@@ -7,16 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */; };
+		460FD2022A841E4100029FD7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* Extension.swift */; };
+		460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */; };
+		460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2062A841FCC00029FD7 /* PlayerHeaderView.swift */; };
+		460FD2092A84203C00029FD7 /* PlayerStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2082A84203C00029FD7 /* PlayerStatsView.swift */; };
+		460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD20A2A84210100029FD7 /* RoundedRectangleView.swift */; };
 		4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639280E2A7EC0B1002C2767 /* CricKitApp.swift */; };
-		463928112A7EC0B1002C2767 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463928102A7EC0B1002C2767 /* ContentView.swift */; };
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileView.swift; sourceTree = "<group>"; };
+		460FD2002A841E4100029FD7 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBackgroundView.swift; sourceTree = "<group>"; };
+		460FD2062A841FCC00029FD7 /* PlayerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHeaderView.swift; sourceTree = "<group>"; };
+		460FD2082A84203C00029FD7 /* PlayerStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsView.swift; sourceTree = "<group>"; };
+		460FD20A2A84210100029FD7 /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		4639280B2A7EC0B1002C2767 /* CricKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
-		463928102A7EC0B1002C2767 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463928152A7EC0B3002C2767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +42,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		460FD2032A841E7800029FD7 /* PlayerProfileCrickit */ = {
+			isa = PBXGroup;
+			children = (
+				460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */,
+				460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */,
+				460FD2062A841FCC00029FD7 /* PlayerHeaderView.swift */,
+				460FD2082A84203C00029FD7 /* PlayerStatsView.swift */,
+			);
+			path = PlayerProfileCrickit;
+			sourceTree = "<group>";
+		};
+		460FD20C2A8422B700029FD7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				460FD2002A841E4100029FD7 /* Extension.swift */,
+				460FD20A2A84210100029FD7 /* RoundedRectangleView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		463928022A7EC0B1002C2767 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
-				463928102A7EC0B1002C2767 /* ContentView.swift */,
+				460FD20C2A8422B700029FD7 /* Helper */,
+				460FD2032A841E7800029FD7 /* PlayerProfileCrickit */,
 				463928122A7EC0B3002C2767 /* Assets.xcassets */,
 				463928142A7EC0B3002C2767 /* Preview Content */,
 			);
@@ -137,8 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				463928112A7EC0B1002C2767 /* ContentView.swift in Sources */,
+				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
+				460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */,
+				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
+				460FD2022A841E4100029FD7 /* Extension.swift in Sources */,
+				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
+				460FD2092A84203C00029FD7 /* PlayerStatsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

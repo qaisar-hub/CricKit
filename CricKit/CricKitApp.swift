@@ -11,7 +11,7 @@ import SwiftUI
 struct CricKitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlayerProfileView()
         }
     }
 }
