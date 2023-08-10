@@ -13,6 +13,20 @@
 		460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2062A841FCC00029FD7 /* PlayerHeaderView.swift */; };
 		460FD2092A84203C00029FD7 /* PlayerStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2082A84203C00029FD7 /* PlayerStatsView.swift */; };
 		460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD20A2A84210100029FD7 /* RoundedRectangleView.swift */; };
+		460FD24E2A84E75700029FD7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD24D2A84E75700029FD7 /* CardView.swift */; };
+		460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD24F2A84E77600029FD7 /* CustomTabBar.swift */; };
+		460FD2522A84E79600029FD7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2512A84E79600029FD7 /* CustomTextField.swift */; };
+		460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2532A84E7AF00029FD7 /* RotationButton.swift */; };
+		460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2572A84E83400029FD7 /* ShopPage.swift */; };
+		460FD25B2A84E85E00029FD7 /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD25A2A84E85E00029FD7 /* AboutPage.swift */; };
+		460FD25E2A84E8A700029FD7 /* SignInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD25D2A84E8A700029FD7 /* SignInPage.swift */; };
+		460FD2602A84E8B500029FD7 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD25F2A84E8B500029FD7 /* SignInView.swift */; };
+		460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2612A84E8C900029FD7 /* SignUpView.swift */; };
+		460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2642A84E9D200029FD7 /* HomePage.swift */; };
+		460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2662A84EA0700029FD7 /* TextFieldValidator.swift */; };
+		460FD26B2A84EA4F00029FD7 /* CustomViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD26A2A84EA4F00029FD7 /* CustomViewModifiers.swift */; };
+		460FD26D2A84EA8400029FD7 /* HomeSectionObservables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD26C2A84EA8400029FD7 /* HomeSectionObservables.swift */; };
+		460FD26F2A84EB7400029FD7 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD26E2A84EB7400029FD7 /* test.swift */; };
 		4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639280E2A7EC0B1002C2767 /* CricKitApp.swift */; };
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
@@ -25,6 +39,20 @@
 		460FD2062A841FCC00029FD7 /* PlayerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHeaderView.swift; sourceTree = "<group>"; };
 		460FD2082A84203C00029FD7 /* PlayerStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsView.swift; sourceTree = "<group>"; };
 		460FD20A2A84210100029FD7 /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
+		460FD24D2A84E75700029FD7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		460FD24F2A84E77600029FD7 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		460FD2512A84E79600029FD7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		460FD2532A84E7AF00029FD7 /* RotationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationButton.swift; sourceTree = "<group>"; };
+		460FD2572A84E83400029FD7 /* ShopPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPage.swift; sourceTree = "<group>"; };
+		460FD25A2A84E85E00029FD7 /* AboutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
+		460FD25D2A84E8A700029FD7 /* SignInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPage.swift; sourceTree = "<group>"; };
+		460FD25F2A84E8B500029FD7 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		460FD2612A84E8C900029FD7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		460FD2642A84E9D200029FD7 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		460FD2662A84EA0700029FD7 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
+		460FD26A2A84EA4F00029FD7 /* CustomViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewModifiers.swift; sourceTree = "<group>"; };
+		460FD26C2A84EA8400029FD7 /* HomeSectionObservables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionObservables.swift; sourceTree = "<group>"; };
+		460FD26E2A84EB7400029FD7 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		4639280B2A7EC0B1002C2767 /* CricKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,8 +86,70 @@
 			children = (
 				460FD2002A841E4100029FD7 /* Extension.swift */,
 				460FD20A2A84210100029FD7 /* RoundedRectangleView.swift */,
+				460FD2662A84EA0700029FD7 /* TextFieldValidator.swift */,
+				460FD26A2A84EA4F00029FD7 /* CustomViewModifiers.swift */,
+				460FD26C2A84EA8400029FD7 /* HomeSectionObservables.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		460FD24C2A84E72500029FD7 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				460FD24D2A84E75700029FD7 /* CardView.swift */,
+				460FD24F2A84E77600029FD7 /* CustomTabBar.swift */,
+				460FD2512A84E79600029FD7 /* CustomTextField.swift */,
+				460FD2532A84E7AF00029FD7 /* RotationButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		460FD2562A84E81A00029FD7 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				460FD2572A84E83400029FD7 /* ShopPage.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		460FD2592A84E84A00029FD7 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				460FD25A2A84E85E00029FD7 /* AboutPage.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		460FD2632A84E9C500029FD7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				460FD2642A84E9D200029FD7 /* HomePage.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		460FD2702A85066B00029FD7 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				460FD2712A85070300029FD7 /* SignIn */,
+				460FD2562A84E81A00029FD7 /* Shop */,
+				460FD2632A84E9C500029FD7 /* Home */,
+				460FD2592A84E84A00029FD7 /* About */,
+				460FD26E2A84EB7400029FD7 /* test.swift */,
+			);
+			name = Pages;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		460FD2712A85070300029FD7 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				460FD2612A84E8C900029FD7 /* SignUpView.swift */,
+				460FD25F2A84E8B500029FD7 /* SignInView.swift */,
+				460FD25D2A84E8A700029FD7 /* SignInPage.swift */,
+			);
+			name = SignIn;
+			path = Sign;
 			sourceTree = "<group>";
 		};
 		463928022A7EC0B1002C2767 = {
@@ -82,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
+				460FD2702A85066B00029FD7 /* Pages */,
+				460FD24C2A84E72500029FD7 /* CustomViews */,
 				460FD20C2A8422B700029FD7 /* Helper */,
 				460FD2032A841E7800029FD7 /* PlayerProfile */,
 				463928122A7EC0B3002C2767 /* Assets.xcassets */,
@@ -168,12 +260,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460FD25B2A84E85E00029FD7 /* AboutPage.swift in Sources */,
+				460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */,
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
+				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,
+				460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */,
+				460FD26B2A84EA4F00029FD7 /* CustomViewModifiers.swift in Sources */,
+				460FD25E2A84E8A700029FD7 /* SignInPage.swift in Sources */,
 				460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */,
+				460FD26D2A84EA8400029FD7 /* HomeSectionObservables.swift in Sources */,
+				460FD2602A84E8B500029FD7 /* SignInView.swift in Sources */,
+				460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
+				460FD26F2A84EB7400029FD7 /* test.swift in Sources */,
+				460FD2522A84E79600029FD7 /* CustomTextField.swift in Sources */,
+				460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */,
 				460FD2022A841E4100029FD7 /* Extension.swift in Sources */,
+				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,
 				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
+				460FD24E2A84E75700029FD7 /* CardView.swift in Sources */,
 				460FD2092A84203C00029FD7 /* PlayerStatsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
