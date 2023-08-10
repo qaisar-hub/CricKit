@@ -42,7 +42,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		460FD2032A841E7800029FD7 /* PlayerProfileCrickit */ = {
+		460FD2032A841E7800029FD7 /* PlayerProfile */ = {
 			isa = PBXGroup;
 			children = (
 				460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */,
@@ -50,7 +50,7 @@
 				460FD2062A841FCC00029FD7 /* PlayerHeaderView.swift */,
 				460FD2082A84203C00029FD7 /* PlayerStatsView.swift */,
 			);
-			path = PlayerProfileCrickit;
+			path = PlayerProfile;
 			sourceTree = "<group>";
 		};
 		460FD20C2A8422B700029FD7 /* Helper */ = {
@@ -83,7 +83,7 @@
 			children = (
 				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
 				460FD20C2A8422B700029FD7 /* Helper */,
-				460FD2032A841E7800029FD7 /* PlayerProfileCrickit */,
+				460FD2032A841E7800029FD7 /* PlayerProfile */,
 				463928122A7EC0B3002C2767 /* Assets.xcassets */,
 				463928142A7EC0B3002C2767 /* Preview Content */,
 			);
