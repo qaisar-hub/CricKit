@@ -9,8 +9,6 @@ import SwiftUI
 
 struct PlayerHeaderView: View {
     
-    var linearColor = LinearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
-    
     var body: some View {
         VStack {
             Color.clear
@@ -21,7 +19,7 @@ struct PlayerHeaderView: View {
                 .fontWidth(.expanded)
                 .font(.system(size: 30))
                 .fontWeight(.bold)
-                .foregroundStyle(linearColor)
+                .foregroundStyle(Color.linearColor)
         }
     }
 }

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct CardView: View {
     
+    var featuredSection: Bool = false
     var width: CGFloat =  30
     var height: CGFloat = 30
+    var text: String = "Coming Soon"
     
     var body: some View {
         ZStack {
@@ -18,9 +20,14 @@ struct CardView: View {
                 .fill(Color.appSecondary)
             
             VStack {
-                Text("xyz")
-                    .font(.body)
-                    .foregroundColor(.black)
+                if( featuredSection ) {
+                    MatchSummarySectionView()
+                } else {
+                    Text(text)
+                        .font(.body)
+                        .foregroundColor(.black)
+                }
+                
             }
             .multilineTextAlignment(.center)
         }

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct PlayerStatsView: View {
     
-    var linearColor = LinearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
-    
     var screenWidth: CGFloat {
         UIScreen.main.bounds.width
     }
@@ -36,7 +34,7 @@ struct PlayerStatsView: View {
                         .fontWidth(.expanded)
                         .font(.system(size: 25))
                         .fontWeight(.bold)
-                        .foregroundStyle(linearColor)
+                        .foregroundStyle(Color.linearColor)
                 }
                 .frame(height: screenHeight * 0.055)
             

@@ -18,7 +18,7 @@
 		460FD2522A84E79600029FD7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2512A84E79600029FD7 /* CustomTextField.swift */; };
 		460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2532A84E7AF00029FD7 /* RotationButton.swift */; };
 		460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2572A84E83400029FD7 /* ShopPage.swift */; };
-		460FD25B2A84E85E00029FD7 /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD25A2A84E85E00029FD7 /* AboutPage.swift */; };
+		460FD25B2A84E85E00029FD7 /* UserProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD25A2A84E85E00029FD7 /* UserProfilePage.swift */; };
 		460FD25E2A84E8A700029FD7 /* SignInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD25D2A84E8A700029FD7 /* SignInPage.swift */; };
 		460FD2602A84E8B500029FD7 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD25F2A84E8B500029FD7 /* SignInView.swift */; };
 		460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2612A84E8C900029FD7 /* SignUpView.swift */; };
@@ -30,6 +30,7 @@
 		4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639280E2A7EC0B1002C2767 /* CricKitApp.swift */; };
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
+		46DF90B72A8967DE009D0A9E /* MatchSummarySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF90B62A8967DE009D0A9E /* MatchSummarySectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +45,7 @@
 		460FD2512A84E79600029FD7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		460FD2532A84E7AF00029FD7 /* RotationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationButton.swift; sourceTree = "<group>"; };
 		460FD2572A84E83400029FD7 /* ShopPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPage.swift; sourceTree = "<group>"; };
-		460FD25A2A84E85E00029FD7 /* AboutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
+		460FD25A2A84E85E00029FD7 /* UserProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePage.swift; sourceTree = "<group>"; };
 		460FD25D2A84E8A700029FD7 /* SignInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPage.swift; sourceTree = "<group>"; };
 		460FD25F2A84E8B500029FD7 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		460FD2612A84E8C900029FD7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463928152A7EC0B3002C2767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		46DF90B62A8967DE009D0A9E /* MatchSummarySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSummarySectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +114,12 @@
 			path = Shop;
 			sourceTree = "<group>";
 		};
-		460FD2592A84E84A00029FD7 /* About */ = {
+		460FD2592A84E84A00029FD7 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				460FD25A2A84E85E00029FD7 /* AboutPage.swift */,
+				460FD25A2A84E85E00029FD7 /* UserProfilePage.swift */,
 			);
-			path = About;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		460FD2632A84E9C500029FD7 /* Home */ = {
@@ -134,7 +136,7 @@
 				460FD2712A85070300029FD7 /* SignIn */,
 				460FD2562A84E81A00029FD7 /* Shop */,
 				460FD2632A84E9C500029FD7 /* Home */,
-				460FD2592A84E84A00029FD7 /* About */,
+				460FD2592A84E84A00029FD7 /* Profile */,
 				460FD26E2A84EB7400029FD7 /* test.swift */,
 			);
 			name = Pages;
@@ -171,6 +173,7 @@
 		4639280D2A7EC0B1002C2767 /* CricKit */ = {
 			isa = PBXGroup;
 			children = (
+				4667B2AC2A8963B000DB95BE /* MatchSummary */,
 				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
 				460FD2702A85066B00029FD7 /* Pages */,
 				460FD24C2A84E72500029FD7 /* CustomViews */,
@@ -188,6 +191,14 @@
 				463928152A7EC0B3002C2767 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4667B2AC2A8963B000DB95BE /* MatchSummary */ = {
+			isa = PBXGroup;
+			children = (
+				46DF90B62A8967DE009D0A9E /* MatchSummarySectionView.swift */,
+			);
+			path = MatchSummary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				460FD25B2A84E85E00029FD7 /* AboutPage.swift in Sources */,
+				460FD25B2A84E85E00029FD7 /* UserProfilePage.swift in Sources */,
 				460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */,
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
@@ -281,6 +292,7 @@
 				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
 				460FD24E2A84E75700029FD7 /* CardView.swift in Sources */,
 				460FD2092A84203C00029FD7 /* PlayerStatsView.swift in Sources */,
+				46DF90B72A8967DE009D0A9E /* MatchSummarySectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,4 +24,5 @@ extension Color {
     static let appPrimary = Color(red: 0.882, green: 0.831, blue: 0.788) // #e1d4c9
     static let appBlacks = Color(red: 0.125, green: 0.137, blue: 0.145) // #202325
     static let appWhites = Color(red: 0.902, green: 0.906, blue: 0.91) // #e6e7e8
+    static let linearColor = LinearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
 }

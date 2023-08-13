@@ -35,7 +35,7 @@ struct customTabBars: View {
             case 1:
                 ShopPage()
             default:
-                AboutPage()
+                UserProfilePage()
             }
             HStack {
                 

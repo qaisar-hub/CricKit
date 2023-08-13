@@ -9,7 +9,7 @@ import SwiftUI
 
 struct customTabBar: View {
     
-    let tabs = ["Home", "Shop", "About"]
+    let tabs = ["Home", "Shop", "My Profile"]
     
     @Binding var selectedIndex: Int
     

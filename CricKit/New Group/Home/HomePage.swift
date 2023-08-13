@@ -22,7 +22,7 @@ struct HomePage: View {
                 case 1:
                     ShopPage()
                 default:
-                    AboutPage()
+                    UserProfilePage()
                 }
                 
                 VStack() {
@@ -77,18 +77,19 @@ struct HomeBoard: View {
     
     var body: some View {
         VStack{
-			CardView(width:  width , height: 200)
+            CardView(featuredSection: true, width:  width , height: 200)
                 .clipShape(MyCard())
                 .padding()
+                .shadow(color: Color.black, radius: 5)
             HomeSections(sectionProgress: sectionProgress)
-				.frame(width: width)
-            .padding(.top, 10)
-            .padding(.bottom, -10)
+                    .frame(width: width)
+                    .padding(.top, 10)
+                    .padding(.bottom, -10)
             ScrollView(showsIndicators: false) {
                 VStack(spacing: -20) {
                     ForEach(0..<3) { items in
                         RecentMatches(sectionProgress: sectionProgress)
-							.frame(width: UIScreen.main.bounds.width - 80)
+                            .frame(width: UIScreen.main.bounds.width - 80)
                     }
                 }
             }
@@ -103,47 +104,21 @@ struct HomeSections: View {
     @ObservedObject var sectionProgress : HomeSection
 	
 	var width = UIScreen.main.bounds.width / 7
+    var categoryData: [String] = ["All", "Live", "Upcoming", "Finished", "Ranking"]
     
     var body: some View{
-        VStack{
+        //ScrollView(.horizontal, showsIndicators: false) {
+        VStack {
             HStack (spacing: 10) {
-                ForEach(0..<5) { items in
-                    if( items == 0) {
-						CardView(width: width, height: 50)
-                            .onTapGesture {
-                                sectionProgress.index = 0
-                            }
-                    }
-                    else if( items == 1) {
-                        CardView(width: width, height: 50)
-                            .offset(y: -10)
-                            .onTapGesture {
-                                sectionProgress.index = 1
-                            }
-                    } else if( items == 2) {
-                        CardView(width: width, height: 50)
-                            .offset(y: -15)
-                            .onTapGesture {
-                                sectionProgress.index = 2
-                            }
-                        
-                    } else if( items == 3) {
-                        CardView(width: width, height: 50)
-                            .offset(y: -20)
-                            .onTapGesture {
-                                sectionProgress.index = 3
-                            }
-                    }
-                    
-                    else if( items == 4) {
-                        CardView(width: width, height: 50)
-                            .offset(y: -25)
-                            .onTapGesture {
-                                sectionProgress.index = 4
-                            }
-                    }
+                ForEach(Array(categoryData.enumerated()), id: \.offset) { index, category in
+                    CardView(width: width, height: 50, text: category)
+                        .offset(y: CGFloat(-index*5))
+                        .onTapGesture {
+                            sectionProgress.index = index
+                        }
                 }
             }
+            //  }
         }
     }
 }

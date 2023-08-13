@@ -1,5 +1,5 @@
 //
-//  aboutPage.swift
+//  UserProfilePage.swift
 //  Crickit_iOSAthon
 //
 //  Created by ephrim.daniel on 08/08/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AboutPage: View {
+struct UserProfilePage: View {
     
     @State var name: String = "Hello"
     
@@ -28,7 +28,7 @@ struct AboutPage: View {
 
 struct AboutPage_Previews: PreviewProvider {
     static var previews: some View {
-        AboutPage()
+        UserProfilePage()
     }
 }
 
@@ -39,7 +39,7 @@ struct myButton: View {
     
     var body: some View {
         Button {
-            let a = AboutPage()
+            let a = UserProfilePage()
             a.updateText()
         } label: {
             Text("changetText")
