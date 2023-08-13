@@ -53,20 +53,24 @@ struct SignInPage: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(signUpColor)
-                        
                         Spacer()
-                        
                     }
-                    VStack {
+					VStack{
+						Spacer()
+						Image("appLogo")
+							.renderingMode(.original)
+							.resizable()
+							.aspectRatio(contentMode: .fill)
+							.frame(width: 150, height: 200)
+							.opacity(0.9)
                         if (isSignInShown) {
                             SignInView(readyToNavigate: $readyToNavigate)
                         } else {
                             SignUpView()
                         }
-                        
+						Spacer()
                     }.background(Color.black)
-                    .cornerRadius(20, corners: .bottomLeft)
-                    .padding(.bottom, 50)
+                    .cornerRadius(20, corners: .allCorners)
                     .ignoresSafeArea()
                 }
             }

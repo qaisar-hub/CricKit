@@ -17,7 +17,6 @@ struct SignInView: View {
     
     var body: some View {
         VStack {
-            Spacer()
             Text("SIGN IN")
                 .padding()
                 .fontWidth(.expanded)
@@ -54,7 +53,6 @@ struct SignInView: View {
                     
                 }
             }
-            Spacer()
         }
     }
 }

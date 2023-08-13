@@ -15,7 +15,6 @@ struct SignUpView: View {
     
     var body: some View {
         VStack() {
-            Spacer()
             Text("SIGN UP")
                 .padding()
                 .fontWidth(.expanded)
@@ -43,7 +42,6 @@ struct SignUpView: View {
                         .padding()
                 }
             }
-            Spacer()
         }
         .cornerRadius(20, corners: [ .bottomLeft, .topLeft])
         .padding(.bottom)

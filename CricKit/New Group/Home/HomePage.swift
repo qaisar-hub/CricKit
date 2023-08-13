@@ -50,9 +50,9 @@ struct RecentMatches: View {
         HStack(spacing: 10) {
             
             if (sectionProgress.index == 0) {
-                CardView(width: 140, height: 200)
+				CardView(width: UIScreen.main.bounds.width / 2.5, height: 200)
                     .clipShape(MyCard())
-                CardView(width: 140, height: 200)
+                CardView(width: UIScreen.main.bounds.width / 2.5, height: 200)
                     .clipShape(MyCard())
                     .offset(y: -18)
             } else if (sectionProgress.index == 1) {
@@ -72,19 +72,23 @@ struct RecentMatches: View {
 struct HomeBoard: View {
     
     @StateObject var sectionProgress = HomeSection()
+	
+	var width = UIScreen.main.bounds.width - 80
     
     var body: some View {
         VStack{
-            CardView(width: 300, height: 200)
+			CardView(width:  width , height: 200)
                 .clipShape(MyCard())
                 .padding()
             HomeSections(sectionProgress: sectionProgress)
+				.frame(width: width)
             .padding(.top, 10)
             .padding(.bottom, -10)
             ScrollView(showsIndicators: false) {
                 VStack(spacing: -20) {
                     ForEach(0..<3) { items in
                         RecentMatches(sectionProgress: sectionProgress)
+							.frame(width: UIScreen.main.bounds.width - 80)
                     }
                 }
             }
@@ -97,36 +101,34 @@ struct HomeBoard: View {
 struct HomeSections: View {
     
     @ObservedObject var sectionProgress : HomeSection
+	
+	var width = UIScreen.main.bounds.width / 7
     
     var body: some View{
         VStack{
             HStack (spacing: 10) {
                 ForEach(0..<5) { items in
                     if( items == 0) {
-                        CardView(width: 50, height: 50)
-                            .rotation3DEffect(.degrees(5), axis: (x: 0, y: 2, z: 0))
+						CardView(width: width, height: 50)
                             .onTapGesture {
                                 sectionProgress.index = 0
                             }
                     }
                     else if( items == 1) {
-                        CardView(width: 50, height: 50)
-                            .rotation3DEffect(.degrees(5), axis: (x: 0, y: 2, z: 0))
+                        CardView(width: width, height: 50)
                             .offset(y: -10)
                             .onTapGesture {
                                 sectionProgress.index = 1
                             }
                     } else if( items == 2) {
-                        CardView(width: 50, height: 50)
-                            .rotation3DEffect(.degrees(5), axis: (x: 0, y: 2, z: 0))
+                        CardView(width: width, height: 50)
                             .offset(y: -15)
                             .onTapGesture {
                                 sectionProgress.index = 2
                             }
                         
                     } else if( items == 3) {
-                        CardView(width: 50, height: 50)
-                            .rotation3DEffect(.degrees(5), axis: (x: 0, y: 2, z: 0))
+                        CardView(width: width, height: 50)
                             .offset(y: -20)
                             .onTapGesture {
                                 sectionProgress.index = 3
@@ -134,8 +136,7 @@ struct HomeSections: View {
                     }
                     
                     else if( items == 4) {
-                        CardView(width: 50, height: 50)
-                            .rotation3DEffect(.degrees(5), axis: (x: 0, y: 2, z: 0))
+                        CardView(width: width, height: 50)
                             .offset(y: -25)
                             .onTapGesture {
                                 sectionProgress.index = 4
