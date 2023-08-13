@@ -37,7 +37,7 @@ struct SignUpView: View {
                     Image(systemName: "arrow.right")
                         .frame(width: 50, height: 50)
                         .foregroundColor(Color.appSecondary)
-                        .background(Color.black)
+                        .background(Color.appBlacks)
                         .clipShape(Circle())
                         .padding()
                 }

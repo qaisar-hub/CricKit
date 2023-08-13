@@ -41,6 +41,7 @@ struct SignInPage: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(signInColor)
+                        .shadow(color: Color.appSecondary, radius: isSignInShown ? 10: 0)
                         
                         RotationButton(label: "SIGN UP", action: {
                             isSignInShown = false
@@ -53,6 +54,7 @@ struct SignInPage: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(signUpColor)
+                        .shadow(color: Color.appSecondary, radius: isSignInShown ? 0: 10)
                         Spacer()
                     }
 					VStack{
