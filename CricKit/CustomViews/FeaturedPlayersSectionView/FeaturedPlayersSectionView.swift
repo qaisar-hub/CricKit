@@ -15,7 +15,6 @@ struct FeaturedPlayersSectionView: View {
     
     var body: some View {
         VStack {
-            SectionTitleView(title: "Featured Players")
             ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
                 let imageName = categoryDataImages[index]
                 HStack {
@@ -33,19 +32,10 @@ struct FeaturedPlayersSectionView: View {
                 }
                 .background(Blur(style: .systemChromeMaterialDark))
                 .cornerRadius(20, corners: .allCorners)
+                .shadow(color: Color.black, radius: 5)
             }
         }
     }
 }
 
-struct SectionTitleView: View {
-    let title: String
-    var body: some View {
-        Text(title)
-            .foregroundColor(Color.white)
-            .padding(.all, 5)
-            .font(.footnote)
-            .background(Blur(style: .systemChromeMaterialDark))
-            .cornerRadius(20, corners: .allCorners)
-    }
-}
+

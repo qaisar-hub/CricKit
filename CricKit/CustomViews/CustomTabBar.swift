@@ -9,21 +9,18 @@ import SwiftUI
 
 struct customTabBar: View {
     
-    var tabs: [(tabName: String, imageName: String)] = [(tabName: "home", imageName: "house.fill"),
-                                                        (tabName: "shop", imageName: "cart.fill"),
-                                                        (tabName: "profile", imageName: "person.fill")]
+    var tabs: [(tabName: String, imageName: String)] = [(tabName: "home", imageName: "house.fill"), (tabName: "shop", imageName: "cart.fill"), (tabName: "profile", imageName: "person.fill")]
     
     @Binding var selectedIndex: Int
     
     
-    var body: some View{
-        HStack {
-            
+    var body: some View {
+        HStack(spacing: 20) {
             ForEach(tabs.enumerated().map({ $0 }), id: \.element.tabName) { index, tab in
                 TabBarButton(tabName: tab.tabName, imageName: tab.imageName, tabIndex: index, selectedIndex: $selectedIndex)
             }
         }
-        .background(Color.black)
+        .background(Blur(style: .systemChromeMaterialDark))
         .cornerRadius(10)
         .shadow(color: Color.black, radius: 5)
     }
@@ -39,14 +36,15 @@ struct TabBarButton: View {
         Button(action: {
             selectedIndex = tabIndex
         }) {
-            VStack {
+            VStack(spacing: 3) {
                 Image(systemName: imageName)
-                    .foregroundColor(selectedIndex == tabIndex ? Color.appSecondary : Color.appPrimary)
+                    .foregroundColor(selectedIndex == tabIndex ?  Color.appPrimary : Color.appWhites)
                 Text(tabName.capitalized)
                     .font(.caption)
-                    .foregroundColor(selectedIndex == tabIndex ? Color.appSecondary : Color.appPrimary)
+                    .foregroundColor(selectedIndex == tabIndex ? Color.appPrimary : Color.appWhites)
             }
             .padding(10)
+            .shadow(color: Color.appBlacks, radius: 5)
         }
     }
 }

@@ -16,8 +16,8 @@ struct SignInPage: View {
     @StateObject var progress = TextFieldObserver()
     
     
-    @State private var signInColor = Color.appSecondary
-    @State private var signUpColor = Color.appPrimary
+    @State private var signInColor = Color.appPrimary
+    @State private var signUpColor = Color.appSecondary
     
     @State private var isSignInShown = true
     
@@ -33,6 +33,19 @@ struct SignInPage: View {
                         RotationButton(label: "SIGN IN", action:{
                             isSignInShown = true
                             withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1)) {
+                                signInColor = Color.appPrimary
+                                signUpColor = Color.appSecondary
+                                
+                            }
+                        })
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .foregroundColor(signInColor)
+                        .shadow(color: signInColor, radius: isSignInShown ? 10: 0)
+                        
+                        RotationButton(label: "SIGN UP", action: {
+                            isSignInShown = false
+                            withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1)) {
                                 signInColor = Color.appSecondary
                                 signUpColor = Color.appPrimary
                                 
@@ -40,21 +53,8 @@ struct SignInPage: View {
                         })
                         .font(.caption)
                         .fontWeight(.bold)
-                        .foregroundColor(signInColor)
-                        .shadow(color: Color.appSecondary, radius: isSignInShown ? 10: 0)
-                        
-                        RotationButton(label: "SIGN UP", action: {
-                            isSignInShown = false
-                            withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1)) {
-                                signInColor = Color.appPrimary
-                                signUpColor =  Color.appSecondary
-                                
-                            }
-                        })
-                        .font(.caption)
-                        .fontWeight(.bold)
                         .foregroundColor(signUpColor)
-                        .shadow(color: Color.appSecondary, radius: isSignInShown ? 0: 10)
+                        .shadow(color: signUpColor, radius: isSignInShown ? 0: 10)
                         Spacer()
                     }
                     VStack{
