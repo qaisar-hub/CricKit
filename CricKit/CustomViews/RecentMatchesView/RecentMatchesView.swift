@@ -18,7 +18,7 @@ struct RecentMatchesView: View {
         }
         .cornerRadius(25, corners: .allCorners)
         .background(Blur(style: .systemChromeMaterialDark))
-        .clipShape(MyCard())
+        .clipShape(LiveMatchCard())
     }
 }
 

@@ -15,12 +15,7 @@ struct FeaturedPlayersSectionView: View {
     
     var body: some View {
         VStack {
-            Text("Featured Players")
-                .foregroundColor(Color.white)
-                .padding(.all, 5)
-                .font(.footnote)
-                .background(Blur(style: .systemChromeMaterialDark))
-                .cornerRadius(20, corners: .allCorners)
+            SectionTitleView(title: "Featured Players")
             ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
                 let imageName = categoryDataImages[index]
                 HStack {
@@ -29,7 +24,7 @@ struct FeaturedPlayersSectionView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 80, height: 80)
-                            //.clipShape()
+                            .clipShape(Circle())
                     }
                     .padding(.all, 8)
                     Text(categoryDataPlayerName[index])
@@ -40,5 +35,17 @@ struct FeaturedPlayersSectionView: View {
                 .cornerRadius(20, corners: .allCorners)
             }
         }
+    }
+}
+
+struct SectionTitleView: View {
+    let title: String
+    var body: some View {
+        Text(title)
+            .foregroundColor(Color.white)
+            .padding(.all, 5)
+            .font(.footnote)
+            .background(Blur(style: .systemChromeMaterialDark))
+            .cornerRadius(20, corners: .allCorners)
     }
 }
