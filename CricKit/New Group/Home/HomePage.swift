@@ -43,14 +43,15 @@ struct HomePage_Previews: PreviewProvider {
 }
 
 struct RecentMatches: View {
+    let categoryDataImages: [String] = ["playerVirat", "playerJoeRoot", "playerBabar", "playerSteveSmith", "playerKaneWill"]
+    
     
     @StateObject var sectionProgress = HomeSection()
     
     var body: some View {
         VStack(spacing: 10) {
-            let categoryDataImages: [String] = ["playerVirat", "playerJoeRoot", "playerBabar", "playerSteveSmith", "playerKaneWill"]
-            
             if (sectionProgress.index == 0) {
+                SectionTitleView(title: "Recent Matches")
                 ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
                     HStack {
                         RecentMatchesView()

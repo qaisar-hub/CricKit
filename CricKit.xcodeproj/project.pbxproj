@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2094D8DD2A8A9C72002567FC /* sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094D8DC2A8A9C72002567FC /* sample.swift */; };
 		460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */; };
 		460FD2022A841E4100029FD7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* Extension.swift */; };
 		460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2094D8DC2A8A9C72002567FC /* sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample.swift; sourceTree = "<group>"; };
 		460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileView.swift; sourceTree = "<group>"; };
 		460FD2002A841E4100029FD7 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBackgroundView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				460FD2032A841E7800029FD7 /* PlayerProfile */,
 				463928122A7EC0B3002C2767 /* Assets.xcassets */,
 				463928142A7EC0B3002C2767 /* Preview Content */,
+				2094D8DC2A8A9C72002567FC /* sample.swift */,
 			);
 			path = CricKit;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */,
 				460FD2022A841E4100029FD7 /* Extension.swift in Sources */,
 				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,
+				2094D8DD2A8A9C72002567FC /* sample.swift in Sources */,
 				469377032A8A64FF003E9AD8 /* RecentMatchesView.swift in Sources */,
 				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
 				460FD24E2A84E75700029FD7 /* CardView.swift in Sources */,
