@@ -30,7 +30,10 @@
 		4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639280E2A7EC0B1002C2767 /* CricKitApp.swift */; };
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
-		46DF90B72A8967DE009D0A9E /* MatchSummarySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DF90B62A8967DE009D0A9E /* MatchSummarySectionView.swift */; };
+		469376FE2A8A64A2003E9AD8 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469376FD2A8A64A2003E9AD8 /* BlurView.swift */; };
+		469377032A8A64FF003E9AD8 /* RecentMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377022A8A64FF003E9AD8 /* RecentMatchesView.swift */; };
+		469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */; };
+		469377092A8A6568003E9AD8 /* MatchLiveSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377082A8A6568003E9AD8 /* MatchLiveSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +61,10 @@
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463928152A7EC0B3002C2767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		46DF90B62A8967DE009D0A9E /* MatchSummarySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSummarySectionView.swift; sourceTree = "<group>"; };
+		469376FD2A8A64A2003E9AD8 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		469377022A8A64FF003E9AD8 /* RecentMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchesView.swift; sourceTree = "<group>"; };
+		469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayersSectionView.swift; sourceTree = "<group>"; };
+		469377082A8A6568003E9AD8 /* MatchLiveSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchLiveSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +104,14 @@
 		460FD24C2A84E72500029FD7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				469377072A8A6548003E9AD8 /* MatchLiveSectionView */,
+				469377042A8A6527003E9AD8 /* FeaturedPlayersSectionView */,
+				469376FF2A8A64C6003E9AD8 /* RecentMatchesView */,
 				460FD24D2A84E75700029FD7 /* CardView.swift */,
 				460FD24F2A84E77600029FD7 /* CustomTabBar.swift */,
 				460FD2512A84E79600029FD7 /* CustomTextField.swift */,
 				460FD2532A84E7AF00029FD7 /* RotationButton.swift */,
+				469376FD2A8A64A2003E9AD8 /* BlurView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -173,7 +183,6 @@
 		4639280D2A7EC0B1002C2767 /* CricKit */ = {
 			isa = PBXGroup;
 			children = (
-				4667B2AC2A8963B000DB95BE /* MatchSummary */,
 				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
 				460FD2702A85066B00029FD7 /* Pages */,
 				460FD24C2A84E72500029FD7 /* CustomViews */,
@@ -193,12 +202,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		4667B2AC2A8963B000DB95BE /* MatchSummary */ = {
+		469376FF2A8A64C6003E9AD8 /* RecentMatchesView */ = {
 			isa = PBXGroup;
 			children = (
-				46DF90B62A8967DE009D0A9E /* MatchSummarySectionView.swift */,
+				469377022A8A64FF003E9AD8 /* RecentMatchesView.swift */,
 			);
-			path = MatchSummary;
+			path = RecentMatchesView;
+			sourceTree = "<group>";
+		};
+		469377042A8A6527003E9AD8 /* FeaturedPlayersSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */,
+			);
+			path = FeaturedPlayersSectionView;
+			sourceTree = "<group>";
+		};
+		469377072A8A6548003E9AD8 /* MatchLiveSectionView */ = {
+			isa = PBXGroup;
+			children = (
+				469377082A8A6568003E9AD8 /* MatchLiveSectionView.swift */,
+			);
+			path = MatchLiveSectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				469377092A8A6568003E9AD8 /* MatchLiveSectionView.swift in Sources */,
 				460FD25B2A84E85E00029FD7 /* UserProfilePage.swift in Sources */,
 				460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */,
+				469376FE2A8A64A2003E9AD8 /* BlurView.swift in Sources */,
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
 				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,
@@ -282,6 +309,7 @@
 				460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */,
 				460FD26D2A84EA8400029FD7 /* HomeSectionObservables.swift in Sources */,
 				460FD2602A84E8B500029FD7 /* SignInView.swift in Sources */,
+				469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */,
 				460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
 				460FD26F2A84EB7400029FD7 /* test.swift in Sources */,
@@ -289,10 +317,10 @@
 				460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */,
 				460FD2022A841E4100029FD7 /* Extension.swift in Sources */,
 				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,
+				469377032A8A64FF003E9AD8 /* RecentMatchesView.swift in Sources */,
 				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
 				460FD24E2A84E75700029FD7 /* CardView.swift in Sources */,
 				460FD2092A84203C00029FD7 /* PlayerStatsView.swift in Sources */,
-				46DF90B72A8967DE009D0A9E /* MatchSummarySectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

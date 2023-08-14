@@ -57,20 +57,20 @@ struct SignInPage: View {
                         .shadow(color: Color.appSecondary, radius: isSignInShown ? 0: 10)
                         Spacer()
                     }
-					VStack{
-						Spacer()
-						Image("appLogo")
-							.renderingMode(.original)
-							.resizable()
-							.aspectRatio(contentMode: .fill)
-							.frame(width: 150, height: 200)
-							.opacity(0.9)
+                    VStack{
+                        Spacer()
+                        Image("appLogo")
+                            .renderingMode(.original)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 150, height: 200)
+                            .opacity(0.9)
                         if (isSignInShown) {
                             SignInView(readyToNavigate: $readyToNavigate)
                         } else {
                             SignUpView()
                         }
-						Spacer()
+                        Spacer()
                     }.background(Color.black)
                     .cornerRadius(20, corners: .allCorners)
                     .ignoresSafeArea()

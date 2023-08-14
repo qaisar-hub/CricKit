@@ -1,6 +1,6 @@
 //
 //  RotationButton.swift
-//  Crickit_iOSAthon
+//  CricKit
 //
 //  Created by ephrim.daniel on 10/08/23.
 //

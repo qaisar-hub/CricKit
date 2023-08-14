@@ -19,10 +19,9 @@ extension UIView {
 }
 
 extension Color {
-	static let appSecondary = Color(#colorLiteral(red: 0.992, green: 0.757, blue: 0.055, alpha: 1)) // #fdc10e
-	//static let appSecondary = Color(#colorLiteral(red: 0.769, green: 0.588, blue: 0.318, alpha: 1)) // #c49651
-    static let appPrimary = Color(red: 0.882, green: 0.831, blue: 0.788) // #e1d4c9
-    static let appBlacks = Color(red: 0.125, green: 0.137, blue: 0.145) // #202325
+    static let appSecondary = Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)) // #c49651
+    static let appPrimary = Color(#colorLiteral(red: 0.2056267262, green: 0.5325312614, blue: 0.7769566178, alpha: 1))
+    static let appBlacks = Color(#colorLiteral(red: 0.03084787726, green: 0.0898687616, blue: 0.1246017292, alpha: 1))
     static let appWhites = Color(red: 0.902, green: 0.906, blue: 0.91) // #e6e7e8
-    static let linearColor = LinearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
+    static let linearColor = LinearGradient(colors: [Color.appPrimary, Color.appPrimary, Color.appPrimary.opacity(0.9)], startPoint: .bottomLeading, endPoint: .topTrailing)
 }

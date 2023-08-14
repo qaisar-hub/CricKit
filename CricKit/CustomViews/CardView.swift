@@ -1,6 +1,6 @@
 //
 //  cardView.swift
-//  Crickit_iOSAthon
+//  CricKit
 //
 //  Created by ephrim.daniel on 08/08/23.
 //
@@ -16,12 +16,9 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 5, style: .continuous)
-                .fill(Color.appSecondary)
-            
             VStack {
                 if( featuredSection ) {
-                    MatchSummarySectionView()
+                    MatchLiveSectionView()
                 } else {
                     Text(text)
                         .font(.body)
@@ -32,6 +29,7 @@ struct CardView: View {
             .multilineTextAlignment(.center)
         }
         .frame(width: width, height: height)
+        .shadow(color: Color.black, radius: 10)
     }
 }
 

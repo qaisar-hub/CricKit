@@ -1,6 +1,6 @@
 //
 //  customViewModifiers.swift
-//  Crickit_iOSAthon
+//  CricKit
 //
 //  Created by ephrim.daniel on 25/07/23.
 //

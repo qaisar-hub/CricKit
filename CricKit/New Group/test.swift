@@ -1,6 +1,6 @@
 //
 //  test.swift
-//  Crickit_iOSAthon
+//  CricKit
 //
 //  Created by ephrim.daniel on 25/07/23.
 //
@@ -9,14 +9,26 @@ import SwiftUI
 
 struct test: View {
     var body: some View {
-        VStack {
-            CardView(width: 140, height: 200)
-                .clipShape(MyCard())
-            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-                RecentMatches()
+        ZStack {
+            Color.blue
+                .ignoresSafeArea()
+            VStack {
+                    CardView(width: 140, height: 200)
+                    .background(Color.black)
+                    .clipShape(MyCard())
             }
-            
         }
+    }
+}
+
+struct BackgroundCard : Shape {
+    func path(in rect : CGRect ) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY - 100))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY - 100))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY - ( UIScreen.main.bounds.width)))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        return path
     }
 }
 
@@ -70,47 +82,29 @@ struct myLabel: View {
 struct MyCard : Shape {
     func path(in rect : CGRect ) -> Path {
         var path = Path()
-        // 1
-//        path.move(
-//            to: CGPoint(
-//                x: 0 * width,
-//                y: 0 * height
-//            )
-//        )
-//
-//        path.move(
-//            to: CGPoint(
-//                x: 1 * width,
-//                y: 0 * height
-//            )
-//        )
-//        // 2
-//        path.addLine(
-//            to: CGPoint(
-//                x: 1 * width,
-//                y: 1 * height)
-//        )
-//
-//        path.addLine(
-//            to: CGPoint(
-//                x: 0 * width,
-//                y: 1 * height)
-//        )
-        
-        
         path.move(to: CGPoint(x: rect.minX, y: rect.minY + 18))
         path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
         path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - 18))
         path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
-
-            //    return path
-        
         return path
     }
 }
 
+struct LiveMatchCard : Shape {
+    func path(in rect : CGRect ) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - 30))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        return path
+    }
+}
+
+
+
 struct test_Previews: PreviewProvider {
     static var previews: some View {
-        customTabBars()
+        test()
     }
 }
