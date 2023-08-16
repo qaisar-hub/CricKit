@@ -21,6 +21,13 @@
 		20C067532A8CD36800102BCF /* HomeSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067522A8CD36800102BCF /* HomeSectionsView.swift */; };
 		20C067552A8CD48C00102BCF /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067542A8CD48C00102BCF /* SectionTitleView.swift */; };
 		20C067572A8CDA5B00102BCF /* LiveScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067502A8CD2FB00102BCF /* LiveScoreCard.swift */; };
+		20C0675B2A8CE16100102BCF /* LiveScoreCardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067592A8CE15700102BCF /* LiveScoreCardEntry.swift */; };
+		20C067632A8CEAE900102BCF /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067612A8CEAE600102BCF /* Provider.swift */; };
+		20C067642A8CF13600102BCF /* WidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */; };
+		20C067652A8CF39500102BCF /* WidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */; };
+		20C067672A8CF72700102BCF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* Extension.swift */; };
+		20C067682A8CF94C00102BCF /* MatchLiveSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377082A8A6568003E9AD8 /* MatchLiveSectionView.swift */; };
+		20C067692A8CF9B200102BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */; };
 		460FD2022A841E4100029FD7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* Extension.swift */; };
 		460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */; };
@@ -47,7 +54,6 @@
 		469376FE2A8A64A2003E9AD8 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469376FD2A8A64A2003E9AD8 /* BlurView.swift */; };
 		469377032A8A64FF003E9AD8 /* RecentMatchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377022A8A64FF003E9AD8 /* RecentMatchSectionView.swift */; };
 		469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */; };
-		469377092A8A6568003E9AD8 /* MatchLiveSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377082A8A6568003E9AD8 /* MatchLiveSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +94,10 @@
 		20C067502A8CD2FB00102BCF /* LiveScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCard.swift; sourceTree = "<group>"; };
 		20C067522A8CD36800102BCF /* HomeSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionsView.swift; sourceTree = "<group>"; };
 		20C067542A8CD48C00102BCF /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
+		20C067592A8CE15700102BCF /* LiveScoreCardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardEntry.swift; sourceTree = "<group>"; };
+		20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSmall.swift; sourceTree = "<group>"; };
+		20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMedium.swift; sourceTree = "<group>"; };
+		20C067612A8CEAE600102BCF /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileView.swift; sourceTree = "<group>"; };
 		460FD2002A841E4100029FD7 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBackgroundView.swift; sourceTree = "<group>"; };
@@ -152,7 +162,7 @@
 			children = (
 				20C0673C2A8CCA7F00102BCF /* CrickitWidgetBundle.swift */,
 				20C0673E2A8CCA7F00102BCF /* CrickitWidgetLiveActivity.swift */,
-				20C067402A8CCA7F00102BCF /* CrickitWidget.swift */,
+				20C067582A8CE11600102BCF /* Widgets */,
 				20C067422A8CCA7F00102BCF /* CrickitWidget.intentdefinition */,
 				20C067432A8CCA8700102BCF /* Assets.xcassets */,
 				20C067452A8CCA8700102BCF /* Info.plist */,
@@ -176,6 +186,26 @@
 				469376FF2A8A64C6003E9AD8 /* RecentMatchSectionView */,
 			);
 			path = HomeSectionsView;
+			sourceTree = "<group>";
+		};
+		20C067582A8CE11600102BCF /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				20C0675C2A8CEA3300102BCF /* views */,
+				20C067402A8CCA7F00102BCF /* CrickitWidget.swift */,
+				20C067592A8CE15700102BCF /* LiveScoreCardEntry.swift */,
+				20C067612A8CEAE600102BCF /* Provider.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		20C0675C2A8CEA3300102BCF /* views */ = {
+			isa = PBXGroup;
+			children = (
+				20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */,
+				20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 		460FD2032A841E7800029FD7 /* PlayerProfile */ = {
@@ -412,6 +442,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C067692A8CF9B200102BCF /* Assets.xcassets in Resources */,
 				20C067442A8CCA8700102BCF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,10 +464,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				20C067462A8CCA8700102BCF /* CrickitWidget.intentdefinition in Sources */,
+				20C067642A8CF13600102BCF /* WidgetSmall.swift in Sources */,
+				20C067652A8CF39500102BCF /* WidgetMedium.swift in Sources */,
 				20C0673F2A8CCA7F00102BCF /* CrickitWidgetLiveActivity.swift in Sources */,
+				20C067672A8CF72700102BCF /* Extension.swift in Sources */,
+				20C067632A8CEAE900102BCF /* Provider.swift in Sources */,
 				20C067572A8CDA5B00102BCF /* LiveScoreCard.swift in Sources */,
 				20C0673D2A8CCA7F00102BCF /* CrickitWidgetBundle.swift in Sources */,
 				20C067412A8CCA7F00102BCF /* CrickitWidget.swift in Sources */,
+				20C0675B2A8CE16100102BCF /* LiveScoreCardEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +480,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469377092A8A6568003E9AD8 /* MatchLiveSectionView.swift in Sources */,
 				460FD25B2A84E85E00029FD7 /* UserProfilePage.swift in Sources */,
 				460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */,
 				469376FE2A8A64A2003E9AD8 /* BlurView.swift in Sources */,
@@ -469,6 +504,7 @@
 				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,
 				20C067552A8CD48C00102BCF /* SectionTitleView.swift in Sources */,
 				2094D8DD2A8A9C72002567FC /* sample.swift in Sources */,
+				20C067682A8CF94C00102BCF /* MatchLiveSectionView.swift in Sources */,
 				469377032A8A64FF003E9AD8 /* RecentMatchSectionView.swift in Sources */,
 				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
 				460FD24E2A84E75700029FD7 /* CardView.swift in Sources */,
@@ -495,6 +531,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JA675S6WXV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CrickitWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CrickitWidget;
@@ -522,6 +559,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JA675S6WXV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CrickitWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CrickitWidget;
@@ -665,6 +703,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CricKit/Preview Content\"";
+				DEVELOPMENT_TEAM = JA675S6WXV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -694,6 +733,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CricKit/Preview Content\"";
+				DEVELOPMENT_TEAM = JA675S6WXV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
