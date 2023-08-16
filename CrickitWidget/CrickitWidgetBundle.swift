@@ -12,6 +12,6 @@ import SwiftUI
 struct CrickitWidgetBundle: WidgetBundle {
     var body: some Widget {
         CrickitWidget()
-        CrickitWidgetLiveActivity()
+       // CrickitWidgetLiveActivity()
     }
 }
