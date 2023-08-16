@@ -1,5 +1,5 @@
 //
-//  RecentMatchesView.swift
+//  RecentMatchSectionView.swift
 //  CricKit
 //
 //  Created by ephrim.daniel on 14/08/23.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct RecentMatchesView: View {
+struct RecentMatchSectionView: View {
     let leftTeam = Team(name: "IND", flagImageName: "teamInd", runs: 280, wickets: 6, overs: 50)
     let rightTeam = Team(name: "AUS", flagImageName: "teamAus", runs: 180, wickets: 5, overs: 40)
     
     
     var body: some View {
         HStack{
-            MatchSummaryView2(leftTeam: leftTeam, rightTeam: rightTeam, isLive: false)
+            MatchSummarySection(leftTeam: leftTeam, rightTeam: rightTeam, isLive: false)
         }
         .cornerRadius(25, corners: .allCorners)
         .background(Blur(style: .systemChromeMaterialDark))
@@ -23,7 +23,7 @@ struct RecentMatchesView: View {
 }
 
 
-struct MatchSummaryView2: View {
+struct MatchSummarySection: View {
     let leftTeam: Team
     let rightTeam: Team
     let isLive: Bool
@@ -31,7 +31,7 @@ struct MatchSummaryView2: View {
     var body: some View {
         VStack {
             HStack {
-                TeamSummaryView2(team: leftTeam)
+                TeamSummarySectionView(team: leftTeam)
                 Spacer()
             }
             HStack {
@@ -44,7 +44,7 @@ struct MatchSummaryView2: View {
             }
             HStack {
                 Spacer()
-                TeamSummaryView2(team: rightTeam)
+                TeamSummarySectionView(team: rightTeam)
             }
             HStack {
                 VStack {
@@ -53,8 +53,6 @@ struct MatchSummaryView2: View {
                             .fontWeight(.bold)
                         .foregroundColor(Color.white)
                 }
-                    
-                
                 Spacer()
             }
             
@@ -62,7 +60,7 @@ struct MatchSummaryView2: View {
     }
 }
 
-struct TeamSummaryView2: View {
+struct TeamSummarySectionView: View {
     let team: Team
     
     var body: some View {

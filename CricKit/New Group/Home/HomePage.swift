@@ -41,39 +41,6 @@ struct HomePage_Previews: PreviewProvider {
         HomePage()
     }
 }
-
-struct RecentMatches: View {
-    let categoryDataImages: [String] = ["playerVirat", "playerJoeRoot", "playerBabar", "playerSteveSmith", "playerKaneWill"]
-    
-    
-    @StateObject var sectionProgress = HomeSection()
-    
-    var body: some View {
-        VStack(spacing: 10) {
-            if (sectionProgress.index == 0) {
-                ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
-                    HStack {
-                        RecentMatchesView()
-                            .shadow(color: Color.black, radius: 5)
-                    }
-                }
-                
-            } else if (sectionProgress.index == 1) {
-                Text("<<< Hello 1>>>")
-            } else if (sectionProgress.index == 2) {
-                VStack {
-                    FeaturedPlayersSectionView()
-                }
-            } else if (sectionProgress.index == 3) {
-                Text("<<< Hello 3>>>")
-            } else if (sectionProgress.index == 4) {
-                Text("<<< Hello 4>>>")
-            }
-            
-        }
-        .padding()
-    }
-}
 struct HomeBoard: View {
     
     @StateObject var sectionProgress = HomeSection()
@@ -94,7 +61,7 @@ struct HomeBoard: View {
                     .padding(.bottom, -10)
             ScrollView(showsIndicators: false) {
                 VStack(spacing: -20) {
-                        RecentMatches(sectionProgress: sectionProgress)
+                        HomeSectionSwitches(sectionProgress: sectionProgress)
                             .frame(width: UIScreen.main.bounds.width - 30)
                 }
             }
@@ -105,50 +72,35 @@ struct HomeBoard: View {
     }
 }
 
-struct HomeSections: View {
+struct HomeSectionSwitches: View {
+    let categoryDataImages: [String] = ["playerVirat", "playerJoeRoot", "playerBabar", "playerSteveSmith", "playerKaneWill"]
     
-    @ObservedObject var sectionProgress : HomeSection
     
-    var width = UIScreen.main.bounds.width / 7
-    var categoryDataImages: [String] = ["clock.fill", "rectangle.fill.on.rectangle.fill", "shared.with.you", "newspaper.fill", "stairs"]
-    var categoryDataTitle: [String] = ["Recents", "Upcoming Matches", "Featured Players", "News", "Rankings"]
+    @StateObject var sectionProgress = HomeSection()
     
-    var body: some View{
-        VStack {
-            HStack (spacing: 10) {
+    var body: some View {
+        VStack(spacing: 10) {
+            if (sectionProgress.index == 0) {
                 ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
-                    let imageName = categoryDataImages[index]
-                    VStack {
-                        Image(systemName: imageName)
+                    HStack {
+                        RecentMatchSectionView()
                             .shadow(color: Color.black, radius: 5)
-                            .padding()
-                            .font(.system(size: 25.0))
-                            .foregroundColor( sectionProgress.index == index ? Color.appPrimary : Color.appWhites)
-                            .opacity(9)
-                            .background(Blur(style: .systemChromeMaterialDark))
-                            .cornerRadius(10, corners: .allCorners)
-                            .shadow(color: Color.black, radius: 5)
-                            .offset(y: CGFloat(-index*6))
-                            .onTapGesture {
-                                sectionProgress.index = index
-                            }
                     }
                 }
+                
+            } else if (sectionProgress.index == 1) {
+                Text("<<< Hello 1>>>")
+            } else if (sectionProgress.index == 2) {
+                VStack {
+                    FeaturedPlayersSectionView()
+                }
+            } else if (sectionProgress.index == 3) {
+                Text("<<< Hello 3>>>")
+            } else if (sectionProgress.index == 4) {
+                Text("<<< Hello 4>>>")
             }
-            SectionTitleView(title: categoryDataTitle[sectionProgress.index])
+            
         }
-    }
-}
-
-struct SectionTitleView: View {
-    let title: String
-    var body: some View {
-        Text(title)
-            .foregroundColor(Color.white)
-            .padding(.all, 10)
-            .font(.footnote)
-            .background(Blur(style: .systemChromeMaterialDark))
-            .cornerRadius(20, corners: .allCorners)
-            .shadow(color: Color.black, radius: 5)
+        .padding()
     }
 }
