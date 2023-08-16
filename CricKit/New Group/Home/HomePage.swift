@@ -11,28 +11,41 @@ struct HomePage: View {
     @State var selectedIndex = 0
     
     var body: some View {
-        ZStack {
-            Color.appBlacks
-                .clipShape(BackgroundCard())
-            VStack(spacing: 0) {
-                
-                switch selectedIndex {
-                case 0:
-                    HomeBoard()
-                case 1:
-                    ShopPage()
-                default:
-                    UserProfilePage()
-                }
-                
-                VStack() {
-                    HStack (alignment: .center, spacing: 30) {
-                        customTabBar(selectedIndex: $selectedIndex)
+        NavigationStack {
+            ZStack {
+                Color.appBlacks
+                    .clipShape(BackgroundCard())
+                VStack(spacing: 0) {
+                    HStack {
+                        Text("CricKit")
+                            .padding()
+                            .fontWidth(.expanded)
+                            .font(.system(size: 30))
+                            .fontWeight(.bold)
+                            .foregroundStyle(.linearGradient(colors: [Color.appPrimary, Color.appSecondary, Color.appPrimary], startPoint: .topLeading, endPoint: .bottomTrailing))
+                        Spacer()
                     }
+                    
+                    switch selectedIndex {
+                    case 0:
+                        HomeBoard()
+                    case 1:
+                        ShopPage()
+                    default:
+                        UserProfilePage()
+                    }
+                    
+                    VStack() {
+                        HStack (alignment: .center, spacing: 30) {
+                            customTabBar(selectedIndex: $selectedIndex)
+                        }
+                    }
+                    Spacer()
                 }
-                Spacer()
-            }
-        }.background(Color.linearColor)
+            }.background(Color.linearColor)
+            .navigationBarBackButtonHidden(true)
+        }
+        
     }
 }
 
@@ -49,7 +62,7 @@ struct HomeBoard: View {
     
     var body: some View {
         VStack{
-            CardView(featuredSection: true, width:  width , height: 200)
+            CardView(featuredSection: true, width:  width * 1.15 , height: 200)
                 .clipShape(LiveMatchCard())
                 .background(Blur(style: .systemChromeMaterialDark))
                 .clipShape(LiveMatchCard())
@@ -62,7 +75,7 @@ struct HomeBoard: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: -20) {
                         HomeSectionSwitches(sectionProgress: sectionProgress)
-                            .frame(width: UIScreen.main.bounds.width - 30)
+                            .frame(width: UIScreen.main.bounds.width)
                 }
             }
             .padding(.top, 10)

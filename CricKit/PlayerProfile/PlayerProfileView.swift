@@ -8,24 +8,55 @@
 import SwiftUI
 
 struct PlayerProfileView: View {
-    
+
+    let playerImage: String
+    let playerTeamName: String
     var body: some View {
-        ZStack {
-            PlayerBackgroundView()
-            VStack {
-                PlayerHeaderView()
-                Spacer()
-                PlayerStatsView()
+        NavigationStack {
+            ZStack {
+                PlayerBackgroundView(imageName: playerImage)
+                VStack {
+                    PlayerHeaderView(teamName: playerTeamName)
+                    Spacer()
+                    PlayerStatsView()
+                }
             }
+            .navigationBarBackButtonHidden(true)
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    CustomBackButton()
+                }
+            })
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
+        
+        
     }
     
     
 }
 
+struct CustomBackButton: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var body: some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "chevron.left")
+                .padding(.vertical, 8)
+                .padding(.horizontal, 12)
+                .background(Color.linearColor)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .shadow(color: Color.black, radius: 5)
+        }
+    }
+}
+
+
 struct PlayerProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerProfileView()
+        PlayerProfileView(playerImage: "playerDhoni", playerTeamName: "INDIA")
     }
 }

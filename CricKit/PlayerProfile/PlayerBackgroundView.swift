@@ -9,8 +9,10 @@ import SwiftUI
 
 struct PlayerBackgroundView: View {
     
+    let imageName: String
+    
     var body: some View {
-        Image("Dhoni")
+        Image(imageName)
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -28,6 +30,6 @@ struct PlayerBackgroundView: View {
 
 struct PlayerBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerBackgroundView()
+        PlayerBackgroundView(imageName: "playerDhoni")
     }
 }

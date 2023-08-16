@@ -17,24 +17,35 @@ struct FeaturedPlayersSectionView: View {
         VStack {
             ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
                 let imageName = categoryDataImages[index]
-                HStack {
-                    VStack {
-                        Image(imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
+                NavigationLink(destination: PlayerDetailView(playerTeamName: categoryDataPlayerName[index], playerImage: categoryDataImages[index])) {
+                    HStack {
+                        VStack {
+                            Image(imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                        }
+                        .padding(.all, 8)
+                        Text(categoryDataPlayerName[index])
+                            .foregroundColor(Color.white)
+                        Spacer()
                     }
-                    .padding(.all, 8)
-                    Text(categoryDataPlayerName[index])
-                        .foregroundColor(Color.white)
-                    Spacer()
-                }
-                .background(Blur(style: .systemChromeMaterialDark))
-                .cornerRadius(20, corners: .allCorners)
-                .shadow(color: Color.black, radius: 5)
+                    .background(Blur(style: .systemChromeMaterialDark))
+                    .cornerRadius(20, corners: .allCorners)
+                    .shadow(color: Color.black, radius: 5)
+                    .navigationBarTitle("")                }
             }
         }
+    }
+}
+
+struct PlayerDetailView: View {
+    var playerTeamName: String
+    var playerImage: String
+    
+    var body: some View {
+        PlayerProfileView(playerImage: playerImage, playerTeamName: playerTeamName)
     }
 }
 
