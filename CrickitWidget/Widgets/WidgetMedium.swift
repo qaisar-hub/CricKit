@@ -16,14 +16,40 @@ struct WidgetMedium: View {
         self.liveScorecard = _liveScorecard
     }
     var body: some View {
-        Text("Hello, World medium widget!")
+        VStack{
+            Text(liveScorecard.matchName)
+            TeamView(liveScorecard: liveScorecard)
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
+            Text(liveScorecard.matchStatus)
+        }
     }
 }
 
 struct WidgetMedium_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetMedium(_liveScorecard: LiveScoreCard(matchName: "India vs Australia", matchStatus: "India won by 100 Runs", playerOfTheMatch: "Virat Kohli", liveScore: [LiveScore(name: "IND", flagImageName: "teamInd", runs: 280, wickets: 6, overs: 50), LiveScore(name: "AUS", flagImageName: "teamAus", runs: 180, wickets: 5, overs: 40)]))
+        WidgetMedium(_liveScorecard: LiveScoreCard(matchName: "1st ODI, India vs Australia at Vizag", matchStatus: "India still need 100 runs", playerOfTheMatch: "Virat Kohli", liveScore: [LiveScore(name: "IND", flagImageName: "teamInd", runs: 180, wickets: 4, overs: 30), LiveScore(name: "AUS", flagImageName: "teamAus", runs: 280, wickets: 5, overs: 50)]))
         
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+    }
+}
+
+struct TeamView: View {
+    
+    var liveScorecard: LiveScoreCard
+    
+    var body: some View {
+        ForEach(liveScorecard.liveScore, id:\.self) { item in
+            HStack {
+                Image(item.flagImageName)
+                    .resizable()
+                    .frame(width: 15, height: 15)
+                Text(item.name)
+                    .fontWeight(.medium)
+                
+                Text("\(item.runs)/\(item.wickets) in")
+                Text("\(item.overs) Overs")
+            }
+        }
     }
 }

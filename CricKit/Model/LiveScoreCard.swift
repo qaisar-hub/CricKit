@@ -7,14 +7,16 @@
 
 import Foundation
 
-struct LiveScoreCard {
+struct LiveScoreCard: Identifiable, Decodable, Hashable {
+    var id = UUID()
     let matchName: String
     let matchStatus: String
     let playerOfTheMatch: String
     let liveScore: [LiveScore]
 }
 
-struct LiveScore {
+struct LiveScore: Identifiable, Decodable, Hashable {
+    var id = UUID()
     let name: String
     let flagImageName: String
     let runs: Int
