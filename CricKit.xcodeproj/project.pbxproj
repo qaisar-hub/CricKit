@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2094D8DD2A8A9C72002567FC /* sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094D8DC2A8A9C72002567FC /* sample.swift */; };
+		209EA1572A8E4CD100036CAD /* UpComingMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EA1562A8E4CD100036CAD /* UpComingMatchesView.swift */; };
 		20C067382A8CCA7F00102BCF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067372A8CCA7E00102BCF /* WidgetKit.framework */; };
 		20C0673A2A8CCA7F00102BCF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067392A8CCA7F00102BCF /* SwiftUI.framework */; };
 		20C0673D2A8CCA7F00102BCF /* CrickitWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0673C2A8CCA7F00102BCF /* CrickitWidgetBundle.swift */; };
@@ -82,6 +83,7 @@
 
 /* Begin PBXFileReference section */
 		2094D8DC2A8A9C72002567FC /* sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample.swift; sourceTree = "<group>"; };
+		209EA1562A8E4CD100036CAD /* UpComingMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingMatchesView.swift; sourceTree = "<group>"; };
 		20C067352A8CCA7E00102BCF /* CrickitWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CrickitWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C067372A8CCA7E00102BCF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		20C067392A8CCA7F00102BCF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -148,6 +150,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		209EA1552A8E4CB000036CAD /* UpcomingMatchesView */ = {
+			isa = PBXGroup;
+			children = (
+				209EA1562A8E4CD100036CAD /* UpComingMatchesView.swift */,
+			);
+			name = UpcomingMatchesView;
+			sourceTree = "<group>";
+		};
 		20C067362A8CCA7E00102BCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,8 @@
 		20C067562A8CD74C00102BCF /* HomeSectionsView */ = {
 			isa = PBXGroup;
 			children = (
+				20C067522A8CD36800102BCF /* HomeSectionsView.swift */,
+				209EA1552A8E4CB000036CAD /* UpcomingMatchesView */,
 				469377072A8A6548003E9AD8 /* MatchLiveSectionView */,
 				469377042A8A6527003E9AD8 /* FeaturedPlayersSectionView */,
 				469376FF2A8A64C6003E9AD8 /* RecentMatchSectionView */,
@@ -265,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				460FD2642A84E9D200029FD7 /* HomePage.swift */,
-				20C067522A8CD36800102BCF /* HomeSectionsView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -489,6 +500,7 @@
 				460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */,
 				460FD26B2A84EA4F00029FD7 /* CustomViewModifiers.swift in Sources */,
 				460FD25E2A84E8A700029FD7 /* SignInPage.swift in Sources */,
+				209EA1572A8E4CD100036CAD /* UpComingMatchesView.swift in Sources */,
 				460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */,
 				460FD26D2A84EA8400029FD7 /* HomeSectionObservables.swift in Sources */,
 				460FD2602A84E8B500029FD7 /* SignInView.swift in Sources */,
