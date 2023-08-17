@@ -102,7 +102,12 @@ struct HomeSectionSwitches: View {
                 }
                 
             } else if (sectionProgress.index == 1) {
-                Text("<<< Hello 1>>>")
+                ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
+                    HStack {
+                        UpComingMatchesView()
+                            .shadow(color: Color.black, radius: 5)
+                    }
+                }
             } else if (sectionProgress.index == 2) {
                 VStack {
                     FeaturedPlayersSectionView()
