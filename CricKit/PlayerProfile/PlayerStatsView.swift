@@ -33,6 +33,10 @@ struct PlayerStatsView: View {
                     .font(.system(size: 25))
                     .fontWeight(.bold)
                     .foregroundColor(Color.appWhites)
+                Image("teamInd")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .fontWeight(.medium)
                 Spacer()
             }
             HStack(spacing: 16) {
