@@ -26,19 +26,15 @@ struct PlayerStatsView: View {
     var body: some View {
         VStack(spacing: 20) {
             
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(Color.black)
-                .overlay {
-                    Text("MS DHONI")
-                        .padding()
-                        .fontWidth(.expanded)
-                        .font(.system(size: 25))
-                        .fontWeight(.bold)
-                        .foregroundStyle(Color.linearColor)
-                }
-                .frame(height: screenHeight * 0.055)
-            
-            
+            HStack{
+                Text("WICKET KEEPER")
+                    .padding()
+                    .fontWidth(.expanded)
+                    .font(.system(size: 25))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.appWhites)
+                Spacer()
+            }
             HStack(spacing: 16) {
                 ForEach(playerDetails, id: \.topLeftText) { data in
                     RoundedRectangleView(topLeftText: data.topLeftText, bottomRightText: data.bottomRightText)
@@ -48,7 +44,7 @@ struct PlayerStatsView: View {
             Button {
                 // Code To Show Full Details
             } label: {
-                Text("See Full Details >>")
+                Text("FULL BIO")
                     .foregroundColor(Color.appSecondary)
                     .font(.system(size: 25))
                     .fontWeight(.bold)
@@ -58,11 +54,9 @@ struct PlayerStatsView: View {
             }
             .cornerRadius(30)
         }
-        .padding(.vertical, screenWidth * 0.06)
-        .padding(.horizontal, 15)
-        .background(Color.appBlacks)
+        .padding()
+        .background(Blur(style: .systemChromeMaterialDark))
         .cornerRadius(20)
-        .frame(maxWidth: screenWidth)
     }
 }
 
