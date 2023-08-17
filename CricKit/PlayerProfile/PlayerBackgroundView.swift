@@ -30,6 +30,6 @@ struct PlayerBackgroundView: View {
 
 struct PlayerBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerBackgroundView(imageName: "playerDhoni")
+        PlayerBackgroundView(imageName: "pp_dhoni")
     }
 }

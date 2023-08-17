@@ -8,17 +8,33 @@
 import SwiftUI
 
 struct PlayerProfileView: View {
-
+    
     let playerImage: String
     let playerTeamName: String
+    
     var body: some View {
         NavigationStack {
             ZStack {
+                Color.appBlacks
+                    .clipShape(BackgroundCard())
                 PlayerBackgroundView(imageName: playerImage)
+                                .offset(x: 120.0)
+               
                 VStack {
-                    PlayerHeaderView(teamName: playerTeamName)
                     Spacer()
-                    PlayerStatsView()
+                    HStack {
+                        Text("MS DHONI ")
+                            .font(.system(size: 70))
+                            .foregroundStyle(
+                              Color.appWhites)
+                            .fontWeight(.heavy)
+                            .rotationEffect(.degrees(-90))
+                       Spacer()
+                    }.offset(x: UIScreen.main.bounds.minX - 100)
+                    Spacer()
+                    HStack {
+                        PlayerStatsView()
+                    }
                 }
             }
             .navigationBarBackButtonHidden(true)
@@ -29,11 +45,7 @@ struct PlayerProfileView: View {
             })
             .ignoresSafeArea()
         }
-        
-        
     }
-    
-    
 }
 
 struct CustomBackButton: View {
@@ -54,9 +66,8 @@ struct CustomBackButton: View {
     }
 }
 
-
 struct PlayerProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerProfileView(playerImage: "playerDhoni", playerTeamName: "INDIA")
+        PlayerProfileView(playerImage: "pp_dhoni", playerTeamName: "INDIA")
     }
 }
