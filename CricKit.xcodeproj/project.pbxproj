@@ -156,6 +156,7 @@
 				209EA1562A8E4CD100036CAD /* UpComingMatchesView.swift */,
 			);
 			name = UpcomingMatchesView;
+			path = HomeSectionsView;
 			sourceTree = "<group>";
 		};
 		20C067362A8CCA7E00102BCF /* Frameworks */ = {
@@ -192,10 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				20C067522A8CD36800102BCF /* HomeSectionsView.swift */,
-				209EA1552A8E4CB000036CAD /* UpcomingMatchesView */,
-				469377072A8A6548003E9AD8 /* MatchLiveSectionView */,
-				469377042A8A6527003E9AD8 /* FeaturedPlayersSectionView */,
-				469376FF2A8A64C6003E9AD8 /* RecentMatchSectionView */,
 			);
 			path = HomeSectionsView;
 			sourceTree = "<group>";
@@ -246,6 +243,10 @@
 		460FD24C2A84E72500029FD7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				209EA1552A8E4CB000036CAD /* UpcomingMatchesView */,
+				469377072A8A6548003E9AD8 /* MatchLiveSectionView */,
+				469377042A8A6527003E9AD8 /* FeaturedPlayersSectionView */,
+				469376FF2A8A64C6003E9AD8 /* RecentMatchSectionView */,
 				20C067562A8CD74C00102BCF /* HomeSectionsView */,
 				460FD24D2A84E75700029FD7 /* CardView.swift */,
 				460FD24F2A84E77600029FD7 /* CustomTabBar.swift */,
