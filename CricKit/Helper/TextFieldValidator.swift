@@ -14,6 +14,10 @@ class TextFieldObserver: ObservableObject {
     @Published var checkDigitTextValue = ""
     @Published var canShowError = true
     @Published var upcTextValue = ""
+    @Published var emailId = ""
+    @Published var password = ""
+    @Published var confirmPassword = ""
+    @Published var fullName = ""
     @Published var quantityTextValue = ""
     @Published var retailTextValue = ""
     @Published var departmentTextValue = ""

@@ -56,6 +56,7 @@ struct CustomBackButton: View {
             self.presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "chevron.left")
+                .font(.footnote)
                 .padding(.vertical, 8)
                 .padding(.horizontal, 12)
                 .background(Color.linearColor)

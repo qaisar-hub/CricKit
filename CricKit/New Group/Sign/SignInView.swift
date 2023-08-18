@@ -13,6 +13,7 @@ struct SignInView: View {
     @Binding var readyToNavigate: Bool
     
     @StateObject var progress = TextFieldObserver()
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     
     var body: some View {
@@ -25,10 +26,9 @@ struct SignInView: View {
                 .foregroundStyle(
                     .linearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
-            customTextField(placeholderText: "UserName", spacing: 0.0, textValue: $progress.upcTextValue)
+            customTextField(placeholderText: "Email ID", spacing: 0.0, textValue: $progress.emailId)
             
-            
-            customTextField(placeholderText: "Password", spacing: 0.0, textValue: $progress.sheetTextValue)
+            customTextField(placeholderText: "Password", spacing: 0.0, textValue: $progress.password)
             
             
             Text("Forgot Password ?")
@@ -42,7 +42,9 @@ struct SignInView: View {
             HStack {
                 Spacer()
                 Button {
-                    readyToNavigate = true
+                    Task {
+                        try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password)
+                    }
                 } label: {
                     Image(systemName: "arrow.right")
                         .frame(width: 50, height: 50)

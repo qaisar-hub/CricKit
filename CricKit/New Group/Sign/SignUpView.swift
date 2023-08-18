@@ -11,7 +11,7 @@ struct SignUpView: View {
     
     @State private var readyToNavigate = false
     @StateObject var progress = TextFieldObserver()
-    
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         VStack() {
@@ -23,16 +23,21 @@ struct SignUpView: View {
                 .foregroundStyle(
                     .linearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
-            customTextField(placeholderText: "Email ID", spacing: 0.0, textValue: $progress.upcTextValue)
+            customTextField(placeholderText: "Full Name", spacing: 0.0, textValue: $progress.fullName)
             
-            customTextField(placeholderText: "New Password", spacing: 0.0, textValue: $progress.upcTextValue)
-                
-            customTextField(placeholderText: "Confirm Password", spacing: 0.0, textValue: $progress.upcTextValue)
+            customTextField(placeholderText: "Email ID", spacing: 0.0, textValue: $progress.emailId)
+            
+            customTextField(placeholderText: "New Password", spacing: 0.0, textValue: $progress.password)
+
+            customTextField(placeholderText: "Confirm Password", spacing: 0.0, textValue: $progress.confirmPassword)
                 
             HStack {
                 Spacer()
                 Button {
-                    readyToNavigate = true
+                    Task {
+                        try await authViewModel.createUser(withEmail: progress.emailId
+                                                           ,password: progress.password, fullName: progress.fullName)
+                    }
                 } label: {
                     Image(systemName: "arrow.right")
                         .frame(width: 50, height: 50)

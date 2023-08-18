@@ -9,9 +9,6 @@ import SwiftUI
 
 struct SignInPage: View {
     
-    
-    @Namespace var animation
-    
     @State var readyToNavigate = false
     @StateObject var progress = TextFieldObserver()
     

@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct CricKitApp: App {
+    @StateObject var authViewModel = AuthViewModel()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             LaunchAnimationView()
+                .environmentObject(authViewModel)
         }
     }
 }
@@ -106,8 +114,13 @@ struct TypingText: View {
 
 
 struct ContentView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
     var body: some View {
-        SignInPage()
+        if authViewModel.userSession != nil {
+            HomePage()
+        } else {
+            SignInPage()
+        }
     }
 }
 
