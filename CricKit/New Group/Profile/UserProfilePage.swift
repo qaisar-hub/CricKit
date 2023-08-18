@@ -27,18 +27,10 @@ struct UserProfilePage: View {
             Section(header: Text("Account Actions")) {
                 
                 // Sign out button
-                HStack(spacing: 10) {
-                    Image(systemName: "arrow.right.circle.fill")
-                        .imageScale(.small)
-                        .font(.title)
-                        .foregroundColor(.red)
-                    
-                    Button(action: {
-                        isSignOut.toggle()
-                    }) {
-                        Text("Sign Out")
-                            .foregroundColor(.red)
-                    }
+                Button(action: {
+                    isSignOut.toggle()
+                }) {
+                    SettingsRowView(imageName: "arrow.right.circle.fill", title: "Sign out", subtitle: "", tintColor: .red)
                 }.alert("Sign Out", isPresented: $isSignOut) {
                     Button("Sign Out", action: {
                         authViewModel.signOut()
@@ -49,27 +41,18 @@ struct UserProfilePage: View {
                 }
                 
                 // Delete Action
-                HStack(spacing: 10) {
-                    Image(systemName: "xmark.circle.fill")
-                        .imageScale(.small)
-                        .font(.title)
-                        .foregroundColor(.red)
-                    
-                    Button(action: {
-                        confirmDeletion.toggle()
-                    }) {
-                        Text("Delete Account")
-                            .foregroundColor(.red)
-                    }
-                }
-                .alert("Confirm Account Deletion", isPresented: $confirmDeletion) {
+                Button(action: {
+                    confirmDeletion.toggle()
+                }) {
+                    SettingsRowView(imageName: "xmark.circle.fill", title: "Delete Account", subtitle: "", tintColor: .red)
+                }.alert("Confirm Account Deletion", isPresented: $confirmDeletion) {
                     SecureField("Password", text: $password)
                     Button("Delete", action: {
                         authViewModel.deleteAccount(password: password)
                     })
                     Button("Cancel", role: .cancel) { }
                 } message: {
-                    Text("Enter your password for \"\(authViewModel.currentUser?.email ?? "this account")\" to confirm the account deletion.")
+                    Text("Enter your password for \"\(authViewModel.currentUser?.email ?? "")\" to confirm the account deletion.")
                 }
             }
         }

@@ -22,6 +22,7 @@ struct SettingsRowView: View {
             
             
             Text(title)
+                .foregroundColor(tintColor)
             Spacer()
             Text(subtitle)
                 .font(.subheadline)
