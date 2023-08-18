@@ -11,6 +11,7 @@ struct SignInPage: View {
     
     @State var readyToNavigate = false
     @StateObject var progress = TextFieldObserver()
+    @State var isLoading: Bool = false
     
     
     @State private var signInColor = Color.appPrimary
@@ -63,16 +64,20 @@ struct SignInPage: View {
                             .frame(width: 150, height: 200)
                             .opacity(0.9)
                         if (isSignInShown) {
-                            SignInView(readyToNavigate: $readyToNavigate)
+                            SignInView(readyToNavigate: $readyToNavigate, isLoading: $isLoading)
                         } else {
-                            SignUpView()
+                            SignUpView(isLoading: $isLoading)
                         }
                         Spacer()
                     }.background(Color.black)
                     .cornerRadius(20, corners: .allCorners)
                     .ignoresSafeArea()
                 }
+                if isLoading {
+                    LoadingIndicator()
+                }
             }
+            .background(Color.appPrimary)
             .navigationBarTitle("", displayMode: .inline)
             .navigationDestination(isPresented: $readyToNavigate) {
                 HomePage()
@@ -82,6 +87,8 @@ struct SignInPage: View {
                 Color.black,
                 for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            
+            
         }
     }
 }
@@ -89,5 +96,6 @@ struct SignInPage: View {
 struct SignInPage_Previews: PreviewProvider {
     static var previews: some View {
         SignInPage()
+            .environmentObject(AuthViewModel())
     }
 }

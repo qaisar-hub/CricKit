@@ -12,6 +12,7 @@ struct SignUpView: View {
     @State private var readyToNavigate = false
     @StateObject var progress = TextFieldObserver()
     @EnvironmentObject var authViewModel: AuthViewModel
+    @Binding var isLoading: Bool
     
     var body: some View {
         VStack() {
@@ -28,15 +29,20 @@ struct SignUpView: View {
             customTextField(placeholderText: "Email ID", spacing: 0.0, textValue: $progress.emailId)
             
             customTextField(placeholderText: "New Password", spacing: 0.0, textValue: $progress.password)
-
+            
             customTextField(placeholderText: "Confirm Password", spacing: 0.0, textValue: $progress.confirmPassword)
-                
+            
+            
             HStack {
                 Spacer()
                 Button {
+                    isLoading = true // start loading indicator
+                    
                     Task {
                         try await authViewModel.createUser(withEmail: progress.emailId
                                                            ,password: progress.password, fullName: progress.fullName)
+                        
+                        isLoading = false // stop loading indicator
                     }
                 } label: {
                     Image(systemName: "arrow.right")
@@ -50,12 +56,14 @@ struct SignUpView: View {
         }
         .cornerRadius(20, corners: [ .bottomLeft, .topLeft])
         .padding(.bottom)
+        
     }
 }
 
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(isLoading: .constant(false))
+            .environmentObject(AuthViewModel())
     }
 }

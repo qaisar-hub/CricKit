@@ -14,6 +14,7 @@ struct SignInView: View {
     
     @StateObject var progress = TextFieldObserver()
     @EnvironmentObject var authViewModel: AuthViewModel
+    @Binding var isLoading: Bool
     
     
     var body: some View {
@@ -42,8 +43,10 @@ struct SignInView: View {
             HStack {
                 Spacer()
                 Button {
+                    isLoading = true
                     Task {
                         try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password)
+                        isLoading = false
                     }
                 } label: {
                     Image(systemName: "arrow.right")
@@ -52,7 +55,6 @@ struct SignInView: View {
                         .background(Color.appBlacks)
                         .clipShape(Circle())
                         .padding()
-                    
                 }
             }
         }

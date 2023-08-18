@@ -51,13 +51,13 @@ class AuthViewModel: ObservableObject {
             self.userSession = nil
             self.currentUser = nil
         } catch {
-            print("Failed to sign out with error \(error.localizedDescription)")
+            debugPrint("Failed to sign out with error \(error.localizedDescription)")
         }
     }
     
     func deleteAccount(password: String) {
         guard let user = Auth.auth().currentUser else {
-            print("No user signed in.")
+            debugPrint("No user signed in.")
             return
         }
         
@@ -65,13 +65,15 @@ class AuthViewModel: ObservableObject {
         
         user.reauthenticate(with: credential) { authResult, error in
             if let error = error {
-                print("Error reauthenticating user: \(error)")
+                debugPrint("Error reauthenticating user: \(error)")
             } else {
                 user.delete { deleteError in
                     if let deleteError = deleteError {
-                        print("Error deleting user: \(deleteError)")
+                        debugPrint("Error deleting user: \(deleteError)")
                     } else {
-                        print("User account deleted successfully.")
+                        self.userSession = nil
+                        self.currentUser = nil
+                        debugPrint("User account deleted successfully.")
                     }
                 }
             }

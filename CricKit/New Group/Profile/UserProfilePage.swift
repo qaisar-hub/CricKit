@@ -7,62 +7,73 @@
 
 import SwiftUI
 
-enum AlertType: Identifiable {
-        case signOut, confirmDeletion
-        var id: Int { hashValue }
-}
-
 struct UserProfilePage: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @State private var password = ""
-    @State private var showingAlert: AlertType? = nil
+    @State private var isSignOut = false
+    @State private var confirmDeletion = false
+    @State var isLoading: Bool = false
     
     var body: some View {
         Form {
-                    Section(header: Text("Profile Information")) {
-                        ProfileCard(initials: authViewModel.currentUser?.initials ?? "", fullName: authViewModel.currentUser?.fullName ?? "", emailID: authViewModel.currentUser?.email ?? "")
-                    }
+            Section(header: Text("Profile Information")) {
+                ProfileCard(initials: authViewModel.currentUser?.initials ?? "", fullName: authViewModel.currentUser?.fullName ?? "", emailID: authViewModel.currentUser?.email ?? "")
+            }
+            
+            Section(header: Text("App Settings")) {
+                SettingsRowView(imageName: "gear", title: "Version", subtitle: "1.0.0", tintColor: .gray)
+            }
+            
+            Section(header: Text("Account Actions")) {
+                
+                // Sign out button
+                HStack(spacing: 10) {
+                    Image(systemName: "arrow.right.circle.fill")
+                        .imageScale(.small)
+                        .font(.title)
+                        .foregroundColor(.red)
                     
-                    Section(header: Text("App Settings")) {
-                        SettingsRowView(imageName: "gear", title: "Version", subtitle: "1.0.0", tintColor: .gray)
-                    }
-                    
-                Section(header: Text("Account Actions")) {
                     Button(action: {
-                        showingAlert = .signOut
+                        isSignOut.toggle()
                     }) {
-                        SettingsRowView(imageName: "arrow.right.circle.fill", title: "Sign Out", subtitle: "", tintColor: .red)
+                        Text("Sign Out")
+                            .foregroundColor(.red)
                     }
+                }.alert("Sign Out", isPresented: $isSignOut) {
+                    Button("Sign Out", action: {
+                        authViewModel.signOut()
+                    })
+                    Button("Cancel", role: .cancel) { }
+                } message: {
+                    Text("Are you sure you want to sign out?")
+                }
+                
+                // Delete Action
+                HStack(spacing: 10) {
+                    Image(systemName: "xmark.circle.fill")
+                        .imageScale(.small)
+                        .font(.title)
+                        .foregroundColor(.red)
                     
                     Button(action: {
-                        showingAlert = .confirmDeletion
+                        confirmDeletion.toggle()
                     }) {
-                        SettingsRowView(imageName: "trash.fill", title: "Delete Account", subtitle: "", tintColor: .red)
-                    }.alert(item: $showingAlert) { alertType in
-                        switch alertType {
-                        case .signOut:
-                            return Alert(
-                                title: Text("Sign Out"),
-                                message: Text("Are you sure you want to sign out?"),
-                                primaryButton: .default(Text("Sign Out"), action: {
-                                    authViewModel.signOut()
-                                }),
-                                secondaryButton: .cancel()
-                            )
-                        case .confirmDeletion:
-                            return Alert(
-                                title: Text("Confirm Account Deletion"),
-                                message: Text("Enter your password to confirm the account deletion."),
-                                primaryButton: .destructive(Text("Delete"), action: {
-                                    authViewModel.deleteAccount(password: password)
-                                }),
-                                secondaryButton: .cancel()
-                            )
-                        }
+                        Text("Delete Account")
+                            .foregroundColor(.red)
                     }
                 }
+                .alert("Confirm Account Deletion", isPresented: $confirmDeletion) {
+                    SecureField("Password", text: $password)
+                    Button("Delete", action: {
+                        authViewModel.deleteAccount(password: password)
+                    })
+                    Button("Cancel", role: .cancel) { }
+                } message: {
+                    Text("Enter your password for \"\(authViewModel.currentUser?.email ?? "this account")\" to confirm the account deletion.")
+                }
             }
-            .background(Color.linearColor)
+        }
+        .background(Color.linearColor)
     }
 }
 
