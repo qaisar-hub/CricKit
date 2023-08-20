@@ -43,6 +43,8 @@ struct SignInView: View {
             HStack {
                 Spacer()
                 Button {
+                    /// readyToNavigate = true
+                    /// To By Pass SignIn Page uncomment the above and comment the below lines
                     isLoading = true
                     Task {
                         try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password)

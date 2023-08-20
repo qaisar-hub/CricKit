@@ -16,21 +16,20 @@ struct UserProfilePage: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Profile Information")) {
+            Section(header: SectionHeaderView(title: "Profile Information")) {
                 ProfileCard(initials: authViewModel.currentUser?.initials ?? "", fullName: authViewModel.currentUser?.fullName ?? "", emailID: authViewModel.currentUser?.email ?? "")
-            }
+            }.listRowBackground(Blur(style: .systemChromeMaterialDark))
             
-            Section(header: Text("App Settings")) {
-                SettingsRowView(imageName: "gear", title: "Version", subtitle: "1.0.0", tintColor: .gray)
-            }
+            Section(header: SectionHeaderView(title: "App Settings")) {
+                SettingsRowView(iconName: "gear", title: "Version", subtitle: "1.0.0", tintColor: .gray)
+            }.listRowBackground(Blur(style: .systemChromeMaterialDark))
             
-            Section(header: Text("Account Actions")) {
-                
+            Section(header: SectionHeaderView(title: "Account Actions")) {
                 // Sign out button
                 Button(action: {
                     isSignOut.toggle()
                 }) {
-                    SettingsRowView(imageName: "arrow.right.circle.fill", title: "Sign out", subtitle: "", tintColor: .red)
+                    SettingsRowView(iconName: "rectangle.portrait.and.arrow.forward", title: "Sign out", subtitle: "", tintColor: .red)
                 }.alert("Sign Out", isPresented: $isSignOut) {
                     Button("Sign Out", action: {
                         authViewModel.signOut()
@@ -44,7 +43,7 @@ struct UserProfilePage: View {
                 Button(action: {
                     confirmDeletion.toggle()
                 }) {
-                    SettingsRowView(imageName: "xmark.circle.fill", title: "Delete Account", subtitle: "", tintColor: .red)
+                    SettingsRowView(iconName: "xmark.circle", title: "Delete Account", subtitle: "", tintColor: .red)
                 }.alert("Confirm Account Deletion", isPresented: $confirmDeletion) {
                     SecureField("Password", text: $password)
                     Button("Delete", action: {
@@ -54,18 +53,29 @@ struct UserProfilePage: View {
                 } message: {
                     Text("Enter your password for \"\(authViewModel.currentUser?.email ?? "")\" to confirm the account deletion.")
                 }
-            }
+            }.listRowBackground(Blur(style: .systemChromeMaterialDark))
+            
         }
-        .background(Color.linearColor)
+        .padding(EdgeInsets(top: -20, leading: 0, bottom: 0, trailing: 0))
+        .scrollContentBackground(.hidden)
+    }
+}
+
+struct SectionHeaderView: View {
+    let title: String
+    
+    var body: some View {
+        Text(title)
+            .font(.headline)
+            .foregroundColor(Color.appWhites)
+            .padding(EdgeInsets(top: 8, leading: -15, bottom: 8, trailing: 15))
     }
 }
 
 
-
-
 struct UserProfilePage_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfilePage()
+        SignInPage()
             .environmentObject(AuthViewModel())
     }
 }
