@@ -10,6 +10,8 @@ import SwiftUI
 struct HomePage: View {
     @State var selectedIndex = 0
     
+    @ObservedObject var liveScoreCardModel = LiveScoreCardViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -45,7 +47,9 @@ struct HomePage: View {
             }.background(Color.linearColor)
             .navigationBarBackButtonHidden(true)
         }
-        
+    }
+    init() {
+        liveScoreCardModel.getLiveScores()
     }
 }
 

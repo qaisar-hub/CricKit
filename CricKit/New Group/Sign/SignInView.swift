@@ -12,6 +12,10 @@ struct SignInView: View {
     //@State private var readyToNavigate = false
     @Binding var readyToNavigate: Bool
     
+    @State private var showingAlert = false
+    
+    @State private var alert: AlertTypes? = nil
+    
     @StateObject var progress = TextFieldObserver()
     @EnvironmentObject var authViewModel: AuthViewModel
     @Binding var isLoading: Bool
@@ -43,13 +47,17 @@ struct SignInView: View {
             HStack {
                 Spacer()
                 Button {
+                    print("<<< tapped")
+                    //alert = .defaulAlert(title: "Hello", message: "world")
                     /// readyToNavigate = true
                     /// To By Pass SignIn Page uncomment the above and comment the below lines
                     isLoading = true
                     Task {
                         try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password)
                         isLoading = false
+                        alert = authViewModel.checkUserStatus()
                     }
+                    
                 } label: {
                     Image(systemName: "arrow.right")
                         .frame(width: 50, height: 50)
@@ -59,6 +67,9 @@ struct SignInView: View {
                         .padding()
                 }
             }
+       }
+        .alert(item: $alert) { value in
+                   return value.alert
         }
     }
 }
