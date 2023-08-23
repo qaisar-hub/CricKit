@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>707775792390-8m8qqfshb2em3umq9nktdvb5q80skh4g.apps.googleusercontent.com</string>
+	<string>345837473636-3uisbund955ibli2npddeg6fvloodm57.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.707775792390-8m8qqfshb2em3umq9nktdvb5q80skh4g</string>
+	<string>com.googleusercontent.apps.345837473636-3uisbund955ibli2npddeg6fvloodm57</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBUTOhdmYcq5_9P5Hx5eaRfmeZkeX1G0b0</string>
+	<string>AIzaSyDnrDLnCpvMqMDUEZw8ePKNoj1ZMAbvluI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>707775792390</string>
+	<string>345837473636</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.iOSAthon.CricKit</string>
 	<key>PROJECT_ID</key>
-	<string>crickitapp-9c9db</string>
+	<string>crickit-655b9</string>
 	<key>STORAGE_BUCKET</key>
-	<string>crickitapp-9c9db.appspot.com</string>
+	<string>crickit-655b9.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:707775792390:ios:e40b9b528adaddb7a34a87</string>
+	<string>1:345837473636:ios:cf3ed898d6fdf473263471</string>
 </dict>
 </plist>
