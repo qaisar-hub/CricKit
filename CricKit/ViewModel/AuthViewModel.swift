@@ -13,6 +13,7 @@ import FirebaseFirestoreSwift
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
+    @Published var userStatus: UserStatus?
     
     init() {
         self.userSession = Auth.auth().currentUser
@@ -26,9 +27,24 @@ class AuthViewModel: ObservableObject {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
+            self.userStatus = .loggenIn
             await fetchUser()
         } catch {
+            self.userStatus = .error
             print("Failed to sign in with error \(error.localizedDescription)")
+        }
+    }
+    
+    func checkUserStatus() -> AlertTypes {
+        switch self.userStatus {
+        case .error:
+            return AlertTypes.defaulAlert(title: "LoginError")
+        case .none:
+            return AlertTypes.defaulAlert(title: "LoginError")
+        case .loggenIn:
+            return AlertTypes.defaulAlert(title: "LoginError")
+        case .logOut:
+            return AlertTypes.defaulAlert(title: "LoginError")
         }
     }
     
@@ -86,4 +102,11 @@ class AuthViewModel: ObservableObject {
         self.currentUser = try? snapshot.data(as: User.self)
     }
     
+}
+
+
+enum UserStatus {
+   case loggenIn
+   case error
+   case logOut
 }

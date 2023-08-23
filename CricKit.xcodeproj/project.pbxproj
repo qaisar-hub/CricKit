@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2094D8DD2A8A9C72002567FC /* sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094D8DC2A8A9C72002567FC /* sample.swift */; };
+		209ADA702A95A983002B31D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */; };
+		209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */; };
+		209ADA742A964E09002B31D5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA732A964E09002B31D5 /* Alerts.swift */; };
 		209EA1572A8E4CD100036CAD /* UpComingMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EA1562A8E4CD100036CAD /* UpComingMatchesView.swift */; };
 		20C067382A8CCA7F00102BCF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067372A8CCA7E00102BCF /* WidgetKit.framework */; };
 		20C0673A2A8CCA7F00102BCF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067392A8CCA7F00102BCF /* SwiftUI.framework */; };
@@ -53,7 +56,6 @@
 		461BFE922A8EAD27007AECB3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BFE912A8EAD27007AECB3 /* AuthViewModel.swift */; };
 		461BFE962A8ECA87007AECB3 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BFE952A8ECA87007AECB3 /* SettingsRowView.swift */; };
 		461BFE982A8ECC80007AECB3 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BFE972A8ECC80007AECB3 /* ProfileCard.swift */; };
-		461BFE9A2A8F6EA8007AECB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 461BFE992A8F6EA8007AECB3 /* GoogleService-Info.plist */; };
 		461BFE9D2A8F6F1C007AECB3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 461BFE9C2A8F6F1C007AECB3 /* FirebaseAuth */; };
 		461BFE9F2A8F6F1C007AECB3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 461BFE9E2A8F6F1C007AECB3 /* FirebaseFirestore */; };
 		461BFEA12A8F6F1C007AECB3 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 461BFEA02A8F6F1C007AECB3 /* FirebaseFirestoreSwift */; };
@@ -93,6 +95,9 @@
 
 /* Begin PBXFileReference section */
 		2094D8DC2A8A9C72002567FC /* sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample.swift; sourceTree = "<group>"; };
+		209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardViewModel.swift; sourceTree = "<group>"; };
+		209ADA732A964E09002B31D5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		209EA1562A8E4CD100036CAD /* UpComingMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingMatchesView.swift; sourceTree = "<group>"; };
 		20C067352A8CCA7E00102BCF /* CrickitWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CrickitWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C067372A8CCA7E00102BCF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -134,7 +139,6 @@
 		461BFE912A8EAD27007AECB3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		461BFE952A8ECA87007AECB3 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		461BFE972A8ECC80007AECB3 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
-		461BFE992A8F6EA8007AECB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		461BFEA42A8FAB5D007AECB3 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		4639280B2A7EC0B1002C2767 /* CricKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				460FD2662A84EA0700029FD7 /* TextFieldValidator.swift */,
 				460FD26A2A84EA4F00029FD7 /* CustomViewModifiers.swift */,
 				460FD26C2A84EA8400029FD7 /* HomeSectionObservables.swift */,
+				209ADA732A964E09002B31D5 /* Alerts.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				461BFE912A8EAD27007AECB3 /* AuthViewModel.swift */,
+				209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 		4639280D2A7EC0B1002C2767 /* CricKit */ = {
 			isa = PBXGroup;
 			children = (
+				209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */,
 				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
 				20C0674F2A8CD2C400102BCF /* Model */,
 				461BFE902A8EAD02007AECB3 /* ViewModel */,
@@ -368,7 +375,6 @@
 				460FD20C2A8422B700029FD7 /* Helper */,
 				460FD2032A841E7800029FD7 /* PlayerProfile */,
 				463928122A7EC0B3002C2767 /* Assets.xcassets */,
-				461BFE992A8F6EA8007AECB3 /* GoogleService-Info.plist */,
 				463928142A7EC0B3002C2767 /* Preview Content */,
 				2094D8DC2A8A9C72002567FC /* sample.swift */,
 			);
@@ -508,7 +514,7 @@
 			files = (
 				463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */,
 				463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */,
-				461BFE9A2A8F6EA8007AECB3 /* GoogleService-Info.plist in Resources */,
+				209ADA702A95A983002B31D5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +547,7 @@
 				460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */,
 				469376FE2A8A64A2003E9AD8 /* BlurView.swift in Sources */,
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
+				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
 				461BFE8B2A8EA062007AECB3 /* User.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
 				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,
@@ -555,6 +562,7 @@
 				460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
 				20C067532A8CD36800102BCF /* HomeSectionsView.swift in Sources */,
+				209ADA742A964E09002B31D5 /* Alerts.swift in Sources */,
 				20C067512A8CD2FB00102BCF /* LiveScoreCard.swift in Sources */,
 				460FD26F2A84EB7400029FD7 /* test.swift in Sources */,
 				460FD2522A84E79600029FD7 /* CustomTextField.swift in Sources */,
