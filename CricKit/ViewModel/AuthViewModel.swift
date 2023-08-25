@@ -27,24 +27,21 @@ class AuthViewModel: ObservableObject {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
-            self.userStatus = .loggenIn
             await fetchUser()
         } catch {
-            self.userStatus = .error
+            self.userStatus = .failed("Signin Failed", "The email or password you entered is incorrect. Please double-check and try again.")
             print("Failed to sign in with error \(error.localizedDescription)")
         }
     }
     
     func checkUserStatus() -> AlertTypes {
         switch self.userStatus {
-        case .error:
-            return AlertTypes.defaulAlert(title: "LoginError")
+        case .some(.failed(let title, let message)):
+            return AlertTypes.defaulAlert(title: title, message: message)
+        case .some(.success(let title, let message)):
+            return AlertTypes.defaulAlert(title: title, message: message)
         case .none:
-            return AlertTypes.defaulAlert(title: "LoginError")
-        case .loggenIn:
-            return AlertTypes.defaulAlert(title: "LoginError")
-        case .logOut:
-            return AlertTypes.defaulAlert(title: "LoginError")
+            return AlertTypes.defaulAlert(title: "title", message: "message")
         }
     }
     
@@ -57,6 +54,7 @@ class AuthViewModel: ObservableObject {
             try await Firestore.firestore().collection("users").document(user.id).setData(encoderUser)
             await fetchUser()
         } catch {
+            self.userStatus = .failed("Signup Failed", "An error occurred while signing up. Please try again.")
             debugPrint("Failed to create user with error \(error.localizedDescription)")
         }
     }
@@ -89,6 +87,7 @@ class AuthViewModel: ObservableObject {
                     } else {
                         self.userSession = nil
                         self.currentUser = nil
+                        self.userStatus = .success("Account Deleted","Your account deleted successfully!")
                         debugPrint("User account deleted successfully.")
                     }
                 }
@@ -106,7 +105,6 @@ class AuthViewModel: ObservableObject {
 
 
 enum UserStatus {
-   case loggenIn
-   case error
-   case logOut
+   case failed(String, String)
+   case success(String, String)
 }

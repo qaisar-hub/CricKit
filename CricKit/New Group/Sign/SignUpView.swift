@@ -13,6 +13,9 @@ struct SignUpView: View {
     @StateObject var progress = TextFieldObserver()
     @EnvironmentObject var authViewModel: AuthViewModel
     @Binding var isLoading: Bool
+    @State private var isTapped = false
+    @State private var showingAlert = false
+    @State private var alert: AlertTypes? = nil
     
     var body: some View {
         VStack() {
@@ -37,25 +40,52 @@ struct SignUpView: View {
                 Spacer()
                 Button {
                     isLoading = true // start loading indicator
-                    
+                    withAnimation {
+                        isTapped.toggle()
+                    }
                     Task {
                         try await authViewModel.createUser(withEmail: progress.emailId
                                                            ,password: progress.password, fullName: progress.fullName)
-                        
                         isLoading = false // stop loading indicator
+                        alert = authViewModel.checkUserStatus()
+                        if alert != nil {
+                            withAnimation {
+                                isTapped.toggle()
+                            }
+                        }
                     }
                 } label: {
-                    Image(systemName: "arrow.right")
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.appSecondary)
-                        .background(Color.appBlacks)
-                        .clipShape(Circle())
-                        .padding()
+                    HStack(spacing: 5) {
+                        if isTapped {
+                            Text(isLoading ? "Signing Up" : "Sign Up")
+                                .fontWeight(.medium)
+                                .padding(.leading, 10)
+                        }
+                        Image(systemName: "arrow.right")
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.blue)
+                            .background(Color.appBlacks)
+                            .clipShape(Circle())
+                        
+                        if !isTapped {
+                            Text(isLoading ? "Signing Up" : "Sign Up")
+                                .fontWeight(.medium)
+                                .padding(.trailing, 10)
+                        }
+                        
+                    }
+                    .padding(2)
+                    .background(.white)
+                    .clipShape(Capsule())
+                    .padding(.trailing, 10)
                 }
             }
         }
         .cornerRadius(20, corners: [ .bottomLeft, .topLeft])
         .padding(.bottom)
+        .alert(item: $alert) { value in
+            return value.alert
+        }
         
     }
 }

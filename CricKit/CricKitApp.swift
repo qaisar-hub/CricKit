@@ -81,7 +81,7 @@ struct AnimationView: View {
                     .fontWidth(.expanded)
                     .font(.system(size: 30))
                     .fontWeight(.bold)
-                    .foregroundStyle(.linearGradient(colors: [Color.appPrimary, Color.appSecondary, Color.appPrimary], startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .foregroundStyle(.linearGradient(colors: [Color.appPrimary], startPoint: .topLeading, endPoint: .bottomTrailing))
             }
         }
     }
