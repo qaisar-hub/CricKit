@@ -10,7 +10,7 @@ import SwiftUI
 struct HomePage: View {
     @State var selectedIndex = 0
     
-    @ObservedObject var liveScoreCardModel = LiveScoreCardViewModel()
+    @ObservedObject var liveScoreCardViewModel = LiveScoreCardViewModel()
     
     var body: some View {
         NavigationStack {
@@ -30,7 +30,7 @@ struct HomePage: View {
                     
                     switch selectedIndex {
                     case 0:
-                        HomeBoard()
+                        HomeBoard(liveScoreCardViewModel: liveScoreCardViewModel)
                     case 1:
                         ShopPage()
                     default:
@@ -49,7 +49,7 @@ struct HomePage: View {
         }
     }
     init() {
-        liveScoreCardModel.getLiveScores()
+        liveScoreCardViewModel.getLiveScore()
     }
 }
 
@@ -61,17 +61,25 @@ struct HomePage_Previews: PreviewProvider {
 struct HomeBoard: View {
     
     @StateObject var sectionProgress = HomeSection()
+    @ObservedObject var liveScoreCardViewModel: LiveScoreCardViewModel
     
     var width = UIScreen.main.bounds.width - 80
     
     var body: some View {
         VStack{
-            CardView(featuredSection: true, width:  width * 1.15 , height: 200)
-                .clipShape(LiveMatchCard())
-                .background(Blur(style: .systemChromeMaterialDark))
-                .clipShape(LiveMatchCard())
-                .cornerRadius(10, corners: .allCorners)
-                .shadow(color: Color.black, radius: 10)
+            
+            ScrollView(.horizontal, showsIndicators: false){
+                HStack{
+                    ForEach(liveScoreCardViewModel.liveScoreCardlists) { liveScoreItem in
+                        LiveScoreCardView(liveScoreCardData: liveScoreItem)
+                            .frame(width: width * 1.15, height: 200)
+                            .clipShape(LiveMatchCard())
+                            .background(Blur(style: .systemChromeMaterialDark))
+                            .clipShape(LiveMatchCard())
+                            .cornerRadius(10, corners: .allCorners)
+                    }
+                }
+            }
             HomeSections(sectionProgress: sectionProgress)
                     .frame(width: width)
                     .padding(.top, 10)

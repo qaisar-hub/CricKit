@@ -18,7 +18,8 @@ struct CardView: View {
         ZStack {
             VStack {
                 if( featuredSection ) {
-                    MatchLiveSectionView()
+                    //Commented because we are not using
+                    //MatchLiveSectionView()
                 } else {
                     Text(text)
                         .font(.body)

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2065A45A2A98858C00F3C522 /* FireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065A4592A98858C00F3C522 /* FireStoreHelper.swift */; };
 		2094D8DD2A8A9C72002567FC /* sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094D8DC2A8A9C72002567FC /* sample.swift */; };
 		209ADA702A95A983002B31D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */; };
 		209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */; };
 		209ADA742A964E09002B31D5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA732A964E09002B31D5 /* Alerts.swift */; };
+		209ADA762A987C90002B31D5 /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA752A987C90002B31D5 /* FirebaseDataService.swift */; };
 		209EA1572A8E4CD100036CAD /* UpComingMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EA1562A8E4CD100036CAD /* UpComingMatchesView.swift */; };
 		20C067382A8CCA7F00102BCF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067372A8CCA7E00102BCF /* WidgetKit.framework */; };
 		20C0673A2A8CCA7F00102BCF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067392A8CCA7F00102BCF /* SwiftUI.framework */; };
@@ -30,7 +32,7 @@
 		20C067642A8CF13600102BCF /* WidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */; };
 		20C067652A8CF39500102BCF /* WidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */; };
 		20C067672A8CF72700102BCF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* Extension.swift */; };
-		20C067682A8CF94C00102BCF /* MatchLiveSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377082A8A6568003E9AD8 /* MatchLiveSectionView.swift */; };
+		20C067682A8CF94C00102BCF /* LiveScoreCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */; };
 		20C067692A8CF9B200102BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */; };
 		460FD2022A841E4100029FD7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* Extension.swift */; };
@@ -94,10 +96,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2065A4592A98858C00F3C522 /* FireStoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreHelper.swift; sourceTree = "<group>"; };
 		2094D8DC2A8A9C72002567FC /* sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample.swift; sourceTree = "<group>"; };
 		209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardViewModel.swift; sourceTree = "<group>"; };
 		209ADA732A964E09002B31D5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		209ADA752A987C90002B31D5 /* FirebaseDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataService.swift; sourceTree = "<group>"; };
 		209EA1562A8E4CD100036CAD /* UpComingMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingMatchesView.swift; sourceTree = "<group>"; };
 		20C067352A8CCA7E00102BCF /* CrickitWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CrickitWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C067372A8CCA7E00102BCF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -147,7 +151,7 @@
 		469376FD2A8A64A2003E9AD8 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		469377022A8A64FF003E9AD8 /* RecentMatchSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchSectionView.swift; sourceTree = "<group>"; };
 		469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayersSectionView.swift; sourceTree = "<group>"; };
-		469377082A8A6568003E9AD8 /* MatchLiveSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchLiveSectionView.swift; sourceTree = "<group>"; };
+		469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,8 @@
 				460FD26A2A84EA4F00029FD7 /* CustomViewModifiers.swift */,
 				460FD26C2A84EA8400029FD7 /* HomeSectionObservables.swift */,
 				209ADA732A964E09002B31D5 /* Alerts.swift */,
+				209ADA752A987C90002B31D5 /* FirebaseDataService.swift */,
+				2065A4592A98858C00F3C522 /* FireStoreHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -408,7 +414,7 @@
 		469377072A8A6548003E9AD8 /* MatchLiveSectionView */ = {
 			isa = PBXGroup;
 			children = (
-				469377082A8A6568003E9AD8 /* MatchLiveSectionView.swift */,
+				469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */,
 			);
 			path = MatchLiveSectionView;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,
 				460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */,
 				460FD26B2A84EA4F00029FD7 /* CustomViewModifiers.swift in Sources */,
+				2065A45A2A98858C00F3C522 /* FireStoreHelper.swift in Sources */,
 				460FD25E2A84E8A700029FD7 /* SignInPage.swift in Sources */,
 				209EA1572A8E4CD100036CAD /* UpComingMatchesView.swift in Sources */,
 				460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */,
@@ -571,9 +578,10 @@
 				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,
 				20C067552A8CD48C00102BCF /* SectionTitleView.swift in Sources */,
 				2094D8DD2A8A9C72002567FC /* sample.swift in Sources */,
-				20C067682A8CF94C00102BCF /* MatchLiveSectionView.swift in Sources */,
+				20C067682A8CF94C00102BCF /* LiveScoreCardView.swift in Sources */,
 				469377032A8A64FF003E9AD8 /* RecentMatchSectionView.swift in Sources */,
 				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
+				209ADA762A987C90002B31D5 /* FirebaseDataService.swift in Sources */,
 				461BFE962A8ECA87007AECB3 /* SettingsRowView.swift in Sources */,
 				460FD24E2A84E75700029FD7 /* CardView.swift in Sources */,
 				461BFE922A8EAD27007AECB3 /* AuthViewModel.swift in Sources */,
