@@ -1,5 +1,5 @@
 //
-//  MatchLiveSectionView.swift
+//  LiveScoreCardView.swift
 //  CricKit
 //
 //  Created by Qaisar Raza on 14/08/23.
@@ -7,26 +7,27 @@
 
 import SwiftUI
 
-struct MatchSummaryView: View {
-    let leftTeam: Team
-    let rightTeam: Team
-    let isLive: Bool
+struct LiveScoreCardView: View {
+    
+    var liveScoreCardData : LiveScoreCardData
     
     var body: some View {
         VStack {
-            Text("1st ODI . India tour for Australia , 2023")
+            Text(liveScoreCardData.matchHeader)
                 .font(.subheadline)
                 .fontWeight(.medium)
                 .foregroundColor(Color.white)
                 .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-            TeamSummaryView(team: leftTeam)
-            TeamSummaryView(team: rightTeam)
-            
+            ForEach(liveScoreCardData.TeamStatus) { team in
+                HStack {
+                    LiveTeamSummaryView(team: team)
+                }
+            }
             HStack {
-                if isLive {
+                if liveScoreCardData.isLive {
                     LiveDotView()
                 }
-                Text("India won by 100 runs")
+                Text(liveScoreCardData.matchStatus)
                     .font(.subheadline)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
@@ -55,12 +56,12 @@ struct LiveDotView: View {
 }
 
 
-struct TeamSummaryView: View {
-    let team: Team
+struct LiveTeamSummaryView: View {
+    let team: TeamStats
     
     var body: some View {
         HStack {
-            Image(team.flagImageName)
+            Image(team.flag)
                 .resizable()
                 .frame(width: 35, height: 35)
             
@@ -87,35 +88,5 @@ struct TeamSummaryView: View {
     }
 }
 
-struct Team {
-    let name: String
-    let flagImageName: String
-    let runs: Int
-    let wickets: Int
-    let overs: Int
-}
 
-struct MatchLiveSectionView: View {
-    let leftTeam = Team(name: "IND", flagImageName: "teamInd", runs: 280, wickets: 6, overs: 50)
-    let rightTeam = Team(name: "AUS", flagImageName: "teamAus", runs: 180, wickets: 5, overs: 40)
-    let isLive = true
-    
-    var body: some View {
-        VStack{
-            MatchSummaryView(leftTeam: leftTeam, rightTeam: rightTeam, isLive: isLive)
-        }
-    }
-}
-
-
-struct MatchSummaryView_Previews: PreviewProvider {
-    
-    
-    static var previews: some View {
-        let leftTeam = Team(name: "IND", flagImageName: "teamInd", runs: 280, wickets: 6, overs: 50)
-        let rightTeam = Team(name: "AUS", flagImageName: "teamAus", runs: 180, wickets: 5, overs: 40
-        )
-        MatchSummaryView(leftTeam: leftTeam, rightTeam: rightTeam, isLive: true)
-    }
-}
 

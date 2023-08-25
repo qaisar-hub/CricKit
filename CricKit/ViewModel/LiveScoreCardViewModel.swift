@@ -12,54 +12,49 @@ import SwiftUI
 
 class LiveScoreCardViewModel : ObservableObject {
     
-    @Published var lists = [LiveScoreData]()
+    @Published var liveScoreCardlists = [LiveScoreCardData]()
     
     var teamStats : TeamStats? = nil
-    
     var teamStatusArray = [TeamStats]()
     
-    func getLiveScores(){
-        // MARK: Creating Firestore Data Base Reference
-        let db = Firestore.firestore()
-        
-        // accessing firestore collection
-        // addSnapshotListener - is to look for real time changes
-        db.collection("liveScore").addSnapshotListener { snapshot, error in
-            if error == nil {
-                if let snapshot = snapshot {
-                    
-                    for doc in snapshot.documents{
-                        let matchStatus = doc["matchStatus"] as! String
-                        let teamA = doc.documentID
-                        // accessing firestore sub-collection from document ID of parent Collection
-                        db.collection("liveScore").document(teamA).collection("teamStatus").addSnapshotListener { snapshot, error in
-                            if let snapshot = snapshot {
-                                for doc in snapshot.documents {
-                                    let teamStats = TeamStats(name: doc["name"] as? String ?? "")
-                                    self.teamStatusArray.append(teamStats)
-                                }
-                                print("<<< teamStatusArray \(self.teamStatusArray)")
-                                
-                                let liveScoreData = LiveScoreData(matchStatus: matchStatus, TeamStatus:  self.teamStatusArray)
-                                self.lists.append(liveScoreData)
-                                print("<<< Final Lists \(self.lists)")
+    func getLiveScore() {
+        FbDataServiceManager.shared.getData(parentCollection: liveScoreCollectionPath()) { [self] snapshot in
+            if let snapshot = snapshot {
+                self.liveScoreCardlists.removeAll()
+                for doc in snapshot.documents{
+                    let matchStatus = doc["matchStatus"] as? String ?? ""
+                    let matchHeader = doc["matchHeader"] as? String ?? ""
+                    let isLive = doc["isLive"] as? Bool ?? true
+                    let teamsStatusDocumentID = doc.documentID
+                    // accessing firestore sub-collection from document ID of parent Collection
+                    FbDataServiceManager.shared.getDataWithDocumentID(parentCollection: liveScoreCollectionPath(), documentId: teamsStatusDocumentID, subCollection: teamStatusCollectionPath()) { snapshot in
+                        if let snapshot = snapshot {
+                            print("<<< event 2")
+                            self.teamStatusArray.removeAll()
+                            for doc in snapshot.documents {
+                                let teamStats = TeamStats(name: doc["name"] as? String ?? "",
+                                                          flag: doc["flag"] as? String ?? "",
+                                                          overs: doc["overs"] as? String ?? "",
+                                                          runs: doc["runs"] as? String ?? "",
+                                                          wickets: doc["wickets"] as? String ?? "")
+                                self.teamStatusArray.append(teamStats)
                             }
+                            let liveScoreData = LiveScoreCardData(matchStatus: matchStatus, matchHeader: matchHeader, isLive: isLive, TeamStatus:  self.teamStatusArray)
+                            self.liveScoreCardlists.append(liveScoreData)
                         }
                     }
                 }
-                
-            } else{
-                
             }
         }
     }
+    
+    private func liveScoreCollectionPath() -> String {
+        return FireStoreHelper.getCollectionID(collection: FireStoreCollection.liveScore(subCollectionPath: .none))
+    }
+    
+    private func teamStatusCollectionPath() -> String {
+        return FireStoreHelper.getCollectionID(collection: FireStoreCollection.liveScore(subCollectionPath: .teamStatus))
+    }
 }
 
-struct LiveScoreData {
-    var matchStatus: String
-    var TeamStatus : [TeamStats]
-}
 
-struct TeamStats {
-    var name: String
-}
