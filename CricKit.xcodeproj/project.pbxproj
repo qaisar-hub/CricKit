@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2065A45A2A98858C00F3C522 /* FireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065A4592A98858C00F3C522 /* FireStoreHelper.swift */; };
 		2094D8DD2A8A9C72002567FC /* sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094D8DC2A8A9C72002567FC /* sample.swift */; };
+		2096CFFA2A99E31C0093C131 /* RecentMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */; };
+		2096CFFC2A99E32F0093C131 /* RecentMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */; };
 		209ADA702A95A983002B31D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */; };
 		209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */; };
 		209ADA742A964E09002B31D5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA732A964E09002B31D5 /* Alerts.swift */; };
@@ -23,10 +25,10 @@
 		20C067462A8CCA8700102BCF /* CrickitWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 20C067422A8CCA7F00102BCF /* CrickitWidget.intentdefinition */; };
 		20C067472A8CCA8700102BCF /* CrickitWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 20C067422A8CCA7F00102BCF /* CrickitWidget.intentdefinition */; };
 		20C0674A2A8CCA8700102BCF /* CrickitWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 20C067352A8CCA7E00102BCF /* CrickitWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		20C067512A8CD2FB00102BCF /* LiveScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067502A8CD2FB00102BCF /* LiveScoreCard.swift */; };
+		20C067512A8CD2FB00102BCF /* LiveScoreCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */; };
 		20C067532A8CD36800102BCF /* HomeSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067522A8CD36800102BCF /* HomeSectionsView.swift */; };
 		20C067552A8CD48C00102BCF /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067542A8CD48C00102BCF /* SectionTitleView.swift */; };
-		20C067572A8CDA5B00102BCF /* LiveScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067502A8CD2FB00102BCF /* LiveScoreCard.swift */; };
+		20C067572A8CDA5B00102BCF /* LiveScoreCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */; };
 		20C0675B2A8CE16100102BCF /* LiveScoreCardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067592A8CE15700102BCF /* LiveScoreCardEntry.swift */; };
 		20C067632A8CEAE900102BCF /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067612A8CEAE600102BCF /* Provider.swift */; };
 		20C067642A8CF13600102BCF /* WidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */; };
@@ -67,7 +69,7 @@
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
 		469376FE2A8A64A2003E9AD8 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469376FD2A8A64A2003E9AD8 /* BlurView.swift */; };
-		469377032A8A64FF003E9AD8 /* RecentMatchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377022A8A64FF003E9AD8 /* RecentMatchSectionView.swift */; };
+		469377032A8A64FF003E9AD8 /* RecentMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377022A8A64FF003E9AD8 /* RecentMatchView.swift */; };
 		469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,8 @@
 /* Begin PBXFileReference section */
 		2065A4592A98858C00F3C522 /* FireStoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreHelper.swift; sourceTree = "<group>"; };
 		2094D8DC2A8A9C72002567FC /* sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample.swift; sourceTree = "<group>"; };
+		2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchesViewModel.swift; sourceTree = "<group>"; };
+		2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchModel.swift; sourceTree = "<group>"; };
 		209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardViewModel.swift; sourceTree = "<group>"; };
 		209ADA732A964E09002B31D5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -112,7 +116,7 @@
 		20C067422A8CCA7F00102BCF /* CrickitWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = CrickitWidget.intentdefinition; sourceTree = "<group>"; };
 		20C067432A8CCA8700102BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20C067452A8CCA8700102BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20C067502A8CD2FB00102BCF /* LiveScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCard.swift; sourceTree = "<group>"; };
+		20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardModel.swift; sourceTree = "<group>"; };
 		20C067522A8CD36800102BCF /* HomeSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionsView.swift; sourceTree = "<group>"; };
 		20C067542A8CD48C00102BCF /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
 		20C067592A8CE15700102BCF /* LiveScoreCardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardEntry.swift; sourceTree = "<group>"; };
@@ -149,7 +153,7 @@
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463928152A7EC0B3002C2767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		469376FD2A8A64A2003E9AD8 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		469377022A8A64FF003E9AD8 /* RecentMatchSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchSectionView.swift; sourceTree = "<group>"; };
+		469377022A8A64FF003E9AD8 /* RecentMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchView.swift; sourceTree = "<group>"; };
 		469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayersSectionView.swift; sourceTree = "<group>"; };
 		469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,8 +216,9 @@
 		20C0674F2A8CD2C400102BCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				20C067502A8CD2FB00102BCF /* LiveScoreCard.swift */,
+				20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */,
 				461BFE8A2A8EA062007AECB3 /* User.swift */,
+				2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,9 +282,9 @@
 			isa = PBXGroup;
 			children = (
 				209EA1552A8E4CB000036CAD /* UpcomingMatchesView */,
-				469377072A8A6548003E9AD8 /* MatchLiveSectionView */,
+				469377072A8A6548003E9AD8 /* LiveScoreCardView */,
 				469377042A8A6527003E9AD8 /* FeaturedPlayersSectionView */,
-				469376FF2A8A64C6003E9AD8 /* RecentMatchSectionView */,
+				469376FF2A8A64C6003E9AD8 /* RecentMatchView */,
 				20C067562A8CD74C00102BCF /* HomeSectionsView */,
 				460FD24D2A84E75700029FD7 /* CardView.swift */,
 				460FD24F2A84E77600029FD7 /* CustomTabBar.swift */,
@@ -346,6 +351,7 @@
 			children = (
 				461BFE912A8EAD27007AECB3 /* AuthViewModel.swift */,
 				209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */,
+				2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -395,12 +401,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		469376FF2A8A64C6003E9AD8 /* RecentMatchSectionView */ = {
+		469376FF2A8A64C6003E9AD8 /* RecentMatchView */ = {
 			isa = PBXGroup;
 			children = (
-				469377022A8A64FF003E9AD8 /* RecentMatchSectionView.swift */,
+				469377022A8A64FF003E9AD8 /* RecentMatchView.swift */,
 			);
-			path = RecentMatchSectionView;
+			path = RecentMatchView;
 			sourceTree = "<group>";
 		};
 		469377042A8A6527003E9AD8 /* FeaturedPlayersSectionView */ = {
@@ -411,12 +417,12 @@
 			path = FeaturedPlayersSectionView;
 			sourceTree = "<group>";
 		};
-		469377072A8A6548003E9AD8 /* MatchLiveSectionView */ = {
+		469377072A8A6548003E9AD8 /* LiveScoreCardView */ = {
 			isa = PBXGroup;
 			children = (
 				469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */,
 			);
-			path = MatchLiveSectionView;
+			path = LiveScoreCardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,7 +543,7 @@
 				20C0673F2A8CCA7F00102BCF /* CrickitWidgetLiveActivity.swift in Sources */,
 				20C067672A8CF72700102BCF /* Extension.swift in Sources */,
 				20C067632A8CEAE900102BCF /* Provider.swift in Sources */,
-				20C067572A8CDA5B00102BCF /* LiveScoreCard.swift in Sources */,
+				20C067572A8CDA5B00102BCF /* LiveScoreCardModel.swift in Sources */,
 				20C0673D2A8CCA7F00102BCF /* CrickitWidgetBundle.swift in Sources */,
 				20C067412A8CCA7F00102BCF /* CrickitWidget.swift in Sources */,
 				20C0675B2A8CE16100102BCF /* LiveScoreCardEntry.swift in Sources */,
@@ -548,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2096CFFC2A99E32F0093C131 /* RecentMatchModel.swift in Sources */,
 				461BFEA52A8FAB5D007AECB3 /* LoadingIndicator.swift in Sources */,
 				461BFE982A8ECC80007AECB3 /* ProfileCard.swift in Sources */,
 				460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */,
@@ -570,7 +577,7 @@
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
 				20C067532A8CD36800102BCF /* HomeSectionsView.swift in Sources */,
 				209ADA742A964E09002B31D5 /* Alerts.swift in Sources */,
-				20C067512A8CD2FB00102BCF /* LiveScoreCard.swift in Sources */,
+				20C067512A8CD2FB00102BCF /* LiveScoreCardModel.swift in Sources */,
 				460FD26F2A84EB7400029FD7 /* test.swift in Sources */,
 				460FD2522A84E79600029FD7 /* CustomTextField.swift in Sources */,
 				460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */,
@@ -579,7 +586,8 @@
 				20C067552A8CD48C00102BCF /* SectionTitleView.swift in Sources */,
 				2094D8DD2A8A9C72002567FC /* sample.swift in Sources */,
 				20C067682A8CF94C00102BCF /* LiveScoreCardView.swift in Sources */,
-				469377032A8A64FF003E9AD8 /* RecentMatchSectionView.swift in Sources */,
+				469377032A8A64FF003E9AD8 /* RecentMatchView.swift in Sources */,
+				2096CFFA2A99E31C0093C131 /* RecentMatchesViewModel.swift in Sources */,
 				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
 				209ADA762A987C90002B31D5 /* FirebaseDataService.swift in Sources */,
 				461BFE962A8ECA87007AECB3 /* SettingsRowView.swift in Sources */,

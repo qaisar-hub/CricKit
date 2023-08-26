@@ -82,7 +82,7 @@ struct HomeBoard: View {
             }
             HomeSections(sectionProgress: sectionProgress)
                     .frame(width: width)
-                    .padding(.top, 10)
+                    .padding(.top, 20)
                     .padding(.bottom, -10)
             ScrollView(showsIndicators: false) {
                 VStack(spacing: -20) {
@@ -91,7 +91,6 @@ struct HomeBoard: View {
                 }
             }
             .padding(.top, 10)
-            .padding(.bottom, 20)
             .shadow(radius: 5)
         }
     }
@@ -100,19 +99,26 @@ struct HomeBoard: View {
 struct HomeSectionSwitches: View {
     let categoryDataImages: [String] = ["playerVirat", "playerJoeRoot", "playerBabar", "playerSteveSmith", "playerKaneWill"]
     
-    
+    @StateObject var recentMatchesViewModel = RecentMatchesViewModel()
     @StateObject var sectionProgress = HomeSection()
+    
+    var width = UIScreen.main.bounds.width - 80
     
     var body: some View {
         VStack(spacing: 10) {
             if (sectionProgress.index == 0) {
-                ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
-                    HStack {
-                        RecentMatchSectionView()
-                            .shadow(color: Color.black, radius: 5)
+                ScrollView(.vertical, showsIndicators: false){
+                    VStack{
+                        ForEach(recentMatchesViewModel.recentMatches, id: \.self) { recentMatch in
+                            RecentMatchView(recentMatchModel: recentMatch)
+                                .frame(width: width * 1.15, height: 120)
+                                .clipShape(LiveMatchCard())
+                                .background(Blur(style: .systemChromeMaterialDark))
+                                .clipShape(LiveMatchCard())
+                                .cornerRadius(10, corners: .allCorners)
+                        }
                     }
                 }
-                
             } else if (sectionProgress.index == 1) {
                 ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
                     HStack {
@@ -132,5 +138,8 @@ struct HomeSectionSwitches: View {
             
         }
         .padding()
+        .onAppear {
+            recentMatchesViewModel.getRecentMatches()
+        }
     }
 }

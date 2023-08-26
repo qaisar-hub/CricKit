@@ -7,28 +7,59 @@
 
 import Foundation
 
-class FireStoreHelper : NSObject {
-    static func getCollectionID(collection: FireStoreCollection) -> String {
-        switch collection {
-        case .user:
-            return "user"
+public class FSCollectionManager {
+    
+    static func getCollectionID(collection: parentCollection) -> String {
+        switch collection{
+        case .users:
+            return "users"
         case .liveScore(subCollectionPath: let subCollectionPath):
-            switch subCollectionPath {
-            case .teamStatus:
-                return "teamStatus"
-            case .none:
-                return "liveScore"
+            return subCollectionPath.value.path
+        case .recentMatches(subCollectionPath: let subCollectionPath):
+            return subCollectionPath.value.path
+        case .favouritePlayers:
+            return "favouritePlayers"
+        }
+    }
+    
+    enum parentCollection {
+        case users
+        case liveScore(subCollectionPath: liveScoreSubCollection)
+        case recentMatches(subCollectionPath: recentMatchesSubCollection)
+        case favouritePlayers
+        
+        enum liveScoreSubCollection {
+            case teamStatus // returns liveScore -> teamStatus
+            case none //none denotes that parent collection doesn't have any subCollection and hence we have "none" case which returns collectionId as "liveScore"
+            struct Path {
+                let path: String
+            }
+            var value: Path {
+                switch self{
+                case .teamStatus:
+                    return Path(path: "teamStatus")
+                case .none:
+                    return Path(path: "liveScore")
+                }
+            }
+        }
+        
+        enum recentMatchesSubCollection {
+            case teamStatus
+            case none
+            struct Path {
+                let path: String
+            }
+            var value: Path {
+                switch self{
+                case .teamStatus:
+                    return Path(path: "teamStatus")
+                case .none:
+                    return Path(path: "recentMatches")
+                }
             }
         }
     }
 }
 
 
-enum FireStoreCollection {
-    case user
-    case liveScore (subCollectionPath: FireStoreSubCollection?)
-}
-
-enum FireStoreSubCollection {
-    case teamStatus
-}

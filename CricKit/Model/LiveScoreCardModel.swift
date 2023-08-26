@@ -1,5 +1,5 @@
 //
-//  LiveScoreCard.swift
+//  LiveScoreCardModel.swift
 //  CricKit
 //
 //  Created by  Ephrim Daniel J on 16/08/23.
@@ -36,8 +36,8 @@ struct LiveScore: Identifiable, Decodable, Hashable {
 }
 
 
-struct LiveScoreCardData: Identifiable, Hashable {
-    static func == (lhs: LiveScoreCardData, rhs: LiveScoreCardData) -> Bool {
+struct LiveScoreCardModel: Identifiable, Hashable {
+    static func == (lhs: LiveScoreCardModel, rhs: LiveScoreCardModel) -> Bool {
         return lhs.id == rhs.id
     }
     var id = UUID()
@@ -54,4 +54,12 @@ struct TeamStats: Identifiable, Hashable {
     var overs: String
     var runs: String
     var wickets: String
+    
+    func yetToBat() -> Bool{
+        return self.runs.isEmpty
+    }
+    
+    func yetToBatText() -> String{
+        return "Yet to Bat"
+    }
 }
