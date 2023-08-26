@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LiveScoreCardView: View {
     
-    var liveScoreCardData : LiveScoreCardData
+    var liveScoreCardData : LiveScoreCardModel
     
     var body: some View {
         VStack {
@@ -17,7 +17,7 @@ struct LiveScoreCardView: View {
                 .font(.subheadline)
                 .fontWeight(.medium)
                 .foregroundColor(Color.white)
-                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                .opacity(0.8)
             ForEach(liveScoreCardData.TeamStatus) { team in
                 HStack {
                     LiveTeamSummaryView(team: team)
@@ -64,21 +64,17 @@ struct LiveTeamSummaryView: View {
             Image(team.flag)
                 .resizable()
                 .frame(width: 35, height: 35)
-            
             HStack(spacing: 5){
                 Text(team.name)
                     .font(.headline)
                     .fontWeight(.medium)
                     .foregroundStyle(Color.white)
-                
-                Text("\(team.runs)/\(team.wickets)")
+                Text(team.yetToBat() ? "" : "\(team.runs)/\(team.wickets)")
                     .font(.subheadline)
                     .fontWeight(.medium)
                     .foregroundColor(Color.white)
-                
                 Spacer()
-                
-                Text("\(team.overs) overs")
+                Text(team.yetToBat() ? team.yetToBatText() : "\(team.overs) overs")
                     .font(.subheadline)
                     .fontWeight(.medium)
                     .foregroundColor(Color.white)
