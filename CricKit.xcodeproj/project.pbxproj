@@ -68,6 +68,9 @@
 		4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639280E2A7EC0B1002C2767 /* CricKitApp.swift */; };
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
+		465F2B072A99E8230088A35A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 465F2B062A99E8230088A35A /* GoogleSignIn */; };
+		465F2B092A99E8230088A35A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 465F2B082A99E8230088A35A /* GoogleSignInSwift */; };
+		465F2B0C2A99EBD30088A35A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F2B0B2A99EBD30088A35A /* Utilities.swift */; };
 		469376FE2A8A64A2003E9AD8 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469376FD2A8A64A2003E9AD8 /* BlurView.swift */; };
 		469377032A8A64FF003E9AD8 /* RecentMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377022A8A64FF003E9AD8 /* RecentMatchView.swift */; };
 		469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */; };
@@ -152,6 +155,8 @@
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463928152A7EC0B3002C2767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		465F2B0A2A99E8570088A35A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		465F2B0B2A99EBD30088A35A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		469376FD2A8A64A2003E9AD8 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		469377022A8A64FF003E9AD8 /* RecentMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchView.swift; sourceTree = "<group>"; };
 		469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayersSectionView.swift; sourceTree = "<group>"; };
@@ -172,8 +177,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465F2B072A99E8230088A35A /* GoogleSignIn in Frameworks */,
 				461BFE9D2A8F6F1C007AECB3 /* FirebaseAuth in Frameworks */,
 				461BFEA32A8F6F1C007AECB3 /* FirebaseStorage in Frameworks */,
+				465F2B092A99E8230088A35A /* GoogleSignInSwift in Frameworks */,
 				461BFE9F2A8F6F1C007AECB3 /* FirebaseFirestore in Frameworks */,
 				461BFEA12A8F6F1C007AECB3 /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -274,6 +281,7 @@
 				209ADA732A964E09002B31D5 /* Alerts.swift */,
 				209ADA752A987C90002B31D5 /* FirebaseDataService.swift */,
 				2065A4592A98858C00F3C522 /* FireStoreHelper.swift */,
+				465F2B0B2A99EBD30088A35A /* Utilities.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 		4639280D2A7EC0B1002C2767 /* CricKit */ = {
 			isa = PBXGroup;
 			children = (
+				465F2B0A2A99E8570088A35A /* Info.plist */,
 				209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */,
 				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
 				20C0674F2A8CD2C400102BCF /* Model */,
@@ -465,6 +474,8 @@
 				461BFE9E2A8F6F1C007AECB3 /* FirebaseFirestore */,
 				461BFEA02A8F6F1C007AECB3 /* FirebaseFirestoreSwift */,
 				461BFEA22A8F6F1C007AECB3 /* FirebaseStorage */,
+				465F2B062A99E8230088A35A /* GoogleSignIn */,
+				465F2B082A99E8230088A35A /* GoogleSignInSwift */,
 			);
 			productName = CricKit;
 			productReference = 4639280B2A7EC0B1002C2767 /* CricKit.app */;
@@ -499,6 +510,7 @@
 			mainGroup = 463928022A7EC0B1002C2767;
 			packageReferences = (
 				461BFE9B2A8F6F1C007AECB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				465F2B052A99E8230088A35A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 4639280C2A7EC0B1002C2767 /* Products */;
 			projectDirPath = "";
@@ -563,6 +575,7 @@
 				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
 				461BFE8B2A8EA062007AECB3 /* User.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
+				465F2B0C2A99EBD30088A35A /* Utilities.swift in Sources */,
 				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,
 				460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */,
 				460FD26B2A84EA4F00029FD7 /* CustomViewModifiers.swift in Sources */,
@@ -794,6 +807,7 @@
 				DEVELOPMENT_TEAM = JA675S6WXV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CricKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -824,6 +838,7 @@
 				DEVELOPMENT_TEAM = JA675S6WXV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CricKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -883,6 +898,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		465F2B052A99E8230088A35A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -905,6 +928,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 461BFE9B2A8F6F1C007AECB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		465F2B062A99E8230088A35A /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 465F2B052A99E8230088A35A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		465F2B082A99E8230088A35A /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 465F2B052A99E8230088A35A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

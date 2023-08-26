@@ -8,6 +8,8 @@
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
+import GoogleSignIn
+import GoogleSignInSwift
 
 @MainActor
 class AuthViewModel: ObservableObject {
@@ -95,10 +97,54 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func getProviders() throws -> [AuthProviderOption] {
+        guard let providerData = Auth.auth().currentUser?.providerData else {
+            throw URLError(.badServerResponse)
+        }
+        
+        var providers: [AuthProviderOption] = []
+        for provider in providerData {
+            if let option = AuthProviderOption(rawValue: provider.providerID) {
+                providers.append(option)
+            } else {
+                assertionFailure("Provider option not found: \(provider.providerID)")
+            }
+        }
+        print(providers)
+        return providers
+    }
+    
     func fetchUser() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
         self.currentUser = try? snapshot.data(as: User.self)
+    }
+    
+    func signInGoogle() async throws {
+        guard let topVC = Utilities.shared.topViewController() else {
+            throw URLError(.cannotFindHost)
+        }
+        
+        let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
+        
+        guard let idToken = gidSignInResult.user.idToken?.tokenString else {
+            throw URLError(.badServerResponse)
+        }
+        
+        let accessToken = gidSignInResult.user.accessToken.tokenString
+        guard let name = gidSignInResult.user.profile?.name else { return }
+        guard let email = gidSignInResult.user.profile?.email else { return }
+
+        let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        let result = try await Auth.auth().signIn(with: credential)
+        
+     //   try await createUser(withEmail: email, password: result.user., fullName: name)
+        self.userSession = result.user
+        let user = User(id: result.user.uid, email: email, fullName: name)
+        let encoderUser = try Firestore.Encoder().encode(user)
+        try await Firestore.firestore().collection("users").document(user.id).setData(encoderUser)
+        await fetchUser()
     }
     
 }
@@ -107,4 +153,9 @@ class AuthViewModel: ObservableObject {
 enum UserStatus {
    case failed(String, String)
    case success(String, String)
+}
+
+enum AuthProviderOption: String {
+    case email = "password"
+    case google = "google.com"
 }

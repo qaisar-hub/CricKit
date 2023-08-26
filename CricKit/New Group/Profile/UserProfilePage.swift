@@ -40,19 +40,24 @@ struct UserProfilePage: View {
                 }
                 
                 // Delete Action
-                Button(action: {
-                    confirmDeletion.toggle()
-                }) {
-                    SettingsRowView(iconName: "xmark.circle", title: "Delete Account", subtitle: "", tintColor: .red)
-                }.alert("Confirm Account Deletion", isPresented: $confirmDeletion) {
-                    SecureField("Password", text: $password)
-                    Button("Delete", action: {
-                        authViewModel.deleteAccount(password: password)
-                    })
-                    Button("Cancel", role: .cancel) { }
-                } message: {
-                    Text("Enter your password for \"\(authViewModel.currentUser?.email ?? "")\" to confirm the account deletion.")
+                if let providers = try? authViewModel.getProviders() {
+                    if providers.contains(.email) {
+                        Button(action: {
+                            confirmDeletion.toggle()
+                        }) {
+                            SettingsRowView(iconName: "xmark.circle", title: "Delete Account", subtitle: "", tintColor: .red)
+                        }.alert("Confirm Account Deletion", isPresented: $confirmDeletion) {
+                            SecureField("Password", text: $password)
+                            Button("Delete", action: {
+                                authViewModel.deleteAccount(password: password)
+                            })
+                            Button("Cancel", role: .cancel) { }
+                        } message: {
+                            Text("Enter your password for \"\(authViewModel.currentUser?.email ?? "")\" to confirm the account deletion.")
+                        }
+                    }
                 }
+                
             }.listRowBackground(Blur(style: .systemChromeMaterialDark))
             
         }

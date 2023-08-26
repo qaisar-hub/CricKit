@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
+import AuthenticationServices
 
 struct SignInView: View {
     
@@ -71,7 +74,8 @@ struct SignInView: View {
                                 .padding(.leading, 10)
                         }
                         Image(systemName: "arrow.right")
-                            .frame(width: 50, height: 50)
+                            .font(.subheadline)
+                            .frame(width: 40, height: 40)
                             .foregroundColor(.blue)
                             .background(Color.appBlacks)
                             .clipShape(Circle())
@@ -90,7 +94,46 @@ struct SignInView: View {
 
                 }
             }
-       }
+            .padding()
+            
+            HStack(spacing: 8) {
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.gray)
+                
+                Text("OR")
+                    .foregroundColor(.gray)
+                    .font(.subheadline)
+                
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.gray)
+            }
+            .padding(.horizontal)
+            
+            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)) {
+                    isLoading = true
+                    Task {
+                        do {
+                            try await authViewModel.signInGoogle()
+                        } catch {
+                            print(error)
+                        }
+                        isLoading = false
+                    }
+                }
+            .padding(.horizontal)
+                SignInWithAppleButton { request in
+                    
+                } onCompletion: { result in
+                    
+                }
+                .signInWithAppleButtonStyle(.white)
+                .frame(height: 44)
+                .padding()
+            
+            
+        }
         .alert(item: $alert) { value in
             return value.alert
         }
