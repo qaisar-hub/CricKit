@@ -141,7 +141,7 @@ struct HomeSectionSwitches: View {
                     FeaturedPlayersSectionView()
                 }
             } else if (sectionProgress.index == 3) {
-                Text("<<< Hello 3>>>")
+                CricketNews()
             } else if (sectionProgress.index == 4) {
                 Text("<<< Hello 4>>>")
             }

@@ -77,6 +77,8 @@
 		469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */; };
 		46AF6D4E2A9B823100A3EBBB /* SwipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D4D2A9B823100A3EBBB /* SwipeCard.swift */; };
 		46AF6D522A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */; };
+		46AF6D542A9BFDB400A3EBBB /* CricketNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D532A9BFDB400A3EBBB /* CricketNews.swift */; };
+		46AF6D562A9C057000A3EBBB /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D552A9C057000A3EBBB /* CustomBackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +168,8 @@
 		469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardView.swift; sourceTree = "<group>"; };
 		46AF6D4D2A9B823100A3EBBB /* SwipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCard.swift; sourceTree = "<group>"; };
 		46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardShimmerView.swift; sourceTree = "<group>"; };
+		46AF6D532A9BFDB400A3EBBB /* CricketNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketNews.swift; sourceTree = "<group>"; };
+		46AF6D552A9C057000A3EBBB /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,7 @@
 				209ADA752A987C90002B31D5 /* FirebaseDataService.swift */,
 				2065A4592A98858C00F3C522 /* FireStoreHelper.swift */,
 				465F2B0B2A99EBD30088A35A /* Utilities.swift */,
+				46AF6D552A9C057000A3EBBB /* CustomBackButton.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				460FD2532A84E7AF00029FD7 /* RotationButton.swift */,
 				469376FD2A8A64A2003E9AD8 /* BlurView.swift */,
 				20C067542A8CD48C00102BCF /* SectionTitleView.swift */,
+				46AF6D532A9BFDB400A3EBBB /* CricketNews.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -600,11 +606,13 @@
 				469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */,
 				460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
+				46AF6D542A9BFDB400A3EBBB /* CricketNews.swift in Sources */,
 				20C067532A8CD36800102BCF /* HomeSectionsView.swift in Sources */,
 				209ADA742A964E09002B31D5 /* Alerts.swift in Sources */,
 				20C067512A8CD2FB00102BCF /* LiveScoreCardModel.swift in Sources */,
 				460FD26F2A84EB7400029FD7 /* test.swift in Sources */,
 				460FD2522A84E79600029FD7 /* CustomTextField.swift in Sources */,
+				46AF6D562A9C057000A3EBBB /* CustomBackButton.swift in Sources */,
 				460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */,
 				460FD2022A841E4100029FD7 /* Extension.swift in Sources */,
 				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,

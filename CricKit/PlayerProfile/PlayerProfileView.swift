@@ -48,25 +48,6 @@ struct PlayerProfileView: View {
     }
 }
 
-struct CustomBackButton: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    var body: some View {
-        Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-        }) {
-            Image(systemName: "chevron.left")
-                .font(.footnote)
-                .padding(.vertical, 8)
-                .padding(.horizontal, 12)
-                .background(Color.linearColor)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .shadow(color: Color.black, radius: 5)
-        }
-    }
-}
-
 struct PlayerProfileView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerProfileView(playerImage: "pp_dhoni", playerTeamName: "INDIA")
