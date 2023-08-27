@@ -13,15 +13,19 @@ import SwiftUI
 class LiveScoreCardViewModel : ObservableObject {
     
     @Published var liveScoreCardlists = [LiveScoreCardModel]()
+    @Published var isLoading = false
     
     var teamStats : TeamStats? = nil
     var teamStatusArray = [TeamStats]()
     
     func getLiveScore() {
+        self.isLoading = true
         let parentCollection = FSCollectionManager.getCollectionID(collection: .liveScore(subCollectionPath: .none))
             FbDataServiceManager.shared.getData(parentCollection: parentCollection) { [self] snapshot in
             if let snapshot = snapshot {
                 self.liveScoreCardlists.removeAll()
+                var pendingOperations = snapshot.documents.count
+                var tempLiveScoreCardlists = [LiveScoreCardModel]()
                 for doc in snapshot.documents{
                     let matchStatus = doc["matchStatus"] as? String ?? ""
                     let matchHeader = doc["matchHeader"] as? String ?? ""
@@ -41,7 +45,12 @@ class LiveScoreCardViewModel : ObservableObject {
                                 self.teamStatusArray.append(teamStats)
                             }
                             let liveScoreData = LiveScoreCardModel(matchStatus: matchStatus, matchHeader: matchHeader, isLive: isLive, TeamStatus:  self.teamStatusArray)
-                            self.liveScoreCardlists.append(liveScoreData)
+                            tempLiveScoreCardlists.append(liveScoreData)
+                            pendingOperations -= 1
+                            if (pendingOperations == 0) {
+                                self.liveScoreCardlists = tempLiveScoreCardlists
+                                self.isLoading = false
+                            }
                         }
                     }
                 }

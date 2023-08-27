@@ -58,6 +58,7 @@ struct HomePage_Previews: PreviewProvider {
         HomePage()
     }
 }
+
 struct HomeBoard: View {
     
     @StateObject var sectionProgress = HomeSection()
@@ -70,14 +71,22 @@ struct HomeBoard: View {
             
             ScrollView(.horizontal, showsIndicators: false){
                 HStack{
-                    ForEach(liveScoreCardViewModel.liveScoreCardlists) { liveScoreItem in
-                        LiveScoreCardView(liveScoreCardData: liveScoreItem)
-                            .frame(width: width * 1.15, height: 200)
-                            .clipShape(LiveMatchCard())
-                            .background(Blur(style: .systemChromeMaterialDark))
-                            .clipShape(LiveMatchCard())
-                            .cornerRadius(10, corners: .allCorners)
+                    if liveScoreCardViewModel.isLoading {
+                        LiveScoreCardShimmerView(width: width * 1.15)
+                            .offset(x: 16)
+                    } else {
+                        ForEach(Array(liveScoreCardViewModel.liveScoreCardlists.enumerated()), id: \.element.id) { index, liveScoreItem in
+                            LiveScoreCardView(liveScoreCardData: liveScoreItem)
+                                .frame(width: width * 1.15, height: 200)
+                                .clipShape(LiveMatchCard())
+                                .background(Blur(style: .systemChromeMaterialDark))
+                                .clipShape(LiveMatchCard())
+                                .cornerRadius(10, corners: .allCorners)
+                                .padding(.trailing, index == liveScoreCardViewModel.liveScoreCardlists.count - 1 ? 30: 0)
+                        }
+                        .offset(x: 16)
                     }
+                    
                 }
             }
             HomeSections(sectionProgress: sectionProgress)
@@ -89,8 +98,9 @@ struct HomeBoard: View {
                         HomeSectionSwitches(sectionProgress: sectionProgress)
                             .frame(width: UIScreen.main.bounds.width)
                 }
+                .padding(.bottom, 10)
             }
-            .padding(.top, 10)
+            
             .shadow(radius: 5)
         }
     }

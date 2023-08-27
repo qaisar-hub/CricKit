@@ -71,9 +71,12 @@
 		465F2B072A99E8230088A35A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 465F2B062A99E8230088A35A /* GoogleSignIn */; };
 		465F2B092A99E8230088A35A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 465F2B082A99E8230088A35A /* GoogleSignInSwift */; };
 		465F2B0C2A99EBD30088A35A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F2B0B2A99EBD30088A35A /* Utilities.swift */; };
+		465F2B0F2A9A91B20088A35A /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 465F2B0E2A9A91B20088A35A /* Shimmer */; };
 		469376FE2A8A64A2003E9AD8 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469376FD2A8A64A2003E9AD8 /* BlurView.swift */; };
 		469377032A8A64FF003E9AD8 /* RecentMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377022A8A64FF003E9AD8 /* RecentMatchView.swift */; };
 		469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */; };
+		46AF6D4E2A9B823100A3EBBB /* SwipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D4D2A9B823100A3EBBB /* SwipeCard.swift */; };
+		46AF6D522A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +164,8 @@
 		469377022A8A64FF003E9AD8 /* RecentMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchView.swift; sourceTree = "<group>"; };
 		469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayersSectionView.swift; sourceTree = "<group>"; };
 		469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardView.swift; sourceTree = "<group>"; };
+		46AF6D4D2A9B823100A3EBBB /* SwipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCard.swift; sourceTree = "<group>"; };
+		46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardShimmerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +187,7 @@
 				461BFEA32A8F6F1C007AECB3 /* FirebaseStorage in Frameworks */,
 				465F2B092A99E8230088A35A /* GoogleSignInSwift in Frameworks */,
 				461BFE9F2A8F6F1C007AECB3 /* FirebaseFirestore in Frameworks */,
+				465F2B0F2A9A91B20088A35A /* Shimmer in Frameworks */,
 				461BFEA12A8F6F1C007AECB3 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +278,7 @@
 		460FD20C2A8422B700029FD7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				46AF6D4D2A9B823100A3EBBB /* SwipeCard.swift */,
 				461BFEA42A8FAB5D007AECB3 /* LoadingIndicator.swift */,
 				460FD2002A841E4100029FD7 /* Extension.swift */,
 				460FD20A2A84210100029FD7 /* RoundedRectangleView.swift */,
@@ -430,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */,
+				46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */,
 			);
 			path = LiveScoreCardView;
 			sourceTree = "<group>";
@@ -476,6 +484,7 @@
 				461BFEA22A8F6F1C007AECB3 /* FirebaseStorage */,
 				465F2B062A99E8230088A35A /* GoogleSignIn */,
 				465F2B082A99E8230088A35A /* GoogleSignInSwift */,
+				465F2B0E2A9A91B20088A35A /* Shimmer */,
 			);
 			productName = CricKit;
 			productReference = 4639280B2A7EC0B1002C2767 /* CricKit.app */;
@@ -511,6 +520,7 @@
 			packageReferences = (
 				461BFE9B2A8F6F1C007AECB3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				465F2B052A99E8230088A35A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				465F2B0D2A9A91B20088A35A /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
 			);
 			productRefGroup = 4639280C2A7EC0B1002C2767 /* Products */;
 			projectDirPath = "";
@@ -569,8 +579,10 @@
 				2096CFFC2A99E32F0093C131 /* RecentMatchModel.swift in Sources */,
 				461BFEA52A8FAB5D007AECB3 /* LoadingIndicator.swift in Sources */,
 				461BFE982A8ECC80007AECB3 /* ProfileCard.swift in Sources */,
+				46AF6D522A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift in Sources */,
 				460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */,
 				469376FE2A8A64A2003E9AD8 /* BlurView.swift in Sources */,
+				46AF6D4E2A9B823100A3EBBB /* SwipeCard.swift in Sources */,
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
 				461BFE8B2A8EA062007AECB3 /* User.swift in Sources */,
@@ -906,6 +918,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		465F2B0D2A9A91B20088A35A /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -938,6 +958,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 465F2B052A99E8230088A35A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		465F2B0E2A9A91B20088A35A /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 465F2B0D2A9A91B20088A35A /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
