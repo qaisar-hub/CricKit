@@ -82,6 +82,7 @@
 		46AF6D522A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */; };
 		46AF6D542A9BFDB400A3EBBB /* CricketNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D532A9BFDB400A3EBBB /* CricketNews.swift */; };
 		46AF6D562A9C057000A3EBBB /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D552A9C057000A3EBBB /* CustomBackButton.swift */; };
+		46CC98E42A9D378F0004C8F1 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,7 @@
 		46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardShimmerView.swift; sourceTree = "<group>"; };
 		46AF6D532A9BFDB400A3EBBB /* CricketNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketNews.swift; sourceTree = "<group>"; };
 		46AF6D552A9C057000A3EBBB /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
+		46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				2065A4592A98858C00F3C522 /* FireStoreHelper.swift */,
 				465F2B0B2A99EBD30088A35A /* Utilities.swift */,
 				46AF6D552A9C057000A3EBBB /* CustomBackButton.swift */,
+				46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
 				461BFE8B2A8EA062007AECB3 /* User.swift in Sources */,
+				46CC98E42A9D378F0004C8F1 /* CustomBackground.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
 				465F2B0C2A99EBD30088A35A /* Utilities.swift in Sources */,
 				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,

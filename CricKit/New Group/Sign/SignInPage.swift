@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Shimmer
 
 struct SignInPage: View {
     
@@ -22,7 +23,7 @@ struct SignInPage: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.appBlacks
+                CustomBackgroundView()
                     .ignoresSafeArea()
                 
                 HStack {
@@ -57,27 +58,34 @@ struct SignInPage: View {
                     }
                     VStack{
                         Spacer()
-                        Image("appLogo")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 150, height: 200)
-                            .opacity(0.9)
+
                         if (isSignInShown) {
+                            Text("Welcome Back")
+                               // .modifier(Shimmer())
+                                .font(.title)
+                                .foregroundColor(Color.appWhites)
+                                .fontWidth(.expanded)
+                            
                             SignInView(readyToNavigate: $readyToNavigate, isLoading: $isLoading)
                         } else {
+                            Text("Create Account")
+                               // .modifier(Shimmer())
+                                .font(.title)
+                                .foregroundColor(Color.appWhites)
+                                .fontWidth(.expanded)
+                        
                             SignUpView(isLoading: $isLoading)
                         }
                         Spacer()
-                    }.background(Color.black)
+                    }.background(CustomBackgroundView())
                     .cornerRadius(20, corners: .allCorners)
+                    .shadow(color: Color.appBlacks, radius: 20)
                     .ignoresSafeArea()
                 }
                 if isLoading {
                     LoadingIndicator()
                 }
             }
-            .background(Color.appPrimary)
             .navigationBarTitle("", displayMode: .inline)
             .navigationDestination(isPresented: $readyToNavigate) {
                 HomePage()

@@ -26,17 +26,16 @@ struct CricKitApp: App {
 
 struct LaunchAnimationView: View {
     @State private var isAnimationComplete = false
-    @State private var backgroundColor = Color.appPrimary
     
     var body: some View {
         ZStack {
-            backgroundColor
+            CustomBackgroundView()
             
             if isAnimationComplete {
                 ContentView()
                     .transition(.opacity)
             } else {
-                AnimationView(isAnimationComplete: $isAnimationComplete, backgroundColor: $backgroundColor)
+                AnimationView(isAnimationComplete: $isAnimationComplete)
                     .transition(.opacity)
             }
         }
@@ -46,7 +45,6 @@ struct LaunchAnimationView: View {
 
 struct AnimationView: View {
     @Binding var isAnimationComplete: Bool
-    @Binding var backgroundColor: Color
     @State private var showSlogan = false
     
     var body: some View {
@@ -58,10 +56,6 @@ struct AnimationView: View {
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
                 .opacity(0.9)
                 .onAppear {
-                    withAnimation(.easeInOut(duration: 3)) {
-                        backgroundColor = Color.appBlacks
-                    }
-                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation(.easeInOut(duration: 1)) {
                             showSlogan = true

@@ -1,4 +1,5 @@
 import SwiftUI
+import Shimmer
 
 struct SwipeCard: View {
     @State private var cardOffsets: [CGFloat] = Array(repeating: 0, count: 4)
@@ -38,9 +39,18 @@ struct SwipeCard: View {
 
 struct CustomCardView: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 10)
-            .frame(width: UIScreen.main.bounds.width * 0.85, height: UIScreen.main.bounds.width * 1.15)
-            .foregroundColor(.blue)
+        VStack {
+            Text("Coming Soon...")
+                .modifier(Shimmer())
+                .font(.title)
+                .foregroundColor(.white)
+                .padding()
+        }
+        .frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.width * 0.5)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.appPrimary, Color.appBlacks]), startPoint: .topLeading, endPoint: .bottomTrailing))
+        .cornerRadius(10)
+        .rotation3DEffect(.degrees(10), axis: (x: 0, y: 5, z: 0))
+        .shadow(color: Color.appBlacks, radius: 10)
     }
 }
 
