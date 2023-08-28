@@ -24,7 +24,7 @@ struct HomePage: View {
                             .fontWidth(.expanded)
                             .font(.system(size: 30))
                             .fontWeight(.bold)
-                            .foregroundStyle(.linearGradient(colors: [Color.appPrimary, Color.appSecondary, Color.appPrimary], startPoint: .topLeading, endPoint: .bottomTrailing))
+                            .foregroundStyle(Color.appPrimary)
                         Spacer()
                     }
                     
@@ -67,7 +67,7 @@ struct HomeBoard: View {
     @StateObject var sectionProgress = HomeSection()
     @ObservedObject var liveScoreCardViewModel: LiveScoreCardViewModel
     
-    var width = UIScreen.main.bounds.width - 80
+    var width = UIScreen.main.bounds.width
     
     var body: some View {
         VStack{
@@ -75,12 +75,12 @@ struct HomeBoard: View {
             ScrollView(.horizontal, showsIndicators: false){
                 HStack{
                     if liveScoreCardViewModel.isLoading {
-                        LiveScoreCardShimmerView(width: width * 1.15)
+                        LiveScoreCardShimmerView(width: width - 32)
                             .offset(x: 16)
                     } else {
                         ForEach(Array(liveScoreCardViewModel.liveScoreCardlists.enumerated()), id: \.element.id) { index, liveScoreItem in
                             LiveScoreCardView(liveScoreCardData: liveScoreItem)
-                                .frame(width: width * 1.15, height: 200)
+                                .frame(width: width - 32, height: 200)
                                 .clipShape(LiveMatchCard())
                                 .background(Blur(style: .systemChromeMaterialDark))
                                 .clipShape(LiveMatchCard())
@@ -115,7 +115,7 @@ struct HomeSectionSwitches: View {
     @StateObject var recentMatchesViewModel = RecentMatchesViewModel()
     @StateObject var sectionProgress = HomeSection()
     
-    var width = UIScreen.main.bounds.width - 80
+    var width = UIScreen.main.bounds.width - 32
     
     var body: some View {
         VStack(spacing: 10) {
@@ -124,7 +124,7 @@ struct HomeSectionSwitches: View {
                     VStack{
                         ForEach(recentMatchesViewModel.recentMatches, id: \.self) { recentMatch in
                             RecentMatchView(recentMatchModel: recentMatch)
-                                .frame(width: width * 1.15, height: 120)
+                                .frame(width: width, height: 120)
                                 .clipShape(LiveMatchCard())
                                 .background(Blur(style: .systemChromeMaterialDark))
                                 .clipShape(LiveMatchCard())
@@ -136,7 +136,11 @@ struct HomeSectionSwitches: View {
                 ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
                     HStack {
                         UpComingMatchesView()
-                            .shadow(color: Color.black, radius: 5)
+                            .frame(width: width, height: 120)
+                            .clipShape(LiveMatchCard())
+                            .background(Blur(style: .systemChromeMaterialDark))
+                            .clipShape(LiveMatchCard())
+                            .cornerRadius(10, corners: .allCorners)
                     }
                 }
             } else if (sectionProgress.index == 2) {

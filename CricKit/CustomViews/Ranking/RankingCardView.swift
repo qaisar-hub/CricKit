@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MatchFormatCardView: View {
     var name: String
+    @State private var isAnimating = false
     
     var body: some View {
         VStack {
@@ -17,12 +18,12 @@ struct MatchFormatCardView: View {
                 .foregroundColor(.white)
                 .padding()
         }
-        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.width * 0.2)
+        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.width * 0.25)
         .background(LinearGradient(gradient: Gradient(colors: [Color.appPrimary, Color.appBlacks, Color.appPrimary]), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(10)
         .shadow(radius: 10)
         .rotation3DEffect(.degrees(10), axis: (x: 1, y: 0, z: 0))
-        .offset(y: -20)
+        .offset(y: -10)
     }
 }
 

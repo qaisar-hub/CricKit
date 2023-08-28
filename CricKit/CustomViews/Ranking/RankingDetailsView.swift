@@ -16,33 +16,42 @@ struct RankingDetailsView: View {
     @State var selectedTab: TabSelection
     
     var body: some View {
-        VStack {
-            TabView(selection: $selectedTab) {
-                ICCRankingView(selectedTab: selectedTab)
-                    .tabItem {
-                        Label("Batsman", systemImage: "person.fill")
+        NavigationStack{
+            VStack {
+                TabView(selection: $selectedTab) {
+                    ICCRankingView(selectedTab: selectedTab)
+                        .tabItem {
+                            Label("Batsman", systemImage: "person.fill")
+                        }
+                        .tag(TabSelection.batsman)
+                    
+                    ICCRankingView(selectedTab: selectedTab)
+                        .tabItem {
+                            Label("Bowler", systemImage: "bolt.fill")
+                        }
+                        .tag(TabSelection.bowler)
+                    
+                    ICCRankingView(selectedTab: selectedTab)
+                        .tabItem {
+                            Label("All Rounder", systemImage: "star.fill")
+                        }
+                        .tag(TabSelection.allRounder)
+                    
+                    ICCRankingView(selectedTab: selectedTab)
+                        .tabItem {
+                            Label("Team", systemImage: "person.3.fill")
+                        }
+                        .tag(TabSelection.team) // Add a new case to the TabSelection enum for Team
+                }
+                .navigationBarTitle("ICC Rankings")
+                .navigationBarBackButtonHidden(true)
+                .toolbar(content: {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        CustomBackButton()
                     }
-                    .tag(TabSelection.batsman)
+                })
                 
-                ICCRankingView(selectedTab: selectedTab)
-                    .tabItem {
-                        Label("Bowler", systemImage: "bolt.fill")
-                    }
-                    .tag(TabSelection.bowler)
-                
-                ICCRankingView(selectedTab: selectedTab)
-                    .tabItem {
-                        Label("All Rounder", systemImage: "star.fill")
-                    }
-                    .tag(TabSelection.allRounder)
-                
-                ICCRankingView(selectedTab: selectedTab)
-                    .tabItem {
-                        Label("Team", systemImage: "person.3.fill")
-                    }
-                    .tag(TabSelection.team) // Add a new case to the TabSelection enum for Team
             }
-
         }
     }
 }

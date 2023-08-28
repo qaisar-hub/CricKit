@@ -27,7 +27,6 @@ struct ICCRankingView: View {
     
     var body: some View {
         NavigationStack {
-             
             List {
                 Section(header: Text(sectionHeader)) { // Use the dynamic section header
                     ForEach(0..<10) { index in
@@ -44,13 +43,6 @@ struct ICCRankingView: View {
                     }
                 }
             }
-            .navigationBarTitle("ICC Rankings")
-            .navigationBarBackButtonHidden(true)
-            .toolbar(content: {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    CustomBackButton()
-                }
-            })
         }
     }
 }

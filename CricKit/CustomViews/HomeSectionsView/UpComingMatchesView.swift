@@ -36,9 +36,9 @@ struct UpComingMatchesView: View {
                 .padding(.bottom, 5)
             
         }.padding()
-            .cornerRadius(25, corners: .allCorners)
-            .background(Blur(style: .systemChromeMaterialDark))
-            .clipShape(LiveMatchCard())
+//            .cornerRadius(25, corners: .allCorners)
+//            .background(Blur(style: .systemChromeMaterialDark))
+//            .clipShape(LiveMatchCard())
     }
 }
 
