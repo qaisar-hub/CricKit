@@ -41,6 +41,9 @@ struct HomePage: View {
                         HStack (alignment: .center, spacing: 30) {
                             customTabBar(selectedIndex: $selectedIndex)
                         }
+                        .padding(.top, 16)
+                        .padding(.bottom, -20)
+                        
                     }
                     Spacer()
                 }
@@ -143,7 +146,7 @@ struct HomeSectionSwitches: View {
             } else if (sectionProgress.index == 3) {
                 CricketNews()
             } else if (sectionProgress.index == 4) {
-                Text("<<< Hello 4>>>")
+                RankingCardView()
             }
             
         }

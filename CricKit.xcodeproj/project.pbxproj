@@ -68,6 +68,9 @@
 		4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639280E2A7EC0B1002C2767 /* CricKitApp.swift */; };
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
+		465DC2722A9C95F400B171BE /* RankingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DC2712A9C95F400B171BE /* RankingDetailsView.swift */; };
+		465DC2742A9C960B00B171BE /* ICCRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DC2732A9C960B00B171BE /* ICCRankingView.swift */; };
+		465DC2762A9C962000B171BE /* RankingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DC2752A9C962000B171BE /* RankingCardView.swift */; };
 		465F2B072A99E8230088A35A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 465F2B062A99E8230088A35A /* GoogleSignIn */; };
 		465F2B092A99E8230088A35A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 465F2B082A99E8230088A35A /* GoogleSignInSwift */; };
 		465F2B0C2A99EBD30088A35A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F2B0B2A99EBD30088A35A /* Utilities.swift */; };
@@ -160,6 +163,9 @@
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463928152A7EC0B3002C2767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		465DC2712A9C95F400B171BE /* RankingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDetailsView.swift; sourceTree = "<group>"; };
+		465DC2732A9C960B00B171BE /* ICCRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICCRankingView.swift; sourceTree = "<group>"; };
+		465DC2752A9C962000B171BE /* RankingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCardView.swift; sourceTree = "<group>"; };
 		465F2B0A2A99E8570088A35A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		465F2B0B2A99EBD30088A35A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		469376FD2A8A64A2003E9AD8 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -301,6 +307,7 @@
 		460FD24C2A84E72500029FD7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				465DC2702A9C95D900B171BE /* Ranking */,
 				209EA1552A8E4CB000036CAD /* UpcomingMatchesView */,
 				469377072A8A6548003E9AD8 /* LiveScoreCardView */,
 				469377042A8A6527003E9AD8 /* FeaturedPlayersSectionView */,
@@ -421,6 +428,16 @@
 				463928152A7EC0B3002C2767 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		465DC2702A9C95D900B171BE /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				465DC2712A9C95F400B171BE /* RankingDetailsView.swift */,
+				465DC2732A9C960B00B171BE /* ICCRankingView.swift */,
+				465DC2752A9C962000B171BE /* RankingCardView.swift */,
+			);
+			path = Ranking;
 			sourceTree = "<group>";
 		};
 		469376FF2A8A64C6003E9AD8 /* RecentMatchView */ = {
@@ -596,6 +613,7 @@
 				465F2B0C2A99EBD30088A35A /* Utilities.swift in Sources */,
 				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,
 				460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */,
+				465DC2722A9C95F400B171BE /* RankingDetailsView.swift in Sources */,
 				460FD26B2A84EA4F00029FD7 /* CustomViewModifiers.swift in Sources */,
 				2065A45A2A98858C00F3C522 /* FireStoreHelper.swift in Sources */,
 				460FD25E2A84E8A700029FD7 /* SignInPage.swift in Sources */,
@@ -613,6 +631,8 @@
 				460FD26F2A84EB7400029FD7 /* test.swift in Sources */,
 				460FD2522A84E79600029FD7 /* CustomTextField.swift in Sources */,
 				46AF6D562A9C057000A3EBBB /* CustomBackButton.swift in Sources */,
+				465DC2742A9C960B00B171BE /* ICCRankingView.swift in Sources */,
+				465DC2762A9C962000B171BE /* RankingCardView.swift in Sources */,
 				460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */,
 				460FD2022A841E4100029FD7 /* Extension.swift in Sources */,
 				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,
