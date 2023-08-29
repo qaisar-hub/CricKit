@@ -61,18 +61,24 @@ struct SignInPage: View {
 
                         if (isSignInShown) {
                             Text("Welcome Back")
-                               // .modifier(Shimmer())
-                                .font(.title)
-                                .foregroundColor(Color.appWhites)
                                 .fontWidth(.expanded)
+                                .font(.system(size: 25))
+                                .fontWeight(.bold)
+                                .foregroundStyle(
+                                    .linearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
+                                )
+                                .offset(y: -12)
                             
                             SignInView(readyToNavigate: $readyToNavigate, isLoading: $isLoading)
                         } else {
                             Text("Create Account")
-                               // .modifier(Shimmer())
-                                .font(.title)
-                                .foregroundColor(Color.appWhites)
                                 .fontWidth(.expanded)
+                                .font(.system(size: 25))
+                                .fontWeight(.bold)
+                                .foregroundStyle(
+                                    .linearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
+                                )
+                                .offset(y: -12)
                         
                             SignUpView(isLoading: $isLoading)
                         }

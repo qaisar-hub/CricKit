@@ -24,11 +24,10 @@ struct SignInView: View {
     
     var body: some View {
         VStack {
-            Text("SIGN IN")
-                .padding()
+            Text("Please sign in to continue.")
+                .padding(.bottom, 16)
                 .fontWidth(.expanded)
-                .font(.system(size: 25))
-                .fontWeight(.bold)
+                .font(.system(size: 12))
                 .foregroundStyle(
                     .linearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
