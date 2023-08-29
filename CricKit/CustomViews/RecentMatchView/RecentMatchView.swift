@@ -38,6 +38,7 @@ struct RecentMatchView: View {
                 Spacer()
             }
         }
+        .padding()
     }
 }
 

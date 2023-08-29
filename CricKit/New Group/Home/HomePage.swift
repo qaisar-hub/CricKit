@@ -48,7 +48,7 @@ struct HomePage: View {
                     Spacer()
                 }
             }.background(Color.linearColor)
-            .navigationBarBackButtonHidden(true)
+                .navigationBarBackButtonHidden(true)
         }
     }
     init() {
@@ -93,13 +93,13 @@ struct HomeBoard: View {
                 }
             }
             HomeSections(sectionProgress: sectionProgress)
-                    .frame(width: width)
-                    .padding(.top, 20)
-                    .padding(.bottom, -10)
+                .frame(width: width)
+                .padding(.top, 20)
+                .padding(.bottom, -10)
             ScrollView(showsIndicators: false) {
                 VStack(spacing: -20) {
-                        HomeSectionSwitches(sectionProgress: sectionProgress)
-                            .frame(width: UIScreen.main.bounds.width)
+                    HomeSectionSwitches(sectionProgress: sectionProgress)
+                        .frame(width: UIScreen.main.bounds.width)
                 }
                 .padding(.bottom, 10)
             }
@@ -113,6 +113,8 @@ struct HomeSectionSwitches: View {
     let categoryDataImages: [String] = ["playerVirat", "playerJoeRoot", "playerBabar", "playerSteveSmith", "playerKaneWill"]
     
     @StateObject var recentMatchesViewModel = RecentMatchesViewModel()
+    @StateObject var upComingMatchesViewModel = UpComingMatchViewModel()
+    @StateObject var featuredPlayersViewModel = FeaturedPlayersViewModel()
     @StateObject var sectionProgress = HomeSection()
     
     var width = UIScreen.main.bounds.width - 32
@@ -133,19 +135,27 @@ struct HomeSectionSwitches: View {
                     }
                 }
             } else if (sectionProgress.index == 1) {
-                ForEach(Array(categoryDataImages.enumerated()), id: \.offset) { index, category in
-                    HStack {
-                        UpComingMatchesView()
-                            .frame(width: width, height: 120)
-                            .clipShape(LiveMatchCard())
-                            .background(Blur(style: .systemChromeMaterialDark))
-                            .clipShape(LiveMatchCard())
-                            .cornerRadius(10, corners: .allCorners)
+                ScrollView(.vertical, showsIndicators: false){
+                    VStack{
+                        ForEach(upComingMatchesViewModel.upComingMatches, id: \.self) { upComingMatch in
+                            UpComingMatchesView(upComingMatchModel: upComingMatch)
+                                .frame(width: width, height: 120)
+                                .clipShape(LiveMatchCard())
+                                .background(Blur(style: .systemChromeMaterialDark))
+                                .clipShape(LiveMatchCard())
+                                .cornerRadius(10, corners: .allCorners)
+                        }
                     }
                 }
             } else if (sectionProgress.index == 2) {
-                VStack {
-                    FeaturedPlayersSectionView()
+                ScrollView(.vertical, showsIndicators: false){
+                    VStack{
+                        ForEach(featuredPlayersViewModel.featuredPlayers, id: \.self) { featuredPlayer in
+                            FeaturedPlayersSectionView(featuredPlayer: featuredPlayer)
+                                .background(Blur(style: .systemChromeMaterialDark))
+                                .cornerRadius(20, corners: .allCorners)
+                        }
+                    }
                 }
             } else if (sectionProgress.index == 3) {
                 CricketNews()
@@ -157,6 +167,8 @@ struct HomeSectionSwitches: View {
         .padding()
         .onAppear {
             recentMatchesViewModel.getRecentMatches()
+            upComingMatchesViewModel.geUpComingMatches()
+            featuredPlayersViewModel.getFeaturedPlayers()
         }
     }
 }

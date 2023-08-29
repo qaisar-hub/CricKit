@@ -17,8 +17,10 @@ public class FSCollectionManager {
             return subCollectionPath.value.path
         case .recentMatches(subCollectionPath: let subCollectionPath):
             return subCollectionPath.value.path
-        case .favouritePlayers:
-            return "favouritePlayers"
+        case .featuredPlayers:
+            return "featuredPlayers"
+        case .upComingMatches(subCollectionPath: let subCollectionPath):
+            return subCollectionPath.value.path
         }
     }
     
@@ -26,7 +28,8 @@ public class FSCollectionManager {
         case users
         case liveScore(subCollectionPath: liveScoreSubCollection)
         case recentMatches(subCollectionPath: recentMatchesSubCollection)
-        case favouritePlayers
+        case upComingMatches(subCollectionPath: upComingMatchesSubCollection)
+        case featuredPlayers
         
         enum liveScoreSubCollection {
             case teamStatus // returns liveScore -> teamStatus
@@ -56,6 +59,22 @@ public class FSCollectionManager {
                     return Path(path: "teamStatus")
                 case .none:
                     return Path(path: "recentMatches")
+                }
+            }
+        }
+        
+        enum upComingMatchesSubCollection {
+            case teamStatus
+            case none
+            struct Path {
+                let path: String
+            }
+            var value: Path {
+                switch self{
+                case .teamStatus:
+                    return Path(path: "teamStatus")
+                case .none:
+                    return Path(path: "upComingMatches")
                 }
             }
         }

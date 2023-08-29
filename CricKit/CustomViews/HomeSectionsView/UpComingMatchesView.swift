@@ -8,73 +8,77 @@
 import SwiftUI
 
 struct UpComingMatchesView: View {
-    let leftTeam = Team(name: "IND", flagImageName: "teamInd", runs: 280, wickets: 6, overs: 50)
-    let rightTeam = Team(name: "AUS", flagImageName: "teamAus", runs: 180, wickets: 5, overs: 40)
+    
+    var upComingMatchModel : UpComingMatchModel
     
     var body: some View {
         VStack {
             HStack {
-                Text("1st ODI Match, Bangalore")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
+                Text(upComingMatchModel.matchName)
+                    .font(.subheadline)
+                    .fontWeight(.bold)
                     .foregroundColor(Color.white)
                 Spacer()
             }
             
-            HStack{
-                Spacer()
-                TeamView(flagImageName: leftTeam.flagImageName, teamName: leftTeam.name)
-                Text("vs")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.appWhites)
-                TeamView(flagImageName: rightTeam.flagImageName, teamName: rightTeam.name)
-                
+            HStack {
+                ForEach(0..<upComingMatchModel.TeamStatus.count) { index in
+                    HStack {
+                        if (index == 0) {
+                            Spacer()
+                            TeamView(team: upComingMatchModel.TeamStatus[index])
+                            Text("vs")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.appWhites)
+                        } else {
+                            TeamView(team: upComingMatchModel.TeamStatus[index])
+                        }
+                    }
+                }
             }
-
-            DateAndVenueView()
-                .padding(.bottom, 5)
-            
-        }.padding()
-//            .cornerRadius(25, corners: .allCorners)
-//            .background(Blur(style: .systemChromeMaterialDark))
-//            .clipShape(LiveMatchCard())
+            DateAndVenueView(matchDetail: upComingMatchModel.matchDetails)
+        }
+        .padding()
     }
 }
 
-struct UpComingMatchesView_Previews: PreviewProvider {
-    static var previews: some View {
-        UpComingMatchesView()
-    }
-}
+
+//struct UpComingMatchesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UpComingMatchesView()
+//    }
+//}
 
 
 struct TeamView: View {
     
-    let flagImageName: String
-    let teamName: String
+    let team: UpComingMatchStats
     
     var body: some View{
         HStack {
-            Image(flagImageName)
+            Image(team.flag)
                 .resizable()
                 .frame(width: 35, height: 35)
-            Text(teamName)
-                    .font(.headline)
-                    .fontWeight(.medium)
-                    .foregroundStyle(Color.white)
+            Text(team.name)
+                .font(.headline)
+                .fontWeight(.medium)
+                .foregroundStyle(Color.white)
         }
     }
 }
 
 struct DateAndVenueView: View {
+    
+    var matchDetail : String
+    
     var body: some View {
         HStack {
-            Text("Thu, 31st Aug . 01.00 PM")
+            Text(matchDetail)
                 .font(.subheadline)
                 .fontWeight(.bold)
                 .foregroundStyle(Color.white)
-                //.background(Color.white.opacity())
+            //.background(Color.white.opacity())
                 .cornerRadius(5)
             Spacer()
         }

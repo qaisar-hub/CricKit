@@ -82,6 +82,10 @@
 		46AF6D522A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */; };
 		46AF6D542A9BFDB400A3EBBB /* CricketNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D532A9BFDB400A3EBBB /* CricketNews.swift */; };
 		46AF6D562A9C057000A3EBBB /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AF6D552A9C057000A3EBBB /* CustomBackButton.swift */; };
+		46CAEF032A9E1B5D009312CE /* FeaturedPlayersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CAEF022A9E1B5D009312CE /* FeaturedPlayersModel.swift */; };
+		46CAEF052A9E1B87009312CE /* UpComingMatchesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CAEF042A9E1B87009312CE /* UpComingMatchesModel.swift */; };
+		46CAEF072A9E1D0C009312CE /* FeaturedPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CAEF062A9E1D0C009312CE /* FeaturedPlayersViewModel.swift */; };
+		46CAEF092A9E1D3A009312CE /* UpComingMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CAEF082A9E1D3A009312CE /* UpComingMatchViewModel.swift */; };
 		46CC98E42A9D378F0004C8F1 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +181,10 @@
 		46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardShimmerView.swift; sourceTree = "<group>"; };
 		46AF6D532A9BFDB400A3EBBB /* CricketNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricketNews.swift; sourceTree = "<group>"; };
 		46AF6D552A9C057000A3EBBB /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
+		46CAEF022A9E1B5D009312CE /* FeaturedPlayersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayersModel.swift; sourceTree = "<group>"; };
+		46CAEF042A9E1B87009312CE /* UpComingMatchesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingMatchesModel.swift; sourceTree = "<group>"; };
+		46CAEF062A9E1D0C009312CE /* FeaturedPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayersViewModel.swift; sourceTree = "<group>"; };
+		46CAEF082A9E1D3A009312CE /* UpComingMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingMatchViewModel.swift; sourceTree = "<group>"; };
 		46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,6 +252,8 @@
 				20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */,
 				461BFE8A2A8EA062007AECB3 /* User.swift */,
 				2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */,
+				46CAEF022A9E1B5D009312CE /* FeaturedPlayersModel.swift */,
+				46CAEF042A9E1B87009312CE /* UpComingMatchesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -383,6 +393,8 @@
 				461BFE912A8EAD27007AECB3 /* AuthViewModel.swift */,
 				209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */,
 				2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */,
+				46CAEF062A9E1D0C009312CE /* FeaturedPlayersViewModel.swift */,
+				46CAEF082A9E1D3A009312CE /* UpComingMatchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -627,9 +639,12 @@
 				460FD2602A84E8B500029FD7 /* SignInView.swift in Sources */,
 				469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */,
 				460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */,
+				46CAEF092A9E1D3A009312CE /* UpComingMatchViewModel.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
+				46CAEF032A9E1B5D009312CE /* FeaturedPlayersModel.swift in Sources */,
 				46AF6D542A9BFDB400A3EBBB /* CricketNews.swift in Sources */,
 				20C067532A8CD36800102BCF /* HomeSectionsView.swift in Sources */,
+				46CAEF052A9E1B87009312CE /* UpComingMatchesModel.swift in Sources */,
 				209ADA742A964E09002B31D5 /* Alerts.swift in Sources */,
 				20C067512A8CD2FB00102BCF /* LiveScoreCardModel.swift in Sources */,
 				460FD26F2A84EB7400029FD7 /* test.swift in Sources */,
@@ -643,6 +658,7 @@
 				20C067552A8CD48C00102BCF /* SectionTitleView.swift in Sources */,
 				2094D8DD2A8A9C72002567FC /* sample.swift in Sources */,
 				20C067682A8CF94C00102BCF /* LiveScoreCardView.swift in Sources */,
+				46CAEF072A9E1D0C009312CE /* FeaturedPlayersViewModel.swift in Sources */,
 				469377032A8A64FF003E9AD8 /* RecentMatchView.swift in Sources */,
 				2096CFFA2A99E31C0093C131 /* RecentMatchesViewModel.swift in Sources */,
 				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
