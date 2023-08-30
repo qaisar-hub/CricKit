@@ -87,6 +87,7 @@
 		46CAEF072A9E1D0C009312CE /* FeaturedPlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CAEF062A9E1D0C009312CE /* FeaturedPlayersViewModel.swift */; };
 		46CAEF092A9E1D3A009312CE /* UpComingMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CAEF082A9E1D3A009312CE /* UpComingMatchViewModel.swift */; };
 		46CC98E42A9D378F0004C8F1 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */; };
+		46D255EF2A9F24E8008D5ACF /* EmbossedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255EE2A9F24E8008D5ACF /* EmbossedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +187,7 @@
 		46CAEF062A9E1D0C009312CE /* FeaturedPlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayersViewModel.swift; sourceTree = "<group>"; };
 		46CAEF082A9E1D3A009312CE /* UpComingMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingMatchViewModel.swift; sourceTree = "<group>"; };
 		46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
+		46D255EE2A9F24E8008D5ACF /* EmbossedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbossedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +335,7 @@
 				469376FD2A8A64A2003E9AD8 /* BlurView.swift */,
 				20C067542A8CD48C00102BCF /* SectionTitleView.swift */,
 				46AF6D532A9BFDB400A3EBBB /* CricketNews.swift */,
+				46D255EE2A9F24E8008D5ACF /* EmbossedButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				46CC98E42A9D378F0004C8F1 /* CustomBackground.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
 				465F2B0C2A99EBD30088A35A /* Utilities.swift in Sources */,
+				46D255EF2A9F24E8008D5ACF /* EmbossedButton.swift in Sources */,
 				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,
 				460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */,
 				465DC2722A9C95F400B171BE /* RankingDetailsView.swift in Sources */,

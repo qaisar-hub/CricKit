@@ -23,77 +23,44 @@ struct SignInView: View {
     
     
     var body: some View {
-        VStack {
+		VStack (spacing: 10) {
             Text("Please sign in to continue.")
                 .padding(.bottom, 16)
                 .fontWidth(.expanded)
                 .font(.system(size: 12))
-                .foregroundStyle(
-                    .linearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
-                )
-            customTextField(placeholderText: "Email ID", spacing: 0.0, textValue: $progress.emailId)
+				.foregroundColor(Color.appWhites)
+            customTextField(placeholderText: "Email ID", spacing: 0.0, textValue: $progress.emailId, isSecureField: false)
+				.frame(height: 40)
+				.background(Color.darkStart)
+				.cornerRadius(10, corners: .allCorners)
+				.padding(.leading, 15)
+				.padding(.trailing, 15)
+				.padding(.bottom, 15)
             
-            customTextField(placeholderText: "Password", spacing: 0.0, textValue: $progress.password)
+            customTextField(placeholderText: "Password", spacing: 0.0, textValue: $progress.password, isSecureField: true)
+				.frame(height: 40)
+				.background(Color.darkStart)
+				.cornerRadius(10, corners: .allCorners)
+				.padding(.leading, 15)
+				.padding(.trailing, 15)
+			
             
             
             Text("Forgot Password ?")
                 .padding()
                 .fontWidth(.expanded)
                 .font(.system(size: 12))
-                .foregroundStyle(
-                    .linearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
-                )
+				.foregroundColor(.appWhites)
             
             HStack {
-                Spacer()
-                Button {
-                    //alert = .defaulAlert(title: "Hello", message: "world")
-                    /// readyToNavigate = true
-                    /// To By Pass SignIn Page uncomment the above and comment the below lines
-                    isLoading = true
-                    withAnimation {
-                        isTapped.toggle()
-                    }
-                    Task {
-                        try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password)
-                        isLoading = false
-                        alert = authViewModel.checkUserStatus()
-                        
-                        if alert != nil {
-                            withAnimation {
-                                isTapped.toggle()
-                            }
-                        }
-                    }
-                } label: {
-                    HStack(spacing: 5) {
-                        if isTapped {
-                            Text(isLoading ? "Signing In" : "Sign In")
-                                .fontWeight(.medium)
-                                .padding(.leading, 10)
-                        }
-                        Image(systemName: "arrow.right")
-                            .font(.subheadline)
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(.blue)
-                            .background(Color.appBlacks)
-                            .clipShape(Circle())
-                        
-                        if !isTapped {
-                            Text(isLoading ? "Signing In" : "Sign In")
-                                .fontWeight(.medium)
-                                .padding(.trailing, 10)
-                        }
-                        
-                    }
-                    .padding(2)
-                    .background(.white)
-                    .clipShape(Capsule())
-                    .padding(.trailing, 10)
-
-                }
+				EmbossedButton(systemName: "arrow.right") {
+					Task {
+						try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password)
+						isLoading = false
+						alert = authViewModel.checkUserStatus()
+					}
+				}.padding()
             }
-            .padding()
             
             HStack(spacing: 8) {
                 Rectangle()
@@ -108,29 +75,45 @@ struct SignInView: View {
                     .frame(height: 1)
                     .foregroundColor(.gray)
             }
-            .padding(.horizontal)
-            
-            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)) {
-                    isLoading = true
-                    Task {
-                        do {
-                            try await authViewModel.signInGoogle()
-                        } catch {
-                            print(error)
-                        }
-                        isLoading = false
-                    }
-                }
-            .padding(.horizontal)
-                SignInWithAppleButton { request in
-                    
-                } onCompletion: { result in
-                    
-                }
-                .signInWithAppleButtonStyle(.white)
-                .frame(height: 44)
-                .padding()
-            
+            .padding()
+			
+			HStack (spacing: 20) {
+				GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .icon, state: .normal)) {
+						isLoading = true
+						Task {
+							do {
+								try await authViewModel.signInGoogle()
+							} catch {
+								print(error)
+							}
+							isLoading = false
+						}
+					}
+				.clipShape(Circle())
+				
+				Button(action: {}) {
+						Image(systemName: "apple.logo")
+							.padding()
+							.background(Color.white)
+							.foregroundColor(Color.black)
+							.clipShape(Circle())
+							.shadow(radius: 8)
+				}
+				.frame(width: 42, height: 42)
+				.clipShape(Circle())
+				
+				Button(action: {}) {
+						Image(systemName: "f.cursive")
+							.padding()
+							.background(Color.blue)
+							.foregroundColor(Color.white)
+							.clipShape(Circle())
+							.shadow(radius: 8)
+				}
+				.frame(width: 42, height: 42)
+				.clipShape(Circle())
+
+            }
             
         }
         .alert(item: $alert) { value in

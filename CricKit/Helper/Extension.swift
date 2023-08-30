@@ -23,5 +23,5 @@ extension Color {
     static let appPrimary = Color(#colorLiteral(red: 0.2056267262, green: 0.5325312614, blue: 0.7769566178, alpha: 1))
     static let appBlacks = Color(#colorLiteral(red: 0.03084787726, green: 0.0898687616, blue: 0.1246017292, alpha: 1))
     static let appWhites = Color(red: 0.902, green: 0.906, blue: 0.91) // #e6e7e8
-    static let linearColor = LinearGradient(colors: [Color.appPrimary, Color.appPrimary, Color.appPrimary.opacity(0.9)], startPoint: .bottomLeading, endPoint: .topTrailing)
+	static let linearColor = LinearGradient(colors: [Color.appPrimary,Color.appBlacks], startPoint: .topLeading, endPoint: .bottomTrailing)
 }

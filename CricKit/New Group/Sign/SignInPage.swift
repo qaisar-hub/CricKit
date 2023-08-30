@@ -23,7 +23,7 @@ struct SignInPage: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                CustomBackgroundView()
+				LinearGradient(Color.darkStart, Color.darkEnd)
                     .ignoresSafeArea()
                 
                 HStack {
@@ -40,7 +40,7 @@ struct SignInPage: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(signInColor)
-                        .shadow(color: signInColor, radius: isSignInShown ? 10: 0)
+						.shadow(color: Color.black, radius: isSignInShown ? 8: 0)
                         
                         RotationButton(label: "SIGN UP", action: {
                             isSignInShown = false
@@ -53,7 +53,7 @@ struct SignInPage: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(signUpColor)
-                        .shadow(color: signUpColor, radius: isSignInShown ? 0: 10)
+						.shadow(color: Color.black, radius: isSignInShown ? 0: 8)
                         Spacer()
                     }
                     VStack{
@@ -64,9 +64,7 @@ struct SignInPage: View {
                                 .fontWidth(.expanded)
                                 .font(.system(size: 25))
                                 .fontWeight(.bold)
-                                .foregroundStyle(
-                                    .linearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
-                                )
+								.foregroundColor(.appWhites)
                                 .offset(y: -12)
                             
                             SignInView(readyToNavigate: $readyToNavigate, isLoading: $isLoading)
@@ -75,17 +73,14 @@ struct SignInPage: View {
                                 .fontWidth(.expanded)
                                 .font(.system(size: 25))
                                 .fontWeight(.bold)
-                                .foregroundStyle(
-                                    .linearGradient(colors: [Color.appSecondary, Color.appPrimary, Color.appSecondary], startPoint: .topLeading, endPoint: .bottomTrailing)
-                                )
+								.foregroundColor(.appWhites)
                                 .offset(y: -12)
                         
                             SignUpView(isLoading: $isLoading)
                         }
                         Spacer()
-                    }.background(CustomBackgroundView())
-                    .cornerRadius(20, corners: .allCorners)
-                    .shadow(color: Color.appBlacks, radius: 20)
+                    }.background(LinearGradient(Color.darkStart, Color.darkEnd))
+						.shadow(color: Color.black.opacity(0.8), radius: 20)
                     .ignoresSafeArea()
                 }
                 if isLoading {
