@@ -38,24 +38,27 @@ struct SwipeCard: View {
 }
 
 struct CustomCardView: View {
+    @EnvironmentObject private var appSettings: AppSettings
     var body: some View {
         VStack {
             Text("Coming Soon...")
                 .modifier(Shimmer())
                 .font(.title)
-                .foregroundColor(.white)
+                .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark: .light))
                 .padding()
         }
         .frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.width * 0.5)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.appPrimary, Color.appBlacks]), startPoint: .topLeading, endPoint: .bottomTrailing))
+        //.background(LinearGradient(gradient: Gradient(colors: [Color.appPrimary, Color.appBlacks]), startPoint: .topLeading, endPoint: .bottomTrailing))
+        .background(appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor)
         .cornerRadius(10)
         .rotation3DEffect(.degrees(10), axis: (x: 0, y: 5, z: 0))
-        .shadow(color: Color.appBlacks, radius: 10)
+        .shadow(color: appSettings.isDarkMode ? Color.appBlacks : Color.appSecondary, radius: 10)
     }
 }
 
 struct SwipeCard_Previews: PreviewProvider {
     static var previews: some View {
         SwipeCard()
+            .environmentObject(AppSettings())
     }
 }

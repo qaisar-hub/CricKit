@@ -33,11 +33,11 @@
 		20C067632A8CEAE900102BCF /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067612A8CEAE600102BCF /* Provider.swift */; };
 		20C067642A8CF13600102BCF /* WidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */; };
 		20C067652A8CF39500102BCF /* WidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */; };
-		20C067672A8CF72700102BCF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* Extension.swift */; };
+		20C067672A8CF72700102BCF /* ColorHelper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */; };
 		20C067682A8CF94C00102BCF /* LiveScoreCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */; };
 		20C067692A8CF9B200102BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */; };
-		460FD2022A841E4100029FD7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* Extension.swift */; };
+		460FD2022A841E4100029FD7 /* ColorHelper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */; };
 		460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */; };
 		460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2062A841FCC00029FD7 /* PlayerHeaderView.swift */; };
 		460FD2092A84203C00029FD7 /* PlayerStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2082A84203C00029FD7 /* PlayerStatsView.swift */; };
@@ -89,6 +89,7 @@
 		46CC98E42A9D378F0004C8F1 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */; };
 		46D255EF2A9F24E8008D5ACF /* EmbossedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255EE2A9F24E8008D5ACF /* EmbossedButton.swift */; };
 		46D255F12A9F781F008D5ACF /* SignInPageErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F02A9F781F008D5ACF /* SignInPageErrorMessageView.swift */; };
+		46D255F62A9FB907008D5ACF /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F52A9FB907008D5ACF /* AppSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +143,7 @@
 		20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMedium.swift; sourceTree = "<group>"; };
 		20C067612A8CEAE600102BCF /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileView.swift; sourceTree = "<group>"; };
-		460FD2002A841E4100029FD7 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorHelper+Extension.swift"; sourceTree = "<group>"; };
 		460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBackgroundView.swift; sourceTree = "<group>"; };
 		460FD2062A841FCC00029FD7 /* PlayerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHeaderView.swift; sourceTree = "<group>"; };
 		460FD2082A84203C00029FD7 /* PlayerStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsView.swift; sourceTree = "<group>"; };
@@ -161,7 +162,7 @@
 		460FD26C2A84EA8400029FD7 /* HomeSectionObservables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionObservables.swift; sourceTree = "<group>"; };
 		460FD26E2A84EB7400029FD7 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		461BFE8A2A8EA062007AECB3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		461BFE8E2A8EABF6007AECB3 /* UserProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePage.swift; sourceTree = "<group>"; };
+		461BFE8E2A8EABF6007AECB3 /* UserProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePage.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		461BFE912A8EAD27007AECB3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		461BFE952A8ECA87007AECB3 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		461BFE972A8ECC80007AECB3 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
@@ -190,6 +191,7 @@
 		46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
 		46D255EE2A9F24E8008D5ACF /* EmbossedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbossedButton.swift; sourceTree = "<group>"; };
 		46D255F02A9F781F008D5ACF /* SignInPageErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageErrorMessageView.swift; sourceTree = "<group>"; };
+		46D255F52A9FB907008D5ACF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +308,7 @@
 			children = (
 				46AF6D4D2A9B823100A3EBBB /* SwipeCard.swift */,
 				461BFEA42A8FAB5D007AECB3 /* LoadingIndicator.swift */,
-				460FD2002A841E4100029FD7 /* Extension.swift */,
+				460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */,
 				460FD20A2A84210100029FD7 /* RoundedRectangleView.swift */,
 				460FD2662A84EA0700029FD7 /* TextFieldValidator.swift */,
 				460FD26A2A84EA4F00029FD7 /* CustomViewModifiers.swift */,
@@ -324,6 +326,7 @@
 		460FD24C2A84E72500029FD7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				460FD2032A841E7800029FD7 /* PlayerProfile */,
 				465DC2702A9C95D900B171BE /* Ranking */,
 				209EA1552A8E4CB000036CAD /* UpcomingMatchesView */,
 				469377072A8A6548003E9AD8 /* LiveScoreCardView */,
@@ -356,6 +359,7 @@
 				461BFE8E2A8EABF6007AECB3 /* UserProfilePage.swift */,
 				461BFE952A8ECA87007AECB3 /* SettingsRowView.swift */,
 				461BFE972A8ECC80007AECB3 /* ProfileCard.swift */,
+				46D255F52A9FB907008D5ACF /* AppSettings.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -431,11 +435,9 @@
 				209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */,
 				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
 				20C0674F2A8CD2C400102BCF /* Model */,
+				46D255F42A9FB8AA008D5ACF /* Views */,
 				461BFE902A8EAD02007AECB3 /* ViewModel */,
-				460FD2702A85066B00029FD7 /* Pages */,
-				460FD24C2A84E72500029FD7 /* CustomViews */,
 				460FD20C2A8422B700029FD7 /* Helper */,
-				460FD2032A841E7800029FD7 /* PlayerProfile */,
 				463928122A7EC0B3002C2767 /* Assets.xcassets */,
 				463928142A7EC0B3002C2767 /* Preview Content */,
 				2094D8DC2A8A9C72002567FC /* sample.swift */,
@@ -484,6 +486,15 @@
 				46AF6D512A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift */,
 			);
 			path = LiveScoreCardView;
+			sourceTree = "<group>";
+		};
+		46D255F42A9FB8AA008D5ACF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				460FD2702A85066B00029FD7 /* Pages */,
+				460FD24C2A84E72500029FD7 /* CustomViews */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -607,7 +618,7 @@
 				20C067642A8CF13600102BCF /* WidgetSmall.swift in Sources */,
 				20C067652A8CF39500102BCF /* WidgetMedium.swift in Sources */,
 				20C0673F2A8CCA7F00102BCF /* CrickitWidgetLiveActivity.swift in Sources */,
-				20C067672A8CF72700102BCF /* Extension.swift in Sources */,
+				20C067672A8CF72700102BCF /* ColorHelper+Extension.swift in Sources */,
 				20C067632A8CEAE900102BCF /* Provider.swift in Sources */,
 				20C067572A8CDA5B00102BCF /* LiveScoreCardModel.swift in Sources */,
 				20C0673D2A8CCA7F00102BCF /* CrickitWidgetBundle.swift in Sources */,
@@ -630,6 +641,7 @@
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
 				46D255F12A9F781F008D5ACF /* SignInPageErrorMessageView.swift in Sources */,
+				46D255F62A9FB907008D5ACF /* AppSettings.swift in Sources */,
 				461BFE8B2A8EA062007AECB3 /* User.swift in Sources */,
 				46CC98E42A9D378F0004C8F1 /* CustomBackground.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
@@ -661,7 +673,7 @@
 				465DC2742A9C960B00B171BE /* ICCRankingView.swift in Sources */,
 				465DC2762A9C962000B171BE /* RankingCardView.swift in Sources */,
 				460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */,
-				460FD2022A841E4100029FD7 /* Extension.swift in Sources */,
+				460FD2022A841E4100029FD7 /* ColorHelper+Extension.swift in Sources */,
 				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,
 				20C067552A8CD48C00102BCF /* SectionTitleView.swift in Sources */,
 				2094D8DD2A8A9C72002567FC /* sample.swift in Sources */,

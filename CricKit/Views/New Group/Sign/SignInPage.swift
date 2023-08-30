@@ -13,6 +13,7 @@ struct SignInPage: View {
     @State var readyToNavigate = false
     @StateObject var progress = TextFieldObserver()
     @State var isLoading: Bool = false
+    @EnvironmentObject private var appSettings: AppSettings
     
     
     @State private var signInColor = Color.appPrimary

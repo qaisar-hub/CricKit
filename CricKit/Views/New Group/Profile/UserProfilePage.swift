@@ -13,16 +13,23 @@ struct UserProfilePage: View {
     @State private var isSignOut = false
     @State private var confirmDeletion = false
     @State var isLoading: Bool = false
+    @EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         Form {
             Section(header: SectionHeaderView(title: "Profile Information")) {
                 ProfileCard(initials: authViewModel.currentUser?.initials ?? "", fullName: authViewModel.currentUser?.fullName ?? "", emailID: authViewModel.currentUser?.email ?? "")
-            }.listRowBackground(Blur(style: .systemChromeMaterialDark))
+            }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "App Settings")) {
                 SettingsRowView(iconName: "gear", title: "Version", subtitle: "1.0.0", tintColor: .gray)
-            }.listRowBackground(Blur(style: .systemChromeMaterialDark))
+                Toggle(isOn: $appSettings.isDarkMode) {
+                      Text("Dark Mode")
+                        .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+                    }
+                    .toggleStyle(SwitchToggleStyle(tint: Color.red))
+
+            }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "Account Actions")) {
                 // Sign out button
@@ -58,7 +65,7 @@ struct UserProfilePage: View {
                     }
                 }
                 
-            }.listRowBackground(Blur(style: .systemChromeMaterialDark))
+            }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
         }
         .padding(EdgeInsets(top: -20, leading: 0, bottom: 0, trailing: 0))
@@ -68,11 +75,12 @@ struct UserProfilePage: View {
 
 struct SectionHeaderView: View {
     let title: String
+    @EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         Text(title)
             .font(.headline)
-            .foregroundColor(Color.appWhites)
+            .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
             .padding(EdgeInsets(top: 8, leading: -15, bottom: 8, trailing: 15))
     }
 }

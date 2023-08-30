@@ -6,29 +6,83 @@
 //
 
 import SwiftUI
+import Shimmer
 
-import SwiftUI
-
-struct LoadingIndicator: View {
+struct LoadingIndicator1: View {
+    @State var isAnimated: Bool = false
     var body: some View {
-        VStack {
-            ProgressView {
-                Text("LOADING")
-                    .foregroundColor(Color(.systemGray3))
-                    .font(.footnote)
-            }.tint(Color(.systemGray3))
+        ZStack{
+            ZStack{
+                Circle()
+                    .stroke(Color(.systemGray5), lineWidth: 14)
+                    .frame(width: 50, height: 50)
+                
+                Circle()
+                    .trim(from: 0, to: 0.2)
+                    .stroke(Color.red, lineWidth: 7)
+                    .frame(width: 50, height: 50)
+                    .rotationEffect(Angle(degrees: isAnimated ? 360 : 0))
+                    .animation(Animation.linear(duration: 0.7).repeatForever(autoreverses: false), value: isAnimated
+                    )
+            }
             .padding()
-            .background(Blur(style: .systemChromeMaterialDark))
-            .cornerRadius(10)
-            .shadow(radius: 5)
-            
+            //.background(Blur(style: .systemChromeMaterialDark))
+            .cornerRadius(50)
+            .shadow(radius: 10)
         }
-        .padding()
-        //.background(Blur(style: .systemChromeMaterial))
-        .cornerRadius(10)
-        .shadow(radius: 5)
+        .edgesIgnoringSafeArea(.all)
+        .onAppear{
+            DispatchQueue.main.async {
+                isAnimated = true
+            }
+        }
+        .onDisappear{
+            DispatchQueue.main.async {
+                isAnimated = false
+            }
+        }
     }
 }
+
+struct LoadingIndicator: View {
+    
+    @State var  isAnimating: Bool = false
+    
+    var body: some View {
+        ZStack{
+            VStack {
+                Circle()
+                    .trim(from: 0.0, to: 0.8)
+                    .stroke(Color.red, style: .init(lineWidth: 5, lineCap: .round))
+                    .rotationEffect(.degrees( isAnimating ? 360 : 0))
+                    .animation( isAnimating ? .linear(duration: 0.5).repeatForever(autoreverses: false) :.default, value:  isAnimating)
+                    .frame(width: 30, height: 30, alignment: .center)
+                Text("LOADING")
+                    .foregroundColor(Color(.white))
+                    .font(.footnote)
+                    .shimmering()
+            }
+        }
+        .padding()
+        .background(Blur(style: .systemChromeMaterialDark))
+        .cornerRadius(10)
+        .shadow(radius: 10)
+        .edgesIgnoringSafeArea(.all)
+        
+        .onAppear{
+            DispatchQueue.main.async {
+                 isAnimating = true
+            }
+        }
+        .onDisappear{
+            DispatchQueue.main.async {
+                 isAnimating = false
+            }
+            
+        }
+    }
+}
+
 
 struct LoadingIndicator_Previews: PreviewProvider {
     static var previews: some View {

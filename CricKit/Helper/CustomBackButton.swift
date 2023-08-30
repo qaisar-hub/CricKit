@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomBackButton: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+    @EnvironmentObject private var appSettings: AppSettings
     var body: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
@@ -18,7 +18,7 @@ struct CustomBackButton: View {
                 .font(.footnote)
                 .padding(.vertical, 8)
                 .padding(.horizontal, 12)
-                .background(Color.linearColor)
+                .background(appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor)
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .shadow(color: Color.black, radius: 5)

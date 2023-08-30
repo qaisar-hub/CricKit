@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlayerHeaderView: View {
+    @EnvironmentObject private var appSettings: AppSettings
     let teamName: String
     
     var body: some View {
@@ -20,7 +21,7 @@ struct PlayerHeaderView: View {
                 .fontWidth(.expanded)
                 .font(.system(size: 30))
                 .fontWeight(.bold)
-                .foregroundStyle(Color.linearColor)
+                .foregroundStyle(appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor)
         }
         .padding(.horizontal, 20)
     }

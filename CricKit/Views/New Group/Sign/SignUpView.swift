@@ -82,6 +82,7 @@ struct SignUpView: View {
             
             HStack {
                 EmbossedButton(systemName: "arrow.right") {
+                    isLoading = true
                     if progress.isValidAllFields() {
                         Task {
                             try await authViewModel.createUser(withEmail: progress.emailId
@@ -90,6 +91,7 @@ struct SignUpView: View {
                             alert = authViewModel.checkUserStatus()
                         }
                     } else {
+                        isLoading = false
                         showingFieldAlert = true
                     }
                 }

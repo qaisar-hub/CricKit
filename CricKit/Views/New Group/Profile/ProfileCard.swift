@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileCard: View {
     @State private var showImagePicker: Bool = false
     @State private var selectedImage: UIImage? = nil
+    @EnvironmentObject var appSettings: AppSettings
     
     var initials: String
     var fullName: String
@@ -26,7 +27,7 @@ struct ProfileCard: View {
                     .overlay(
                         Image(systemName: "camera")
                             .font(.headline)
-                            .foregroundColor(Color.appPrimary)
+                            .foregroundColor(ColorManager.appPrimaryColor())
                             .offset(x: 25, y: 25)
                             .onTapGesture {
                                 showImagePicker.toggle()
@@ -43,7 +44,7 @@ struct ProfileCard: View {
                     .overlay(
                         Image(systemName: "camera")
                             .font(.headline)
-                            .foregroundColor(Color.appPrimary)
+                            .foregroundColor(ColorManager.appPrimaryColor())
                             .offset(x: 25, y: 25)
                             .onTapGesture {
                                 showImagePicker.toggle()
@@ -54,9 +55,9 @@ struct ProfileCard: View {
             VStack(alignment: .leading) {
                 Text(fullName)
                     .font(.title)
-                    .foregroundColor(Color.appWhites)
+                    .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                 Text(emailID)
-                    .foregroundColor(Color.blue)
+                    .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
             }
         }
         .sheet(isPresented: $showImagePicker) {
@@ -68,6 +69,7 @@ struct ProfileCard: View {
 struct ProfileCard_Previews: PreviewProvider {
     static var previews: some View {
         ProfileCard(initials: "VK", fullName: "Virat Kohli", emailID: "virat_k@gmail.com")
+            .environmentObject(AppSettings())
     }
 }
 

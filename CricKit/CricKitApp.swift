@@ -11,6 +11,7 @@ import Firebase
 @main
 struct CricKitApp: App {
     @StateObject var authViewModel = AuthViewModel()
+    @StateObject private var appSettings = AppSettings()
     
     init() {
         FirebaseApp.configure()
@@ -20,6 +21,7 @@ struct CricKitApp: App {
         WindowGroup {
             LaunchAnimationView()
                 .environmentObject(authViewModel)
+                .environmentObject(appSettings)
         }
     }
 }
@@ -109,6 +111,7 @@ struct TypingText: View {
 
 struct ContentView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject private var appSettings: AppSettings
     var body: some View {
         if authViewModel.userSession != nil {
             HomePage()

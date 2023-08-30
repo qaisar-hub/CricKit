@@ -56,6 +56,7 @@ struct SignInView: View {
             
             HStack {
 				EmbossedButton(systemName: "arrow.right") {
+                    isLoading = true
 					Task {
 						try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password)
 						isLoading = false

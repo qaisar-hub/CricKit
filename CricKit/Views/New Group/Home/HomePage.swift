@@ -11,12 +11,20 @@ struct HomePage: View {
     @State var selectedIndex = 0
     
     @ObservedObject var liveScoreCardViewModel = LiveScoreCardViewModel()
+    @EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.appBlacks
-                    .clipShape(BackgroundCard())
+                
+                if appSettings.isDarkMode {
+                    Color.appBlacks
+                        .clipShape(BackgroundCard())
+                } else {
+                    Color.appWhites
+                        .clipShape(BackgroundCard())
+                }
+                
                 VStack(spacing: 0) {
                     HStack {
                         Text("CricKit")
@@ -24,7 +32,7 @@ struct HomePage: View {
                             .fontWidth(.expanded)
                             .font(.system(size: 30))
                             .fontWeight(.bold)
-                            .foregroundStyle(Color.appPrimary)
+                            .foregroundStyle(ColorManager.appPrimaryColor())
                         Spacer()
                     }
                     
@@ -47,7 +55,7 @@ struct HomePage: View {
                     }
                     Spacer()
                 }
-            }.background(Color.linearColor)
+            }.background(appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor)
                 .navigationBarBackButtonHidden(true)
         }
     }
@@ -59,6 +67,7 @@ struct HomePage: View {
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
         HomePage()
+            .environmentObject(AppSettings())
     }
 }
 
