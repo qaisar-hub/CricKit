@@ -8,9 +8,11 @@
 import Foundation
 
 struct FeaturedPlayersModel: Identifiable, Hashable {
-    static func == (lhs: FeaturedPlayersModel, rhs: FeaturedPlayersModel) -> Bool {
-        return lhs.id == rhs.id
-    }
-    var id = UUID()
-    var name: String
+	static func == (lhs: FeaturedPlayersModel, rhs: FeaturedPlayersModel) -> Bool {
+		return lhs.id == rhs.id
+	}
+	var id = UUID()
+	var name: String
+	var flag: String
+	var country: String
 }

@@ -20,7 +20,9 @@ struct SignInView: View {
     @State private var isTapped = false
     @State private var showingAlert = false
     @State private var alert: AlertTypes? = nil
-    
+
+    @State private var isEmailValid = false
+    @State private var isPasswordValid = false
     
     var body: some View {
 		VStack (spacing: 10) {
@@ -29,7 +31,7 @@ struct SignInView: View {
                 .fontWidth(.expanded)
                 .font(.system(size: 12))
 				.foregroundColor(Color.appWhites)
-            customTextField(placeholderText: "Email ID", spacing: 0.0, textValue: $progress.emailId, isSecureField: false)
+            customTextField(placeholderText: "Email ID", spacing: 0.0, textValue: $progress.emailId)
 				.frame(height: 40)
 				.background(Color.darkStart)
 				.cornerRadius(10, corners: .allCorners)

@@ -19,7 +19,9 @@ class FeaturedPlayersViewModel : ObservableObject {
                 self.featuredPlayers.removeAll()
                 for doc in snapshot.documents{
                     let playerName = doc["name"] as? String ?? ""
-                    let featuredPlayer = FeaturedPlayersModel(name: playerName)
+					let country = doc["country"] as? String ?? ""
+					let flag = doc["flag"] as? String ?? ""
+                    let featuredPlayer = FeaturedPlayersModel(name: playerName, flag: flag, country: country)
                     self.featuredPlayers.append(featuredPlayer)
                     print("<<< featuredPlayers \(self.featuredPlayers)")
                 }

@@ -94,8 +94,8 @@ struct HomeBoard: View {
             }
             HomeSections(sectionProgress: sectionProgress)
                 .frame(width: width)
-                .padding(.top, 20)
-                .padding(.bottom, -10)
+                .padding(.top, 5)
+                .padding(.bottom, 5)
             ScrollView(showsIndicators: false) {
                 VStack(spacing: -20) {
                     HomeSectionSwitches(sectionProgress: sectionProgress)
@@ -150,9 +150,10 @@ struct HomeSectionSwitches: View {
             } else if (sectionProgress.index == 2) {
                 ScrollView(.vertical, showsIndicators: false){
                     VStack{
-                        ForEach(featuredPlayersViewModel.featuredPlayers, id: \.self) { featuredPlayer in
-                            FeaturedPlayersSectionView(featuredPlayer: featuredPlayer)
+						ForEach(Array(featuredPlayersViewModel.featuredPlayers.enumerated()), id: \.element.id) { index, featuredPlayer in
+							FeaturedPlayersSectionView(featuredPlayer: featuredPlayer, playerImage: categoryDataImages[index])
                                 .background(Blur(style: .systemChromeMaterialDark))
+								.clipShape(LiveMatchCard())
                                 .cornerRadius(20, corners: .allCorners)
                         }
                     }

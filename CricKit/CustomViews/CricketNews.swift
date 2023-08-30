@@ -74,14 +74,14 @@ struct NewsCard: View {
                     .font(.subheadline)
                     .foregroundColor(Color.white)
                     .padding(.bottom, 5)
-                NavigationLink(destination: WebView(urlString: news.url)) { 
-                    HStack {
-                        Text("Read More")
-                            .font(.caption)
-                            .foregroundColor(.blue)
-                        Spacer()
-                    }
-                }
+//                NavigationLink(destination: WebView(urlString: news.url)) { 
+//                    HStack {
+//                        Text("Read More")
+//                            .font(.caption)
+//                            .foregroundColor(.blue)
+//                        Spacer()
+//                    }
+                //}
             }
             Spacer()
         }

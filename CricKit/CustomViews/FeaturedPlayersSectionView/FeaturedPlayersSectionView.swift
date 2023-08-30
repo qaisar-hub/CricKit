@@ -8,26 +8,37 @@
 import SwiftUI
 
 struct FeaturedPlayersSectionView: View {
-    
-    var categoryDataImages: [String] = ["playerVirat", "playerJoeRoot", "playerBabar", "playerSteveSmith", "playerKaneWill"]
-    
-    var categoryDataPlayerName: [String] = ["Virat Kohli [Player desc for 2/3 lines]", "Joe Root [Player desc for 2/3 lines]", "Babar Azam [Player desc for 2/3 lines]", "Steve Smith [Player desc for 2/3 lines]", "Kane Williamson [Player desc for 2/3 lines]"]
-    
+        
     var featuredPlayer : FeaturedPlayersModel
+	var playerImage : String
     
     var body: some View {
         HStack {
             VStack {
-                //                        Image(imageName)
-                //                            .resizable()
-                //                            .aspectRatio(contentMode: .fill)
-                //                            .frame(width: 40, height: 40)
-                //                            .clipShape(Circle())
+				Image(playerImage)
+					.resizable()
+					.aspectRatio(contentMode: .fill)
+					.frame(width: 40, height: 40)
+					.clipShape(Circle())
             }
             .padding(.all, 8)
             Text(featuredPlayer.name)
                 .foregroundColor(Color.white)
-            Spacer()
+			Spacer()
+			Text(featuredPlayer.country)
+				.foregroundColor(Color.white)
+				.offset(y: -10)
+			Image(featuredPlayer.flag)
+				.resizable()
+				.aspectRatio(contentMode: .fill)
+				.frame(width: 30, height: 30)
+				.offset(y: -10)
+			Image("batsman")
+				.resizable()
+				.aspectRatio(contentMode: .fill)
+				.frame(width: 30, height: 30)
+				.clipShape(Circle())
+				.offset(y: -10)
         }
     }
 }

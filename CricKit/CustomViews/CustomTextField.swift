@@ -11,12 +11,12 @@ struct customTextField: View {
 	var placeholderText: String
 	var spacing: CGFloat
 	@Binding var textValue: String
-    var isSecureField: Bool
+    var isSecureField: Bool = false
 	
 	var body: some View {
 		VStack(spacing: 0) {
             if isSecureField {
-                SecureTextFieldWithToggle(textValue: textValue, placeholderText: placeholderText)
+                SecureTextFieldWithToggle(textValue: $textValue, placeholderText: placeholderText)
             } else {
                 TextField("", text: self.$textValue)
                     .padding(4)
@@ -31,9 +31,10 @@ struct customTextField: View {
 }
 
 struct SecureTextFieldWithToggle: View {
-    @State var textValue: String
+    @Binding var textValue: String
     var placeholderText: String
     @State private var isSecure: Bool = true
+    @StateObject var progress = TextFieldObserver()
     
     var body: some View {
             HStack {

@@ -9,19 +9,39 @@ import SwiftUI
 
 struct MatchFormatCardView: View {
     var name: String
+	var width = UIScreen.main.bounds.width - 32
     
     var body: some View {
         VStack {
-            Text(name)
-                .font(.title)
-                .foregroundColor(.white)
-                .padding()
+			HStack{
+				Text(name)
+					.font(.headline)
+					.foregroundColor(.white)
+					.padding()
+				
+				Text("Current Rankings")
+					.font(.caption2)
+					.font(.system(size: 14))
+					.foregroundColor(.white)
+					.padding()
+				
+				Image("teamInd")
+					.resizable()
+					.aspectRatio(contentMode: .fill)
+					.frame(width: 25, height: 25)
+				
+				Text("is at #1")
+					.font(.caption2)
+					.font(.system(size: 8))
+					.foregroundColor(.white)
+					.padding()
+			}
+            
         }
-        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.width * 0.25)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.appPrimary, Color.appBlacks]), startPoint: .topLeading, endPoint: .bottomTrailing))
-        .cornerRadius(10)
-        .rotation3DEffect(.degrees(10), axis: (x: 1, y: 0, z: 0))
-        .shadow(color: Color.appBlacks, radius: 10)
+		.frame(width: width, height: 40)
+		.background(Blur(style: .systemChromeMaterialDark))
+		.clipShape(Capsule())
+		.cornerRadius(10, corners: .allCorners)
     }
 }
 
@@ -30,14 +50,13 @@ struct RankingCardView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
-                    ForEach(["Test", "ODI", "T20", "IPL"], id: \.self) { name in
+                    ForEach(["TEST", "ODI", "T20I"], id: \.self) { name in
                         NavigationLink(destination: RankingDetailsView(selectedTab: .batsman)) {
                             MatchFormatCardView(name: name)
                         }
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width)
-                .padding()
             }
         }
     }

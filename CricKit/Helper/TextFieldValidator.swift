@@ -9,48 +9,34 @@ import Foundation
 import SwiftUI
 
 class TextFieldObserver: ObservableObject {
-    @Published var readyToNavigate = false
-    @Published var sheetTextValue = ""
-    @Published var checkDigitTextValue = ""
-    @Published var canShowError = true
-    @Published var upcTextValue = ""
     @Published var emailId = ""
     @Published var password = ""
     @Published var confirmPassword = ""
     @Published var fullName = ""
-    @Published var quantityTextValue = ""
-    @Published var retailTextValue = ""
-    @Published var departmentTextValue = ""
     
-    func retailFieldEmpty() -> Bool {
-        return !retailTextValue.isEmpty
+    func isValidFullName() -> Bool {
+        return !fullName.isEmpty
     }
     
-    func departmentFieldEmpty() -> Bool {
-        return !departmentTextValue.isEmpty
+    func isValidEmail() -> Bool {
+        let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: emailId)
     }
     
-    func sheetFieldEmpty() -> Bool {
-        return !sheetTextValue.isEmpty
+    func isValidPassword() -> Bool {
+        return password.count >= 6
     }
     
-    func quantityFieldEmpty() -> Bool {
-        return !quantityTextValue.isEmpty
+    func doPasswordsMatch() -> Bool {
+        return password == confirmPassword
     }
     
-    func upcFieldEmpty() -> Bool {
-        return !upcTextValue.isEmpty
-    }
-    
-    func checkDigitFieldEmpty() -> Bool {
-        return !checkDigitTextValue.isEmpty
-    }
-    
-    func canShowErrorFlag() -> Bool {
-        return canShowError
-    }
-    
-    func fieldsEmpty() -> Bool {
-        return !sheetTextValue.isEmpty && !checkDigitTextValue.isEmpty
+    func isValidAllFields() -> Bool {
+            let isFullNameValid = isValidFullName()
+            let isEmailValid = isValidEmail()
+            let isPasswordValid = isValidPassword()
+            let doPasswordsMatch = doPasswordsMatch()
+
+            return isFullNameValid && isEmailValid && isPasswordValid && doPasswordsMatch
     }
 }
