@@ -90,6 +90,7 @@
 		46D255EF2A9F24E8008D5ACF /* EmbossedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255EE2A9F24E8008D5ACF /* EmbossedButton.swift */; };
 		46D255F12A9F781F008D5ACF /* SignInPageErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F02A9F781F008D5ACF /* SignInPageErrorMessageView.swift */; };
 		46D255F62A9FB907008D5ACF /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F52A9FB907008D5ACF /* AppSettings.swift */; };
+		46D255F82A9FF0D0008D5ACF /* RecentMatchShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +193,7 @@
 		46D255EE2A9F24E8008D5ACF /* EmbossedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbossedButton.swift; sourceTree = "<group>"; };
 		46D255F02A9F781F008D5ACF /* SignInPageErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageErrorMessageView.swift; sourceTree = "<group>"; };
 		46D255F52A9FB907008D5ACF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchShimmerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				469377022A8A64FF003E9AD8 /* RecentMatchView.swift */,
+				46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */,
 			);
 			path = RecentMatchView;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				460FD26D2A84EA8400029FD7 /* HomeSectionObservables.swift in Sources */,
 				460FD2602A84E8B500029FD7 /* SignInView.swift in Sources */,
 				469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */,
+				46D255F82A9FF0D0008D5ACF /* RecentMatchShimmerView.swift in Sources */,
 				460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */,
 				46CAEF092A9E1D3A009312CE /* UpComingMatchViewModel.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,

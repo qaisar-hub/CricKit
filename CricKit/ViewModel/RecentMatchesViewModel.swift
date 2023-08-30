@@ -11,15 +11,19 @@ import SwiftUI
 class RecentMatchesViewModel : ObservableObject {
     
     @Published var recentMatches = [RecentMatchModel]()
+    @Published var isLoading = false
     
     var teamStats : TeamStats? = nil
     var teamStatusArray = [TeamStats]()
     
     func getRecentMatches() {
+        self.isLoading = true
         let parentCollection = FSCollectionManager.getCollectionID(collection: .recentMatches(subCollectionPath: .none))
             FbDataServiceManager.shared.getData(parentCollection: parentCollection) { [self] snapshot in
             if let snapshot = snapshot {
                 self.recentMatches.removeAll()
+                var pendingOperations = snapshot.documents.count
+                var tempLiveScoreCardlists = [RecentMatchModel]()
                 for doc in snapshot.documents{
                     let matchStatus = doc["matchStatus"] as? String ?? ""
                     let teamsStatusDocumentID = doc.documentID
@@ -37,7 +41,12 @@ class RecentMatchesViewModel : ObservableObject {
                                 self.teamStatusArray.append(teamStats)
                             }
                             let recentMatch = RecentMatchModel(matchStatus: matchStatus, TeamStatus: self.teamStatusArray)
-                            self.recentMatches.append(recentMatch)
+                            tempLiveScoreCardlists.append(recentMatch)
+                            pendingOperations -= 1
+                            if (pendingOperations == 0) {
+                                self.recentMatches = tempLiveScoreCardlists
+                                self.isLoading = false
+                            }
                         }
                     }
                 }

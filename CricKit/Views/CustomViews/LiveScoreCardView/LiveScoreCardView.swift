@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Shimmer
 
 struct LiveScoreCardView: View {
     
@@ -47,6 +48,7 @@ struct LiveDotView: View {
                 .foregroundColor(Color.appSecondary)
             
         }
+        .shimmering(bandSize: 10)
         .padding(.horizontal, 10)
         .padding(.vertical, 5)
         .background(Color.appBlacks.opacity(0.8))

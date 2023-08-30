@@ -133,13 +133,17 @@ struct HomeSectionSwitches: View {
             if (sectionProgress.index == 0) {
                 ScrollView(.vertical, showsIndicators: false){
                     VStack{
-                        ForEach(recentMatchesViewModel.recentMatches, id: \.self) { recentMatch in
-                            RecentMatchView(recentMatchModel: recentMatch)
-                                .frame(width: width, height: 120)
-                                .clipShape(LiveMatchCard())
-                                .background(Blur(style: .systemChromeMaterialDark))
-                                .clipShape(LiveMatchCard())
-                                .cornerRadius(10, corners: .allCorners)
+                        if recentMatchesViewModel.isLoading {
+                            RecentMatchShimmerView(width: width)
+                        }else {
+                            ForEach(recentMatchesViewModel.recentMatches, id: \.self) { recentMatch in
+                                RecentMatchView(recentMatchModel: recentMatch)
+                                    .frame(width: width, height: 120)
+                                    .clipShape(LiveMatchCard())
+                                    .background(Blur(style: .systemChromeMaterialDark))
+                                    .clipShape(LiveMatchCard())
+                                    .cornerRadius(10, corners: .allCorners)
+                            }
                         }
                     }
                 }
