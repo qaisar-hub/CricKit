@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeSections: View {
     
     @ObservedObject var sectionProgress : HomeSection
+	@EnvironmentObject private var appSettings: AppSettings
     
     var width = UIScreen.main.bounds.width / 7
     var categoryDataImages: [String] = ["clock.fill", "rectangle.fill.on.rectangle.fill", "shared.with.you", "newspaper.fill", "stairs"]
@@ -22,14 +23,14 @@ struct HomeSections: View {
                     let imageName = categoryDataImages[index]
                     VStack {
                         Image(systemName: imageName)
-                            .shadow(color: Color.black, radius: 5)
+                            .shadow(color: appSettings.isDarkMode ? Color.black : Color.white, radius: 1)
                             .padding()
                             .font(.system(size: 25.0))
-                            .foregroundColor( sectionProgress.index == index ? Color.appPrimary : Color.appWhites)
+							.foregroundColor( sectionProgress.index == index ? Color.appPrimary : Color.gray.opacity(0.8))
                             .opacity(9)
-                            .background(Blur(style: .systemChromeMaterialDark))
+							.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                             .cornerRadius(10, corners: .allCorners)
-                            .shadow(color: Color.black, radius: 5)
+							.shadow(color: appSettings.isDarkMode ? Color.black : Color.white, radius: 1)
                             .offset(y: CGFloat(-index*6))
                             .onTapGesture {
                                 sectionProgress.index = index

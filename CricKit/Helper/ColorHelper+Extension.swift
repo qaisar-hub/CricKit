@@ -77,6 +77,6 @@ extension Color {
     static let appPrimary = Color(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
     static let appBlacks = Color(#colorLiteral(red: 0.03084787726, green: 0.0898687616, blue: 0.1246017292, alpha: 1))
     static let appWhites = Color(red: 0.902, green: 0.906, blue: 0.91) // #e6e7e8
-	static let linearWhiteColor = LinearGradient(colors: [Color.appPrimary,Color.appWhites], startPoint: .topLeading, endPoint: .bottomTrailing)
+	static let linearWhiteColor = LinearGradient(colors: [Color.appPrimary.opacity(0.8),Color.appWhites], startPoint: .topLeading, endPoint: .bottomTrailing)
     static let linearBlackColor = LinearGradient(colors: [Color.appPrimary,Color.appBlacks.opacity(0.8)], startPoint: .topLeading, endPoint: .bottomTrailing)
 }

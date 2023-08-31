@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct SectionTitleView: View {
+	@EnvironmentObject private var appSettings: AppSettings
+	
     let title: String
     var body: some View {
         Text(title)
-            .foregroundColor(Color.white)
+			.foregroundColor(appSettings.isDarkMode ? Color.white : Color.black)
             .padding(.all, 10)
             .font(.footnote)
-            .background(Blur(style: .systemChromeMaterialDark))
+			.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             .cornerRadius(20, corners: .allCorners)
-            .shadow(color: Color.black, radius: 5)
+			.shadow(color: appSettings.isDarkMode ? Color.black : Color.white, radius: 0.5)
     }
 }

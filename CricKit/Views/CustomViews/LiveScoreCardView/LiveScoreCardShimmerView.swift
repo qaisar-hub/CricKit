@@ -10,6 +10,7 @@ import Shimmer
 
 struct LiveScoreCardShimmerView: View {
     let width: CGFloat
+	@EnvironmentObject private var appSettings: AppSettings
     
     let liveScoreCardDummylists = [LiveScoreCardModel(matchStatus: "India needs 50 runs to win", matchHeader: "ICC WC 2023, India vs Australia", isLive: true, TeamStatus: [TeamStats(name: "India", flag: "teamInd", overs: "50", runs: "100", wickets: "5"), TeamStats(name: "India", flag: "teamInd", overs: "50", runs: "100", wickets: "5")])]
     
@@ -18,7 +19,7 @@ struct LiveScoreCardShimmerView: View {
             LiveScoreCardView(liveScoreCardData: liveScoreItem)
                 .frame(width: width , height: 200)
                 .clipShape(LiveMatchCard())
-                .background(Blur(style: .systemChromeMaterialDark))
+				.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                 .clipShape(LiveMatchCard())
                 .cornerRadius(10, corners: .allCorners)
                 .redacted(reason: .placeholder)

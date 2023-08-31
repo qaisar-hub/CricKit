@@ -24,8 +24,9 @@ struct SignInPage: View {
     var body: some View {
         NavigationStack {
             ZStack {
-				LinearGradient(Color.darkStart, Color.darkEnd)
-                    .ignoresSafeArea()
+                
+                LinearGradient(Color.appBlacks, Color.darkStart)
+                        .ignoresSafeArea()
                 
                 HStack {
                     VStack(spacing: 100) {
@@ -80,8 +81,8 @@ struct SignInPage: View {
                             SignUpView(isLoading: $isLoading)
                         }
                         Spacer()
-                    }.background(LinearGradient(Color.darkStart, Color.darkEnd))
-						.shadow(color: Color.black.opacity(0.8), radius: 20)
+                    }.background(appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor)
+                    .shadow(radius: 10)
                     .ignoresSafeArea()
                 }
                 if isLoading {
@@ -107,5 +108,6 @@ struct SignInPage_Previews: PreviewProvider {
     static var previews: some View {
         SignInPage()
             .environmentObject(AuthViewModel())
+            .environmentObject(AppSettings())
     }
 }

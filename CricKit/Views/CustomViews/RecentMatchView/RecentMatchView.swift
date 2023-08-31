@@ -11,6 +11,7 @@ import SwiftUI
 struct RecentMatchView: View {
     
     var recentMatchModel : RecentMatchModel
+	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         VStack {
@@ -31,9 +32,8 @@ struct RecentMatchView: View {
             }
             HStack {
                 Text(recentMatchModel.matchStatus)
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
+					.font(.subheadline)
+					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                     .padding(.leading, 5)
                 Spacer()
             }
@@ -44,6 +44,7 @@ struct RecentMatchView: View {
 
 struct TeamSummarySectionView: View {
     let team: TeamStats
+	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         HStack {
@@ -52,18 +53,15 @@ struct TeamSummarySectionView: View {
                 .frame(width: 25, height: 25)
             HStack{
                 Text(team.name)
-                    .font(.headline)
-                    .fontWeight(.medium)
-                    .foregroundStyle(Color.white)
+					.font(.subheadline)
+					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                 Text("\(team.runs)/\(team.wickets)")
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundColor(Color.white)
+					.font(.subheadline)
+					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                 
                 Text("\(team.overs) overs")
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundColor(Color.white)
+					.font(.subheadline)
+					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
             }
         }
     }

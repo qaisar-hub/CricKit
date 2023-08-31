@@ -75,6 +75,8 @@ struct HomeBoard: View {
     
     @StateObject var sectionProgress = HomeSection()
     @ObservedObject var liveScoreCardViewModel: LiveScoreCardViewModel
+	
+	@EnvironmentObject private var appSettings: AppSettings
     
     var width = UIScreen.main.bounds.width
     
@@ -91,7 +93,7 @@ struct HomeBoard: View {
                             LiveScoreCardView(liveScoreCardData: liveScoreItem)
                                 .frame(width: width - 32, height: 200)
                                 .clipShape(LiveMatchCard())
-                                .background(Blur(style: .systemChromeMaterialDark))
+								.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                                 .clipShape(LiveMatchCard())
                                 .cornerRadius(10, corners: .allCorners)
                                 .padding(.trailing, index == liveScoreCardViewModel.liveScoreCardlists.count - 1 ? 30: 0)
@@ -103,7 +105,7 @@ struct HomeBoard: View {
             }
             HomeSections(sectionProgress: sectionProgress)
                 .frame(width: width)
-                .padding(.top, 5)
+                .padding(.top, 25)
                 .padding(.bottom, 5)
             ScrollView(showsIndicators: false) {
                 VStack(spacing: -20) {
@@ -112,8 +114,7 @@ struct HomeBoard: View {
                 }
                 .padding(.bottom, 10)
             }
-            
-            .shadow(radius: 5)
+			.shadow(color: appSettings.isDarkMode ? Color.black : Color.white, radius: 0.5)
         }
     }
 }
@@ -125,6 +126,8 @@ struct HomeSectionSwitches: View {
     @StateObject var upComingMatchesViewModel = UpComingMatchViewModel()
     @StateObject var featuredPlayersViewModel = FeaturedPlayersViewModel()
     @StateObject var sectionProgress = HomeSection()
+	
+	@EnvironmentObject private var appSettings: AppSettings
     
     var width = UIScreen.main.bounds.width - 32
     
@@ -140,7 +143,7 @@ struct HomeSectionSwitches: View {
                                 RecentMatchView(recentMatchModel: recentMatch)
                                     .frame(width: width, height: 120)
                                     .clipShape(LiveMatchCard())
-                                    .background(Blur(style: .systemChromeMaterialDark))
+                                    .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                                     .clipShape(LiveMatchCard())
                                     .cornerRadius(10, corners: .allCorners)
                             }
@@ -154,7 +157,7 @@ struct HomeSectionSwitches: View {
                             UpComingMatchesView(upComingMatchModel: upComingMatch)
                                 .frame(width: width, height: 120)
                                 .clipShape(LiveMatchCard())
-                                .background(Blur(style: .systemChromeMaterialDark))
+                                .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                                 .clipShape(LiveMatchCard())
                                 .cornerRadius(10, corners: .allCorners)
                         }
@@ -165,7 +168,7 @@ struct HomeSectionSwitches: View {
                     VStack{
 						ForEach(Array(featuredPlayersViewModel.featuredPlayers.enumerated()), id: \.element.id) { index, featuredPlayer in
 							FeaturedPlayersSectionView(featuredPlayer: featuredPlayer, playerImage: categoryDataImages[index])
-                                .background(Blur(style: .systemChromeMaterialDark))
+                                .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
 								.clipShape(LiveMatchCard())
                                 .cornerRadius(20, corners: .allCorners)
                         }

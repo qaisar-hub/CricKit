@@ -10,14 +10,14 @@ import SwiftUI
 struct UpComingMatchesView: View {
     
     var upComingMatchModel : UpComingMatchModel
+	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         VStack {
             HStack {
                 Text(upComingMatchModel.matchName)
                     .font(.subheadline)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
+					.foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                 Spacer()
             }
             
@@ -29,8 +29,7 @@ struct UpComingMatchesView: View {
                             TeamView(team: upComingMatchModel.TeamStatus[index])
                             Text("vs")
                                 .font(.subheadline)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.appWhites)
+                                .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                         } else {
                             TeamView(team: upComingMatchModel.TeamStatus[index])
                         }
@@ -54,6 +53,7 @@ struct UpComingMatchesView: View {
 struct TeamView: View {
     
     let team: UpComingMatchStats
+	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View{
         HStack {
@@ -61,9 +61,8 @@ struct TeamView: View {
                 .resizable()
                 .frame(width: 35, height: 35)
             Text(team.name)
-                .font(.headline)
-                .fontWeight(.medium)
-                .foregroundStyle(Color.white)
+                .font(.subheadline)
+                .foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
         }
     }
 }
@@ -71,14 +70,13 @@ struct TeamView: View {
 struct DateAndVenueView: View {
     
     var matchDetail : String
+	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         HStack {
             Text(matchDetail)
                 .font(.subheadline)
-                .fontWeight(.bold)
-                .foregroundStyle(Color.white)
-            //.background(Color.white.opacity())
+                .foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                 .cornerRadius(5)
             Spacer()
         }

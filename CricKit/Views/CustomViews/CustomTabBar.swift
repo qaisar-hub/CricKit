@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct customTabBar: View {
+	@EnvironmentObject private var appSettings: AppSettings
     
     var tabs: [(tabName: String, imageName: String)] = [(tabName: "home", imageName: "house.fill"), (tabName: "shop", imageName: "cart.fill"), (tabName: "profile", imageName: "person.fill")]
     
@@ -20,9 +21,9 @@ struct customTabBar: View {
                 TabBarButton(tabName: tab.tabName, imageName: tab.imageName, tabIndex: index, selectedIndex: $selectedIndex)
             }
         }
-        .background(Blur(style: .systemChromeMaterialDark))
+		.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
         .cornerRadius(10)
-        .shadow(color: Color.black, radius: 5)
+		.shadow(color: appSettings.isDarkMode ? Color.black : Color.white, radius: 0.5)
     }
 }
 

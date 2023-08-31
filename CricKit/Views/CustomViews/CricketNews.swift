@@ -43,9 +43,9 @@ struct CricketNews: View {
     var body: some View {
         VStack(spacing: 20) {
             ForEach(newsList) { news in
-                NavigationLink(destination: WebView(urlString: news.url)) {
+                //NavigationLink(destination: WebView(urlString: news.url)) {
                     NewsCard(news: news)
-                }
+                //}
             }
         }
     }
@@ -55,7 +55,8 @@ struct CricketNews: View {
 
 struct NewsCard: View {
     var news: NewsItem
-    
+	@EnvironmentObject private var appSettings: AppSettings
+	
     var body: some View {
         HStack(spacing: 10) {
             Image(news.imageName)
@@ -66,13 +67,13 @@ struct NewsCard: View {
                 Text(news.header)
                     .multilineTextAlignment(.leading)
                     .font(.headline)
-                    .foregroundColor(Color.white)
+					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                     .padding(.bottom, 5)
                 Text(news.subheader)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
                     .font(.subheadline)
-                    .foregroundColor(Color.white)
+					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                     .padding(.bottom, 5)
 //                NavigationLink(destination: WebView(urlString: news.url)) { 
 //                    HStack {
@@ -87,15 +88,15 @@ struct NewsCard: View {
         }
         .frame(height: 150)
         .padding(10)
-        .background(Blur(style: .systemChromeMaterialDark))
+		.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
         .cornerRadius(10)
-        .shadow(radius: 5)
     }
 }
 
 struct NewsDetail: View {
     var news: NewsItem
-    
+	@EnvironmentObject private var appSettings: AppSettings
+	
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -108,11 +109,9 @@ struct NewsDetail: View {
                         VStack {
                             Spacer()
                             Text(news.header)
-                                .font(.title)
-                                .foregroundColor(.white)
+                                .font(.subheadline)
+								.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                                 .padding(25)
-                                .background(Color.black.opacity(0.5))
-                            
                         }
                     }
                     Text(news.header)

@@ -16,6 +16,7 @@ struct SignInView: View {
     @Binding var readyToNavigate: Bool
     @StateObject var progress = TextFieldObserver()
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var appSettings: AppSettings
     @Binding var isLoading: Bool
     @State private var isTapped = false
     @State private var showingAlert = false
@@ -52,7 +53,7 @@ struct SignInView: View {
                 .padding()
                 .fontWidth(.expanded)
                 .font(.system(size: 12))
-				.foregroundColor(.appWhites)
+                .foregroundColor(.appWhites)
             
             HStack {
 				EmbossedButton(systemName: "arrow.right") {
@@ -129,6 +130,7 @@ struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInPage()
             .environmentObject(AuthViewModel())
+            .environmentObject(AppSettings())
     }
 }
 

@@ -9,5 +9,11 @@ import SwiftUI
 
 class AppSettings: ObservableObject {
     @Published var isDarkMode = false
+    
+    init() {
+            let currentColorScheme = UIScreen.main.traitCollection.userInterfaceStyle
+            self.isDarkMode = currentColorScheme == .dark
+            print(self.isDarkMode)
+    }
 }
 

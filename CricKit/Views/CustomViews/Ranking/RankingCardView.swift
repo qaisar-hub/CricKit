@@ -10,19 +10,19 @@ import SwiftUI
 struct MatchFormatCardView: View {
     var name: String
 	var width = UIScreen.main.bounds.width - 32
+	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         VStack {
 			HStack{
 				Text(name)
-					.font(.headline)
-					.foregroundColor(.white)
+					.font(.subheadline)
+					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
 					.padding()
 				
 				Text("Current Rankings")
-					.font(.caption2)
-					.font(.system(size: 14))
-					.foregroundColor(.white)
+					.font(.subheadline)
+					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
 					.padding()
 				
 				Image("teamInd")
@@ -31,15 +31,14 @@ struct MatchFormatCardView: View {
 					.frame(width: 25, height: 25)
 				
 				Text("is at #1")
-					.font(.caption2)
-					.font(.system(size: 8))
-					.foregroundColor(.white)
+					.font(.subheadline)
+					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
 					.padding()
 			}
             
         }
 		.frame(width: width, height: 40)
-		.background(Blur(style: .systemChromeMaterialDark))
+		.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
 		.clipShape(Capsule())
 		.cornerRadius(10, corners: .allCorners)
     }

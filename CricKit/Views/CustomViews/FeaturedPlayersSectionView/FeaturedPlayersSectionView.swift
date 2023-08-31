@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FeaturedPlayersSectionView: View {
+	
+	@EnvironmentObject private var appSettings: AppSettings
         
     var featuredPlayer : FeaturedPlayersModel
 	var playerImage : String
@@ -23,10 +25,12 @@ struct FeaturedPlayersSectionView: View {
             }
             .padding(.all, 8)
             Text(featuredPlayer.name)
-                .foregroundColor(Color.white)
+				.font(.subheadline)
+				.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
 			Spacer()
 			Text(featuredPlayer.country)
-				.foregroundColor(Color.white)
+				.font(.subheadline)
+				.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
 				.offset(y: -10)
 			Image(featuredPlayer.flag)
 				.resizable()
