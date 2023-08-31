@@ -32,6 +32,7 @@ struct TabBarButton: View {
     let imageName: String
     let tabIndex: Int
     @Binding var selectedIndex: Int
+	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         Button(action: {
@@ -39,13 +40,13 @@ struct TabBarButton: View {
         }) {
             VStack(spacing: 3) {
                 Image(systemName: imageName)
-                    .foregroundColor(selectedIndex == tabIndex ?  Color.appPrimary : Color.appWhites)
+                    .foregroundColor(selectedIndex == tabIndex ?  Color.appPrimary : appSettings.isDarkMode ? Color.white : Color.gray)
                 Text(tabName.capitalized)
                     .font(.caption)
-                    .foregroundColor(selectedIndex == tabIndex ? Color.appPrimary : Color.appWhites)
+                    .foregroundColor(selectedIndex == tabIndex ? Color.appPrimary : appSettings.isDarkMode ? Color.white : Color.gray)
             }
             .padding(10)
-            .shadow(color: Color.appBlacks, radius: 5)
+			.shadow(color: appSettings.isDarkMode ? Color.black : Color.white, radius: 0.5)
         }
     }
 }
