@@ -35,10 +35,10 @@ struct ProfileCard: View {
                     )
             } else {
                 Text(initials)
-                    .font(.title)
+                    .font(.headline)
                     .foregroundColor(Color.white)
                     .frame(width: 60, height: 60)
-                    .background(Color(.systemGray3))
+                    .background(Color(.systemGray3).opacity(0.5))
                     .clipShape(Circle())
                     .shadow(radius: 5)
                     .overlay(
@@ -54,7 +54,7 @@ struct ProfileCard: View {
             
             VStack(alignment: .leading) {
                 Text(fullName)
-                    .font(.title)
+                    .font(.headline)
                     .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                 Text(emailID)
                     .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
