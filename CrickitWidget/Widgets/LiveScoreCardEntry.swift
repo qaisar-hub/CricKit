@@ -7,17 +7,30 @@
 
 import Foundation
 import WidgetKit
+import Firebase
 
 struct LiveScoreCardEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
-    let liveScoreCard: LiveScoreCard
+    let liveScoreCardModel: LiveScoreCardModel
     
-    static func mockLiveScoreCardEntry() -> LiveScoreCard  {
-        let leftTeam = LiveScore(name: "IND", flagImageName: "teamInd", runs: 280, wickets: 6, overs: 50)
-        let rightTeam = LiveScore(name: "AUS", flagImageName: "teamAus", runs: 180, wickets: 5, overs: 40)
-        let liveScoreCard = LiveScoreCard(matchName: "India vs Australia", matchStatus: "India Won by 100 Runs", playerOfTheMatch: "Virat", liveScore: [leftTeam, rightTeam])
-        return liveScoreCard
+    static func mockLiveScoreCardEntry() -> LiveScoreCardModel  {
+        let leftTeam = TeamStats(name: "IND", flag: "teamInd", overs: "50", runs: "280", wickets: "6")
+        let rightTeam = TeamStats(name: "AUS", flag: "teamAus", overs: "40", runs: "180", wickets: "5")
+        
+        let liveScoreCardModel = LiveScoreCardModel(matchStatus: "Aus Need 100 runs to win", matchHeader: "ICC WC 2023, Ind vs Aus | Delhi", isLive: true, TeamStatus: [leftTeam, rightTeam])
+        return liveScoreCardModel
+    }
+    
+    static func getLiveScoreCardEntry() async -> LiveScoreCardModel {
+        var liveScoreCardModel : LiveScoreCardModel!
+        do {
+            let result = try await GetLiveScoreForIntent.liveScore()
+            liveScoreCardModel = result[0]
+        }  catch {
+            print(error)
+        }
+        return liveScoreCardModel
     }
 }
 

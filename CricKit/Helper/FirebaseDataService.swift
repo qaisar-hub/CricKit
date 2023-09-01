@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Firebase
 import FirebaseFirestore
 
 public class FbDataServiceManager {

@@ -10,45 +10,34 @@ import WidgetKit
 
 struct WidgetMedium: View {
     
-    private var liveScorecard: LiveScoreCard
+    private var liveScorecardModel: LiveScoreCardModel
     
-    init (_liveScorecard: LiveScoreCard) {
-        self.liveScorecard = _liveScorecard
+    init (_liveScorecardModel: LiveScoreCardModel) {
+        self.liveScorecardModel = _liveScorecardModel
     }
     var body: some View {
-        VStack{
-            Text(liveScorecard.matchName)
-            TeamView(liveScorecard: liveScorecard)
+        VStack(spacing: 10){
+            Text(liveScorecardModel.matchHeader)
+            Text(liveScorecardModel.matchStatus)
+            TeamView(liveScorecardModel: liveScorecardModel)
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
-            Text(liveScorecard.matchStatus)
         }
-    }
-}
-
-struct WidgetMedium_Previews: PreviewProvider {
-    static var previews: some View {
-        WidgetMedium(_liveScorecard: LiveScoreCard(matchName: "1st ODI, India vs Australia at Vizag", matchStatus: "India still need 100 runs", playerOfTheMatch: "Virat Kohli", liveScore: [LiveScore(name: "IND", flagImageName: "teamInd", runs: 180, wickets: 4, overs: 30), LiveScore(name: "AUS", flagImageName: "teamAus", runs: 280, wickets: 5, overs: 50)]))
-        
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
 
 struct TeamView: View {
     
-    var liveScorecard: LiveScoreCard
+    var liveScorecardModel: LiveScoreCardModel
     
     var body: some View {
-        ForEach(liveScorecard.liveScore, id:\.self) { item in
+        ForEach(liveScorecardModel.TeamStatus, id:\.self) { item in
             HStack {
-                Image(item.flagImageName)
+                Image(item.flag)
                     .resizable()
                     .frame(width: 15, height: 15)
                 Text(item.name)
-                    .fontWeight(.medium)
-                
-                Text("\(item.runs)/\(item.wickets) in")
-                Text("\(item.overs) Overs")
+                Text(item.yetToBat() ? item.yetToBatText() : "\(item.runs)/\(item.wickets) in \(item.overs) ovs")
             }
         }
     }

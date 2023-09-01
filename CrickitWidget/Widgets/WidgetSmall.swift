@@ -10,42 +10,32 @@ import WidgetKit
 
 struct WidgetSmall: View {
     
-    private var liveScorecard: LiveScoreCard
+    private var liveScorecardModel: LiveScoreCardModel
     
-    init (_liveScorecard: LiveScoreCard) {
-        self.liveScorecard = _liveScorecard
+    init (_liveScorecardModel: LiveScoreCardModel) {
+        self.liveScorecardModel = _liveScorecardModel
     }
     var body: some View {
-        TeamViewSmall(liveScorecard: liveScorecard)
-    }
-}
-
-struct WidgetSmall_Previews: PreviewProvider {
-    static var previews: some View {
-        WidgetSmall(_liveScorecard: LiveScoreCard(matchName: "India vs Australia", matchStatus: "India won by 100 Runs", playerOfTheMatch: "Virat Kohli", liveScore: [LiveScore(name: "IND", flagImageName: "teamInd", runs: 280, wickets: 6, overs: 50), LiveScore(name: "AUS", flagImageName: "teamAus", runs: 180, wickets: 5, overs: 40)]))
-        
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        TeamViewSmall(liveScorecardModel: liveScorecardModel)
     }
 }
 
 struct TeamViewSmall: View {
     
-    var liveScorecard: LiveScoreCard
+    var liveScorecardModel: LiveScoreCardModel
     
     var body: some View {
         VStack {
-            ForEach(liveScorecard.liveScore) { item in
+            ForEach(liveScorecardModel.TeamStatus) { item in
                 HStack {
-                    Image(item.flagImageName)
+                    Image(item.flag)
                         .resizable()
                     .frame(width: 15, height: 15)
                     Text(item.name)
                         .fontWeight(.medium)
                 }
                 HStack{
-                    Text("\(item.runs)/\(item.wickets) in")
-                    Text("\(item.overs)")
-                        .font(.caption)
+                    Text(item.yetToBat() ? item.yetToBatText() : "\(item.runs)/\(item.wickets) in \(item.overs) ovs")
                 }
             }
         }.padding()
