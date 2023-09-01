@@ -28,11 +28,15 @@ struct UserProfilePage: View {
             Section(header: SectionHeaderView(title: "App Settings")) {
                 SettingsRowView(iconName: "gear", title: "Version", subtitle: "1.0.0", tintColor: .gray)
                 Toggle(isOn: $appSettings.isDarkMode) {
-                      Text("Dark Mode")
-                        .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+                    HStack {
+                        Image(systemName: "moonphase.last.quarter")
+                            .imageScale(.small)
+                            .font(.title)
+                            .foregroundColor(.gray)
+                        Text("Dark Mode")
+                            .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                     }
-                    .toggleStyle(SwitchToggleStyle(tint: Color.red))
-
+                }.toggleStyle(SwitchToggleStyle(tint: Color.red))
             }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "Account Actions")) {

@@ -18,6 +18,10 @@ struct FavouriteTeamView: View {
     
     var body: some View {
         HStack {
+            Image(systemName: "heart.fill")
+                .imageScale(.small)
+                .font(.title)
+                .foregroundColor(.gray)
             Text("Favourite Team")
                 .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
             Spacer()
