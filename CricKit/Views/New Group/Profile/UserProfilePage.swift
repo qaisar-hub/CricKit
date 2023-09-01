@@ -21,6 +21,10 @@ struct UserProfilePage: View {
                 ProfileCard(initials: authViewModel.currentUser?.initials ?? "", fullName: authViewModel.currentUser?.fullName ?? "", emailID: authViewModel.currentUser?.email ?? "")
             }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
+            Section(header: SectionHeaderView(title: "Favourite Team")) {
+                FavouriteTeamView(chosenTeam: "India", chosenFlag: "teamInd")
+            }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
+            
             Section(header: SectionHeaderView(title: "App Settings")) {
                 SettingsRowView(iconName: "gear", title: "Version", subtitle: "1.0.0", tintColor: .gray)
                 Toggle(isOn: $appSettings.isDarkMode) {
