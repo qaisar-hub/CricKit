@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		205CD15F2AA0C3DD0082374E /* UpComingMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD15E2AA0C3DD0082374E /* UpComingMatchesView.swift */; };
 		205CD1652AA0C84D0082374E /* CrickitIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1642AA0C84D0082374E /* CrickitIntents.swift */; };
+		205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1662AA0ECE30082374E /* FavouriteTeamView.swift */; };
+		205CD16A2AA187250082374E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1692AA187240082374E /* UserData.swift */; };
 		2065A45A2A98858C00F3C522 /* FireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065A4592A98858C00F3C522 /* FireStoreHelper.swift */; };
 		2096CFFA2A99E31C0093C131 /* RecentMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */; };
 		2096CFFC2A99E32F0093C131 /* RecentMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */; };
@@ -119,6 +121,8 @@
 /* Begin PBXFileReference section */
 		205CD15E2AA0C3DD0082374E /* UpComingMatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpComingMatchesView.swift; sourceTree = "<group>"; };
 		205CD1642AA0C84D0082374E /* CrickitIntents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrickitIntents.swift; sourceTree = "<group>"; };
+		205CD1662AA0ECE30082374E /* FavouriteTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTeamView.swift; sourceTree = "<group>"; };
+		205CD1692AA187240082374E /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		2065A4592A98858C00F3C522 /* FireStoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreHelper.swift; sourceTree = "<group>"; };
 		2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchesViewModel.swift; sourceTree = "<group>"; };
 		2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchModel.swift; sourceTree = "<group>"; };
@@ -245,6 +249,14 @@
 			path = AppIntents;
 			sourceTree = "<group>";
 		};
+		205CD1682AA186EA0082374E /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				205CD1692AA187240082374E /* UserData.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
 		20C067362A8CCA7E00102BCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +338,7 @@
 		460FD20C2A8422B700029FD7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				205CD1682AA186EA0082374E /* SwiftData */,
 				46AF6D4D2A9B823100A3EBBB /* SwipeCard.swift */,
 				461BFEA42A8FAB5D007AECB3 /* LoadingIndicator.swift */,
 				460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */,
@@ -372,6 +385,7 @@
 				461BFE952A8ECA87007AECB3 /* SettingsRowView.swift */,
 				461BFE972A8ECC80007AECB3 /* ProfileCard.swift */,
 				46D255F52A9FB907008D5ACF /* AppSettings.swift */,
+				205CD1662AA0ECE30082374E /* FavouriteTeamView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -654,6 +668,7 @@
 				46AF6D4E2A9B823100A3EBBB /* SwipeCard.swift in Sources */,
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
+				205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */,
 				46D255F12A9F781F008D5ACF /* SignInPageErrorMessageView.swift in Sources */,
 				46D255F62A9FB907008D5ACF /* AppSettings.swift in Sources */,
 				461BFE8B2A8EA062007AECB3 /* User.swift in Sources */,
@@ -663,6 +678,7 @@
 				46D255EF2A9F24E8008D5ACF /* EmbossedButton.swift in Sources */,
 				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,
 				460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */,
+				205CD16A2AA187250082374E /* UserData.swift in Sources */,
 				465DC2722A9C95F400B171BE /* RankingDetailsView.swift in Sources */,
 				460FD26B2A84EA4F00029FD7 /* CustomViewModifiers.swift in Sources */,
 				2065A45A2A98858C00F3C522 /* FireStoreHelper.swift in Sources */,
