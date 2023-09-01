@@ -28,7 +28,7 @@ struct UserProfilePage: View {
             Section(header: SectionHeaderView(title: "App Settings")) {
                 SettingsRowView(iconName: "gear", title: "Version", subtitle: "1.0.0", tintColor: .gray)
                 Toggle(isOn: $appSettings.isDarkMode) {
-                    HStack {
+                    HStack(spacing: 12) {
                         Image(systemName: "moonphase.last.quarter")
                             .imageScale(.small)
                             .font(.title)

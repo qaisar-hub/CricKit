@@ -7,58 +7,52 @@
 
 import SwiftUI
 
-enum TabSelection {
-    case batsman, bowler, allRounder, team
+enum TabSelection: String, CaseIterable, Identifiable {
+    case batsman = "Batsman", bowler = "Bowler", allRounder = "All Rounder", team = "Team"
+    
+    var id: String { self.rawValue }
 }
 
-
 struct RankingDetailsView: View {
-    @State var selectedTab: TabSelection
+    @State private var selectedTabIndex = 0
+    
+    private var selectedTab: TabSelection {
+        TabSelection.allCases[selectedTabIndex]
+    }
     
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             VStack {
-                TabView(selection: $selectedTab) {
-                    ICCRankingView(selectedTab: selectedTab)
-                        .tabItem {
-                            Label("Batsman", systemImage: "person.fill")
-                        }
-                        .tag(TabSelection.batsman)
-                    
-                    ICCRankingView(selectedTab: selectedTab)
-                        .tabItem {
-                            Label("Bowler", systemImage: "bolt.fill")
-                        }
-                        .tag(TabSelection.bowler)
-                    
-                    ICCRankingView(selectedTab: selectedTab)
-                        .tabItem {
-                            Label("All Rounder", systemImage: "star.fill")
-                        }
-                        .tag(TabSelection.allRounder)
-                    
-                    ICCRankingView(selectedTab: selectedTab)
-                        .tabItem {
-                            Label("Team", systemImage: "person.3.fill")
-                        }
-                        .tag(TabSelection.team) // Add a new case to the TabSelection enum for Team
-                }
-                .navigationBarTitle("ICC Rankings")
-                .navigationBarBackButtonHidden(true)
-                .toolbar(content: {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        CustomBackButton()
+                Spacer()
+                        .frame(minHeight: 0, maxHeight: 16) 
+                Picker("", selection: $selectedTabIndex) {
+                    ForEach(0..<TabSelection.allCases.count, id: \.self) { index in
+                        Text(TabSelection.allCases[index].rawValue.capitalized)
                     }
-                })
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal)
                 
+                ICCRankingView(selectedTab: selectedTab)
+                
+                Spacer()
             }
+            .navigationBarTitle("ICC Rankings")
+            .navigationBarBackButtonHidden(true)
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    CustomBackButton()
+                }
+            })
         }
     }
 }
 
 
+
+
 struct RankingDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        RankingDetailsView(selectedTab: .allRounder)
+        RankingDetailsView()
     }
 }

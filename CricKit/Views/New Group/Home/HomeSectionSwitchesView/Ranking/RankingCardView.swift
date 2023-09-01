@@ -50,7 +50,7 @@ struct RankingCardView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     ForEach(["TEST", "ODI", "T20I"], id: \.self) { name in
-                        NavigationLink(destination: RankingDetailsView(selectedTab: .batsman)) {
+                        NavigationLink(destination: RankingDetailsView()) {
                             MatchFormatCardView(name: name)
                         }
                     }
