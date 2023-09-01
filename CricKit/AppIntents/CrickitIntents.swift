@@ -8,7 +8,6 @@
 import Foundation
 import AppIntents
 import SwiftUI
-import Firebase
 import FirebaseFirestore
 
 struct GetLiveScoreIntent: AppIntent {
@@ -18,7 +17,7 @@ struct GetLiveScoreIntent: AppIntent {
 		
 		var liveScoreCardModel : LiveScoreCardModel?
 		
-		let result = try await liveScore()
+        let result = try await GetLiveScoreForIntent.liveScore()
         liveScoreCardModel = result[0]
 		
         return .result(dialog: "Okay, fetching live score", view: LiveScoreCardViewForIntent(liveScoreCardData: liveScoreCardModel!))
@@ -26,37 +25,42 @@ struct GetLiveScoreIntent: AppIntent {
 	}
 }
 
-func liveScore() async throws-> [LiveScoreCardModel] {
-	let db = Firestore.firestore()
-	var liveScoreModel = [LiveScoreCardModel]()
-    var teamStatusArray = [TeamStats]()
+struct GetLiveScoreForIntent {
     
-	do {
-        let parentCollection = FSCollectionManager.getCollectionID(collection: .liveScore(subCollectionPath: .none))
-		let snapshot = try await db.collection(parentCollection).getDocuments()
-		for doc in snapshot.documents{
-			let matchStatus = doc["matchStatus"] as? String ?? ""
-			let matchHeader = doc["matchHeader"] as? String ?? ""
-    
-            let teamsStatusDocumentID = doc.documentID
-            let subCollection = FSCollectionManager.getCollectionID(collection: .liveScore(subCollectionPath: .teamStatus))
-            let snapshot = try await db.collection(parentCollection).document(teamsStatusDocumentID).collection(subCollection).getDocuments()
-            for doc in snapshot.documents {
-                let teamStats = TeamStats(name: doc["name"] as? String ?? "",
-                                          flag: doc["flag"] as? String ?? "",
-                                          overs: doc["overs"] as? String ?? "",
-                                          runs: doc["runs"] as? String ?? "",
-                                          wickets: doc["wickets"] as? String ?? "")
-                teamStatusArray.append(teamStats)
+    static func liveScore() async throws-> [LiveScoreCardModel] {
+        let db = Firestore.firestore()
+        var liveScoreModel = [LiveScoreCardModel]()
+        var teamStatusArray = [TeamStats]()
+        
+        do {
+            let parentCollection = FSCollectionManager.getCollectionID(collection: .liveScore(subCollectionPath: .none))
+            let snapshot = try await db.collection(parentCollection).getDocuments()
+            for doc in snapshot.documents{
+                let matchStatus = doc["matchStatus"] as? String ?? ""
+                let matchHeader = doc["matchHeader"] as? String ?? ""
+        
+                let teamsStatusDocumentID = doc.documentID
+                let subCollection = FSCollectionManager.getCollectionID(collection: .liveScore(subCollectionPath: .teamStatus))
+                let snapshot = try await db.collection(parentCollection).document(teamsStatusDocumentID).collection(subCollection).getDocuments()
+                for doc in snapshot.documents {
+                    let teamStats = TeamStats(name: doc["name"] as? String ?? "",
+                                              flag: doc["flag"] as? String ?? "",
+                                              overs: doc["overs"] as? String ?? "",
+                                              runs: doc["runs"] as? String ?? "",
+                                              wickets: doc["wickets"] as? String ?? "")
+                    teamStatusArray.append(teamStats)
+                }
+                let liveScoreData = LiveScoreCardModel(matchStatus: matchStatus, matchHeader: matchHeader, isLive: true, TeamStatus:  teamStatusArray)
+                liveScoreModel.append(liveScoreData)
             }
-            let liveScoreData = LiveScoreCardModel(matchStatus: matchStatus, matchHeader: matchHeader, isLive: true, TeamStatus:  teamStatusArray)
-            liveScoreModel.append(liveScoreData)
-		}
-	} catch {
-		print(error)
-	}
-	return liveScoreModel
+        } catch {
+            print(error)
+        }
+        return liveScoreModel
+    }
 }
+
+
 
 struct CrickitShortcuts: AppShortcutsProvider {
 	static var appShortcuts: [AppShortcut] {

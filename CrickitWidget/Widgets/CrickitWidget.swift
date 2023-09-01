@@ -18,13 +18,13 @@ struct CrickitWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            WidgetSmall(_liveScorecard: entry.liveScoreCard)
+            WidgetSmall(_liveScorecardModel: entry.liveScoreCardModel)
             
         case .systemMedium:
-            WidgetMedium(_liveScorecard: entry.liveScoreCard)
+            WidgetMedium(_liveScorecardModel: entry.liveScoreCardModel)
 
         @unknown default:
-            WidgetSmall(_liveScorecard: entry.liveScoreCard)
+            WidgetSmall(_liveScorecardModel: entry.liveScoreCardModel)
         }
     }
 }
@@ -44,7 +44,7 @@ struct CrickitWidget: Widget {
 
 struct CrickitWidget_Previews: PreviewProvider {
     static var previews: some View {
-        CrickitWidgetEntryView(entry: LiveScoreCardEntry(date: Date(), configuration: ConfigurationIntent(), liveScoreCard: LiveScoreCardEntry.mockLiveScoreCardEntry()))
+        CrickitWidgetEntryView(entry: LiveScoreCardEntry(date: Date(), configuration: ConfigurationIntent(), liveScoreCardModel: LiveScoreCardEntry.mockLiveScoreCardEntry()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
