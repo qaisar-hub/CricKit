@@ -10,10 +10,7 @@ import SwiftUI
 struct FavouriteTeamView: View {
     
     @EnvironmentObject private var appSettings: AppSettings
-    
     @State private var showModal = false
-    @State var chosenTeam: String
-    @State var chosenFlag: String
    
     
     var body: some View {
@@ -25,10 +22,10 @@ struct FavouriteTeamView: View {
             Text("Favourite Team")
                 .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
             Spacer()
-            Text(chosenTeam)
+            Text(appSettings.favouriteTeam.team)
                 .font(.caption2)
                 .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
-            Image(chosenFlag)
+            Image(appSettings.favouriteTeam.teamFlag)
                 .resizable()
                 .frame(width: 25, height: 25)
                 .onTapGesture {
@@ -36,7 +33,7 @@ struct FavouriteTeamView: View {
                 }
         }
         .sheet(isPresented: $showModal) {
-            TeamList(chosenTeam: $chosenTeam, chosenFlag: $chosenFlag, showModal: $showModal)
+            TeamList(showModal: $showModal)
             .presentationDetents([.medium, .large])
             //.presentationContentInteraction(.scrolls)
         }
@@ -46,8 +43,6 @@ struct FavouriteTeamView: View {
 
 struct TeamList: View {
     
-    @Binding var chosenTeam: String
-    @Binding var chosenFlag: String
     @Binding var showModal: Bool
     @EnvironmentObject private var appSettings: AppSettings
     
@@ -69,8 +64,7 @@ struct TeamList: View {
                 .padding()
             List(model.teamList, id: \.self) { team in
                 Button {
-                    chosenTeam = "\(team.team)"
-                    chosenFlag = "\(team.teamFlag)"
+                    appSettings.favouriteTeam = team
                     showModal = false
                 } label: {
                     HStack {

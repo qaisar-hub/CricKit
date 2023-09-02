@@ -22,7 +22,7 @@ struct UserProfilePage: View {
             }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "Favourite Team")) {
-                FavouriteTeamView(chosenTeam: "India", chosenFlag: "teamInd")
+                FavouriteTeamView()
             }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "App Settings")) {

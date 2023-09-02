@@ -43,9 +43,9 @@ struct CricketNews: View {
     var body: some View {
         VStack(spacing: 20) {
             ForEach(newsList) { news in
-                //NavigationLink(destination: WebView(urlString: news.url)) {
+                NavigationLink(destination: NewsDetail(news: news)) {
                     NewsCard(news: news)
-                //}
+                }
             }
         }
     }
@@ -75,14 +75,14 @@ struct NewsCard: View {
                     .font(.subheadline)
 					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                     .padding(.bottom, 5)
-//                NavigationLink(destination: WebView(urlString: news.url)) { 
-//                    HStack {
-//                        Text("Read More")
-//                            .font(.caption)
-//                            .foregroundColor(.blue)
-//                        Spacer()
-//                    }
-                //}
+                NavigationLink(destination: NewsDetail(news: news)) {
+                    HStack {
+                        Text("Read More")
+                            .font(.caption)
+                            .foregroundColor(.blue)
+                        Spacer()
+                    }
+                }
             }
             Spacer()
         }

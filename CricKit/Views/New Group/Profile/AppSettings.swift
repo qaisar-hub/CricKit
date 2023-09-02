@@ -9,6 +9,7 @@ import SwiftUI
 
 class AppSettings: ObservableObject {
     @Published var isDarkMode = false
+    @Published var favouriteTeam = FavouriteTeam(team: "India", teamFlag: "teamInd")
     
     init() {
             let currentColorScheme = UIScreen.main.traitCollection.userInterfaceStyle
