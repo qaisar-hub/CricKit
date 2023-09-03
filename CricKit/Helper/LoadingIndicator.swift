@@ -47,6 +47,7 @@ struct LoadingIndicator1: View {
 struct LoadingIndicator: View {
     
     @State var  isAnimating: Bool = false
+    @EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         ZStack{
@@ -58,15 +59,14 @@ struct LoadingIndicator: View {
                     .animation( isAnimating ? .linear(duration: 0.5).repeatForever(autoreverses: false) :.default, value:  isAnimating)
                     .frame(width: 30, height: 30, alignment: .center)
                 Text("LOADING")
-                    .foregroundColor(Color(.white))
+                    .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                     .font(.footnote)
                     .shimmering()
             }
         }
         .padding()
-        .background(Blur(style: .systemChromeMaterialDark))
+        .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
         .cornerRadius(10)
-        .shadow(radius: 10)
         .edgesIgnoringSafeArea(.all)
         
         .onAppear{
@@ -87,5 +87,6 @@ struct LoadingIndicator: View {
 struct LoadingIndicator_Previews: PreviewProvider {
     static var previews: some View {
         LoadingIndicator()
+            .environmentObject(AppSettings())
     }
 }

@@ -30,7 +30,7 @@ struct AnimatedLogoView: View {
                                 }
                             }
                             
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                                 withAnimation {
                                     isAnimationComplete = true
                                 }

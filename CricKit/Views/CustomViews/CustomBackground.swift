@@ -17,7 +17,7 @@ struct CustomBackgroundView: View {
                 .blur(radius: animate ? 50 : 100)
                 .offset(x: animate ? -50 : -130, y: animate ? -30 : -100)
                 .task {
-                    withAnimation(.easeInOut(duration: 7).repeatForever()) {
+                    withAnimation(.easeInOut(duration: 3).repeatForever()) {
                         animate.toggle()
                     }
                 }
@@ -37,7 +37,7 @@ struct CustomBackgroundView: View {
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(appSettings.isDarkMode ?
-                    LinearGradient(gradient: Gradient(colors: [Color.appBlacks]), startPoint: .top, endPoint: .bottom) : LinearGradient(gradient: Gradient(colors: [Color.white, Color.appBlacks.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [Color.appBlacks]), startPoint: .top, endPoint: .bottom) : LinearGradient(gradient: Gradient(colors: [Color.white]), startPoint: .top, endPoint: .bottom)
         )
     }
 }
