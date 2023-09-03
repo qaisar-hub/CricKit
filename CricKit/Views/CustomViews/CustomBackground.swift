@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CustomBackgroundView: View {
     @State var animate: Bool = false
+    @EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         ZStack {
@@ -35,8 +36,8 @@ struct CustomBackgroundView: View {
         }
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(
-            LinearGradient(gradient: Gradient(colors: [Color.appBlacks]), startPoint: .top, endPoint: .bottom)
+        .background(appSettings.isDarkMode ?
+                    LinearGradient(gradient: Gradient(colors: [Color.appBlacks]), startPoint: .top, endPoint: .bottom) : LinearGradient(gradient: Gradient(colors: [Color.white, Color.appBlacks.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
         )
     }
 }
@@ -56,5 +57,6 @@ struct CircleBackground: View {
 struct CustomBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
         CustomBackgroundView()
+            .environmentObject(AppSettings())
     }
 }

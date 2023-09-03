@@ -49,6 +49,7 @@
 		20C067672A8CF72700102BCF /* ColorHelper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */; };
 		20C067682A8CF94C00102BCF /* LiveScoreCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */; };
 		20C067692A8CF9B200102BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
+		460A27A92AA4ABDC00C3A420 /* AnimatedLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460A27A82AA4ABDC00C3A420 /* AnimatedLogoView.swift */; };
 		460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */; };
 		460FD2022A841E4100029FD7 /* ColorHelper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */; };
 		460FD2052A841F1700029FD7 /* PlayerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */; };
@@ -153,6 +154,7 @@
 		20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSmall.swift; sourceTree = "<group>"; };
 		20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMedium.swift; sourceTree = "<group>"; };
 		20C067612A8CEAE600102BCF /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		460A27A82AA4ABDC00C3A420 /* AnimatedLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLogoView.swift; sourceTree = "<group>"; };
 		460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileView.swift; sourceTree = "<group>"; };
 		460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorHelper+Extension.swift"; sourceTree = "<group>"; };
 		460FD2042A841F1700029FD7 /* PlayerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBackgroundView.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				46AF6D4D2A9B823100A3EBBB /* SwipeCard.swift */,
 				461BFEA42A8FAB5D007AECB3 /* LoadingIndicator.swift */,
 				460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */,
+				460A27A82AA4ABDC00C3A420 /* AnimatedLogoView.swift */,
 				460FD2662A84EA0700029FD7 /* TextFieldValidator.swift */,
 				460FD26A2A84EA4F00029FD7 /* CustomViewModifiers.swift */,
 				460FD26C2A84EA8400029FD7 /* HomeSectionObservables.swift */,
@@ -679,6 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2096CFFC2A99E32F0093C131 /* RecentMatchModel.swift in Sources */,
+				460A27A92AA4ABDC00C3A420 /* AnimatedLogoView.swift in Sources */,
 				461BFEA52A8FAB5D007AECB3 /* LoadingIndicator.swift in Sources */,
 				461BFE982A8ECC80007AECB3 /* ProfileCard.swift in Sources */,
 				46AF6D522A9BE42300A3EBBB /* LiveScoreCardShimmerView.swift in Sources */,

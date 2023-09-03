@@ -12,9 +12,8 @@ class AppSettings: ObservableObject {
     @Published var favouriteTeam = FavouriteTeam(team: "India", teamFlag: "teamInd")
     
     init() {
-            let currentColorScheme = UIScreen.main.traitCollection.userInterfaceStyle
-            self.isDarkMode = currentColorScheme == .dark
-            print(self.isDarkMode)
+        let currentColorScheme = UIScreen.main.traitCollection.userInterfaceStyle
+        self.isDarkMode = currentColorScheme == .dark
     }
 }
 
