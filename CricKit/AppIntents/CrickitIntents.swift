@@ -9,6 +9,7 @@ import Foundation
 import AppIntents
 import SwiftUI
 import FirebaseFirestore
+import Firebase
 
 struct GetLiveScoreIntent: AppIntent {
 	static let title: LocalizedStringResource = "Get Live Score"
@@ -28,6 +29,7 @@ struct GetLiveScoreIntent: AppIntent {
 struct GetLiveScoreForIntent {
     
     static func liveScore() async throws-> [LiveScoreCardModel] {
+        FirebaseApp.configure()
         let db = Firestore.firestore()
         var liveScoreModel = [LiveScoreCardModel]()
         var teamStatusArray = [TeamStats]()
@@ -42,6 +44,7 @@ struct GetLiveScoreForIntent {
                 let teamsStatusDocumentID = doc.documentID
                 let subCollection = FSCollectionManager.getCollectionID(collection: .liveScore(subCollectionPath: .teamStatus))
                 let snapshot = try await db.collection(parentCollection).document(teamsStatusDocumentID).collection(subCollection).getDocuments()
+                teamStatusArray.removeAll()
                 for doc in snapshot.documents {
                     let teamStats = TeamStats(name: doc["name"] as? String ?? "",
                                               flag: doc["flag"] as? String ?? "",

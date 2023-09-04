@@ -1,12 +1,11 @@
 //
 //  WidgetSmall.swift
-//  CricKit
+//  WidgetCrickitExtension
 //
-//  Created by  Ephrim Daniel J on 16/08/23.
+//  Created by  Ephrim Daniel J on 04/09/23.
 //
 
 import SwiftUI
-import WidgetKit
 
 struct WidgetSmall: View {
     
@@ -35,9 +34,14 @@ struct TeamViewSmall: View {
                         .fontWeight(.medium)
                 }
                 HStack{
-                    Text(item.yetToBat() ? item.yetToBatText() : "\(item.runs)/\(item.wickets) in \(item.overs) ovs")
+                    if (item.yetToBat()) {
+                        Text(item.yetToBatText())
+                    } else {
+                        Text("\(item.runs)/\(item.wickets) in \(item.overs) ovs")
+                    }
                 }
             }
-        }.padding()
+        }
     }
 }
+
