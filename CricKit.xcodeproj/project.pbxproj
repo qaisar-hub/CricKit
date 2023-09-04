@@ -7,21 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20343F382AA5835E00E840D0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067372A8CCA7E00102BCF /* WidgetKit.framework */; };
+		20343F392AA5835E00E840D0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067392A8CCA7F00102BCF /* SwiftUI.framework */; };
+		20343F3C2AA5835E00E840D0 /* WidgetCrickitBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20343F3B2AA5835E00E840D0 /* WidgetCrickitBundle.swift */; };
+		20343F3E2AA5835E00E840D0 /* WidgetCrickit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20343F3D2AA5835E00E840D0 /* WidgetCrickit.swift */; };
+		20343F402AA5836500E840D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20343F3F2AA5836500E840D0 /* Assets.xcassets */; };
+		20343F442AA5836500E840D0 /* WidgetCrickitExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 20343F372AA5835E00E840D0 /* WidgetCrickitExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		20343F492AA583C100E840D0 /* LiveScoreCardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20343F482AA583C100E840D0 /* LiveScoreCardEntry.swift */; };
+		20343F4B2AA583EA00E840D0 /* WidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20343F4A2AA583EA00E840D0 /* WidgetMedium.swift */; };
+		20343F4D2AA583FC00E840D0 /* WidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20343F4C2AA583FC00E840D0 /* WidgetSmall.swift */; };
+		20343F4E2AA5841600E840D0 /* LiveScoreCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */; };
+		20343F4F2AA5841A00E840D0 /* FireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065A4592A98858C00F3C522 /* FireStoreHelper.swift */; };
+		20343F502AA5841D00E840D0 /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA752A987C90002B31D5 /* FirebaseDataService.swift */; };
+		20343F512AA5842200E840D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */; };
+		20343F522AA5843700E840D0 /* CrickitIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1642AA0C84D0082374E /* CrickitIntents.swift */; };
+		20343F532AA5845A00E840D0 /* ColorHelper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */; };
+		20343F552AA5847C00E840D0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 20343F542AA5847C00E840D0 /* FirebaseAuth */; };
+		20343F572AA5848600E840D0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 20343F562AA5848600E840D0 /* FirebaseFirestore */; };
+		20343F592AA5849000E840D0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 20343F582AA5849000E840D0 /* FirebaseFirestoreSwift */; };
+		20343F5A2AA5853500E840D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		205CD15F2AA0C3DD0082374E /* UpComingMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD15E2AA0C3DD0082374E /* UpComingMatchesView.swift */; };
 		205CD1652AA0C84D0082374E /* CrickitIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1642AA0C84D0082374E /* CrickitIntents.swift */; };
 		205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1662AA0ECE30082374E /* FavouriteTeamView.swift */; };
 		205CD16A2AA187250082374E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1692AA187240082374E /* UserData.swift */; };
-		205CD17A2AA231F00082374E /* CrickitIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1642AA0C84D0082374E /* CrickitIntents.swift */; };
-		205CD17B2AA231F80082374E /* FireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065A4592A98858C00F3C522 /* FireStoreHelper.swift */; };
-		205CD17C2AA231FB0082374E /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA752A987C90002B31D5 /* FirebaseDataService.swift */; };
-		205CD18A2AA2372E0082374E /* LiveScoreCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */; };
 		205CD18D2AA239D20082374E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 205CD18C2AA239D20082374E /* FirebaseAuth */; };
 		205CD18F2AA239D20082374E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 205CD18E2AA239D20082374E /* FirebaseFirestore */; };
 		205CD1912AA239D20082374E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 205CD1902AA239D20082374E /* FirebaseFirestoreSwift */; };
-		205CD1932AA239EB0082374E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 205CD1922AA239EB0082374E /* FirebaseAuth */; };
-		205CD1952AA239F10082374E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 205CD1942AA239F10082374E /* FirebaseFirestoreSwift */; };
-		205CD1972AA239FF0082374E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 205CD1962AA239FF0082374E /* FirebaseFirestore */; };
-		205CD1982AA23BE10082374E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */; };
 		2065A45A2A98858C00F3C522 /* FireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2065A4592A98858C00F3C522 /* FireStoreHelper.swift */; };
 		2096CFFA2A99E31C0093C131 /* RecentMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */; };
 		2096CFFC2A99E32F0093C131 /* RecentMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */; };
@@ -29,26 +40,10 @@
 		209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */; };
 		209ADA742A964E09002B31D5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA732A964E09002B31D5 /* Alerts.swift */; };
 		209ADA762A987C90002B31D5 /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209ADA752A987C90002B31D5 /* FirebaseDataService.swift */; };
-		20C067382A8CCA7F00102BCF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067372A8CCA7E00102BCF /* WidgetKit.framework */; };
-		20C0673A2A8CCA7F00102BCF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C067392A8CCA7F00102BCF /* SwiftUI.framework */; };
-		20C0673D2A8CCA7F00102BCF /* CrickitWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0673C2A8CCA7F00102BCF /* CrickitWidgetBundle.swift */; };
-		20C0673F2A8CCA7F00102BCF /* CrickitWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0673E2A8CCA7F00102BCF /* CrickitWidgetLiveActivity.swift */; };
-		20C067412A8CCA7F00102BCF /* CrickitWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067402A8CCA7F00102BCF /* CrickitWidget.swift */; };
-		20C067442A8CCA8700102BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C067432A8CCA8700102BCF /* Assets.xcassets */; };
-		20C067462A8CCA8700102BCF /* CrickitWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 20C067422A8CCA7F00102BCF /* CrickitWidget.intentdefinition */; };
-		20C067472A8CCA8700102BCF /* CrickitWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 20C067422A8CCA7F00102BCF /* CrickitWidget.intentdefinition */; };
-		20C0674A2A8CCA8700102BCF /* CrickitWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 20C067352A8CCA7E00102BCF /* CrickitWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		20C067512A8CD2FB00102BCF /* LiveScoreCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */; };
 		20C067532A8CD36800102BCF /* HomeSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067522A8CD36800102BCF /* HomeSectionsView.swift */; };
 		20C067552A8CD48C00102BCF /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067542A8CD48C00102BCF /* SectionTitleView.swift */; };
-		20C067572A8CDA5B00102BCF /* LiveScoreCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */; };
-		20C0675B2A8CE16100102BCF /* LiveScoreCardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067592A8CE15700102BCF /* LiveScoreCardEntry.swift */; };
-		20C067632A8CEAE900102BCF /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C067612A8CEAE600102BCF /* Provider.swift */; };
-		20C067642A8CF13600102BCF /* WidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */; };
-		20C067652A8CF39500102BCF /* WidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */; };
-		20C067672A8CF72700102BCF /* ColorHelper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */; };
 		20C067682A8CF94C00102BCF /* LiveScoreCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469377082A8A6568003E9AD8 /* LiveScoreCardView.swift */; };
-		20C067692A8CF9B200102BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		460A27A92AA4ABDC00C3A420 /* AnimatedLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460A27A82AA4ABDC00C3A420 /* AnimatedLogoView.swift */; };
 		460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */; };
 		460FD2022A841E4100029FD7 /* ColorHelper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */; };
@@ -103,12 +98,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		20C067482A8CCA8700102BCF /* PBXContainerItemProxy */ = {
+		20343F422AA5836500E840D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 463928032A7EC0B1002C2767 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 20C067342A8CCA7E00102BCF;
-			remoteInfo = CrickitWidgetExtension;
+			remoteGlobalIDString = 20343F362AA5835E00E840D0;
+			remoteInfo = WidgetCrickitExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -119,7 +114,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				20C0674A2A8CCA8700102BCF /* CrickitWidgetExtension.appex in Embed Foundation Extensions */,
+				20343F442AA5836500E840D0 /* WidgetCrickitExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +122,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		20343F372AA5835E00E840D0 /* WidgetCrickitExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetCrickitExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		20343F3B2AA5835E00E840D0 /* WidgetCrickitBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCrickitBundle.swift; sourceTree = "<group>"; };
+		20343F3D2AA5835E00E840D0 /* WidgetCrickit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCrickit.swift; sourceTree = "<group>"; };
+		20343F3F2AA5836500E840D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20343F412AA5836500E840D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20343F482AA583C100E840D0 /* LiveScoreCardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardEntry.swift; sourceTree = "<group>"; };
+		20343F4A2AA583EA00E840D0 /* WidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMedium.swift; sourceTree = "<group>"; };
+		20343F4C2AA583FC00E840D0 /* WidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSmall.swift; sourceTree = "<group>"; };
 		205CD15E2AA0C3DD0082374E /* UpComingMatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpComingMatchesView.swift; sourceTree = "<group>"; };
 		205CD1642AA0C84D0082374E /* CrickitIntents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrickitIntents.swift; sourceTree = "<group>"; };
 		205CD1662AA0ECE30082374E /* FavouriteTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTeamView.swift; sourceTree = "<group>"; };
@@ -138,22 +141,11 @@
 		209ADA712A95C5A7002B31D5 /* LiveScoreCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardViewModel.swift; sourceTree = "<group>"; };
 		209ADA732A964E09002B31D5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		209ADA752A987C90002B31D5 /* FirebaseDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataService.swift; sourceTree = "<group>"; };
-		20C067352A8CCA7E00102BCF /* CrickitWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CrickitWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C067372A8CCA7E00102BCF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		20C067392A8CCA7F00102BCF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		20C0673C2A8CCA7F00102BCF /* CrickitWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrickitWidgetBundle.swift; sourceTree = "<group>"; };
-		20C0673E2A8CCA7F00102BCF /* CrickitWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrickitWidgetLiveActivity.swift; sourceTree = "<group>"; };
-		20C067402A8CCA7F00102BCF /* CrickitWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrickitWidget.swift; sourceTree = "<group>"; };
-		20C067422A8CCA7F00102BCF /* CrickitWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = CrickitWidget.intentdefinition; sourceTree = "<group>"; };
-		20C067432A8CCA8700102BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		20C067452A8CCA8700102BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardModel.swift; sourceTree = "<group>"; };
 		20C067522A8CD36800102BCF /* HomeSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionsView.swift; sourceTree = "<group>"; };
 		20C067542A8CD48C00102BCF /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
-		20C067592A8CE15700102BCF /* LiveScoreCardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardEntry.swift; sourceTree = "<group>"; };
-		20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSmall.swift; sourceTree = "<group>"; };
-		20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMedium.swift; sourceTree = "<group>"; };
-		20C067612A8CEAE600102BCF /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		460A27A82AA4ABDC00C3A420 /* AnimatedLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLogoView.swift; sourceTree = "<group>"; };
 		460FD1FF2A841E4100029FD7 /* PlayerProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerProfileView.swift; sourceTree = "<group>"; };
 		460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorHelper+Extension.swift"; sourceTree = "<group>"; };
@@ -208,15 +200,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		20C067322A8CCA7E00102BCF /* Frameworks */ = {
+		20343F342AA5835E00E840D0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C0673A2A8CCA7F00102BCF /* SwiftUI.framework in Frameworks */,
-				205CD1932AA239EB0082374E /* FirebaseAuth in Frameworks */,
-				20C067382A8CCA7F00102BCF /* WidgetKit.framework in Frameworks */,
-				205CD1972AA239FF0082374E /* FirebaseFirestore in Frameworks */,
-				205CD1952AA239F10082374E /* FirebaseFirestoreSwift in Frameworks */,
+				20343F592AA5849000E840D0 /* FirebaseFirestoreSwift in Frameworks */,
+				20343F392AA5835E00E840D0 /* SwiftUI.framework in Frameworks */,
+				20343F572AA5848600E840D0 /* FirebaseFirestore in Frameworks */,
+				20343F552AA5847C00E840D0 /* FirebaseAuth in Frameworks */,
+				20343F382AA5835E00E840D0 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +228,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20343F3A2AA5835E00E840D0 /* WidgetCrickit */ = {
+			isa = PBXGroup;
+			children = (
+				20343F3B2AA5835E00E840D0 /* WidgetCrickitBundle.swift */,
+				20343F3D2AA5835E00E840D0 /* WidgetCrickit.swift */,
+				20343F3F2AA5836500E840D0 /* Assets.xcassets */,
+				20343F412AA5836500E840D0 /* Info.plist */,
+				20343F482AA583C100E840D0 /* LiveScoreCardEntry.swift */,
+				20343F4A2AA583EA00E840D0 /* WidgetMedium.swift */,
+				20343F4C2AA583FC00E840D0 /* WidgetSmall.swift */,
+			);
+			path = WidgetCrickit;
+			sourceTree = "<group>";
+		};
 		205CD15D2AA0C3680082374E /* UpComingMatchesView */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,19 +283,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		20C0673B2A8CCA7F00102BCF /* CrickitWidget */ = {
-			isa = PBXGroup;
-			children = (
-				20C0673C2A8CCA7F00102BCF /* CrickitWidgetBundle.swift */,
-				20C0673E2A8CCA7F00102BCF /* CrickitWidgetLiveActivity.swift */,
-				20C067582A8CE11600102BCF /* Widgets */,
-				20C067422A8CCA7F00102BCF /* CrickitWidget.intentdefinition */,
-				20C067432A8CCA8700102BCF /* Assets.xcassets */,
-				20C067452A8CCA8700102BCF /* Info.plist */,
-			);
-			path = CrickitWidget;
-			sourceTree = "<group>";
-		};
 		20C0674F2A8CD2C400102BCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,26 +306,6 @@
 				469376FF2A8A64C6003E9AD8 /* RecentMatchView */,
 			);
 			path = HomeSectionSwitchesView;
-			sourceTree = "<group>";
-		};
-		20C067582A8CE11600102BCF /* Widgets */ = {
-			isa = PBXGroup;
-			children = (
-				20C0675C2A8CEA3300102BCF /* views */,
-				20C067402A8CCA7F00102BCF /* CrickitWidget.swift */,
-				20C067592A8CE15700102BCF /* LiveScoreCardEntry.swift */,
-				20C067612A8CEAE600102BCF /* Provider.swift */,
-			);
-			path = Widgets;
-			sourceTree = "<group>";
-		};
-		20C0675C2A8CEA3300102BCF /* views */ = {
-			isa = PBXGroup;
-			children = (
-				20C0675D2A8CEA5B00102BCF /* WidgetSmall.swift */,
-				20C0675F2A8CEA6C00102BCF /* WidgetMedium.swift */,
-			);
-			name = views;
 			sourceTree = "<group>";
 		};
 		460FD2032A841E7800029FD7 /* PlayerProfile */ = {
@@ -453,7 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				4639280D2A7EC0B1002C2767 /* CricKit */,
-				20C0673B2A8CCA7F00102BCF /* CrickitWidget */,
+				20343F3A2AA5835E00E840D0 /* WidgetCrickit */,
 				20C067362A8CCA7E00102BCF /* Frameworks */,
 				4639280C2A7EC0B1002C2767 /* Products */,
 			);
@@ -463,7 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				4639280B2A7EC0B1002C2767 /* CricKit.app */,
-				20C067352A8CCA7E00102BCF /* CrickitWidgetExtension.appex */,
+				20343F372AA5835E00E840D0 /* WidgetCrickitExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -541,26 +514,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		20C067342A8CCA7E00102BCF /* CrickitWidgetExtension */ = {
+		20343F362AA5835E00E840D0 /* WidgetCrickitExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20C0674E2A8CCA8800102BCF /* Build configuration list for PBXNativeTarget "CrickitWidgetExtension" */;
+			buildConfigurationList = 20343F452AA5836500E840D0 /* Build configuration list for PBXNativeTarget "WidgetCrickitExtension" */;
 			buildPhases = (
-				20C067312A8CCA7E00102BCF /* Sources */,
-				20C067322A8CCA7E00102BCF /* Frameworks */,
-				20C067332A8CCA7E00102BCF /* Resources */,
+				20343F332AA5835E00E840D0 /* Sources */,
+				20343F342AA5835E00E840D0 /* Frameworks */,
+				20343F352AA5835E00E840D0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CrickitWidgetExtension;
+			name = WidgetCrickitExtension;
 			packageProductDependencies = (
-				205CD1922AA239EB0082374E /* FirebaseAuth */,
-				205CD1942AA239F10082374E /* FirebaseFirestoreSwift */,
-				205CD1962AA239FF0082374E /* FirebaseFirestore */,
+				20343F542AA5847C00E840D0 /* FirebaseAuth */,
+				20343F562AA5848600E840D0 /* FirebaseFirestore */,
+				20343F582AA5849000E840D0 /* FirebaseFirestoreSwift */,
 			);
-			productName = CrickitWidgetExtension;
-			productReference = 20C067352A8CCA7E00102BCF /* CrickitWidgetExtension.appex */;
+			productName = WidgetCrickitExtension;
+			productReference = 20343F372AA5835E00E840D0 /* WidgetCrickitExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		4639280A2A7EC0B1002C2767 /* CricKit */ = {
@@ -575,7 +548,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				20C067492A8CCA8700102BCF /* PBXTargetDependency */,
+				20343F432AA5836500E840D0 /* PBXTargetDependency */,
 			);
 			name = CricKit;
 			packageProductDependencies = (
@@ -597,11 +570,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					20C067342A8CCA7E00102BCF = {
-						CreatedOnToolsVersion = 14.3.1;
+					20343F362AA5835E00E840D0 = {
+						CreatedOnToolsVersion = 15.0;
 					};
 					4639280A2A7EC0B1002C2767 = {
 						CreatedOnToolsVersion = 14.2;
@@ -627,19 +600,19 @@
 			projectRoot = "";
 			targets = (
 				4639280A2A7EC0B1002C2767 /* CricKit */,
-				20C067342A8CCA7E00102BCF /* CrickitWidgetExtension */,
+				20343F362AA5835E00E840D0 /* WidgetCrickitExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		20C067332A8CCA7E00102BCF /* Resources */ = {
+		20343F352AA5835E00E840D0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C067692A8CF9B200102BCF /* Assets.xcassets in Resources */,
-				20C067442A8CCA8700102BCF /* Assets.xcassets in Resources */,
-				205CD1982AA23BE10082374E /* GoogleService-Info.plist in Resources */,
+				20343F402AA5836500E840D0 /* Assets.xcassets in Resources */,
+				20343F5A2AA5853500E840D0 /* Assets.xcassets in Resources */,
+				20343F512AA5842200E840D0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,24 +629,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		20C067312A8CCA7E00102BCF /* Sources */ = {
+		20343F332AA5835E00E840D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C067462A8CCA8700102BCF /* CrickitWidget.intentdefinition in Sources */,
-				20C067642A8CF13600102BCF /* WidgetSmall.swift in Sources */,
-				20C067652A8CF39500102BCF /* WidgetMedium.swift in Sources */,
-				205CD17B2AA231F80082374E /* FireStoreHelper.swift in Sources */,
-				205CD17A2AA231F00082374E /* CrickitIntents.swift in Sources */,
-				20C0673F2A8CCA7F00102BCF /* CrickitWidgetLiveActivity.swift in Sources */,
-				205CD17C2AA231FB0082374E /* FirebaseDataService.swift in Sources */,
-				20C067672A8CF72700102BCF /* ColorHelper+Extension.swift in Sources */,
-				20C067632A8CEAE900102BCF /* Provider.swift in Sources */,
-				205CD18A2AA2372E0082374E /* LiveScoreCardViewModel.swift in Sources */,
-				20C067572A8CDA5B00102BCF /* LiveScoreCardModel.swift in Sources */,
-				20C0673D2A8CCA7F00102BCF /* CrickitWidgetBundle.swift in Sources */,
-				20C067412A8CCA7F00102BCF /* CrickitWidget.swift in Sources */,
-				20C0675B2A8CE16100102BCF /* LiveScoreCardEntry.swift in Sources */,
+				20343F502AA5841D00E840D0 /* FirebaseDataService.swift in Sources */,
+				20343F3C2AA5835E00E840D0 /* WidgetCrickitBundle.swift in Sources */,
+				20343F3E2AA5835E00E840D0 /* WidgetCrickit.swift in Sources */,
+				20343F532AA5845A00E840D0 /* ColorHelper+Extension.swift in Sources */,
+				20343F4E2AA5841600E840D0 /* LiveScoreCardModel.swift in Sources */,
+				20343F522AA5843700E840D0 /* CrickitIntents.swift in Sources */,
+				20343F4F2AA5841A00E840D0 /* FireStoreHelper.swift in Sources */,
+				20343F4B2AA583EA00E840D0 /* WidgetMedium.swift in Sources */,
+				20343F4D2AA583FC00E840D0 /* WidgetSmall.swift in Sources */,
+				20343F492AA583C100E840D0 /* LiveScoreCardEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,7 +709,6 @@
 				460FD24E2A84E75700029FD7 /* CardView.swift in Sources */,
 				461BFE922A8EAD27007AECB3 /* AuthViewModel.swift in Sources */,
 				461BFE8F2A8EABF6007AECB3 /* UserProfilePage.swift in Sources */,
-				20C067472A8CCA8700102BCF /* CrickitWidget.intentdefinition in Sources */,
 				460FD2092A84203C00029FD7 /* PlayerStatsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,65 +716,72 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		20C067492A8CCA8700102BCF /* PBXTargetDependency */ = {
+		20343F432AA5836500E840D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 20C067342A8CCA7E00102BCF /* CrickitWidgetExtension */;
-			targetProxy = 20C067482A8CCA8700102BCF /* PBXContainerItemProxy */;
+			target = 20343F362AA5835E00E840D0 /* WidgetCrickitExtension */;
+			targetProxy = 20343F422AA5836500E840D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		20C0674C2A8CCA8700102BCF /* Debug */ = {
+		20343F462AA5836500E840D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JA675S6WXV;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CrickitWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CrickitWidget;
+				INFOPLIST_FILE = WidgetCrickit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetCrickit;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSAthon.CricKit.CrickitWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSAthon.CricKit.WidgetCrickit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		20C0674D2A8CCA8700102BCF /* Release */ = {
+		20343F472AA5836500E840D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CrickitWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CrickitWidget;
+				INFOPLIST_FILE = WidgetCrickit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetCrickit;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSAthon.CricKit.CrickitWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSAthon.CricKit.WidgetCrickit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -993,11 +968,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		20C0674E2A8CCA8800102BCF /* Build configuration list for PBXNativeTarget "CrickitWidgetExtension" */ = {
+		20343F452AA5836500E840D0 /* Build configuration list for PBXNativeTarget "WidgetCrickitExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				20C0674C2A8CCA8700102BCF /* Debug */,
-				20C0674D2A8CCA8700102BCF /* Release */,
+				20343F462AA5836500E840D0 /* Debug */,
+				20343F472AA5836500E840D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1050,6 +1025,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		20343F542AA5847C00E840D0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 205CD18B2AA239D20082374E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		20343F562AA5848600E840D0 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 205CD18B2AA239D20082374E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		20343F582AA5849000E840D0 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 205CD18B2AA239D20082374E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		205CD18C2AA239D20082374E /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 205CD18B2AA239D20082374E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -1064,21 +1054,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 205CD18B2AA239D20082374E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
-		};
-		205CD1922AA239EB0082374E /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 205CD18B2AA239D20082374E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		205CD1942AA239F10082374E /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 205CD18B2AA239D20082374E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
-		205CD1962AA239FF0082374E /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 205CD18B2AA239D20082374E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
 		};
 		465F2B062A99E8230088A35A /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
