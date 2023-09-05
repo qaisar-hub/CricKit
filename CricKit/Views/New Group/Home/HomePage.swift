@@ -128,6 +128,7 @@ struct HomeSectionSwitches: View {
     @StateObject var sectionProgress = HomeSection()
 	
 	@EnvironmentObject private var appSettings: AppSettings
+    @State private var isScrollable = false
     
     var width = UIScreen.main.bounds.width - 32
     

@@ -25,6 +25,8 @@ struct SignInView: View {
     @State private var isEmailValid = false
     @State private var isPasswordValid = false
     
+    @State var showForgetPasswordSheet = false
+    
     var body: some View {
 		VStack (spacing: 10) {
             Text("Please sign in to continue.")
@@ -48,12 +50,23 @@ struct SignInView: View {
 				.padding(.trailing, 15)
 			
             
+            Button(action: {
+                showForgetPasswordSheet.toggle()
+            }) {
+                Text("Forgot Password ?")
+                    .padding()
+                    .fontWeight(.semibold)
+                    .fontWidth(.expanded)
+                    .font(.system(size: 12))
+                    .foregroundColor(.appWhites)
+            }.sheet(isPresented: $showForgetPasswordSheet) {
+                ZStack {
+                    appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor
+                    ForgotPasswordView(showForgetPasswordSheet: $showForgetPasswordSheet)
+                }.ignoresSafeArea()
+                    
+            }
             
-            Text("Forgot Password ?")
-                .padding()
-                .fontWidth(.expanded)
-                .font(.system(size: 12))
-                .foregroundColor(.appWhites)
             
             HStack {
 				EmbossedButton(systemName: "arrow.right") {

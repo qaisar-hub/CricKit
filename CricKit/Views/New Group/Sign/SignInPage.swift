@@ -42,7 +42,7 @@ struct SignInPage: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(signInColor)
-						.shadow(color: Color.black, radius: isSignInShown ? 8: 0)
+                        .shadow(color: Color.black, radius: isSignInShown ? 8: 0)
                         
                         RotationButton(label: "SIGN UP", action: {
                             isSignInShown = false
@@ -55,18 +55,18 @@ struct SignInPage: View {
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(signUpColor)
-						.shadow(color: Color.black, radius: isSignInShown ? 0: 8)
+                        .shadow(color: Color.black, radius: isSignInShown ? 0: 8)
                         Spacer()
                     }
                     VStack{
                         Spacer()
-
+                        
                         if (isSignInShown) {
                             Text("Welcome Back")
                                 .fontWidth(.expanded)
                                 .font(.system(size: 25))
                                 .fontWeight(.bold)
-								.foregroundColor(.appWhites)
+                                .foregroundColor(.appWhites)
                                 .offset(y: -12)
                             
                             SignInView(readyToNavigate: $readyToNavigate, isLoading: $isLoading)
@@ -75,19 +75,20 @@ struct SignInPage: View {
                                 .fontWidth(.expanded)
                                 .font(.system(size: 25))
                                 .fontWeight(.bold)
-								.foregroundColor(.appWhites)
+                                .foregroundColor(.appWhites)
                                 .offset(y: -12)
-                        
+                            
                             SignUpView(isLoading: $isLoading)
                         }
                         Spacer()
                     }.background(appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor)
-                    .shadow(radius: 10)
-                    .ignoresSafeArea()
+                        .shadow(radius: 10)
+                        .ignoresSafeArea()
                 }
                 if isLoading {
                     LoadingIndicator()
                 }
+                
             }
             .navigationBarTitle("", displayMode: .inline)
             .navigationDestination(isPresented: $readyToNavigate) {

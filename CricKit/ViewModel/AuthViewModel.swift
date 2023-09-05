@@ -61,6 +61,18 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func resetPassword(withEmail email: String) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                self.userStatus = .failed("Error", "\(error.localizedDescription)")
+            } else {
+                debugPrint("Password reset email sent. Check your inbox.")
+                self.userStatus = .success("Email Sent", "Password reset email sent. Check your inbox.")
+            }
+        }
+    }
+    
     func signOut() {
         do {
             try Auth.auth().signOut()
