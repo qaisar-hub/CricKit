@@ -36,7 +36,7 @@ struct LiveScore: Identifiable, Decodable, Hashable {
 }
 
 
-struct LiveScoreCardModel: Identifiable, Hashable {
+struct LiveScoreCardModel: Encodable, Decodable, Identifiable, Hashable {
     static func == (lhs: LiveScoreCardModel, rhs: LiveScoreCardModel) -> Bool {
         return lhs.id == rhs.id
     }
@@ -45,9 +45,18 @@ struct LiveScoreCardModel: Identifiable, Hashable {
     var matchHeader: String
     var isLive: Bool
     var TeamStatus : [TeamStats]
+    
+    enum CodingKeys: String, CodingKey {
+        case matchStatus = "matchStatus"
+        case matchHeader = "matchHeader"
+        case isLive = "isLive"
+        case TeamStatus = "TeamStatus"
+    }
+    
+    
 }
 
-struct TeamStats: Identifiable, Hashable {
+struct TeamStats: Encodable, Decodable, Identifiable, Hashable {
     var id = UUID()
     var name: String
     var flag: String
@@ -61,5 +70,13 @@ struct TeamStats: Identifiable, Hashable {
     
     func yetToBatText() -> String{
         return "Yet to Bat"
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case flag = "flag"
+        case overs = "overs"
+        case runs = "runs"
+        case wickets = "wickets"
     }
 }
