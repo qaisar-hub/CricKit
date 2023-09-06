@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ActivityKit
 
 struct HomePage: View {
     @State var selectedIndex = 0
@@ -75,6 +76,8 @@ struct HomeBoard: View {
     
     @StateObject var sectionProgress = HomeSection()
     @ObservedObject var liveScoreCardViewModel: LiveScoreCardViewModel
+    
+    @State private var activity : Activity<LiveScoreActivityAttributes>? = nil
 	
 	@EnvironmentObject private var appSettings: AppSettings
     
@@ -97,6 +100,38 @@ struct HomeBoard: View {
                                 .clipShape(LiveMatchCard())
                                 .cornerRadius(10, corners: .allCorners)
                                 .padding(.trailing, index == liveScoreCardViewModel.liveScoreCardlists.count - 1 ? 30: 0)
+                                .onTapGesture {
+                                    // MARK: LIVE ACTIVITY
+                                    
+                                    let attributes = LiveScoreActivityAttributes(
+                                        
+                                        matchName: liveScoreItem.matchHeader,
+                                        matchStatus:liveScoreItem.matchStatus,
+                                        
+                                        leftTeamflag: liveScoreItem.TeamStatus[0].flag,
+                                        leftTeamName: liveScoreItem.TeamStatus[0].name,
+                                        leftTeamRuns: liveScoreItem.TeamStatus[0].runs,
+                                        leftTeamOvers: liveScoreItem.TeamStatus[0].overs,
+                                        leftTeamWickets: liveScoreItem.TeamStatus[0].wickets,
+                                        
+                                        rightTeamflag: liveScoreItem.TeamStatus[1].flag,
+                                        rightTeamName: liveScoreItem.TeamStatus[1].name,
+                                        rightTeamRuns: liveScoreItem.TeamStatus[1].runs,
+                                        rightTeamOvers: liveScoreItem.TeamStatus[1].overs,
+                                        rightTeamWickets: liveScoreItem.TeamStatus[1].wickets)
+                                    
+                                    let state = LiveScoreActivityAttributes.ContentState(endTime: Date().addingTimeInterval(60))
+                                    do {
+                                        let orderActivity = try Activity.request(
+                                            attributes: attributes,
+                                            contentState: state,
+                                            pushType: nil
+                                        )
+                                        // TODO: Add push notification for live activity to update
+                                    } catch {
+                                        print(error.localizedDescription)
+                                    }
+                                }
                         }
                         .offset(x: 16)
                     }
