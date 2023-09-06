@@ -82,6 +82,7 @@ struct HomeBoard: View {
     @EnvironmentObject private var appSettings: AppSettings
     
     var width = UIScreen.main.bounds.width
+    @State private var alert: AlertTypes? = nil
     
     var body: some View {
         VStack{
@@ -110,6 +111,7 @@ struct HomeBoard: View {
                                             contentState: state,
                                             pushType: nil
                                         )
+                                        alert = AlertTypes.defaulAlert(title: "Live Activity for \(liveScoreItem.matchHeader) is now added to your lock screen", message: "Please check your lock screen notifications")
                                         // TODO: Add push notification for live activity to update
                                     } catch {
                                         print(error.localizedDescription)
@@ -133,6 +135,9 @@ struct HomeBoard: View {
                 .padding(.bottom, 10)
             }
             .shadow(color: appSettings.isDarkMode ? Color.black : Color.white, radius: 0.5)
+        }
+        .alert(item: $alert) { value in
+            return value.alert
         }
     }
 }
