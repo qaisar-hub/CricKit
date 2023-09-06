@@ -78,8 +78,8 @@ struct HomeBoard: View {
     @ObservedObject var liveScoreCardViewModel: LiveScoreCardViewModel
     
     @State private var activity : Activity<LiveScoreActivityAttributes>? = nil
-	
-	@EnvironmentObject private var appSettings: AppSettings
+    
+    @EnvironmentObject private var appSettings: AppSettings
     
     var width = UIScreen.main.bounds.width
     
@@ -96,31 +96,14 @@ struct HomeBoard: View {
                             LiveScoreCardView(liveScoreCardData: liveScoreItem)
                                 .frame(width: width - 32, height: 200)
                                 .clipShape(LiveMatchCard())
-								.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
+                                .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                                 .clipShape(LiveMatchCard())
                                 .cornerRadius(10, corners: .allCorners)
                                 .padding(.trailing, index == liveScoreCardViewModel.liveScoreCardlists.count - 1 ? 30: 0)
                                 .onTapGesture {
                                     // MARK: LIVE ACTIVITY
-                                    
-                                    let attributes = LiveScoreActivityAttributes(
-                                        
-                                        matchName: liveScoreItem.matchHeader,
-                                        matchStatus:liveScoreItem.matchStatus,
-                                        
-                                        leftTeamflag: liveScoreItem.TeamStatus[0].flag,
-                                        leftTeamName: liveScoreItem.TeamStatus[0].name,
-                                        leftTeamRuns: liveScoreItem.TeamStatus[0].runs,
-                                        leftTeamOvers: liveScoreItem.TeamStatus[0].overs,
-                                        leftTeamWickets: liveScoreItem.TeamStatus[0].wickets,
-                                        
-                                        rightTeamflag: liveScoreItem.TeamStatus[1].flag,
-                                        rightTeamName: liveScoreItem.TeamStatus[1].name,
-                                        rightTeamRuns: liveScoreItem.TeamStatus[1].runs,
-                                        rightTeamOvers: liveScoreItem.TeamStatus[1].overs,
-                                        rightTeamWickets: liveScoreItem.TeamStatus[1].wickets)
-                                    
-                                    let state = LiveScoreActivityAttributes.ContentState(endTime: Date().addingTimeInterval(60))
+                                    let attributes = LiveScoreActivityAttributes(matchName: liveScoreItem.matchHeader)
+                                    let state = LiveScoreActivityAttributes.ContentState(endTime: Date().addingTimeInterval(60), liveScoreModel: liveScoreItem)
                                     do {
                                         let orderActivity = try Activity.request(
                                             attributes: attributes,
@@ -149,7 +132,7 @@ struct HomeBoard: View {
                 }
                 .padding(.bottom, 10)
             }
-			.shadow(color: appSettings.isDarkMode ? Color.black : Color.white, radius: 0.5)
+            .shadow(color: appSettings.isDarkMode ? Color.black : Color.white, radius: 0.5)
         }
     }
 }
@@ -161,8 +144,8 @@ struct HomeSectionSwitches: View {
     @StateObject var upComingMatchesViewModel = UpComingMatchViewModel()
     @StateObject var featuredPlayersViewModel = FeaturedPlayersViewModel()
     @StateObject var sectionProgress = HomeSection()
-	
-	@EnvironmentObject private var appSettings: AppSettings
+    
+    @EnvironmentObject private var appSettings: AppSettings
     @State private var isScrollable = false
     
     var width = UIScreen.main.bounds.width - 32
@@ -202,10 +185,10 @@ struct HomeSectionSwitches: View {
             } else if (sectionProgress.index == 2) {
                 ScrollView(.vertical, showsIndicators: false){
                     VStack{
-						ForEach(Array(featuredPlayersViewModel.featuredPlayers.enumerated()), id: \.element.id) { index, featuredPlayer in
-							FeaturedPlayersSectionView(featuredPlayer: featuredPlayer, playerImage: categoryDataImages[index])
+                        ForEach(Array(featuredPlayersViewModel.featuredPlayers.enumerated()), id: \.element.id) { index, featuredPlayer in
+                            FeaturedPlayersSectionView(featuredPlayer: featuredPlayer, playerImage: categoryDataImages[index])
                                 .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
-								.clipShape(LiveMatchCard())
+                                .clipShape(LiveMatchCard())
                                 .cornerRadius(20, corners: .allCorners)
                         }
                     }
