@@ -28,8 +28,10 @@ struct GetLiveScoreIntent: AppIntent {
 
 struct GetLiveScoreForIntent {
     
-    static func liveScore() async throws-> [LiveScoreCardModel] {
-        FirebaseApp.configure()
+    static func liveScore(configureFirebase: Bool = false) async throws-> [LiveScoreCardModel] {
+        if configureFirebase {
+            FirebaseApp.configure()
+        }
         let db = Firestore.firestore()
         var liveScoreModel = [LiveScoreCardModel]()
         var teamStatusArray = [TeamStats]()

@@ -35,7 +35,7 @@ struct Provider: AppIntentTimelineProvider {
     // the timeline which updates the widget based on the chosen configuration value
     func timeline(for configuration: LiveScoreIntent, in context: Context) async -> Timeline<LiveScoreCardEntry> {
         var liveScoreCardModel : LiveScoreCardModel!
-        let result = try! await GetLiveScoreForIntent.liveScore()
+        let result = try! await GetLiveScoreForIntent.liveScore(configureFirebase: true)
         for (index, item) in result.enumerated() {
             // matches the current cnfiguration value from the results and updates the widget view
             if (configuration.matchName.id.entityIdentifierString == item.matchHeader ) {

@@ -26,6 +26,8 @@
 		20343F572AA5848600E840D0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 20343F562AA5848600E840D0 /* FirebaseFirestore */; };
 		20343F592AA5849000E840D0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 20343F582AA5849000E840D0 /* FirebaseFirestoreSwift */; };
 		20343F5A2AA5853500E840D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
+		20343F5C2AA7307000E840D0 /* LiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20343F5B2AA7307000E840D0 /* LiveActivity.swift */; };
+		20343F5D2AA737BF00E840D0 /* LiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20343F5B2AA7307000E840D0 /* LiveActivity.swift */; };
 		205CD15F2AA0C3DD0082374E /* UpComingMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD15E2AA0C3DD0082374E /* UpComingMatchesView.swift */; };
 		205CD1652AA0C84D0082374E /* CrickitIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1642AA0C84D0082374E /* CrickitIntents.swift */; };
 		205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1662AA0ECE30082374E /* FavouriteTeamView.swift */; };
@@ -131,6 +133,7 @@
 		20343F482AA583C100E840D0 /* LiveScoreCardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreCardEntry.swift; sourceTree = "<group>"; };
 		20343F4A2AA583EA00E840D0 /* WidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMedium.swift; sourceTree = "<group>"; };
 		20343F4C2AA583FC00E840D0 /* WidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSmall.swift; sourceTree = "<group>"; };
+		20343F5B2AA7307000E840D0 /* LiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivity.swift; sourceTree = "<group>"; };
 		205CD15E2AA0C3DD0082374E /* UpComingMatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpComingMatchesView.swift; sourceTree = "<group>"; };
 		205CD1642AA0C84D0082374E /* CrickitIntents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrickitIntents.swift; sourceTree = "<group>"; };
 		205CD1662AA0ECE30082374E /* FavouriteTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTeamView.swift; sourceTree = "<group>"; };
@@ -240,6 +243,7 @@
 				20343F482AA583C100E840D0 /* LiveScoreCardEntry.swift */,
 				20343F4A2AA583EA00E840D0 /* WidgetMedium.swift */,
 				20343F4C2AA583FC00E840D0 /* WidgetSmall.swift */,
+				20343F5B2AA7307000E840D0 /* LiveActivity.swift */,
 			);
 			path = WidgetCrickit;
 			sourceTree = "<group>";
@@ -637,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20343F502AA5841D00E840D0 /* FirebaseDataService.swift in Sources */,
+				20343F5C2AA7307000E840D0 /* LiveActivity.swift in Sources */,
 				20343F3C2AA5835E00E840D0 /* WidgetCrickitBundle.swift in Sources */,
 				20343F3E2AA5835E00E840D0 /* WidgetCrickit.swift in Sources */,
 				20343F532AA5845A00E840D0 /* ColorHelper+Extension.swift in Sources */,
@@ -666,6 +671,7 @@
 				205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */,
 				46D255F12A9F781F008D5ACF /* SignInPageErrorMessageView.swift in Sources */,
 				46D255F62A9FB907008D5ACF /* AppSettings.swift in Sources */,
+				20343F5D2AA737BF00E840D0 /* LiveActivity.swift in Sources */,
 				461BFE8B2A8EA062007AECB3 /* User.swift in Sources */,
 				46CC98E42A9D378F0004C8F1 /* CustomBackground.swift in Sources */,
 				4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */,
@@ -769,7 +775,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JA675S6WXV;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -913,6 +919,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CricKit/Preview Content\"";
@@ -920,6 +927,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CricKit/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -932,6 +940,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iOSAthon.CricKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -944,13 +953,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CricKit/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JA675S6WXV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CricKit/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -963,6 +974,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iOSAthon.CricKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
