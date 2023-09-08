@@ -73,6 +73,7 @@
 		461BFE982A8ECC80007AECB3 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BFE972A8ECC80007AECB3 /* ProfileCard.swift */; };
 		461BFEA52A8FAB5D007AECB3 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461BFEA42A8FAB5D007AECB3 /* LoadingIndicator.swift */; };
 		461F30732AA73DBC00F44358 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461F30722AA73DBC00F44358 /* ForgotPasswordView.swift */; };
+		462662702AABDE340091114D /* AppLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626626F2AABDE340091114D /* AppLogoView.swift */; };
 		4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639280E2A7EC0B1002C2767 /* CricKitApp.swift */; };
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
@@ -95,7 +96,7 @@
 		46CAEF092A9E1D3A009312CE /* UpComingMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CAEF082A9E1D3A009312CE /* UpComingMatchViewModel.swift */; };
 		46CC98E42A9D378F0004C8F1 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */; };
 		46D255EF2A9F24E8008D5ACF /* EmbossedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255EE2A9F24E8008D5ACF /* EmbossedButton.swift */; };
-		46D255F12A9F781F008D5ACF /* SignInPageErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F02A9F781F008D5ACF /* SignInPageErrorMessageView.swift */; };
+		46D255F12A9F781F008D5ACF /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F02A9F781F008D5ACF /* ErrorMessageView.swift */; };
 		46D255F62A9FB907008D5ACF /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F52A9FB907008D5ACF /* AppSettings.swift */; };
 		46D255F82A9FF0D0008D5ACF /* RecentMatchShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */; };
 /* End PBXBuildFile section */
@@ -177,6 +178,7 @@
 		461BFE972A8ECC80007AECB3 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		461BFEA42A8FAB5D007AECB3 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		461F30722AA73DBC00F44358 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		4626626F2AABDE340091114D /* AppLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoView.swift; sourceTree = "<group>"; };
 		4639280B2A7EC0B1002C2767 /* CricKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,7 +201,7 @@
 		46CAEF082A9E1D3A009312CE /* UpComingMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingMatchViewModel.swift; sourceTree = "<group>"; };
 		46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
 		46D255EE2A9F24E8008D5ACF /* EmbossedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbossedButton.swift; sourceTree = "<group>"; };
-		46D255F02A9F781F008D5ACF /* SignInPageErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageErrorMessageView.swift; sourceTree = "<group>"; };
+		46D255F02A9F781F008D5ACF /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		46D255F52A9FB907008D5ACF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchShimmerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -357,6 +359,7 @@
 				46AF6D552A9C057000A3EBBB /* CustomBackButton.swift */,
 				46CC98E32A9D378F0004C8F1 /* CustomBackground.swift */,
 				460FD20A2A84210100029FD7 /* RoundedRectangleView.swift */,
+				4626626F2AABDE340091114D /* AppLogoView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -410,7 +413,7 @@
 				460FD2612A84E8C900029FD7 /* SignUpView.swift */,
 				460FD25F2A84E8B500029FD7 /* SignInView.swift */,
 				460FD25D2A84E8A700029FD7 /* SignInPage.swift */,
-				46D255F02A9F781F008D5ACF /* SignInPageErrorMessageView.swift */,
+				46D255F02A9F781F008D5ACF /* ErrorMessageView.swift */,
 				461F30722AA73DBC00F44358 /* ForgotPasswordView.swift */,
 			);
 			name = SignIn;
@@ -669,7 +672,7 @@
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
 				205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */,
-				46D255F12A9F781F008D5ACF /* SignInPageErrorMessageView.swift in Sources */,
+				46D255F12A9F781F008D5ACF /* ErrorMessageView.swift in Sources */,
 				46D255F62A9FB907008D5ACF /* AppSettings.swift in Sources */,
 				20343F5D2AA737BF00E840D0 /* LiveActivity.swift in Sources */,
 				461BFE8B2A8EA062007AECB3 /* User.swift in Sources */,
@@ -693,6 +696,7 @@
 				46CAEF092A9E1D3A009312CE /* UpComingMatchViewModel.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
 				46CAEF032A9E1B5D009312CE /* FeaturedPlayersModel.swift in Sources */,
+				462662702AABDE340091114D /* AppLogoView.swift in Sources */,
 				46AF6D542A9BFDB400A3EBBB /* CricketNews.swift in Sources */,
 				20C067532A8CD36800102BCF /* HomeSectionsView.swift in Sources */,
 				46CAEF052A9E1B87009312CE /* UpComingMatchesModel.swift in Sources */,

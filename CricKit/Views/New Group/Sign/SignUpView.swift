@@ -14,7 +14,7 @@ struct SignUpView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @Binding var isLoading: Bool
     @State private var isTapped = false
-    @State private var showingFieldAlert = false
+    @State private var startValidation = false
     @State private var alert: AlertTypes? = nil
     
     var body: some View {
@@ -31,13 +31,8 @@ struct SignUpView: View {
                 .padding(.leading, 15)
                 .padding(.trailing, 15)
                 .padding(.bottom, 15)
-            if showingFieldAlert && !progress.isValidFullName() {
-                Text("Full name should not be empty")
-                    .foregroundColor(.red)
-                    .font(.system(size: 12))
-                    .offset(y: -15)
-            }
-            
+            ErrorMessageView(errorMessage: startValidation ? progress.validateFullName() : "")
+        
             customTextField(placeholderText: "Email ID", spacing: 0.0, textValue: $progress.emailId, isSecureField: false)
                 .frame(height: 40)
                 .background(Color.darkStart)
@@ -45,12 +40,7 @@ struct SignUpView: View {
                 .padding(.leading, 15)
                 .padding(.trailing, 15)
                 .padding(.bottom, 15)
-            if showingFieldAlert && !progress.isValidEmail() {
-                Text("Invalid email format")
-                    .foregroundColor(.red)
-                    .font(.system(size: 12))
-                    .offset(y: -15)
-            }
+            ErrorMessageView(errorMessage: startValidation ? progress.validateEmail() : "")
             
             customTextField(placeholderText: "New Password", spacing: 0.0, textValue: $progress.password, isSecureField: true)
                 .frame(height: 40)
@@ -59,12 +49,7 @@ struct SignUpView: View {
                 .padding(.leading, 15)
                 .padding(.trailing, 15)
                 .padding(.bottom, 15)
-            if showingFieldAlert && !progress.isValidPassword() {
-                Text("Password should be at least 6 characters")
-                    .foregroundColor(.red)
-                    .font(.system(size: 12))
-                    .offset(y: -15)
-            }
+            ErrorMessageView(errorMessage: startValidation ? progress.validatePassword() : "")
             
             customTextField(placeholderText: "Confirm Password", spacing: 0.0, textValue: $progress.confirmPassword, isSecureField: true)
                 .frame(height: 40)
@@ -73,27 +58,18 @@ struct SignUpView: View {
                 .padding(.leading, 15)
                 .padding(.trailing, 15)
                 .padding(.bottom, 15)
-            if showingFieldAlert && !progress.doPasswordsMatch() {
-                Text("Passwords do not match")
-                    .foregroundColor(.red)
-                    .font(.system(size: 12))
-                    .offset(y: -15)
-            }
+            ErrorMessageView(errorMessage: startValidation ? progress.validateConfirmPassword() : "")
             
             HStack {
                 EmbossedButton(systemName: "arrow.right") {
                     isLoading = true
-                    if progress.isValidAllFields() {
+                    startValidation = true
                         Task {
                             try await authViewModel.createUser(withEmail: progress.emailId
                                                                ,password: progress.password, fullName: progress.fullName)
                             isLoading = false // stop loading indicator
                             alert = authViewModel.checkUserStatus()
                         }
-                    } else {
-                        isLoading = false
-                        showingFieldAlert = true
-                    }
                 }
                 .padding()
             }
