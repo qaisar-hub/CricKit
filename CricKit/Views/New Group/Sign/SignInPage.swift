@@ -25,8 +25,8 @@ struct SignInPage: View {
         NavigationStack {
             ZStack {
                 
-                LinearGradient(Color.appBlacks, Color.darkStart)
-                        .ignoresSafeArea()
+                appSettings.isDarkMode ? LinearGradient(Color.appBlacks, Color.darkStart).ignoresSafeArea() : LinearGradient(Color.appWhites).ignoresSafeArea()
+                        
                 
                 HStack {
                     VStack(spacing: 100) {

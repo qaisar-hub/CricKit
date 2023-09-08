@@ -26,6 +26,7 @@ struct SignInView: View {
     @State private var isPasswordValid = false
     
     @State var showForgetPasswordSheet = false
+    @State private var startValidation = false
     
     var body: some View {
 		VStack (spacing: 10) {
@@ -59,7 +60,7 @@ struct SignInView: View {
                     .fontWidth(.expanded)
                     .font(.system(size: 12))
                     .foregroundColor(.appWhites)
-            }.sheet(isPresented: $showForgetPasswordSheet) {
+            }.popover(isPresented: $showForgetPasswordSheet) {
                 ZStack {
                     appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor
                     ForgotPasswordView(showForgetPasswordSheet: $showForgetPasswordSheet)
@@ -72,7 +73,7 @@ struct SignInView: View {
 				EmbossedButton(systemName: "arrow.right") {
                     isLoading = true
 					Task {
-						try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password)
+                        try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password, errorMessage: progress.validateSignInFields())
 						isLoading = false
 						alert = authViewModel.checkUserStatus()
 					}
@@ -82,15 +83,15 @@ struct SignInView: View {
             HStack(spacing: 8) {
                 Rectangle()
                     .frame(height: 1)
-                    .foregroundColor(.gray)
+                    .foregroundColor(appSettings.isDarkMode ? .gray : .black.opacity(0.5))
                 
                 Text("OR")
-                    .foregroundColor(.gray)
+                    .foregroundColor(appSettings.isDarkMode ? .gray : .black.opacity(0.5))
                     .font(.subheadline)
                 
                 Rectangle()
                     .frame(height: 1)
-                    .foregroundColor(.gray)
+                    .foregroundColor(appSettings.isDarkMode ? .gray : .black.opacity(0.5))
             }
             .padding()
 			

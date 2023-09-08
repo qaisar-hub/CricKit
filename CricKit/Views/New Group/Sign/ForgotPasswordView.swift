@@ -65,10 +65,11 @@ struct ForgotPasswordView: View {
                 
                 .presentationDetents([.medium])
             }
+            .padding(.all)
             .alert(item: $alert) { value in
                 value.alert
             }
-            .padding(.all)
+            
             
     }
 }

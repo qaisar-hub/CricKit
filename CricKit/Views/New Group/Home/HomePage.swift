@@ -27,15 +27,8 @@ struct HomePage: View {
                 }
                 
                 VStack(spacing: 0) {
-                    HStack {
-                        Text("CricKit")
-                            .padding()
-                            .fontWidth(.expanded)
-                            .font(.system(size: 30))
-                            .fontWeight(.bold)
-                            .foregroundStyle(ColorManager.appPrimaryColor())
-                        Spacer()
-                    }
+                    
+                    AppLogoView()
                     
                     switch selectedIndex {
                     case 0:

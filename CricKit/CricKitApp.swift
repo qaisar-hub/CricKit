@@ -45,44 +45,6 @@ struct LaunchAnimationView: View {
     }
 }
 
-//struct AnimationView: View {
-//    @Binding var isAnimationComplete: Bool
-//    @State private var showSlogan = false
-//
-//    var body: some View {
-//        VStack {
-//            Image("appLogo")
-//                .renderingMode(.original)
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
-//                .opacity(0.9)
-//                .onAppear {
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                        withAnimation(.easeInOut(duration: 1)) {
-//                            showSlogan = true
-//                        }
-//                    }
-//
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-//                        withAnimation {
-//                            isAnimationComplete = true
-//                        }
-//                    }
-//                }
-//
-//            if showSlogan {
-//                TypingText(text: "C r i c K i t")
-//                    .padding()
-//                    .fontWidth(.expanded)
-//                    .font(.system(size: 30))
-//                    .fontWeight(.bold)
-//                    .foregroundStyle(.linearGradient(colors: [Color.appPrimary], startPoint: .topLeading, endPoint: .bottomTrailing))
-//            }
-//        }
-//    }
-//}
-
 
 struct ContentView: View {
     @EnvironmentObject var authViewModel: AuthViewModel

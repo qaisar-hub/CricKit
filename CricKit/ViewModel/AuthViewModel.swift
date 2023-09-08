@@ -25,14 +25,18 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func signIn(withEmail email: String, password: String) async throws {
-        do {
-            let result = try await Auth.auth().signIn(withEmail: email, password: password)
-            self.userSession = result.user
-            await fetchUser()
-        } catch {
-            self.userStatus = .failed("Signin Failed", "The email or password you entered is incorrect. Please double-check and try again.")
-            print("Failed to sign in with error \(error.localizedDescription)")
+    func signIn(withEmail email: String, password: String, errorMessage: String) async throws {
+        if errorMessage.isEmpty {
+            do {
+                let result = try await Auth.auth().signIn(withEmail: email, password: password)
+                self.userSession = result.user
+                await fetchUser()
+            } catch {
+                self.userStatus = .failed("Sign In Failed", "The email or password you entered is incorrect. Please double-check and try again.")
+                print("Failed to sign in with error \(error.localizedDescription)")
+            }
+        } else {
+            self.userStatus = .failed("Sign In Failed", errorMessage)
         }
     }
     
@@ -56,7 +60,7 @@ class AuthViewModel: ObservableObject {
             try await Firestore.firestore().collection("users").document(user.id).setData(encoderUser)
             await fetchUser()
         } catch {
-            self.userStatus = .failed("Signup Failed", "An error occurred while signing up. Please try again.")
+            self.userStatus = .failed("Signup Failed", "An error occurred while signing up. Please check the fields again.")
             debugPrint("Failed to create user with error \(error.localizedDescription)")
         }
     }
