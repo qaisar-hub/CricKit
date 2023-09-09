@@ -1,7 +1,4 @@
 # CricKit
 CricKit App is a cricket sports app that keeps you up-to-date with real-time match updates, live scores, and in-depth statistics and an exclusive merchandise store for all cricket enthusiasts.
 
-<img src="https://github.com/qaisar-hub/CricKit/assets/98053898/32ec53ea-c3ed-47ec-81f9-da47456b9f96" width="250">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/qaisar-hub/CricKit/assets/98053898/7eb2880c-c9d7-40c2-94cb-d2ce068acdf5" width="250">
-
-
-
+<img src="https://github.com/qaisar-hub/CricKit/assets/98053898/743c1ac8-8e91-444e-be16-2d2b87cf6305" width="250">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/qaisar-hub/CricKit/assets/98053898/c6e34128-25b6-4a4e-b06f-9aed43db02df" width="250">
