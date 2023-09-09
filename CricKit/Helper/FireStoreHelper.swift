@@ -21,6 +21,8 @@ public class FSCollectionManager {
             return "featuredPlayers"
         case .upComingMatches(subCollectionPath: let subCollectionPath):
             return subCollectionPath.value.path
+        case .news:
+            return "news"
         }
     }
     
@@ -30,6 +32,7 @@ public class FSCollectionManager {
         case recentMatches(subCollectionPath: recentMatchesSubCollection)
         case upComingMatches(subCollectionPath: upComingMatchesSubCollection)
         case featuredPlayers
+        case news
         
         enum liveScoreSubCollection {
             case teamStatus // returns liveScore -> teamStatus

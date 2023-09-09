@@ -99,6 +99,8 @@
 		46D255F12A9F781F008D5ACF /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F02A9F781F008D5ACF /* ErrorMessageView.swift */; };
 		46D255F62A9FB907008D5ACF /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F52A9FB907008D5ACF /* AppSettings.swift */; };
 		46D255F82A9FF0D0008D5ACF /* RecentMatchShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */; };
+		46DA75052AACE0D80040D4C1 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA75042AACE0D70040D4C1 /* NewsViewModel.swift */; };
+		46DA75072AACE16C0040D4C1 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA75062AACE16C0040D4C1 /* NewsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +206,8 @@
 		46D255F02A9F781F008D5ACF /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		46D255F52A9FB907008D5ACF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchShimmerView.swift; sourceTree = "<group>"; };
+		46DA75042AACE0D70040D4C1 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		46DA75062AACE16C0040D4C1 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +303,7 @@
 				2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */,
 				46CAEF022A9E1B5D009312CE /* FeaturedPlayersModel.swift */,
 				46CAEF042A9E1B87009312CE /* UpComingMatchesModel.swift */,
+				46DA75062AACE16C0040D4C1 /* NewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */,
 				46CAEF062A9E1D0C009312CE /* FeaturedPlayersViewModel.swift */,
 				46CAEF082A9E1D3A009312CE /* UpComingMatchViewModel.swift */,
+				46DA75042AACE0D70040D4C1 /* NewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -670,6 +676,7 @@
 				460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */,
 				46AF6D4E2A9B823100A3EBBB /* SwipeCard.swift in Sources */,
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
+				46DA75072AACE16C0040D4C1 /* NewsModel.swift in Sources */,
 				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
 				205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */,
 				46D255F12A9F781F008D5ACF /* ErrorMessageView.swift in Sources */,
@@ -684,6 +691,7 @@
 				460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */,
 				205CD16A2AA187250082374E /* UserData.swift in Sources */,
 				465DC2722A9C95F400B171BE /* RankingDetailsView.swift in Sources */,
+				46DA75052AACE0D80040D4C1 /* NewsViewModel.swift in Sources */,
 				460FD26B2A84EA4F00029FD7 /* CustomViewModifiers.swift in Sources */,
 				2065A45A2A98858C00F3C522 /* FireStoreHelper.swift in Sources */,
 				460FD25E2A84E8A700029FD7 /* SignInPage.swift in Sources */,

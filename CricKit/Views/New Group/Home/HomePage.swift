@@ -142,6 +142,7 @@ struct HomeSectionSwitches: View {
     @StateObject var upComingMatchesViewModel = UpComingMatchViewModel()
     @StateObject var featuredPlayersViewModel = FeaturedPlayersViewModel()
     @StateObject var sectionProgress = HomeSection()
+    @StateObject var newsViewsModel = NewsViewModel()
     
     @EnvironmentObject private var appSettings: AppSettings
     @State private var isScrollable = false
@@ -192,7 +193,7 @@ struct HomeSectionSwitches: View {
                     }
                 }
             } else if (sectionProgress.index == 3) {
-                CricketNews()
+                CricketNews(newsModel: newsViewsModel.newsModel)
             } else if (sectionProgress.index == 4) {
                 RankingCardView()
             }
@@ -203,6 +204,7 @@ struct HomeSectionSwitches: View {
             recentMatchesViewModel.getRecentMatches()
             upComingMatchesViewModel.geUpComingMatches()
             featuredPlayersViewModel.getFeaturedPlayers()
+            newsViewsModel.getaNewsData()
         }
     }
 }
