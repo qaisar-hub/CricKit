@@ -31,7 +31,6 @@
 		205CD15F2AA0C3DD0082374E /* UpComingMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD15E2AA0C3DD0082374E /* UpComingMatchesView.swift */; };
 		205CD1652AA0C84D0082374E /* CrickitIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1642AA0C84D0082374E /* CrickitIntents.swift */; };
 		205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1662AA0ECE30082374E /* FavouriteTeamView.swift */; };
-		205CD16A2AA187250082374E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205CD1692AA187240082374E /* UserData.swift */; };
 		205CD18D2AA239D20082374E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 205CD18C2AA239D20082374E /* FirebaseAuth */; };
 		205CD18F2AA239D20082374E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 205CD18E2AA239D20082374E /* FirebaseFirestore */; };
 		205CD1912AA239D20082374E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 205CD1902AA239D20082374E /* FirebaseFirestoreSwift */; };
@@ -101,6 +100,8 @@
 		46D255F82A9FF0D0008D5ACF /* RecentMatchShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */; };
 		46DA75052AACE0D80040D4C1 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA75042AACE0D70040D4C1 /* NewsViewModel.swift */; };
 		46DA75072AACE16C0040D4C1 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA75062AACE16C0040D4C1 /* NewsModel.swift */; };
+		46DA750A2AAF06800040D4C1 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA75092AAF06800040D4C1 /* UserDataModel.swift */; };
+		46DA750C2AAF45F50040D4C1 /* SwiftDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA750B2AAF45F50040D4C1 /* SwiftDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,7 +141,6 @@
 		205CD15E2AA0C3DD0082374E /* UpComingMatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpComingMatchesView.swift; sourceTree = "<group>"; };
 		205CD1642AA0C84D0082374E /* CrickitIntents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrickitIntents.swift; sourceTree = "<group>"; };
 		205CD1662AA0ECE30082374E /* FavouriteTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTeamView.swift; sourceTree = "<group>"; };
-		205CD1692AA187240082374E /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		2065A4592A98858C00F3C522 /* FireStoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreHelper.swift; sourceTree = "<group>"; };
 		2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchesViewModel.swift; sourceTree = "<group>"; };
 		2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchModel.swift; sourceTree = "<group>"; };
@@ -208,6 +208,8 @@
 		46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchShimmerView.swift; sourceTree = "<group>"; };
 		46DA75042AACE0D70040D4C1 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		46DA75062AACE16C0040D4C1 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		46DA75092AAF06800040D4C1 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		46DA750B2AAF45F50040D4C1 /* SwiftDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,14 +280,6 @@
 			path = AppIntents;
 			sourceTree = "<group>";
 		};
-		205CD1682AA186EA0082374E /* SwiftData */ = {
-			isa = PBXGroup;
-			children = (
-				205CD1692AA187240082374E /* UserData.swift */,
-			);
-			path = SwiftData;
-			sourceTree = "<group>";
-		};
 		20C067362A8CCA7E00102BCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +292,7 @@
 		20C0674F2A8CD2C400102BCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				46DA75082AAF05D40040D4C1 /* SwiftData */,
 				20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */,
 				461BFE8A2A8EA062007AECB3 /* User.swift */,
 				2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */,
@@ -335,7 +330,6 @@
 		460FD20C2A8422B700029FD7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				205CD1682AA186EA0082374E /* SwiftData */,
 				46AF6D4D2A9B823100A3EBBB /* SwipeCard.swift */,
 				461BFEA42A8FAB5D007AECB3 /* LoadingIndicator.swift */,
 				460FD2002A841E4100029FD7 /* ColorHelper+Extension.swift */,
@@ -347,6 +341,7 @@
 				209ADA752A987C90002B31D5 /* FirebaseDataService.swift */,
 				2065A4592A98858C00F3C522 /* FireStoreHelper.swift */,
 				465F2B0B2A99EBD30088A35A /* Utilities.swift */,
+				46DA750B2AAF45F50040D4C1 /* SwiftDataHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -527,6 +522,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		46DA75082AAF05D40040D4C1 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				46DA75092AAF06800040D4C1 /* UserDataModel.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -680,6 +683,7 @@
 				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
 				205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */,
 				46D255F12A9F781F008D5ACF /* ErrorMessageView.swift in Sources */,
+				46DA750A2AAF06800040D4C1 /* UserDataModel.swift in Sources */,
 				46D255F62A9FB907008D5ACF /* AppSettings.swift in Sources */,
 				20343F5D2AA737BF00E840D0 /* LiveActivity.swift in Sources */,
 				461BFE8B2A8EA062007AECB3 /* User.swift in Sources */,
@@ -689,7 +693,6 @@
 				46D255EF2A9F24E8008D5ACF /* EmbossedButton.swift in Sources */,
 				460FD2672A84EA0700029FD7 /* TextFieldValidator.swift in Sources */,
 				460FD2652A84E9D200029FD7 /* HomePage.swift in Sources */,
-				205CD16A2AA187250082374E /* UserData.swift in Sources */,
 				465DC2722A9C95F400B171BE /* RankingDetailsView.swift in Sources */,
 				46DA75052AACE0D80040D4C1 /* NewsViewModel.swift in Sources */,
 				460FD26B2A84EA4F00029FD7 /* CustomViewModifiers.swift in Sources */,
@@ -720,6 +723,7 @@
 				460FD2022A841E4100029FD7 /* ColorHelper+Extension.swift in Sources */,
 				205CD15F2AA0C3DD0082374E /* UpComingMatchesView.swift in Sources */,
 				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,
+				46DA750C2AAF45F50040D4C1 /* SwiftDataHelper.swift in Sources */,
 				20C067552A8CD48C00102BCF /* SectionTitleView.swift in Sources */,
 				20C067682A8CF94C00102BCF /* LiveScoreCardView.swift in Sources */,
 				46CAEF072A9E1D0C009312CE /* FeaturedPlayersViewModel.swift in Sources */,
@@ -945,6 +949,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -979,6 +984,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct UserProfilePage: View {
     @EnvironmentObject var authViewModel: AuthViewModel
@@ -14,6 +15,8 @@ struct UserProfilePage: View {
     @State private var confirmDeletion = false
     @State var isLoading: Bool = false
     @EnvironmentObject private var appSettings: AppSettings
+    @Environment(\.modelContext) private var modelContext 
+    @Query var userDataModel : [UserDataModel]
     
     var body: some View {
         Form {
@@ -22,7 +25,7 @@ struct UserProfilePage: View {
             }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "Favourite Team")) {
-                FavouriteTeamView()
+                FavouriteTeamView(onFavouriteTeamChange: addOrUpdateUserDataModel)
             }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "App Settings")) {
@@ -37,6 +40,9 @@ struct UserProfilePage: View {
                             .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                     }
                 }.toggleStyle(SwitchToggleStyle(tint: Color.red))
+                    .onChange(of: appSettings.isDarkMode) { _, _ in
+                        addOrUpdateUserDataModel()
+                    }
             }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "Account Actions")) {
@@ -78,6 +84,22 @@ struct UserProfilePage: View {
         }
         .padding(EdgeInsets(top: -20, leading: 0, bottom: 0, trailing: 0))
         .scrollContentBackground(.hidden)
+    }
+    
+    func addOrUpdateUserDataModel() {
+        if !userDataModel.isEmpty {
+            userDataModel[0].isDarkMode = appSettings.isDarkMode
+            userDataModel[0].favouriteTeam = appSettings.favouriteTeam
+            do {
+                try modelContext.save()
+            } catch {
+                fatalError("Not saved")
+            }
+        } else {
+            appSettings.emailID = authViewModel.currentUser?.email ?? ""
+            let appModel = UserDataModel(isDarkMode: appSettings.isDarkMode, favouriteTeam: appSettings.favouriteTeam)
+            modelContext.insert(appModel)
+        }
     }
 }
 

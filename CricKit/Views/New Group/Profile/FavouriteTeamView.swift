@@ -11,6 +11,7 @@ struct FavouriteTeamView: View {
     
     @EnvironmentObject private var appSettings: AppSettings
     @State private var showModal = false
+    let onFavouriteTeamChange: () -> Void
    
     
     var body: some View {
@@ -33,7 +34,7 @@ struct FavouriteTeamView: View {
                 }
         }
         .sheet(isPresented: $showModal) {
-            TeamList(showModal: $showModal)
+            TeamList(showModal: $showModal, onFavouriteTeamChange: onFavouriteTeamChange)
             .presentationDetents([.medium, .large])
             //.presentationContentInteraction(.scrolls)
         }
@@ -45,6 +46,7 @@ struct TeamList: View {
     
     @Binding var showModal: Bool
     @EnvironmentObject private var appSettings: AppSettings
+    let onFavouriteTeamChange: () -> Void
     
     var model = FavouriteTeamList(teamList: [FavouriteTeam(team: "India", teamFlag: "teamInd"),
                                              FavouriteTeam(team: "Australia", teamFlag: "teamAus"),
@@ -65,6 +67,7 @@ struct TeamList: View {
             List(model.teamList, id: \.self) { team in
                 Button {
                     appSettings.favouriteTeam = team
+                    onFavouriteTeamChange()
                     showModal = false
                 } label: {
                     HStack {
@@ -87,7 +90,7 @@ struct FavouriteTeamList: Hashable, Identifiable {
     var teamList : [FavouriteTeam]
 }
 
-struct FavouriteTeam: Hashable, Identifiable {
+struct FavouriteTeam: Hashable, Identifiable, Codable {
     var id = UUID()
     var team : String
     var teamFlag : String

@@ -102,7 +102,7 @@ struct NewsDetail: View {
                                 .padding(25)
                         }
                     }
-                    Text(news.header)
+                    Text(news.subheader)
                         .padding()
                 }
                 .frame(width: UIScreen.main.bounds.width)
