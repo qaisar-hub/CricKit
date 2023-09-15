@@ -25,18 +25,21 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func signIn(withEmail email: String, password: String, errorMessage: String) async throws {
+    func signIn(withEmail email: String, password: String, errorMessage: String) async throws -> Bool {
         if errorMessage.isEmpty {
             do {
                 let result = try await Auth.auth().signIn(withEmail: email, password: password)
                 self.userSession = result.user
                 await fetchUser()
+                return true
             } catch {
                 self.userStatus = .failed("Sign In Failed", "The email or password you entered is incorrect. Please double-check and try again.")
                 print("Failed to sign in with error \(error.localizedDescription)")
+                return false
             }
         } else {
             self.userStatus = .failed("Sign In Failed", errorMessage)
+            return false
         }
     }
     
@@ -77,15 +80,18 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func signOut() {
+    func signOut() -> Bool {
         do {
             try Auth.auth().signOut()
             self.userSession = nil
             self.currentUser = nil
+            return true
         } catch {
             debugPrint("Failed to sign out with error \(error.localizedDescription)")
+            return false
         }
     }
+
     
     func deleteAccount(password: String) {
         guard let user = Auth.auth().currentUser else {

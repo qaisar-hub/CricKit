@@ -90,7 +90,7 @@ struct LiveScoreAppEntity: AppEntity{
         var allMatches = [LiveScoreAppEntity]()
         allMatches.removeAll()
         do {
-            let result = try await GetLiveScoreForIntent.liveScore()
+            let result = try await GetLiveScoreForIntent.liveScore(configureFirebase: true)
             for item in result {
                 let entity = LiveScoreAppEntity(id: item.matchHeader)
                 allMatches.append(entity)

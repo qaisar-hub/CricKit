@@ -10,13 +10,13 @@ import SwiftData
 
 @Model
 final class UserDataModel {
-    
-    var id: UUID
+
+    @Attribute(.unique) var uniqueID: String
     var isDarkMode: Bool
     var favouriteTeam: FavouriteTeam
     
-    init(id: UUID = UUID(), isDarkMode: Bool, favouriteTeam: FavouriteTeam) {
-        self.id = id
+    init(uniqueID: String, isDarkMode: Bool, favouriteTeam: FavouriteTeam) {
+        self.uniqueID = uniqueID
         self.isDarkMode = isDarkMode
         self.favouriteTeam = favouriteTeam
     }
@@ -24,10 +24,11 @@ final class UserDataModel {
 
 extension UserDataModel {
     static func == (lhs: UserDataModel, rhs: UserDataModel) -> Bool {
-        return lhs.isDarkMode == rhs.isDarkMode && lhs.favouriteTeam == rhs.favouriteTeam
+        return lhs.uniqueID == rhs.uniqueID && lhs.isDarkMode == rhs.isDarkMode && lhs.favouriteTeam == rhs.favouriteTeam
         }
     
         func hash(into hasher: inout Hasher) {
+            hasher.combine(uniqueID)
             hasher.combine(isDarkMode)
             hasher.combine(favouriteTeam)
         }

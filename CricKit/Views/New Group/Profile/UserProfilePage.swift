@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct UserProfilePage: View {
     @EnvironmentObject var authViewModel: AuthViewModel
@@ -15,8 +14,6 @@ struct UserProfilePage: View {
     @State private var confirmDeletion = false
     @State var isLoading: Bool = false
     @EnvironmentObject private var appSettings: AppSettings
-    @Environment(\.modelContext) private var modelContext 
-    @Query var userDataModel : [UserDataModel]
     
     var body: some View {
         Form {
@@ -46,21 +43,23 @@ struct UserProfilePage: View {
             }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "Account Actions")) {
-                // Sign out button
+                
                 Button(action: {
                     isSignOut.toggle()
                 }) {
                     SettingsRowView(iconName: "rectangle.portrait.and.arrow.forward", title: "Sign out", subtitle: "", tintColor: .red)
                 }.alert("Sign Out", isPresented: $isSignOut) {
                     Button("Sign Out", action: {
-                        authViewModel.signOut()
+                        if authViewModel.signOut() {
+                            appSettings.resetToInitialState()
+                        }
                     })
                     Button("Cancel", role: .cancel) { }
                 } message: {
                     Text("Are you sure you want to sign out?")
                 }
                 
-                // Delete Action
+                
                 if let providers = try? authViewModel.getProviders() {
                     if providers.contains(.email) {
                         Button(action: {
@@ -87,18 +86,9 @@ struct UserProfilePage: View {
     }
     
     func addOrUpdateUserDataModel() {
-        if !userDataModel.isEmpty {
-            userDataModel[0].isDarkMode = appSettings.isDarkMode
-            userDataModel[0].favouriteTeam = appSettings.favouriteTeam
-            do {
-                try modelContext.save()
-            } catch {
-                fatalError("Not saved")
-            }
-        } else {
-            appSettings.emailID = authViewModel.currentUser?.email ?? ""
-            let appModel = UserDataModel(isDarkMode: appSettings.isDarkMode, favouriteTeam: appSettings.favouriteTeam)
-            modelContext.insert(appModel)
+        let emailID = authViewModel.currentUser?.email ?? ""
+        if !emailID.isEmpty {
+            SwiftDataHelper.shared.addOrUpdateUserDataModel(emailID: emailID, isDarkMode: appSettings.isDarkMode, favouriteTeam: appSettings.favouriteTeam)
         }
     }
 }

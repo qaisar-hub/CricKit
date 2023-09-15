@@ -9,6 +9,7 @@ import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
 import AuthenticationServices
+import SwiftData
 
 struct SignInView: View {
     
@@ -73,10 +74,14 @@ struct SignInView: View {
 				EmbossedButton(systemName: "arrow.right") {
                     isLoading = true
 					Task {
-                        try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password, errorMessage: progress.validateSignInFields())
-						isLoading = false
-						alert = authViewModel.checkUserStatus()
-					}
+                        let isSuccessfulLogin = try await authViewModel.signIn(withEmail: progress.emailId, password: progress.password, errorMessage: progress.validateSignInFields())
+                        if isSuccessfulLogin {
+                            updateExistingUserPreference()
+                        }
+                        
+                        isLoading = false
+                        alert = authViewModel.checkUserStatus()
+                    }
 				}.padding()
             }
             
@@ -101,6 +106,7 @@ struct SignInView: View {
 						Task {
 							do {
 								try await authViewModel.signInGoogle()
+                                updateExistingUserPreference()
 							} catch {
 								print(error)
 							}
@@ -136,6 +142,13 @@ struct SignInView: View {
         }
         .alert(item: $alert) { value in
             return value.alert
+        }
+    }
+    
+    func updateExistingUserPreference() {
+        let emailID = authViewModel.currentUser?.email ?? ""
+        if !emailID.isEmpty {
+            SwiftDataHelper.shared.updateExistingUserPreference(emailID: emailID, isDarkMode: &appSettings.isDarkMode, favouriteTeam: &appSettings.favouriteTeam)
         }
     }
 }

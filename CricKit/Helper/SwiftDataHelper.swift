@@ -5,34 +5,64 @@
 //  Created by Qaisar Raza on 11/09/23.
 //
 
-//import SwiftUI
-//import SwiftData
-//
-//public class SwiftDataHelper {
-//    static let shared = SwiftDataHelper()
-//    
-//    @EnvironmentObject private var appSettings: AppSettings
-//    @Environment(\.modelContext) private var modelContext
-//    @Query var userDataModel : [UserDataModel]
-//    
-//    private init() {}
-//    
-//    func addOrUpdateUserDataModel() {
-//        if let existingUserIndex = userDataModel.firstIndex(where: { $0.id == "" }) {
-//            userDataModel[existingUserIndex].isDarkMode = appSettings.isDarkMode
-//            userDataModel[existingUserIndex].favouriteTeam = appSettings.favouriteTeam
-//            do {
-//                try modelContext.save()
-//            } catch {
-//                fatalError("Not saved")
-//            }
-//            debugPrint(userDataModel[existingUserIndex].isDarkMode)
-//            debugPrint(userDataModel[existingUserIndex].favouriteTeam)
-//        } else {
-//            let userData = UserDataModel(isDarkMode: appSettings.isDarkMode, favouriteTeam: appSettings.favouriteTeam)
-//            modelContext.insert(userData)
-//        }
-//        
-//    }
-//    
-//}
+import SwiftUI
+import SwiftData
+
+@MainActor
+public class SwiftDataHelper {
+    static let shared = SwiftDataHelper()
+    
+    let container = createModelContainer()
+    @Query var userDataModel : [UserDataModel]
+    
+    private init() {}
+    
+    func addOrUpdateUserDataModel(emailID: String, isDarkMode: Bool, favouriteTeam: FavouriteTeam) {
+        do {
+            let modelContext = container.mainContext
+            let userDataModel = try modelContext.fetch(FetchDescriptor<UserDataModel>())
+            if let existingUserIndex = userDataModel.firstIndex(where: { $0.uniqueID == emailID }) {
+                debugPrint("### existingUserIndex \(existingUserIndex)")
+                userDataModel[existingUserIndex].isDarkMode = isDarkMode
+                userDataModel[existingUserIndex].favouriteTeam = favouriteTeam
+                debugPrint(userDataModel[existingUserIndex].isDarkMode)
+                debugPrint(userDataModel[existingUserIndex].favouriteTeam)
+            } else {
+                let userData = UserDataModel(uniqueID: emailID, isDarkMode: isDarkMode, favouriteTeam: favouriteTeam)
+                modelContext.insert(userData)
+            }
+            debugPrint("### userDataModel count : \(userDataModel.count)")
+        } catch {
+            debugPrint("### Error : \(error.localizedDescription)")
+        }
+        
+    }
+    
+    func updateExistingUserPreference(emailID: String, isDarkMode: inout Bool , favouriteTeam: inout FavouriteTeam) {
+        do {
+            let modelContext = container.mainContext
+            let userDataModel = try modelContext.fetch(FetchDescriptor<UserDataModel>())
+            debugPrint("### emailID : \(emailID)")
+            debugPrint("### userDataModel count : \(userDataModel.count)")
+            if let existingUser = userDataModel.first(where: { $0.uniqueID == emailID }) {
+                isDarkMode = existingUser.isDarkMode
+                favouriteTeam = existingUser.favouriteTeam
+                debugPrint("### isDarkMode : \(existingUser.isDarkMode)")
+                debugPrint("### favouriteTeam : \(existingUser.favouriteTeam)")
+            }
+        } catch {
+            debugPrint("### Error : \(error.localizedDescription)")
+        }
+    }
+    
+}
+
+@MainActor
+fileprivate func createModelContainer() -> ModelContainer {
+     do {
+        let container = try ModelContainer(for: UserDataModel.self)
+         return container
+    } catch let error {
+        fatalError(error.localizedDescription)
+    }
+}

@@ -12,23 +12,10 @@ import SwiftData
 @main
 struct CricKitApp: App {
     @StateObject var authViewModel = AuthViewModel()
-    @ObservedObject private var appSettings = AppSettings()
+    @StateObject private var appSettings = AppSettings()
     
     init() {
         FirebaseApp.configure()
-        do {
-            let container = try ModelContainer(for: UserDataModel.self)
-            let context = container.mainContext
-            let userDataModel = try context.fetch(FetchDescriptor<UserDataModel>())
-            if !userDataModel.isEmpty {
-                appSettings.isDarkMode = userDataModel[0].isDarkMode
-                appSettings.favouriteTeam = userDataModel[0].favouriteTeam
-                debugPrint(userDataModel[0].isDarkMode)
-                debugPrint(userDataModel[0].favouriteTeam)
-            }
-        } catch {
-            debugPrint("Error Creating ModelContainer: \(error.localizedDescription)")
-        }
     }
     
     var body: some Scene {
@@ -36,10 +23,25 @@ struct CricKitApp: App {
             LaunchAnimationView()
                 .environmentObject(authViewModel)
                 .environmentObject(appSettings)
+                .onAppear {
+                    updateExistingUserPreference()
+                }
         }
-        .modelContainer(for: UserDataModel.self)
+        .modelContainer(SwiftDataHelper.shared.container)
+    }
+    
+    func updateExistingUserPreference()  {
+        Task {
+            await authViewModel.fetchUser()
+            let emailID = authViewModel.currentUser?.email ?? ""
+            if !emailID.isEmpty {
+                SwiftDataHelper.shared.updateExistingUserPreference(emailID: emailID, isDarkMode: &appSettings.isDarkMode, favouriteTeam: &appSettings.favouriteTeam)
+            }
+        }
     }
 }
+
+
 
 struct LaunchAnimationView: View {
     @State private var isAnimationComplete = false
