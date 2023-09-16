@@ -10,21 +10,37 @@ import Shimmer
 
 struct LiveScoreCardView: View {
     
+	var isLiveMatches: Bool = false
     var liveScoreCardData : LiveScoreCardModel
 	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
-        VStack {
+		VStack(alignment: isLiveMatches ? .leading : .center) {
             Text(liveScoreCardData.matchHeader)
 				.font(.subheadline)
 				.fontWeight(.medium)
 				.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                 .opacity(0.8)
-            ForEach(liveScoreCardData.TeamStatus) { team in
-                HStack {
-                    LiveTeamSummaryView(team: team)
-                }
-            }
+			
+			if (isLiveMatches) {
+				HStack {
+					ForEach(Array(liveScoreCardData.TeamStatus.enumerated()), id: \.element.id) { index, team in
+						HStack {
+							LiveTeamSummaryView(team: team, isLiveMatches: isLiveMatches)
+							if( index == 0){
+								Text("vs")
+							}
+						}
+					}
+				}
+			} else {
+				ForEach(liveScoreCardData.TeamStatus) { team in
+					HStack {
+						LiveTeamSummaryView(team: team, isLiveMatches: isLiveMatches)
+					}
+				}
+			}
+			
             HStack {
                 if liveScoreCardData.isLive {
                     LiveDotView()
@@ -62,27 +78,40 @@ struct LiveDotView: View {
 
 struct LiveTeamSummaryView: View {
     let team: TeamStats
+	var isLiveMatches: Bool = false
 	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
-        HStack {
-            Image(team.flag)
-                .resizable()
-                .frame(width: 35, height: 35)
-            HStack(spacing: 5){
-                Text(team.name)
-                    .font(.subheadline)
-					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
-                Text(team.yetToBat() ? "" : "\(team.runs)/\(team.wickets)")
-					.font(.subheadline)
-					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
-                Spacer()
-                Text(team.yetToBat() ? team.yetToBatText() : "\(team.overs) overs")
-					.font(.subheadline)
-					.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
-            }
-            
-        }
+		if (isLiveMatches) {
+			HStack {
+				Image(team.flag)
+					.resizable()
+					.frame(width: 35, height: 35)
+				HStack(spacing: 5){
+					Text(team.name)
+						.font(.subheadline)
+						.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+				}
+			}
+		}  else {
+			HStack {
+				Image(team.flag)
+					.resizable()
+					.frame(width: 35, height: 35)
+				HStack(spacing: 5){
+					Text(team.name)
+						.font(.subheadline)
+						.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+					Text(team.yetToBat() ? "" : "\(team.runs)/\(team.wickets)")
+						.font(.subheadline)
+						.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+					Spacer()
+					Text(team.yetToBat() ? team.yetToBatText() : "\(team.overs) overs")
+						.font(.subheadline)
+						.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+				}
+			}
+		}
     }
 }
 

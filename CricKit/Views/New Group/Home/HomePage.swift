@@ -34,7 +34,7 @@ struct HomePage: View {
                     case 0:
                         HomeBoard(liveScoreCardViewModel: liveScoreCardViewModel)
                     case 1:
-                        ShopPage()
+						LiveMatches()
                     default:
                         UserProfilePage()
                     }
