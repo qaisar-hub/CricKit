@@ -23,6 +23,8 @@ public class FSCollectionManager {
             return subCollectionPath.value.path
         case .news:
             return "news"
+		case .liveMode:
+			return "liveMode"
         }
     }
     
@@ -33,6 +35,7 @@ public class FSCollectionManager {
         case upComingMatches(subCollectionPath: upComingMatchesSubCollection)
         case featuredPlayers
         case news
+		case liveMode
         
         enum liveScoreSubCollection {
             case teamStatus // returns liveScore -> teamStatus

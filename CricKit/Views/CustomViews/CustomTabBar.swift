@@ -10,7 +10,7 @@ import SwiftUI
 struct customTabBar: View {
 	@EnvironmentObject private var appSettings: AppSettings
     
-    var tabs: [(tabName: String, imageName: String)] = [(tabName: "home", imageName: "house.fill"), (tabName: "shop", imageName: "cart.fill"), (tabName: "profile", imageName: "person.fill")]
+    var tabs: [(tabName: String, imageName: String)] = [(tabName: "home", imageName: "house.fill"), (tabName: "Live Mode", imageName: "livephoto"), (tabName: "profile", imageName: "person.fill")]
     
     @Binding var selectedIndex: Int
     

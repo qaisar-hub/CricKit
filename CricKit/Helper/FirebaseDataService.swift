@@ -26,6 +26,19 @@ public class FbDataServiceManager {
             }
         }
     }
+	
+	func getDataWithSnapShot(parentCollection: String, complete: @escaping (_ result: QuerySnapshot?)->()) {
+		//creating db reference
+		let db = Firestore.firestore()
+		// accessing firestore collection
+		db.collection(parentCollection).addSnapshotListener { snapshot, error in
+			if error == nil {
+				complete(snapshot)
+			} else {
+				complete(nil)
+			}
+		}
+	}
     
     func getDataWithDocumentID(parentCollection: String, documentId: String, subCollection: String, complete: @escaping (_ result: QuerySnapshot?)->()){
         //creating db reference
