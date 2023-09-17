@@ -52,18 +52,26 @@ struct LiveModePage: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
-                    Text("/")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundStyle(.white)
+					if ((liveModeViewModel.liveModelForMatch?.runs) != nil) {
+						Text("/")
+							.font(.title)
+							.fontWeight(.bold)
+							.foregroundStyle(.white)
+					}
                     Text(liveModeViewModel.liveModelForMatch?.wickets ?? "")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
-                    Text("in \(liveModeViewModel.liveModelForMatch?.overs ?? "") ovs")
-                        .font(.title3)
-                        .foregroundStyle(.white).opacity(0.8)
-                        .fontWeight(.bold)
+					if ((liveModeViewModel.liveModelForMatch?.overs) != nil) {
+						Text("in \(liveModeViewModel.liveModelForMatch?.overs ?? "") ovs")
+							.font(.title3)
+							.foregroundStyle(.white).opacity(0.8)
+							.fontWeight(.bold)
+						Text("at \(liveModeViewModel.liveModelForMatch?.crr ?? "") rpo")
+							.font(.title3)
+							.foregroundStyle(.white).opacity(0.8)
+							.fontWeight(.bold)
+					}
                     Spacer()
                 } .padding(.leading, 10)
 
@@ -107,16 +115,19 @@ struct LiveModePage: View {
                 }.padding(.leading, 10)
 
                 HStack {
-                    Text("Recent Balls: ")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundStyle(.white).opacity(0.8)
+					if ((liveModeViewModel.liveModelForMatch?.recentBalls) != nil) {
+						Text("Recent Balls: ")
+							.font(.title2)
+							.fontWeight(.bold)
+							.foregroundStyle(.white).opacity(0.8)
+					}
                     Text(liveModeViewModel.liveModelForMatch?.recentBalls ?? "")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundStyle(.white).opacity(0.8)
                     Spacer()
                 }.padding(.leading, 10)
+				ShowLottieAnimation(ballState: liveModeViewModel.liveModelForMatch?.recentBalls.last)
                 Spacer()
             }
         }
