@@ -138,7 +138,6 @@ struct LiveModePage: View {
                 print("<<< onAppear live mode")
                 liveModeViewModel.getLiveScore(for: matchHeader)
             }
-            .navigationBarTitle("Live Match Stats")
             .navigationBarBackButtonHidden(true)
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -19,13 +19,14 @@ struct CustomBackButton: View {
             if liveMode {
                 Text("Close")
                     .font(.headline)
-                    .padding(10)
-                    .foregroundColor(.white)
+                    .padding(8)
+                    .foregroundColor(Color.appWhites)
                     .cornerRadius(10)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.white, lineWidth: 2)
+                            .stroke(Color.appWhites, lineWidth: 2)
                     )
+                    .padding(.leading, 8)
             } else {
                 Image(systemName: "chevron.left")
                     .font(.headline)
