@@ -18,7 +18,7 @@ struct UserProfilePage: View {
     var body: some View {
         Form {
             Section(header: SectionHeaderView(title: "Profile Information")) {
-                ProfileCard(initials: authViewModel.currentUser?.initials ?? "", fullName: authViewModel.currentUser?.fullName ?? "", emailID: authViewModel.currentUser?.email ?? "")
+                ProfileCard(onUserImageChange: addOrUpdateUserDataModel, initials: authViewModel.currentUser?.initials ?? "", fullName: authViewModel.currentUser?.fullName ?? "", emailID: authViewModel.currentUser?.email ?? "")
             }.listRowBackground(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             
             Section(header: SectionHeaderView(title: "Favourite Team")) {
@@ -88,7 +88,7 @@ struct UserProfilePage: View {
     func addOrUpdateUserDataModel() {
         let emailID = authViewModel.currentUser?.email ?? ""
         if !emailID.isEmpty {
-            SwiftDataHelper.shared.addOrUpdateUserDataModel(emailID: emailID, isDarkMode: appSettings.isDarkMode, favouriteTeam: appSettings.favouriteTeam)
+            SwiftDataHelper.shared.addOrUpdateUserDataModel(emailID: emailID, isDarkMode: appSettings.isDarkMode, favouriteTeam: appSettings.favouriteTeam, userImage: appSettings.userImage)
         }
     }
 }

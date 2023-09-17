@@ -17,7 +17,7 @@ public class SwiftDataHelper {
     
     private init() {}
     
-    func addOrUpdateUserDataModel(emailID: String, isDarkMode: Bool, favouriteTeam: FavouriteTeam) {
+    func addOrUpdateUserDataModel(emailID: String, isDarkMode: Bool, favouriteTeam: FavouriteTeam, userImage: Data?) {
         do {
             let modelContext = container.mainContext
             let userDataModel = try modelContext.fetch(FetchDescriptor<UserDataModel>())
@@ -25,10 +25,11 @@ public class SwiftDataHelper {
                 debugPrint("### existingUserIndex \(existingUserIndex)")
                 userDataModel[existingUserIndex].isDarkMode = isDarkMode
                 userDataModel[existingUserIndex].favouriteTeam = favouriteTeam
+                userDataModel[existingUserIndex].userImage = userImage
                 debugPrint(userDataModel[existingUserIndex].isDarkMode)
                 debugPrint(userDataModel[existingUserIndex].favouriteTeam)
             } else {
-                let userData = UserDataModel(uniqueID: emailID, isDarkMode: isDarkMode, favouriteTeam: favouriteTeam)
+                let userData = UserDataModel(uniqueID: emailID, isDarkMode: isDarkMode, favouriteTeam: favouriteTeam, userImage: userImage)
                 modelContext.insert(userData)
             }
             debugPrint("### userDataModel count : \(userDataModel.count)")
@@ -38,7 +39,7 @@ public class SwiftDataHelper {
         
     }
     
-    func updateExistingUserPreference(emailID: String, isDarkMode: inout Bool , favouriteTeam: inout FavouriteTeam) {
+    func updateExistingUserPreference(emailID: String, isDarkMode: inout Bool , favouriteTeam: inout FavouriteTeam, userImage: inout Data?) {
         do {
             let modelContext = container.mainContext
             let userDataModel = try modelContext.fetch(FetchDescriptor<UserDataModel>())
@@ -47,6 +48,7 @@ public class SwiftDataHelper {
             if let existingUser = userDataModel.first(where: { $0.uniqueID == emailID }) {
                 isDarkMode = existingUser.isDarkMode
                 favouriteTeam = existingUser.favouriteTeam
+                userImage = existingUser.userImage
                 debugPrint("### isDarkMode : \(existingUser.isDarkMode)")
                 debugPrint("### favouriteTeam : \(existingUser.favouriteTeam)")
             }

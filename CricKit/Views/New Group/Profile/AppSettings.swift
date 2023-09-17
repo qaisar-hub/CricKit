@@ -11,9 +11,11 @@ class AppSettings: ObservableObject {
     
     @Published var isDarkMode = false
     @Published var favouriteTeam = FavouriteTeam(team: "India", teamFlag: "teamInd")
+    @Published var userImage: Data? = nil
     
     func resetToInitialState() {
         favouriteTeam = FavouriteTeam(team: "India", teamFlag: "teamInd")
+        userImage = nil
     }
 }
 

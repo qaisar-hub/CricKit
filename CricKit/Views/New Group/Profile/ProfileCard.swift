@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProfileCard: View {
     @State private var showImagePicker: Bool = false
-    @State private var selectedImage: UIImage? = nil
     @EnvironmentObject var appSettings: AppSettings
+    let onUserImageChange: () -> Void
     
     var initials: String
     var fullName: String
@@ -18,7 +18,7 @@ struct ProfileCard: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            if let userImage = selectedImage {
+            if let image = appSettings.userImage, let userImage = UIImage(data: image)  {
                 Image(uiImage: userImage)
                     .resizable()
                     .frame(width: 60, height: 60)
@@ -61,27 +61,29 @@ struct ProfileCard: View {
             }
         }
         .sheet(isPresented: $showImagePicker) {
-            ImagePicker(selectedImage: $selectedImage)
+            ImagePicker(onUserImageChange: onUserImageChange)
+                .ignoresSafeArea()
         }
     }
 }
 
 struct ProfileCard_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileCard(initials: "VK", fullName: "Virat Kohli", emailID: "virat_k@gmail.com")
+        ProfileCard(onUserImageChange: {}, initials: "VK", fullName: "Virat Kohli", emailID: "virat_k@gmail.com")
             .environmentObject(AppSettings())
     }
 }
 
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var selectedImage: UIImage?
     @Environment(\.presentationMode) private var presentationMode
+    @EnvironmentObject var appSettings: AppSettings
+    let onUserImageChange: () -> Void
 
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
-        picker.sourceType = .photoLibrary // You can change this to .camera if needed
+        picker.sourceType = .photoLibrary
         return picker
     }
 
@@ -100,7 +102,10 @@ struct ImagePicker: UIViewControllerRepresentable {
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let selectedImage = info[.originalImage] as? UIImage {
-                parent.selectedImage = selectedImage
+                if let data = selectedImage.pngData() {
+                    parent.appSettings.userImage = data
+                    parent.onUserImageChange()
+                }
             }
             parent.presentationMode.wrappedValue.dismiss()
         }

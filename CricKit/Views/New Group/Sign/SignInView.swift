@@ -148,7 +148,9 @@ struct SignInView: View {
     func updateExistingUserPreference() {
         let emailID = authViewModel.currentUser?.email ?? ""
         if !emailID.isEmpty {
-            SwiftDataHelper.shared.updateExistingUserPreference(emailID: emailID, isDarkMode: &appSettings.isDarkMode, favouriteTeam: &appSettings.favouriteTeam)
+            var userImage = appSettings.userImage
+            SwiftDataHelper.shared.updateExistingUserPreference(emailID: emailID, isDarkMode: &appSettings.isDarkMode, favouriteTeam: &appSettings.favouriteTeam, userImage: &userImage)
+            appSettings.userImage = userImage
         }
     }
 }
