@@ -205,7 +205,7 @@
 		465DC2712A9C95F400B171BE /* RankingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDetailsView.swift; sourceTree = "<group>"; };
 		465DC2732A9C960B00B171BE /* ICCRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICCRankingView.swift; sourceTree = "<group>"; };
 		465DC2752A9C962000B171BE /* RankingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCardView.swift; sourceTree = "<group>"; };
-		465F2B0A2A99E8570088A35A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		465F2B0A2A99E8570088A35A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		465F2B0B2A99EBD30088A35A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		469377022A8A64FF003E9AD8 /* RecentMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchView.swift; sourceTree = "<group>"; };
 		469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlayersSectionView.swift; sourceTree = "<group>"; };
@@ -473,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				4639280D2A7EC0B1002C2767 /* CricKit */,
+				463928122A7EC0B3002C2767 /* Assets.xcassets */,
 				20343F3A2AA5835E00E840D0 /* WidgetCrickit */,
 				20C067362A8CCA7E00102BCF /* Frameworks */,
 				4639280C2A7EC0B1002C2767 /* Products */,
@@ -492,14 +493,13 @@
 			isa = PBXGroup;
 			children = (
 				464CBCE42AB8933200068EEB /* Main */,
-				205CD1632AA0C83F0082374E /* AppIntents */,
 				465F2B0A2A99E8570088A35A /* Info.plist */,
 				209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */,
-				463928122A7EC0B3002C2767 /* Assets.xcassets */,
 				20C0674F2A8CD2C400102BCF /* Model */,
 				46D255F42A9FB8AA008D5ACF /* Views */,
 				461BFE902A8EAD02007AECB3 /* ViewModel */,
 				460FD20C2A8422B700029FD7 /* Helper */,
+				205CD1632AA0C83F0082374E /* AppIntents */,
 				463928142A7EC0B3002C2767 /* Preview Content */,
 			);
 			path = CricKit;

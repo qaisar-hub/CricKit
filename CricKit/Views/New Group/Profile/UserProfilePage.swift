@@ -87,9 +87,7 @@ struct UserProfilePage: View {
     
     func addOrUpdateUserDataModel() {
         let emailID = authViewModel.currentUser?.email ?? ""
-        if !emailID.isEmpty {
-            SwiftDataHelper.shared.addOrUpdateUserDataModel(emailID: emailID, isDarkMode: appSettings.isDarkMode, favouriteTeam: appSettings.favouriteTeam, userImage: appSettings.userImage)
-        }
+        appSettings.addOrUpdateUserDataModel(emailID)
     }
 }
 

@@ -35,11 +35,7 @@ struct CricKitApp: App {
         Task {
             await authViewModel.fetchUser()
             let emailID = authViewModel.currentUser?.email ?? ""
-            if !emailID.isEmpty {
-                var userImage = appSettings.userImage
-                SwiftDataHelper.shared.updateExistingUserPreference(emailID: emailID, isDarkMode: &appSettings.isDarkMode, favouriteTeam: &appSettings.favouriteTeam, userImage: &userImage)
-                appSettings.userImage = userImage
-            }
+            appSettings.updateExistingUserPreference(emailID)
             withAnimation {
                 showLoading = false
             }
