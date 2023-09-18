@@ -13,6 +13,7 @@ import SwiftData
 struct CricKitApp: App {
     @StateObject var authViewModel = AuthViewModel()
     @StateObject private var appSettings = AppSettings()
+    @State var showLoading = true
     
     init() {
         FirebaseApp.configure()
@@ -20,7 +21,7 @@ struct CricKitApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LaunchAnimationView()
+            LaunchAnimationView(showLoading: $showLoading)
                 .environmentObject(authViewModel)
                 .environmentObject(appSettings)
                 .onAppear {
@@ -39,41 +40,9 @@ struct CricKitApp: App {
                 SwiftDataHelper.shared.updateExistingUserPreference(emailID: emailID, isDarkMode: &appSettings.isDarkMode, favouriteTeam: &appSettings.favouriteTeam, userImage: &userImage)
                 appSettings.userImage = userImage
             }
-        }
-    }
-}
-
-
-
-struct LaunchAnimationView: View {
-    @State private var isAnimationComplete = false
-    
-    var body: some View {
-        ZStack {
-            CustomBackgroundView()
-            
-            if isAnimationComplete {
-                ContentView()
-                    .transition(.opacity)
-            } else {
-                AnimatedLogoView(isAnimationComplete: $isAnimationComplete)
-                    .transition(.opacity)
+            withAnimation {
+                showLoading = false
             }
         }
-        .ignoresSafeArea()
     }
 }
-
-
-struct ContentView: View {
-    @EnvironmentObject var authViewModel: AuthViewModel
-    @EnvironmentObject private var appSettings: AppSettings
-    var body: some View {
-        if authViewModel.userSession != nil {
-            HomePage()
-        } else {
-            SignInPage()
-        }
-    }
-}
-

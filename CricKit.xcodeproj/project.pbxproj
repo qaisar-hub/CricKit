@@ -80,6 +80,8 @@
 		4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639280E2A7EC0B1002C2767 /* CricKitApp.swift */; };
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
+		464CBCE62AB8936700068EEB /* LaunchAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CBCE52AB8936700068EEB /* LaunchAnimationView.swift */; };
+		464CBCE82AB893A900068EEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CBCE72AB893A900068EEB /* ContentView.swift */; };
 		465DC2722A9C95F400B171BE /* RankingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DC2712A9C95F400B171BE /* RankingDetailsView.swift */; };
 		465DC2742A9C960B00B171BE /* ICCRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DC2732A9C960B00B171BE /* ICCRankingView.swift */; };
 		465DC2762A9C962000B171BE /* RankingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DC2752A9C962000B171BE /* RankingCardView.swift */; };
@@ -198,6 +200,8 @@
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463928152A7EC0B3002C2767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		464CBCE52AB8936700068EEB /* LaunchAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimationView.swift; sourceTree = "<group>"; };
+		464CBCE72AB893A900068EEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		465DC2712A9C95F400B171BE /* RankingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDetailsView.swift; sourceTree = "<group>"; };
 		465DC2732A9C960B00B171BE /* ICCRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICCRankingView.swift; sourceTree = "<group>"; };
 		465DC2752A9C962000B171BE /* RankingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCardView.swift; sourceTree = "<group>"; };
@@ -378,7 +382,6 @@
 		460FD24C2A84E72500029FD7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				460FD2032A841E7800029FD7 /* PlayerProfile */,
 				460FD24D2A84E75700029FD7 /* CardView.swift */,
 				B2C7E8E62AB746A900FBAD87 /* LottieViewAnimation.swift */,
 				460FD24F2A84E77600029FD7 /* CustomTabBar.swift */,
@@ -427,6 +430,7 @@
 		460FD2702A85066B00029FD7 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				464CBCE92AB893E000068EEB /* OnAppLaunch */,
 				2067722C2AB5B3E5006764CA /* LiveMode */,
 				460FD2712A85070300029FD7 /* SignIn */,
 				460FD2562A84E81A00029FD7 /* Shop */,
@@ -487,10 +491,10 @@
 		4639280D2A7EC0B1002C2767 /* CricKit */ = {
 			isa = PBXGroup;
 			children = (
+				464CBCE42AB8933200068EEB /* Main */,
 				205CD1632AA0C83F0082374E /* AppIntents */,
 				465F2B0A2A99E8570088A35A /* Info.plist */,
 				209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */,
-				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
 				463928122A7EC0B3002C2767 /* Assets.xcassets */,
 				20C0674F2A8CD2C400102BCF /* Model */,
 				46D255F42A9FB8AA008D5ACF /* Views */,
@@ -507,6 +511,23 @@
 				463928152A7EC0B3002C2767 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		464CBCE42AB8933200068EEB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4639280E2A7EC0B1002C2767 /* CricKitApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		464CBCE92AB893E000068EEB /* OnAppLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				464CBCE52AB8936700068EEB /* LaunchAnimationView.swift */,
+				464CBCE72AB893A900068EEB /* ContentView.swift */,
+			);
+			path = OnAppLaunch;
 			sourceTree = "<group>";
 		};
 		465DC2702A9C95D900B171BE /* Ranking */ = {
@@ -532,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				469377052A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift */,
+				460FD2032A841E7800029FD7 /* PlayerProfile */,
 			);
 			path = FeaturedPlayersSectionView;
 			sourceTree = "<group>";
@@ -751,6 +773,7 @@
 				2067722E2AB5B3FD006764CA /* LiveMatches.swift in Sources */,
 				460FD26D2A84EA8400029FD7 /* HomeSectionObservables.swift in Sources */,
 				460FD2602A84E8B500029FD7 /* SignInView.swift in Sources */,
+				464CBCE62AB8936700068EEB /* LaunchAnimationView.swift in Sources */,
 				469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */,
 				46D255F82A9FF0D0008D5ACF /* RecentMatchShimmerView.swift in Sources */,
 				460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */,
@@ -773,6 +796,7 @@
 				460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */,
 				205CD1652AA0C84D0082374E /* CrickitIntents.swift in Sources */,
 				460FD2022A841E4100029FD7 /* ColorHelper+Extension.swift in Sources */,
+				464CBCE82AB893A900068EEB /* ContentView.swift in Sources */,
 				205CD15F2AA0C3DD0082374E /* UpComingMatchesView.swift in Sources */,
 				460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */,
 				46DA750C2AAF45F50040D4C1 /* SwiftDataHelper.swift in Sources */,
