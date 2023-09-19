@@ -7,13 +7,15 @@
 
 import SwiftUI
 import ActivityKit
+import TipKit
 
 struct HomePage: View {
     @State var selectedIndex = 0
     
     @ObservedObject var liveScoreCardViewModel = LiveScoreCardViewModel()
     @EnvironmentObject private var appSettings: AppSettings
-    
+	private let myTip = BookmarkTip()
+	
     var body: some View {
         NavigationStack {
             ZStack {
@@ -27,8 +29,15 @@ struct HomePage: View {
                 }
                 
                 VStack(spacing: 0) {
-                    
+					TipView(myTip, arrowEdge: .bottom)
+						.padding()
                     AppLogoView()
+						.task {
+							try? await Tips.configure() {
+								DisplayFrequency(.immediate)
+								DatastoreLocation(.applicationDefault)
+							}
+						}
                     
                     switch selectedIndex {
                     case 0:
