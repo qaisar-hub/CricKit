@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileCard: View {
     @State private var showImagePicker: Bool = false
+    @State private var showFullScreenImage = false
     @EnvironmentObject var appSettings: AppSettings
     let onUserImageChange: () -> Void
     
@@ -30,7 +31,7 @@ struct ProfileCard: View {
                             .foregroundColor(ColorManager.appPrimaryColor())
                             .offset(x: 25, y: 25)
                             .onTapGesture {
-                                showImagePicker.toggle()
+                                showFullScreenImage.toggle()
                             }
                     )
             } else {
@@ -47,7 +48,7 @@ struct ProfileCard: View {
                             .foregroundColor(ColorManager.appPrimaryColor())
                             .offset(x: 25, y: 25)
                             .onTapGesture {
-                                showImagePicker.toggle()
+                                showFullScreenImage.toggle()
                             }
                     )
             }
@@ -60,9 +61,48 @@ struct ProfileCard: View {
                     .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
             }
         }
-        .sheet(isPresented: $showImagePicker) {
-            ImagePicker(onUserImageChange: onUserImageChange)
+        .sheet(isPresented: $showFullScreenImage) {
+            NavigationStack {
+                ZStack{
+                    if let image = appSettings.userImage, let userImage = UIImage(data: image)  {
+                        Image(uiImage: userImage)
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+                            .navigationBarItems(
+                                trailing:
+                                    HStack {
+                                        Button(action: {
+                                            showImagePicker.toggle()
+                                        }) {
+                                            Image(systemName: "pencil.circle")
+                                        }
+                                        
+                                        Button(action: {
+                                            appSettings.userImage = nil
+                                            showFullScreenImage.toggle()
+                                            onUserImageChange()
+                                        }) {
+                                            Image(systemName: "trash.circle")
+                                        }
+                                    }
+                            )
+                    } else {
+                        ImagePicker(onUserImageChange: onUserImageChange)
+                            .ignoresSafeArea()
+                    }
+                }
+                .sheet(isPresented: $showImagePicker) {
+                    ImagePicker(onUserImageChange: onUserImageChange)
+                        .ignoresSafeArea()
+                }
+                .navigationBarBackButtonHidden(true)
+                .toolbar(content: {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        CustomBackButton()
+                    }
+                })
                 .ignoresSafeArea()
+            }
         }
     }
 }
@@ -79,27 +119,27 @@ struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) private var presentationMode
     @EnvironmentObject var appSettings: AppSettings
     let onUserImageChange: () -> Void
-
+    
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = .photoLibrary
         return picker
     }
-
+    
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
-
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-
+    
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         var parent: ImagePicker
-
+        
         init(_ parent: ImagePicker) {
             self.parent = parent
         }
-
+        
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let selectedImage = info[.originalImage] as? UIImage {
                 if let data = selectedImage.pngData() {

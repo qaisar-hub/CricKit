@@ -15,7 +15,7 @@ struct RecentMatchView: View {
     
     var body: some View {
         VStack {
-            ForEach(0..<recentMatchModel.TeamStatus.count) { index in
+            ForEach(0..<recentMatchModel.TeamStatus.count, id: \.self) { index in
                 HStack {
                     
                     if (index == 0){

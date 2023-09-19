@@ -47,9 +47,9 @@ struct HomeBoard: View {
                                     let attributes = LiveScoreActivityAttributes(matchName: liveScoreItem.matchHeader)
                                     let state = LiveScoreActivityAttributes.ContentState(endTime: Date().addingTimeInterval(60), liveScoreModel: liveScoreItem)
                                     do {
-                                        let orderActivity = try Activity.request(
+                                        let _ = try Activity.request(
                                             attributes: attributes,
-                                            contentState: state,
+                                            content: .init(state: state, staleDate: nil),
                                             pushType: nil
                                         )
                                         alert = AlertTypes.defaulAlert(title: "Live Activity for \(liveScoreItem.matchHeader) is now added to your lock screen", message: "Please check your lock screen notifications")

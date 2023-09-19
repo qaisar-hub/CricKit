@@ -22,7 +22,7 @@ struct UpComingMatchesView: View {
             }
             
             HStack {
-                ForEach(0..<upComingMatchModel.TeamStatus.count) { index in
+                ForEach(0..<upComingMatchModel.TeamStatus.count, id: \.self) { index in
                     HStack {
                         if (index == 0) {
                             Spacer()

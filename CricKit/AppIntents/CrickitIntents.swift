@@ -69,10 +69,7 @@ struct GetLiveScoreForIntent {
 
 struct CrickitShortcuts: AppShortcutsProvider {
 	static var appShortcuts: [AppShortcut] {
-		AppShortcut(
-			intent: GetLiveScoreIntent(),
-			phrases: ["Get liveScore \(.applicationName)"]
-		)
+        AppShortcut(intent: GetLiveScoreIntent(), phrases: ["Get liveScore \(.applicationName)"], shortTitle: "CricKit", systemImageName: "appLogo")
 	}
 }
 
