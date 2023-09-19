@@ -9,7 +9,7 @@ struct LiveScoreTip: Tip {
     
     // Set Image Icon
     var image: Image? {
-        Image(systemName: imageName) //TODO: not showing need to debug
+        Image(systemName: imageName)
     }
     // Set Title
     var title: Text {
@@ -30,7 +30,7 @@ struct FavoriteTeamTip: Tip {
     
     // Set Image Icon
     var image: Image? {
-        Image(systemName: imageName) //TODO: not showing need to debug
+        Image(systemName: imageName)
     }
     // Set Title
     var title: Text {

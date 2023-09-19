@@ -18,14 +18,6 @@ struct FavouriteTeamView: View {
 
     var body: some View {
         VStack{
-            TipView(myTip, arrowEdge: .bottom)
-                .padding()
-                .task {
-                    try? Tips.configure([
-                        .datastoreLocation(.applicationDefault),
-                        .displayFrequency(.immediate)
-                    ])
-                }
             HStack {
                 Image(systemName: "heart.fill")
                     .imageScale(.small)
@@ -42,6 +34,13 @@ struct FavouriteTeamView: View {
                     .frame(width: 25, height: 25)
                     .onTapGesture {
                         showModal = true
+                    }
+                    .popoverTip(myTip)
+                    .task {
+                        try? Tips.configure([
+                            .datastoreLocation(.applicationDefault),
+                            .displayFrequency(.immediate)
+                        ])
                     }
             }
         }
