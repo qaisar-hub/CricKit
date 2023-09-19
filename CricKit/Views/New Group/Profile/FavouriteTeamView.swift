@@ -22,8 +22,8 @@ struct FavouriteTeamView: View {
                 .padding()
                 .task {
                     try? await Tips.configure() {
-                        DisplayFrequency(.daily)
-                        //DatastoreLocation(.applicationDefault)
+                        DisplayFrequency(.immediate)
+                        DatastoreLocation(.applicationDefault)
                     }
                 }
             HStack {
