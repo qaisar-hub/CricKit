@@ -31,6 +31,7 @@ struct CustomBackButton: View {
                 Image(systemName: "chevron.left")
                     .font(.headline)
                     .padding(.vertical, 8)
+                    .padding(.horizontal, 8)
                     .foregroundColor(.blue)
             }
         }
