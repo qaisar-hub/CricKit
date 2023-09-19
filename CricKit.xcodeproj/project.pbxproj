@@ -39,6 +39,8 @@
 		206772302AB5B41D006764CA /* LiveModePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2067722F2AB5B41D006764CA /* LiveModePage.swift */; };
 		206772322AB5B567006764CA /* LiveModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206772312AB5B567006764CA /* LiveModeViewModel.swift */; };
 		206772342AB5B599006764CA /* LiveModeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206772332AB5B599006764CA /* LiveModeModel.swift */; };
+		206772482AB98325006764CA /* CrickitTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206772472AB98325006764CA /* CrickitTip.swift */; };
+		206772492AB983A4006764CA /* CrickitTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206772472AB98325006764CA /* CrickitTip.swift */; };
 		2096CFFA2A99E31C0093C131 /* RecentMatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */; };
 		2096CFFC2A99E32F0093C131 /* RecentMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */; };
 		209ADA702A95A983002B31D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */; };
@@ -157,6 +159,7 @@
 		2067722F2AB5B41D006764CA /* LiveModePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveModePage.swift; sourceTree = "<group>"; };
 		206772312AB5B567006764CA /* LiveModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveModeViewModel.swift; sourceTree = "<group>"; };
 		206772332AB5B599006764CA /* LiveModeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveModeModel.swift; sourceTree = "<group>"; };
+		206772472AB98325006764CA /* CrickitTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrickitTip.swift; sourceTree = "<group>"; };
 		2096CFF92A99E31C0093C131 /* RecentMatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchesViewModel.swift; sourceTree = "<group>"; };
 		2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchModel.swift; sourceTree = "<group>"; };
 		209ADA6F2A95A983002B31D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -499,6 +502,7 @@
 				46D255F42A9FB8AA008D5ACF /* Views */,
 				461BFE902A8EAD02007AECB3 /* ViewModel */,
 				460FD20C2A8422B700029FD7 /* Helper */,
+				206772472AB98325006764CA /* CrickitTip.swift */,
 				205CD1632AA0C83F0082374E /* AppIntents */,
 				463928142A7EC0B3002C2767 /* Preview Content */,
 			);
@@ -726,6 +730,7 @@
 				20343F3C2AA5835E00E840D0 /* WidgetCrickitBundle.swift in Sources */,
 				20343F3E2AA5835E00E840D0 /* WidgetCrickit.swift in Sources */,
 				20343F532AA5845A00E840D0 /* ColorHelper+Extension.swift in Sources */,
+				206772492AB983A4006764CA /* CrickitTip.swift in Sources */,
 				20343F4E2AA5841600E840D0 /* LiveScoreCardModel.swift in Sources */,
 				20343F522AA5843700E840D0 /* CrickitIntents.swift in Sources */,
 				20343F4F2AA5841A00E840D0 /* FireStoreHelper.swift in Sources */,
@@ -777,6 +782,7 @@
 				469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */,
 				46D255F82A9FF0D0008D5ACF /* RecentMatchShimmerView.swift in Sources */,
 				460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */,
+				206772482AB98325006764CA /* CrickitTip.swift in Sources */,
 				46CAEF092A9E1D3A009312CE /* UpComingMatchViewModel.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
 				206772322AB5B567006764CA /* LiveModeViewModel.swift in Sources */,
