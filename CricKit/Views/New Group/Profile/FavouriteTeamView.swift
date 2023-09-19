@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct FavouriteTeamView: View {
     
@@ -13,26 +14,38 @@ struct FavouriteTeamView: View {
     @State private var showModal = false
     let onFavouriteTeamChange: () -> Void
    
-    
+    private let myTip = FavoriteTeamTip(imageName: "star", header: "Add your favorite team", desc: "Your favourite team will be used in some places of the app. ")
+
     var body: some View {
-        HStack {
-            Image(systemName: "heart.fill")
-                .imageScale(.small)
-                .font(.title)
-                .foregroundColor(.gray)
-            Text("Favourite Team")
-                .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
-            Spacer()
-            Text(appSettings.favouriteTeam.team)
-                .font(.caption2)
-                .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
-            Image(appSettings.favouriteTeam.teamFlag)
-                .resizable()
-                .frame(width: 25, height: 25)
-                .onTapGesture {
-                    showModal = true
+        VStack{
+            TipView(myTip, arrowEdge: .bottom)
+                .padding()
+                .task {
+                    try? await Tips.configure() {
+                        DisplayFrequency(.daily)
+                        //DatastoreLocation(.applicationDefault)
+                    }
                 }
+            HStack {
+                Image(systemName: "heart.fill")
+                    .imageScale(.small)
+                    .font(.title)
+                    .foregroundColor(.gray)
+                Text("Favourite Team")
+                    .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+                Spacer()
+                Text(appSettings.favouriteTeam.team)
+                    .font(.caption2)
+                    .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+                Image(appSettings.favouriteTeam.teamFlag)
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .onTapGesture {
+                        showModal = true
+                    }
+            }
         }
+       
         .sheet(isPresented: $showModal) {
             TeamList(showModal: $showModal, onFavouriteTeamChange: onFavouriteTeamChange)
             .presentationDetents([.medium, .large])

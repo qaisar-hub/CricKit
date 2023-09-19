@@ -14,7 +14,7 @@ struct HomePage: View {
     
     @ObservedObject var liveScoreCardViewModel = LiveScoreCardViewModel()
     @EnvironmentObject private var appSettings: AppSettings
-	private let myTip = BookmarkTip()
+    private let myTip = LiveScoreTip(imageName: "lasso.and.sparkles", header: "Adding Live acitvities", desc: "Sit back and Relax - please tap below cards to enable live activities")
 	
     var body: some View {
         NavigationStack {
