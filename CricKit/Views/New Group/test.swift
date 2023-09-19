@@ -45,7 +45,7 @@ struct customTabBars: View {
             case 0:
                 HomePage()
             case 1:
-                ShopPage()
+                LiveMatches()
             default:
                 UserProfilePage()
             }

@@ -64,7 +64,6 @@
 		460FD2502A84E77600029FD7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD24F2A84E77600029FD7 /* CustomTabBar.swift */; };
 		460FD2522A84E79600029FD7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2512A84E79600029FD7 /* CustomTextField.swift */; };
 		460FD2542A84E7AF00029FD7 /* RotationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2532A84E7AF00029FD7 /* RotationButton.swift */; };
-		460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2572A84E83400029FD7 /* ShopPage.swift */; };
 		460FD25E2A84E8A700029FD7 /* SignInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD25D2A84E8A700029FD7 /* SignInPage.swift */; };
 		460FD2602A84E8B500029FD7 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD25F2A84E8B500029FD7 /* SignInView.swift */; };
 		460FD2622A84E8C900029FD7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2612A84E8C900029FD7 /* SignUpView.swift */; };
@@ -186,7 +185,6 @@
 		460FD24F2A84E77600029FD7 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		460FD2512A84E79600029FD7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		460FD2532A84E7AF00029FD7 /* RotationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationButton.swift; sourceTree = "<group>"; };
-		460FD2572A84E83400029FD7 /* ShopPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPage.swift; sourceTree = "<group>"; };
 		460FD25D2A84E8A700029FD7 /* SignInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPage.swift; sourceTree = "<group>"; };
 		460FD25F2A84E8B500029FD7 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		460FD2612A84E8C900029FD7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 		20C0674F2A8CD2C400102BCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				46DA75082AAF05D40040D4C1 /* SwiftData */,
 				20C067502A8CD2FB00102BCF /* LiveScoreCardModel.swift */,
 				461BFE8A2A8EA062007AECB3 /* User.swift */,
 				2096CFFB2A99E32F0093C131 /* RecentMatchModel.swift */,
@@ -355,6 +352,14 @@
 				469377072A8A6548003E9AD8 /* LiveScoreCardView */,
 			);
 			path = HomeSections;
+			sourceTree = "<group>";
+		};
+		4600B7922AB9B3D7006D0C5A /* CrickitTip */ = {
+			isa = PBXGroup;
+			children = (
+				206772472AB98325006764CA /* CrickitTip.swift */,
+			);
+			path = CrickitTip;
 			sourceTree = "<group>";
 		};
 		460FD2032A841E7800029FD7 /* PlayerProfile */ = {
@@ -406,14 +411,6 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		460FD2562A84E81A00029FD7 /* Shop */ = {
-			isa = PBXGroup;
-			children = (
-				460FD2572A84E83400029FD7 /* ShopPage.swift */,
-			);
-			path = Shop;
-			sourceTree = "<group>";
-		};
 		460FD2592A84E84A00029FD7 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,10 +437,9 @@
 			isa = PBXGroup;
 			children = (
 				464CBCE92AB893E000068EEB /* OnAppLaunch */,
-				2067722C2AB5B3E5006764CA /* LiveMode */,
 				460FD2712A85070300029FD7 /* SignIn */,
-				460FD2562A84E81A00029FD7 /* Shop */,
 				460FD2632A84E9C500029FD7 /* Home */,
+				2067722C2AB5B3E5006764CA /* LiveMode */,
 				460FD2592A84E84A00029FD7 /* Profile */,
 				460FD26E2A84EB7400029FD7 /* test.swift */,
 			);
@@ -508,7 +504,8 @@
 				46D255F42A9FB8AA008D5ACF /* Views */,
 				461BFE902A8EAD02007AECB3 /* ViewModel */,
 				460FD20C2A8422B700029FD7 /* Helper */,
-				206772472AB98325006764CA /* CrickitTip.swift */,
+				46DA75082AAF05D40040D4C1 /* SwiftData */,
+				4600B7922AB9B3D7006D0C5A /* CrickitTip */,
 				205CD1632AA0C83F0082374E /* AppIntents */,
 				463928142A7EC0B3002C2767 /* Preview Content */,
 			);
@@ -788,7 +785,6 @@
 				464CBCE62AB8936700068EEB /* LaunchAnimationView.swift in Sources */,
 				469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */,
 				46D255F82A9FF0D0008D5ACF /* RecentMatchShimmerView.swift in Sources */,
-				460FD2582A84E83400029FD7 /* ShopPage.swift in Sources */,
 				206772482AB98325006764CA /* CrickitTip.swift in Sources */,
 				46CAEF092A9E1D3A009312CE /* UpComingMatchViewModel.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
