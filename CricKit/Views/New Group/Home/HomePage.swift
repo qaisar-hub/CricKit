@@ -29,19 +29,20 @@ struct HomePage: View {
                 }
                 
                 VStack(spacing: 0) {
-					TipView(myTip, arrowEdge: .bottom)
-						.padding()
                     AppLogoView()
-						.task {
-                            try? Tips.configure([
-                                .datastoreLocation(.applicationDefault),
-                                .displayFrequency(.immediate)
-                            ])
-						}
-                    
                     switch selectedIndex {
                     case 0:
-                        HomeBoard(liveScoreCardViewModel: liveScoreCardViewModel)
+                        VStack {
+                            TipView(myTip, arrowEdge: .bottom)
+                                .padding()
+                            HomeBoard(liveScoreCardViewModel: liveScoreCardViewModel)   
+                                .task {
+                                    try? Tips.configure([
+                                        .datastoreLocation(.applicationDefault),
+                                        .displayFrequency(.immediate)
+                                    ])
+                                }
+                        }
                     case 1:
 						LiveMatches()
                     default:
