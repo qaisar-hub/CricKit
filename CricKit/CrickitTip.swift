@@ -1,19 +1,44 @@
 import SwiftUI
 import TipKit
 
-struct BookmarkTip: Tip {
+struct LiveScoreTip: Tip {
+    
+    var imageName: String
+    var header: String
+    var desc: String
+    
     // Set Image Icon
     var asset: Image {
-        Image(systemName: "lasso.and.sparkles")
+        Image(systemName: imageName) //TODO: not showing need to debug
     }
     // Set Title
     var title: Text {
-        Text("Adding Live acitvities")
+        Text(header)
             .foregroundStyle(ColorManager.appPrimaryColor())
     }
     // Set Message to explain details
     var message: Text? {
-        Text("Sit back and Relax - please tap below cards to enable live activities")
-            .foregroundStyle(.gray)
+        Text(desc)
+    }
+}
+
+struct FavoriteTeamTip: Tip {
+    
+    var imageName: String
+    var header: String
+    var desc: String
+    
+    // Set Image Icon
+    var asset: Image {
+        Image(systemName: imageName) //TODO: not showing need to debug
+    }
+    // Set Title
+    var title: Text {
+        Text(header)
+            .foregroundStyle(ColorManager.appPrimaryColor())
+    }
+    // Set Message to explain details
+    var message: Text? {
+        Text(desc)
     }
 }
