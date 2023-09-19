@@ -21,10 +21,10 @@ struct FavouriteTeamView: View {
             TipView(myTip, arrowEdge: .bottom)
                 .padding()
                 .task {
-                    try? await Tips.configure() {
-                        DisplayFrequency(.immediate)
-                        DatastoreLocation(.applicationDefault)
-                    }
+                    try? Tips.configure([
+                        .datastoreLocation(.applicationDefault),
+                        .displayFrequency(.immediate)
+                    ])
                 }
             HStack {
                 Image(systemName: "heart.fill")

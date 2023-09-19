@@ -33,10 +33,10 @@ struct HomePage: View {
 						.padding()
                     AppLogoView()
 						.task {
-							try? await Tips.configure() {
-								DisplayFrequency(.immediate)
-								DatastoreLocation(.applicationDefault)
-							}
+                            try? Tips.configure([
+                                .datastoreLocation(.applicationDefault),
+                                .displayFrequency(.immediate)
+                            ])
 						}
                     
                     switch selectedIndex {
