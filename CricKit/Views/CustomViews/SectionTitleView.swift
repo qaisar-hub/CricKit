@@ -14,7 +14,7 @@ struct SectionTitleView: View {
     var body: some View {
         Text(title)
 			.foregroundColor(appSettings.isDarkMode ? Color.white : Color.black)
-            .padding(.all, 10)
+            .padding(10)
             .font(.footnote)
 			.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
             .cornerRadius(20, corners: .allCorners)

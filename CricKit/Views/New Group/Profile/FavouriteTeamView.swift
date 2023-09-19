@@ -14,7 +14,7 @@ struct FavouriteTeamView: View {
     @State private var showModal = false
     let onFavouriteTeamChange: () -> Void
    
-    private let myTip = FavoriteTeamTip(imageName: "star", header: "Add your favorite team", desc: "Your favourite team will be used in some places of the app. ")
+    private let favoriteTeamTip = FavoriteTeamTip(imageName: "star", header: "Add your favorite team", desc: "Your favourite team will be used in some places of the app. ")
 
     var body: some View {
         VStack{
@@ -34,8 +34,9 @@ struct FavouriteTeamView: View {
                     .frame(width: 25, height: 25)
                     .onTapGesture {
                         showModal = true
+                        favoriteTeamTip.invalidate(reason: .actionPerformed)
                     }
-                    .popoverTip(myTip)
+                    .popoverTip(favoriteTeamTip)
                     .task {
                         try? Tips.configure([
                             .datastoreLocation(.applicationDefault),
