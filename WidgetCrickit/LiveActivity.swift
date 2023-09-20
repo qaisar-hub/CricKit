@@ -36,19 +36,22 @@ struct CrickitLiveActivity: Widget {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("")
+                    LiveDotViewForIntent()
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("")
+                    Text(context.state.liveScoreModel.matchStatus)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("")
-                    // more content
+                    ForEach(context.state.liveScoreModel.TeamStatus) { team in
+                        HStack {
+                            LiveTeamSummaryViewForIntent(team: team)
+                        }
+                    }
                 }
             } compactLeading: {
-                Text("")
+                LiveDotViewForIntent()
             } compactTrailing: {
-                Text("")
+                Text(context.state.liveScoreModel.matchStatus)
             } minimal: {
                 Text("")
             }
