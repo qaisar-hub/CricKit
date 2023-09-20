@@ -36,7 +36,7 @@ struct CrickitLiveActivity: Widget {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("")
+                    LiveDotViewForIntent()
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     Text("")
