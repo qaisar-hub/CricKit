@@ -40,6 +40,7 @@ struct CrickitLiveActivity: Widget {
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     Text(context.state.liveScoreModel.matchStatus)
+                        .font(.footnote)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
                     ForEach(context.state.liveScoreModel.TeamStatus) { team in
@@ -49,9 +50,11 @@ struct CrickitLiveActivity: Widget {
                     }
                 }
             } compactLeading: {
-                LiveDotViewForIntent()
+                LiveDotViewForIntent(fontSize: 8.0)
             } compactTrailing: {
                 Text(context.state.liveScoreModel.matchStatus)
+                    .font(.system(size: 8))
+                    
             } minimal: {
                 Text("")
             }
