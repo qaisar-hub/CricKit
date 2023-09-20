@@ -133,13 +133,14 @@ struct LiveTeamSummaryViewForIntent: View {
 struct LiveDotViewForIntent: View {
     @Environment(\.colorScheme) var colorScheme
     
+    var fontSize =  12.0
     var body: some View {
         HStack {
             Circle()
                 .fill(Color.red)
                 .frame(width: 10, height: 10)
             Text("Live")
-                .font(.subheadline)
+                .font(.system(size: fontSize))
                 .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
             
         }
