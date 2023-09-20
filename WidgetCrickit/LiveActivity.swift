@@ -39,16 +39,19 @@ struct CrickitLiveActivity: Widget {
                     LiveDotViewForIntent()
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("")
+                    Text(context.state.liveScoreModel.matchStatus)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("")
-                    // more content
+                    ForEach(context.state.liveScoreModel.TeamStatus) { team in
+                        HStack {
+                            LiveTeamSummaryViewForIntent(team: team)
+                        }
+                    }
                 }
             } compactLeading: {
-                Text("")
+                LiveDotViewForIntent()
             } compactTrailing: {
-                Text("")
+                Text(context.state.liveScoreModel.matchStatus)
             } minimal: {
                 Text("")
             }
