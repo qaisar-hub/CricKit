@@ -31,12 +31,12 @@ struct HomeBoard: View {
             ScrollView(.horizontal, showsIndicators: false){
                 HStack{
                     if liveScoreCardViewModel.isLoading {
-                        LiveScoreCardShimmerView(width: width - 32)
+                        LiveScoreCardShimmerView(width: width - 50)
                             .offset(x: 16)
                     } else {
                         ForEach(Array(liveScoreCardViewModel.liveScoreCardlists.enumerated()), id: \.element.id) { index, liveScoreItem in
                             LiveScoreCardView(liveScoreCardData: liveScoreItem)
-                                .frame(width: width - 32, height: 200)
+                                .frame(width: width - 50, height: 200)
                                 .clipShape(LiveMatchCard())
                                 .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                                 .clipShape(LiveMatchCard())
