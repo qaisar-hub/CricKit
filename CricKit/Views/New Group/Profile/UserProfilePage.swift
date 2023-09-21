@@ -15,8 +15,7 @@ struct UserProfilePage: View {
     @State private var confirmDeletion = false
     @State var isLoading: Bool = false
     @EnvironmentObject private var appSettings: AppSettings
-    
-    private let myTip = LiveScoreTip(imageName: "lasso.and.sparkles", header: "Adding Live acitvities", desc: "Sit back and Relax - please tap below cards to enable live activities")
+
     
     var body: some View {
         Form {

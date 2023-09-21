@@ -147,7 +147,7 @@ struct SignInView: View {
     
     func updateExistingUserPreference() {
         let emailID = authViewModel.currentUser?.email ?? ""
-        appSettings.addOrUpdateUserDataModel(emailID)
+        appSettings.updateExistingUserPreference(emailID)
     }
 }
 

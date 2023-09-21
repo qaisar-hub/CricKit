@@ -18,7 +18,6 @@ class AppSettings: ObservableObject {
     func resetToInitialState() {
         favouriteTeam = FavouriteTeam(team: "India", teamFlag: "teamInd")
         userImage = nil
-        
     }
     
     func updateExistingUserPreference(_ emailID: String) {
