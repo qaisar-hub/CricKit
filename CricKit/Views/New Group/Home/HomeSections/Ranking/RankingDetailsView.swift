@@ -8,16 +8,40 @@
 import SwiftUI
 
 enum TabSelection: String, CaseIterable, Identifiable {
-    case batsman = "Batsman", bowler = "Bowler", allRounder = "All Rounder", team = "Team"
+    case batsman, bowler, allRounder, team
     
     var id: String { self.rawValue }
 }
 
 struct RankingDetailsView: View {
     @State private var selectedTabIndex = 0
+    @ObservedObject var rankingViewModel = RankingViewModel()
+    var matchFormat: String
+    
+    init(matchFormat: String) {
+        self.matchFormat = matchFormat
+        self.rankingViewModel.fetchRankings(matchFormat)
+    }
     
     private var selectedTab: TabSelection {
         TabSelection.allCases[selectedTabIndex]
+    }
+    
+    private var filteredData: [Ranking] {
+            guard let category = rankingViewModel.category else {
+                return []
+            }
+
+            switch selectedTab {
+            case .batsman:
+                return category.batsman
+            case .bowler:
+                return category.bowling
+            case .allRounder:
+                return category.allRounder
+            case .team:
+                return category.teams
+            }
     }
     
     var body: some View {
@@ -32,8 +56,11 @@ struct RankingDetailsView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal)
-                
-                ICCRankingView(selectedTab: selectedTab)
+                if !filteredData.isEmpty {
+                    ICCRankingView(selectedTab: selectedTab, rankingArray: filteredData)
+                } else {
+                    ProgressView()
+                }
                 
                 Spacer()
             }
@@ -53,6 +80,6 @@ struct RankingDetailsView: View {
 
 struct RankingDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        RankingDetailsView()
+        RankingDetailsView(matchFormat: "Test")
     }
 }

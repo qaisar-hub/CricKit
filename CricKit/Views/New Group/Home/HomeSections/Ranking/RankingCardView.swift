@@ -45,12 +45,13 @@ struct MatchFormatCardView: View {
 }
 
 struct RankingCardView: View {
+    @ObservedObject var rankingViewModel = RankingViewModel()
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
                     ForEach(["TEST", "ODI", "T20I"], id: \.self) { name in
-                        NavigationLink(destination: RankingDetailsView()) {
+                        NavigationLink(destination: RankingDetailsView(matchFormat: name.lowercased())) {
                             MatchFormatCardView(name: name)
                         }
                     }

@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ICCRankingView: View {
+    @ObservedObject var rankingViewModel = RankingViewModel()
     var selectedTab: TabSelection
+    var rankingArray: [Ranking]
     
     var sectionHeader: String {
             switch selectedTab {
@@ -28,18 +28,19 @@ struct ICCRankingView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section(header: Text(sectionHeader)) { // Use the dynamic section header
+                Section(header: Text(sectionHeader)) { 
                     ForEach(0..<10) { index in
+                        let rank = selectedTab != .team ? rankingArray[index].rank : rankingArray[index].rank
                         let symbolName = selectedTab != .team ? "person.crop.circle.fill" : "square.fill"
-                        let title = selectedTab != .team ? "Player Name" : "Team Name"
-                        let subtitle = selectedTab != .team ? "Team Name" : "Total Points"
-                        let detail = selectedTab != .team ? "Rank Points" : "Ranking Position"
-                        
-                        RankingEntryView(index: index,
+                        let title = selectedTab != .team ? rankingArray[index].player : rankingArray[index].team
+                        let subtitle = selectedTab != .team ? rankingArray[index].team : "Points: \(rankingArray[index].points ?? 0)"
+                        let rating = selectedTab != .team ? rankingArray[index].rating : rankingArray[index].rating
+                        let detail = selectedTab != .team ? rankingArray[index].careerBestRating : ""
+                        RankingEntryView(rank: rank ?? 0,
+                                         rating: rating ?? 0,
                                          symbolName: symbolName,
-                                         title: title,
-                                         subtitle: subtitle,
-                                         detail: detail)
+                                         title: title ?? "",
+                                         subtitle: subtitle ?? "")
                     }
                 }
             }
@@ -50,28 +51,31 @@ struct ICCRankingView: View {
 
 
 struct RankingEntryView: View {
-    var index: Int
+    var rank: Int
+    var rating: Int
     var symbolName: String
     var title: String
     var subtitle: String
-    var detail: String
     
     var body: some View {
-        HStack {
-            Text("\(index + 1)")
+        HStack(spacing: 20) {
+            Text("\(rank)")
                 .font(.headline)
             Image(systemName: symbolName)
                 .resizable()
                 .frame(width: 30, height: 30)
-            VStack(alignment: .leading) {
-                Text(title)
-                    .font(.headline)
-                Text(subtitle)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(title)
+                        .font(.headline)
+                    Text(subtitle)
+                        .font(.subheadline)
+                }
+                Spacer()
+                Text("\(rating)")
                     .font(.subheadline)
+                    .multilineTextAlignment(.trailing)
             }
-            Spacer()
-            Text(detail)
-                .font(.subheadline)
         }
     }
 }
@@ -79,6 +83,6 @@ struct RankingEntryView: View {
 
 struct ICCRankingView_Previews: PreviewProvider {
     static var previews: some View {
-        ICCRankingView(selectedTab: .batsman)
+        ICCRankingView(selectedTab: .batsman, rankingArray: [])
     }
 }

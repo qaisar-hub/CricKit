@@ -114,6 +114,8 @@
 		46E7BE502ABC251300224176 /* MatchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE8CAB2ABC1D5F007631AA /* MatchDetails.swift */; };
 		46E7BE532ABC2B7200224176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46FE8CAC2ABC1D5F007631AA /* Assets.xcassets */; };
 		46E7BE552ABC319300224176 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E7BE542ABC319300224176 /* ProfilePhoto.swift */; };
+		46E7BE582ABCD91D00224176 /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E7BE572ABCD91D00224176 /* RankingModel.swift */; };
+		46E7BE5A2ABCDC2700224176 /* RankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E7BE592ABCDC2700224176 /* RankingViewModel.swift */; };
 		46FE8CA12ABC1A93007631AA /* CricKit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 46FE8C942ABC1A90007631AA /* CricKit.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		46FE8CB32ABC1D5F007631AA /* CricKit_For_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE8CAA2ABC1D5F007631AA /* CricKit_For_WatchApp.swift */; };
 		46FE8CB52ABC1D5F007631AA /* MatchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FE8CAB2ABC1D5F007631AA /* MatchDetails.swift */; };
@@ -265,6 +267,8 @@
 		46DA75092AAF06800040D4C1 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		46DA750B2AAF45F50040D4C1 /* SwiftDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataHelper.swift; sourceTree = "<group>"; };
 		46E7BE542ABC319300224176 /* ProfilePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
+		46E7BE572ABCD91D00224176 /* RankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
+		46E7BE592ABCDC2700224176 /* RankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewModel.swift; sourceTree = "<group>"; };
 		46FE8C942ABC1A90007631AA /* CricKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FE8CAA2ABC1D5F007631AA /* CricKit_For_WatchApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CricKit_For_WatchApp.swift; sourceTree = "<group>"; };
 		46FE8CAB2ABC1D5F007631AA /* MatchDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetails.swift; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 				46CAEF042A9E1B87009312CE /* UpComingMatchesModel.swift */,
 				46DA75062AACE16C0040D4C1 /* NewsModel.swift */,
 				206772332AB5B599006764CA /* LiveModeModel.swift */,
+				46E7BE572ABCD91D00224176 /* RankingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -519,6 +524,7 @@
 				46CAEF082A9E1D3A009312CE /* UpComingMatchViewModel.swift */,
 				46DA75042AACE0D70040D4C1 /* NewsViewModel.swift */,
 				206772312AB5B567006764CA /* LiveModeViewModel.swift */,
+				46E7BE592ABCDC2700224176 /* RankingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -895,6 +901,7 @@
 				464CBCE62AB8936700068EEB /* LaunchAnimationView.swift in Sources */,
 				469377062A8A6530003E9AD8 /* FeaturedPlayersSectionView.swift in Sources */,
 				46D255F82A9FF0D0008D5ACF /* RecentMatchShimmerView.swift in Sources */,
+				46E7BE5A2ABCDC2700224176 /* RankingViewModel.swift in Sources */,
 				206772482AB98325006764CA /* CrickitTip.swift in Sources */,
 				46CAEF092A9E1D3A009312CE /* UpComingMatchViewModel.swift in Sources */,
 				460FD2012A841E4100029FD7 /* PlayerProfileView.swift in Sources */,
@@ -926,6 +933,7 @@
 				469377032A8A64FF003E9AD8 /* RecentMatchView.swift in Sources */,
 				2096CFFA2A99E31C0093C131 /* RecentMatchesViewModel.swift in Sources */,
 				460FD20B2A84210100029FD7 /* RoundedRectangleView.swift in Sources */,
+				46E7BE582ABCD91D00224176 /* RankingModel.swift in Sources */,
 				209ADA762A987C90002B31D5 /* FirebaseDataService.swift in Sources */,
 				461BFE962A8ECA87007AECB3 /* SettingsRowView.swift in Sources */,
 				4600B7912AB9ADE2006D0C5A /* HomeBoard.swift in Sources */,
