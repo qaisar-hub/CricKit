@@ -43,7 +43,6 @@ struct HomePage: View {
                         }
                         .padding(.top, 16)
                         .padding(.bottom, -20)
-                        
                     }
                     Spacer()
                 }

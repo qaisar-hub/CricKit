@@ -18,14 +18,13 @@ struct LiveMatches: View {
             ScrollView(.vertical, showsIndicators: false){
                 VStack{
                     if liveScoreCardViewModel.isLoading {
-                        LiveScoreCardShimmerView(width: width - 32)
-                            .offset(x: 16)
+                        LiveScoreCardShimmerView(width: width - 50)
+                            
                     } else {
                         ForEach(Array(liveScoreCardViewModel.liveScoreCardlists.enumerated()), id: \.element.id) { index, liveScoreItem in
                             NavigationLink(destination: LiveModePage(matchHeader: liveScoreItem.matchHeader, matchStatus: liveScoreItem.matchStatus)) {
                                 LiveScoreCardView(isLiveMatches: true, liveScoreCardData: liveScoreItem)
-                                    .frame(width: width - 32, height: 160)
-                                    .clipShape(LiveMatchCard())
+                                    .frame(width: width - 50, height: 160)
                                     .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                                     .clipShape(LiveMatchCard())
                                     .cornerRadius(10, corners: .allCorners)

@@ -53,7 +53,7 @@ struct CrickitLiveActivity: Widget {
                 LiveDotViewForIntent(fontSize: 8.0)
             } compactTrailing: {
                 Text(context.state.liveScoreModel.matchStatus)
-                    .font(.system(size: 8))
+                    .font(.system(size: 6))
                     
             } minimal: {
                 Text("")

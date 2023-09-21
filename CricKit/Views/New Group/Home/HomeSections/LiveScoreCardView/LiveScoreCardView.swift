@@ -15,7 +15,7 @@ struct LiveScoreCardView: View {
 	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
-		VStack(alignment: isLiveMatches ? .leading : .center) {
+		VStack(alignment: .center) {
             Text(liveScoreCardData.matchHeader)
 				.font(.subheadline)
 				.fontWeight(.medium)
