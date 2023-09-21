@@ -11,16 +11,17 @@ struct MatchDetails: View {
     var doc: Document
     var body: some View {
         VStack {
-            LinearGradient(
-                colors: [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))],
-                startPoint: .leading,
-                endPoint: .trailing
-            )
-            .mask(Text("Match Stat")
+            Spacer()
+            Text("Match Stat")
                 .fontWidth(.expanded)
                 .font(.system(size: 15))
-                .fontWeight(.bold))
-            //.padding(.top,-60)
+                .fontWeight(.bold)
+                .foregroundStyle(LinearGradient(
+                    colors: [Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                ))
+            
             HStack{
                 Text(doc.fields.player1.stringValue)
                     .font(.system(size: 10))
@@ -76,12 +77,11 @@ struct MatchDetails: View {
                     .foregroundColor(.red)
                     .fontWeight(.bold)
             }
-           // Spacer()
             Text("Recent Balls")
                 .font(.system(size: 10))
             Text(doc.fields.recentBalls.stringValue)
                 .font(.system(size: 10))
-         //   Spacer()
+            Spacer()
         }
     }
 }

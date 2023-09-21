@@ -9,6 +9,7 @@ import Foundation
 @MainActor
 public class WatchViewModel: ObservableObject {
     @Published var liveMatches = Documents(documents: [Document]())
+    @Published var isLoading = false
     
     init() {
         Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(self.fetchDataForWatch), userInfo: nil, repeats: true)
@@ -20,16 +21,21 @@ public class WatchViewModel: ObservableObject {
         }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
+        isLoading = true
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
+                DispatchQueue.main.async { [weak self] in
+                    self?.isLoading = false
+                }
                 print(error)
                 return
             }
             if let data = data {
                 do{
                     let decodedResponse = try JSONDecoder().decode(Documents.self, from: data)
-                    DispatchQueue.main.async {
-                        self.liveMatches = decodedResponse
+                    DispatchQueue.main.async { [weak self] in
+                        self?.liveMatches = decodedResponse
+                        self?.isLoading = false
                     }
                 } catch {
                     print(error)

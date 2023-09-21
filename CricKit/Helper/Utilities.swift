@@ -15,7 +15,15 @@ final class Utilities {
     
     @MainActor
     func topViewController(controller: UIViewController? = nil) -> UIViewController? {
-        let controller = controller ?? UIApplication.shared.keyWindow?.rootViewController
+        ///getting the all scenes
+        let scenes = UIApplication.shared.connectedScenes
+        ///getting windowScene from scenes
+        let windowScene = scenes.first as? UIWindowScene
+        ///getting window from windowScene
+        let window = windowScene?.windows.first
+        ///getting the root view controller
+        let rootVC = window?.rootViewController
+        let controller = controller ?? rootVC
         
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)
