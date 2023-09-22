@@ -83,6 +83,7 @@
 		4639280F2A7EC0B1002C2767 /* CricKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639280E2A7EC0B1002C2767 /* CricKitApp.swift */; };
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
+		464A64272ABD9C90007E518E /* MatchSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A64262ABD9C90007E518E /* MatchSummaryView.swift */; };
 		464CBCE62AB8936700068EEB /* LaunchAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CBCE52AB8936700068EEB /* LaunchAnimationView.swift */; };
 		464CBCE82AB893A900068EEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CBCE72AB893A900068EEB /* ContentView.swift */; };
 		465DC2722A9C95F400B171BE /* RankingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DC2712A9C95F400B171BE /* RankingDetailsView.swift */; };
@@ -239,6 +240,7 @@
 		4639280E2A7EC0B1002C2767 /* CricKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitApp.swift; sourceTree = "<group>"; };
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463928152A7EC0B3002C2767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		464A64262ABD9C90007E518E /* MatchSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchSummaryView.swift; sourceTree = "<group>"; };
 		464CBCE52AB8936700068EEB /* LaunchAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimationView.swift; sourceTree = "<group>"; };
 		464CBCE72AB893A900068EEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		465DC2712A9C95F400B171BE /* RankingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDetailsView.swift; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				469377022A8A64FF003E9AD8 /* RecentMatchView.swift */,
+				464A64262ABD9C90007E518E /* MatchSummaryView.swift */,
 				46D255F72A9FF0D0008D5ACF /* RecentMatchShimmerView.swift */,
 			);
 			path = RecentMatchView;
@@ -873,6 +876,7 @@
 				460FD2072A841FCC00029FD7 /* PlayerHeaderView.swift in Sources */,
 				46DA75072AACE16C0040D4C1 /* NewsModel.swift in Sources */,
 				209ADA722A95C5A7002B31D5 /* LiveScoreCardViewModel.swift in Sources */,
+				464A64272ABD9C90007E518E /* MatchSummaryView.swift in Sources */,
 				205CD1672AA0ECE40082374E /* FavouriteTeamView.swift in Sources */,
 				46D255F12A9F781F008D5ACF /* ErrorMessageView.swift in Sources */,
 				46DA750A2AAF06800040D4C1 /* UserDataModel.swift in Sources */,

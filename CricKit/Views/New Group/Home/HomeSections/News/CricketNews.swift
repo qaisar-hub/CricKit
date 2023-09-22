@@ -69,35 +69,45 @@ struct NewsDetail: View {
     var news: NewsModel
     @EnvironmentObject private var appSettings: AppSettings
     
+    
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 0) {
-                    ZStack(alignment: .top) {
-                        Image(news.imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.4)
-                        VStack {
-                            Spacer()
-                            Text(news.header)
-                                .font(.subheadline)
-								.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
-                                .padding(30)
-                                .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
+            ZStack {
+                appSettings.isDarkMode ? LinearGradient(Color.darkStart, Color.appBlacks).ignoresSafeArea() : LinearGradient(Color.appWhites).ignoresSafeArea()
+                ScrollView {
+                    VStack(spacing: 0) {
+                        ZStack(alignment: .top) {
+                            Image(news.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.4)
+                            VStack {
+                                Spacer()
+                                Text(news.header)
+                                    .font(.subheadline)
+                                    .foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+                                    .padding()
+                                    .frame(width: UIScreen.main.bounds.width)
+                                    .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
+                            }
                         }
+                        Text(news.subheader)
+                            .foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
+                            .padding()
                     }
-                    Text(news.subheader)
-                        .padding()
+                    .frame(width: UIScreen.main.bounds.width)
                 }
-                .frame(width: UIScreen.main.bounds.width)
+                .navigationTitle("News")
+                .toolbarColorScheme(appSettings.isDarkMode ? .dark : .light, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden(true)
+                .toolbar(content: {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        CustomBackButton()
+                    }
+                })
             }
-            .navigationBarBackButtonHidden(true)
-            .toolbar(content: {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    CustomBackButton()
-                }
-            })
         }
     }
 }
@@ -105,6 +115,7 @@ struct NewsDetail: View {
 struct CricketNews_Previews: PreviewProvider {
     static var previews: some View {
         CricketNews(newsModel: [NewsModel(imageName: "playerVirat", header: "Virat Kohli's toughness of mind makes a huge difference: Ravi Shastri to India Today", subheader: "Virat Kohli's rampaging run in the South Africa series cemented his place as one of the best players of the modern era, not just in one-day cricket but across all formats.India's tour of South Africa was going to be Kohli's biggest challenge till now as captain and as a batsman and he passed both those tests with flying colours. Kohli amassed 871 runs on the tour and finished as the highest run-getter in the Test and ODI series with 286 and 558 runs respectively.")])
+            .environmentObject(AppSettings())
     }
 }
 

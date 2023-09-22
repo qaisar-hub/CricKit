@@ -22,6 +22,7 @@ struct CricKitApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchAnimationView(showLoading: $showLoading)
+                .tint(ColorManager.appPrimaryColor())
                 .environmentObject(authViewModel)
                 .environmentObject(appSettings)
                 .onAppear {

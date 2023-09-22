@@ -63,6 +63,10 @@ struct TeamStats: Encodable, Decodable, Identifiable, Hashable {
     var overs: String
     var runs: String
     var wickets: String
+    var batsMen: NSArray = []
+    var batsMenScore: NSArray = []
+    var bowlers: NSArray = []
+    var bStat: NSArray = []
     
     func yetToBat() -> Bool{
         return self.runs.isEmpty

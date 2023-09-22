@@ -17,7 +17,7 @@ struct ProfilePhoto : View {
     var body: some View {
         NavigationStack {
             ZStack{
-                appSettings.isDarkMode ? LinearGradient(Color.darkStart, Color.appBlacks).ignoresSafeArea() : Color.linearWhiteColor.ignoresSafeArea()
+                appSettings.isDarkMode ? LinearGradient(Color.darkStart, Color.appBlacks).ignoresSafeArea() : LinearGradient(Color.appWhites).ignoresSafeArea()
                 if let image = appSettings.userImage, let userImage = UIImage(data: image)  {
                     Image(uiImage: userImage)
                         .resizable()
@@ -43,11 +43,15 @@ struct ProfilePhoto : View {
                                             showAlert.toggle()
                                         }) {
                                             Image(systemName: "trash.circle")
+                                                .renderingMode(.template)
+                                                .foregroundStyle(.red)
                                         }
                                     }
                                 }
                         })
                         .navigationTitle(Text("Profile Photo"))
+                        .toolbarColorScheme(appSettings.isDarkMode ? .dark : .light, for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
                         .navigationBarTitleDisplayMode(.inline)
 
                 } else {

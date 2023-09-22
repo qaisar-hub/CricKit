@@ -37,7 +37,11 @@ class RecentMatchesViewModel : ObservableObject {
                                                           flag: doc["flag"] as? String ?? "",
                                                           overs: doc["overs"] as? String ?? "",
                                                           runs: doc["runs"] as? String ?? "",
-                                                          wickets: doc["wickets"] as? String ?? "")
+                                                          wickets: doc["wickets"] as? String ?? "",
+                                                          batsMen: doc["batsMen"] as? NSArray ?? [],
+                                                          batsMenScore: doc["batsMenScore"] as? NSArray ?? [],
+                                                          bowlers: doc["bowlers"] as? NSArray ?? [],
+                                                          bStat: doc["bStat"] as? NSArray ?? [])
                                 self.teamStatusArray.append(teamStats)
                             }
                             let recentMatch = RecentMatchModel(matchStatus: matchStatus, TeamStatus: self.teamStatusArray)

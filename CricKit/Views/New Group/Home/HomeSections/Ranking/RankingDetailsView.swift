@@ -47,7 +47,7 @@ struct RankingDetailsView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                appSettings.isDarkMode ? LinearGradient(Color.darkStart, Color.appBlacks).ignoresSafeArea() : Color.linearWhiteColor.ignoresSafeArea()
+                appSettings.isDarkMode ? LinearGradient(Color.darkStart, Color.appBlacks).ignoresSafeArea() : LinearGradient(Color.appWhites).ignoresSafeArea()
                 VStack {
                     Spacer()
                         .frame(minHeight: 0, maxHeight: 16)
@@ -70,7 +70,9 @@ struct RankingDetailsView: View {
                 .onAppear {
                     self.rankingViewModel.fetchRankings(self.matchFormat)
                 }
-                .navigationBarTitle("ICC Rankings")
+                .navigationTitle("ICC Rankings")
+                .toolbarColorScheme(appSettings.isDarkMode ? .dark : .light, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
                 .navigationBarBackButtonHidden(true)
                 .toolbar(content: {
                     ToolbarItem(placement: .navigationBarLeading) {

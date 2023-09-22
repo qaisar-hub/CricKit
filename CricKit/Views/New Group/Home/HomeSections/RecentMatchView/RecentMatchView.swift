@@ -17,15 +17,18 @@ struct RecentMatchView: View {
         VStack {
             ForEach(0..<recentMatchModel.TeamStatus.count, id: \.self) { index in
                 HStack {
-                    
                     if (index == 0){
-                        TeamSummarySectionView(team: recentMatchModel.TeamStatus[index])
-                            .padding(.horizontal, 5)
+                        NavigationLink(destination: RecentMatchSummary(teamStat: recentMatchModel.TeamStatus,result: recentMatchModel.matchStatus)) {
+                            TeamSummarySectionView(team: recentMatchModel.TeamStatus[index])
+                                .padding(.horizontal, 5)
+                        }
                         Spacer()
                     } else {
                         Spacer()
-                        TeamSummarySectionView(team: recentMatchModel.TeamStatus[index])
-                            .padding(.horizontal, 5)
+                        NavigationLink(destination: RecentMatchSummary(teamStat: recentMatchModel.TeamStatus,result: recentMatchModel.matchStatus)) {
+                            TeamSummarySectionView(team: recentMatchModel.TeamStatus[index])
+                                .padding(.horizontal, 5)
+                        }
                     }
                     
                 }
