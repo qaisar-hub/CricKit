@@ -17,6 +17,7 @@ struct ProfilePhoto : View {
     var body: some View {
         NavigationStack {
             ZStack{
+                appSettings.isDarkMode ? LinearGradient(Color.darkStart, Color.appBlacks).ignoresSafeArea() : Color.linearWhiteColor.ignoresSafeArea()
                 if let image = appSettings.userImage, let userImage = UIImage(data: image)  {
                     Image(uiImage: userImage)
                         .resizable()

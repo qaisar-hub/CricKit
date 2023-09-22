@@ -47,8 +47,11 @@ struct FavouriteTeamView: View {
         }
        
         .sheet(isPresented: $showModal) {
-            TeamList(showModal: $showModal, onFavouriteTeamChange: onFavouriteTeamChange)
-            .presentationDetents([.medium, .large])
+            ZStack {
+                appSettings.isDarkMode ? LinearGradient(Color.darkStart, Color.appBlacks).ignoresSafeArea() : Color.linearWhiteColor.ignoresSafeArea()
+                TeamList(showModal: $showModal, onFavouriteTeamChange: onFavouriteTeamChange)
+                    .presentationDetents([.medium, .large])
+            }
             //.presentationContentInteraction(.scrolls)
         }
     }
