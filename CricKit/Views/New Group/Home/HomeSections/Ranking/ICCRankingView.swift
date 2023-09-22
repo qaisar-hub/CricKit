@@ -35,7 +35,6 @@ struct ICCRankingView: View {
                         let title = selectedTab != .team ? rankingArray[index].player : rankingArray[index].team
                         let subtitle = selectedTab != .team ? rankingArray[index].team : "Points: \(rankingArray[index].points ?? 0)"
                         let rating = selectedTab != .team ? rankingArray[index].rating : rankingArray[index].rating
-                        let detail = selectedTab != .team ? rankingArray[index].careerBestRating : ""
                         RankingEntryView(rank: rank ?? 0,
                                          rating: rating ?? 0,
                                          symbolName: symbolName,

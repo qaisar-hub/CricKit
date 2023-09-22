@@ -20,7 +20,6 @@ struct RankingDetailsView: View {
     
     init(matchFormat: String) {
         self.matchFormat = matchFormat
-        self.rankingViewModel.fetchRankings(matchFormat)
     }
     
     private var selectedTab: TabSelection {
@@ -63,6 +62,9 @@ struct RankingDetailsView: View {
                 }
                 
                 Spacer()
+            }
+            .onAppear {
+                self.rankingViewModel.fetchRankings(self.matchFormat)
             }
             .navigationBarTitle("ICC Rankings")
             .navigationBarBackButtonHidden(true)
