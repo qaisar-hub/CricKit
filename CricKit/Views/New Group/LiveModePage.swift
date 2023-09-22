@@ -17,7 +17,7 @@ struct LiveModePage: View {
     var body: some View {
         NavigationStack{
             ZStack {
-                Color.darkStart.ignoresSafeArea()
+                LinearGradient(Color.darkStart, Color.appBlacks).ignoresSafeArea()
                 HStack{
                     VStack(spacing: 25) {
                         

@@ -84,6 +84,8 @@
 		463928132A7EC0B3002C2767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928122A7EC0B3002C2767 /* Assets.xcassets */; };
 		463928162A7EC0B3002C2767 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463928152A7EC0B3002C2767 /* Preview Assets.xcassets */; };
 		464A64272ABD9C90007E518E /* MatchSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A64262ABD9C90007E518E /* MatchSummaryView.swift */; };
+		464A642F2ABDB21E007E518E /* CricKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A642E2ABDB21E007E518E /* CricKitTests.swift */; };
+		464A64352ABDB2B7007E518E /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FD2662A84EA0700029FD7 /* TextFieldValidator.swift */; };
 		464CBCE62AB8936700068EEB /* LaunchAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CBCE52AB8936700068EEB /* LaunchAnimationView.swift */; };
 		464CBCE82AB893A900068EEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CBCE72AB893A900068EEB /* ContentView.swift */; };
 		465DC2722A9C95F400B171BE /* RankingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DC2712A9C95F400B171BE /* RankingDetailsView.swift */; };
@@ -142,6 +144,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 20343F362AA5835E00E840D0;
 			remoteInfo = WidgetCrickitExtension;
+		};
+		464A64302ABDB21E007E518E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 463928032A7EC0B1002C2767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4639280A2A7EC0B1002C2767;
+			remoteInfo = CricKit;
 		};
 		46FE8C9F2ABC1A93007631AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -241,6 +250,8 @@
 		463928122A7EC0B3002C2767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463928152A7EC0B3002C2767 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		464A64262ABD9C90007E518E /* MatchSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchSummaryView.swift; sourceTree = "<group>"; };
+		464A642C2ABDB21E007E518E /* CricKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CricKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		464A642E2ABDB21E007E518E /* CricKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CricKitTests.swift; sourceTree = "<group>"; };
 		464CBCE52AB8936700068EEB /* LaunchAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimationView.swift; sourceTree = "<group>"; };
 		464CBCE72AB893A900068EEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		465DC2712A9C95F400B171BE /* RankingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingDetailsView.swift; sourceTree = "<group>"; };
@@ -309,6 +320,13 @@
 				205CD18F2AA239D20082374E /* FirebaseFirestore in Frameworks */,
 				205CD18D2AA239D20082374E /* FirebaseAuth in Frameworks */,
 				205CD1912AA239D20082374E /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		464A64292ABDB21E007E518E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +556,7 @@
 				4639280D2A7EC0B1002C2767 /* CricKit */,
 				463928122A7EC0B3002C2767 /* Assets.xcassets */,
 				20343F3A2AA5835E00E840D0 /* WidgetCrickit */,
+				464A642D2ABDB21E007E518E /* CricKitTests */,
 				20C067362A8CCA7E00102BCF /* Frameworks */,
 				4639280C2A7EC0B1002C2767 /* Products */,
 			);
@@ -549,6 +568,7 @@
 				4639280B2A7EC0B1002C2767 /* CricKit.app */,
 				20343F372AA5835E00E840D0 /* WidgetCrickitExtension.appex */,
 				46FE8C942ABC1A90007631AA /* CricKit.app */,
+				464A642C2ABDB21E007E518E /* CricKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -577,6 +597,14 @@
 				463928152A7EC0B3002C2767 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		464A642D2ABDB21E007E518E /* CricKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				464A642E2ABDB21E007E518E /* CricKitTests.swift */,
+			);
+			path = CricKitTests;
 			sourceTree = "<group>";
 		};
 		464CBCE42AB8933200068EEB /* Main */ = {
@@ -738,6 +766,24 @@
 			productReference = 4639280B2A7EC0B1002C2767 /* CricKit.app */;
 			productType = "com.apple.product-type.application";
 		};
+		464A642B2ABDB21E007E518E /* CricKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 464A64342ABDB21E007E518E /* Build configuration list for PBXNativeTarget "CricKitTests" */;
+			buildPhases = (
+				464A64282ABDB21E007E518E /* Sources */,
+				464A64292ABDB21E007E518E /* Frameworks */,
+				464A642A2ABDB21E007E518E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				464A64312ABDB21E007E518E /* PBXTargetDependency */,
+			);
+			name = CricKitTests;
+			productName = CricKitTests;
+			productReference = 464A642C2ABDB21E007E518E /* CricKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		46FE8C932ABC1A90007631AA /* CricKit For Watch Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46FE8CA52ABC1A93007631AA /* Build configuration list for PBXNativeTarget "CricKit For Watch Watch App" */;
@@ -771,6 +817,10 @@
 					4639280A2A7EC0B1002C2767 = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					464A642B2ABDB21E007E518E = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 4639280A2A7EC0B1002C2767;
+					};
 					46FE8C932ABC1A90007631AA = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -798,6 +848,7 @@
 				4639280A2A7EC0B1002C2767 /* CricKit */,
 				20343F362AA5835E00E840D0 /* WidgetCrickitExtension */,
 				46FE8C932ABC1A90007631AA /* CricKit For Watch Watch App */,
+				464A642B2ABDB21E007E518E /* CricKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -825,6 +876,13 @@
 				B2C7E8DD2AB724DF00FBAD87 /* sixer.json in Resources */,
 				46E7BE532ABC2B7200224176 /* Assets.xcassets in Resources */,
 				209ADA702A95A983002B31D5 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		464A642A2ABDB21E007E518E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +1006,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		464A64282ABDB21E007E518E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464A64352ABDB2B7007E518E /* TextFieldValidator.swift in Sources */,
+				464A642F2ABDB21E007E518E /* CricKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46FE8C902ABC1A90007631AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -967,6 +1034,11 @@
 			isa = PBXTargetDependency;
 			target = 20343F362AA5835E00E840D0 /* WidgetCrickitExtension */;
 			targetProxy = 20343F422AA5836500E840D0 /* PBXContainerItemProxy */;
+		};
+		464A64312ABDB21E007E518E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4639280A2A7EC0B1002C2767 /* CricKit */;
+			targetProxy = 464A64302ABDB21E007E518E /* PBXContainerItemProxy */;
 		};
 		46FE8CA02ABC1A93007631AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1223,6 +1295,49 @@
 			};
 			name = Release;
 		};
+		464A64322ABDB21E007E518E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qaisar-raza.CricKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CricKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CricKit";
+			};
+			name = Debug;
+		};
+		464A64332ABDB21E007E518E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qaisar-raza.CricKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CricKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CricKit";
+			};
+			name = Release;
+		};
 		46FE8CA32ABC1A93007631AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1318,6 +1433,15 @@
 			buildConfigurations = (
 				4639281A2A7EC0B3002C2767 /* Debug */,
 				4639281B2A7EC0B3002C2767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		464A64342ABDB21E007E518E /* Build configuration list for PBXNativeTarget "CricKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				464A64322ABDB21E007E518E /* Debug */,
+				464A64332ABDB21E007E518E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
