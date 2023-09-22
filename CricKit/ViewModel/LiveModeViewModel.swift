@@ -35,7 +35,8 @@ class LiveModeViewModel : ObservableObject {
                     let bowlerStats = data["bowlerStats"] as? String ?? ""
                     let recentBalls = data["recentBalls"] as? String ?? ""
                     let matchHeader = data["matchHeader"] as? String ?? ""
-                    return LiveModeData(teamName: teamName, teamFlag: teamFlag, matchHeader: matchHeader, runs: runs, wickets: wickets, overs: overs, crr: crr, pship: pship, player1: player1, player1Score: player1Score, player2: player2, player2Score: player2Score, bowler: bowler, bowlerStats: bowlerStats, recentBalls: recentBalls)
+                    let lastWicket = data["lastWicket"] as? String ?? ""
+                    return LiveModeData(teamName: teamName, teamFlag: teamFlag, matchHeader: matchHeader, runs: runs, wickets: wickets, overs: overs, crr: crr, pship: pship, lastWicket: lastWicket, player1: player1, player1Score: player1Score, player2: player2, player2Score: player2Score, bowler: bowler, bowlerStats: bowlerStats, recentBalls: recentBalls)
                 }
             }
             print("<<< liveModel \(liveModel)")

@@ -129,6 +129,21 @@ struct LiveModePage: View {
                                 .foregroundStyle(.white).opacity(0.8)
                             Spacer()
                         }.padding(.leading, 10)
+                        
+                        HStack {
+                            if ((liveModeViewModel.liveModelForMatch?.lastWicket) != nil) {
+                                Text("Last Wicket: ")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.white).opacity(0.6)
+                            }
+                            Text(liveModeViewModel.liveModelForMatch?.lastWicket ?? "")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundStyle(.white).opacity(0.8)
+                            Spacer()
+                        }.padding(.leading, 10)
+                        
                         ShowLottieAnimation(ballState: liveModeViewModel.liveModelForMatch?.recentBalls.last)
                         Spacer()
                     }

@@ -16,6 +16,7 @@ struct LiveModeData {
     var overs: String
     var crr: String
     var pship: String
+    var lastWicket: String
     
     var player1: String
     var player1Score: String
