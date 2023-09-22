@@ -32,7 +32,6 @@ struct HomeSectionSwitches: View {
                             ForEach(recentMatchesViewModel.recentMatches, id: \.self) { recentMatch in
                                 RecentMatchView(recentMatchModel: recentMatch)
                                     .frame(width: width, height: 120)
-                                    .clipShape(LiveMatchCard())
                                     .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                                     .clipShape(LiveMatchCard())
                                     .cornerRadius(10, corners: .allCorners)
@@ -46,7 +45,6 @@ struct HomeSectionSwitches: View {
                         ForEach(upComingMatchesViewModel.upComingMatches, id: \.self) { upComingMatch in
                             UpComingMatchesView(upComingMatchModel: upComingMatch)
                                 .frame(width: width, height: 120)
-                                .clipShape(LiveMatchCard())
                                 .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                                 .clipShape(LiveMatchCard())
                                 .cornerRadius(10, corners: .allCorners)

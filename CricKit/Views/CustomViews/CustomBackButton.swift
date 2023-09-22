@@ -32,7 +32,7 @@ struct CustomBackButton: View {
                     .font(.headline)
                     .padding(.vertical, 8)
                     .padding(.horizontal, 8)
-                    .foregroundColor(.blue)
+                    .foregroundColor(ColorManager.appPrimaryColor())
             }
         }
     }

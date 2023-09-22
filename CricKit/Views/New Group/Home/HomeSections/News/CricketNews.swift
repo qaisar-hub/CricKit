@@ -9,11 +9,16 @@ import SwiftUI
 
 struct CricketNews: View {
     var newsModel: [NewsModel]
+    @EnvironmentObject private var appSettings: AppSettings
+    
     var body: some View {
         VStack(spacing: 20) {
             ForEach(newsModel) { news in
                 NavigationLink(destination: NewsDetail(news: news)) {
                     NewsCard(news: news)
+                        .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
+                        .clipShape(LiveMatchCard())
+                        .cornerRadius(10, corners: .allCorners)
                 }
             }
         }
@@ -57,8 +62,6 @@ struct NewsCard: View {
         }
         .frame(height: 150)
         .padding(10)
-        .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
-        .cornerRadius(10)
     }
 }
 
@@ -80,7 +83,8 @@ struct NewsDetail: View {
                             Text(news.header)
                                 .font(.subheadline)
 								.foregroundStyle(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
-                                .padding(25)
+                                .padding(30)
+                                .background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
                         }
                     }
                     Text(news.subheader)
