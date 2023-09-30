@@ -9,6 +9,8 @@ import SwiftUI
 
 struct customTabBar: View {
 	@EnvironmentObject private var appSettings: AppSettings
+    @Binding var showSignInSheet: Bool
+
     
     var tabs: [(tabName: String, imageName: String)] = [(tabName: "home", imageName: "house.fill"), (tabName: "Live Mode", imageName: "livephoto"), (tabName: "profile", imageName: "person.fill")]
     
@@ -18,7 +20,7 @@ struct customTabBar: View {
     var body: some View {
         HStack(spacing: 20) {
             ForEach(tabs.enumerated().map({ $0 }), id: \.element.tabName) { index, tab in
-                TabBarButton(tabName: tab.tabName, imageName: tab.imageName, tabIndex: index, selectedIndex: $selectedIndex)
+                TabBarButton(tabName: tab.tabName, imageName: tab.imageName, tabIndex: index, selectedIndex: $selectedIndex, showSignInSheet: $showSignInSheet)
             }
         }
 		.background(BlurManagerData.blurMaterial(colorScheme: appSettings.isDarkMode ? .dark : .light))
@@ -32,11 +34,20 @@ struct TabBarButton: View {
     let imageName: String
     let tabIndex: Int
     @Binding var selectedIndex: Int
+    @Binding var showSignInSheet: Bool
+    @EnvironmentObject private var authViewModel: AuthViewModel
 	@EnvironmentObject private var appSettings: AppSettings
     
     var body: some View {
         Button(action: {
-            selectedIndex = tabIndex
+            if authViewModel.currentUser == nil && (tabIndex == 1 || tabIndex == 2) {
+                withAnimation {
+                    appSettings.showSkipButton = false
+                    showSignInSheet = true
+                }
+            } else {
+                selectedIndex = tabIndex
+           }
         }) {
             VStack(spacing: 3) {
                 Image(systemName: imageName)
@@ -54,6 +65,6 @@ struct TabBarButton: View {
 
 struct customTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        customTabBar(selectedIndex: .constant(0))
+        customTabBar(showSignInSheet: .constant(false), selectedIndex: .constant(0))
     }
 }

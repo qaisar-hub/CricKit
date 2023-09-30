@@ -115,6 +115,37 @@
              )
      }
  }
+
+struct ColorfulButtonStyleCapsule: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(20)
+            .contentShape(Capsule())
+            .background(
+                ColorfulBackground(isHighlighted: configuration.isPressed, shape: Capsule())
+            )
+    }
+}
+
+struct EmbossedCapsuleButton: View {
+
+    var text: String
+    var action: () -> Void
+
+    var body: some View {
+        VStack {
+            Button(action: {
+                action()
+            }) {
+                Text(text)
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundColor(.appWhites)
+            }
+            .buttonStyle(ColorfulButtonStyleCapsule())
+        }
+    }
+}
  
  struct EmbossedButton: View {
  

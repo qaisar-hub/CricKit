@@ -70,6 +70,11 @@ struct SignInPage: View {
                                 .offset(y: -12)
                             
                             SignInView(readyToNavigate: $readyToNavigate, isLoading: $isLoading)
+                            if appSettings.showSkipButton {
+                                EmbossedCapsuleButton(text: "Skip Sign In") {
+                                    readyToNavigate = true
+                                }.padding(.top, 30)
+                            }
                         } else {
                             Text("Create Account")
                                 .fontWidth(.expanded)

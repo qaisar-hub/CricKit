@@ -12,6 +12,7 @@ struct HomePage: View {
     
     @ObservedObject var liveScoreCardViewModel = LiveScoreCardViewModel()
     @EnvironmentObject private var appSettings: AppSettings
+    @State private var showSignInSheet = false
     
 	
     var body: some View {
@@ -30,7 +31,7 @@ struct HomePage: View {
                     AppLogoView()
                     switch selectedIndex {
                     case 0:
-                        HomeBoard(liveScoreCardViewModel: liveScoreCardViewModel)
+                        HomeBoard(liveScoreCardViewModel: liveScoreCardViewModel, showSignInSheet: $showSignInSheet)
                     case 1:
 						LiveMatches()
                     default:
@@ -39,7 +40,7 @@ struct HomePage: View {
                     
                     VStack() {
                         HStack (alignment: .center, spacing: 30) {
-                            customTabBar(selectedIndex: $selectedIndex)
+                            customTabBar(showSignInSheet: $showSignInSheet, selectedIndex: $selectedIndex)
                         }
                         .padding(.top, 16)
                         .padding(.bottom, -20)
@@ -48,6 +49,9 @@ struct HomePage: View {
                 }
             }.background(appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor)
                 .navigationBarBackButtonHidden(true)
+        }
+        .sheet(isPresented: $showSignInSheet) {
+            SignInPage()
         }
     }
     init() {

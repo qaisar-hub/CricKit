@@ -13,11 +13,13 @@ class AppSettings: ObservableObject {
     @Published var isDarkMode = false
     @Published var favouriteTeam = FavouriteTeam(team: "India", teamFlag: "teamInd")
     @Published var userImage: Data? = nil
+    @Published var showSkipButton = true
     
     
     func resetToInitialState() {
         favouriteTeam = FavouriteTeam(team: "India", teamFlag: "teamInd")
         userImage = nil
+        showSkipButton = true
     }
     
     func updateExistingUserPreference(_ emailID: String) {
