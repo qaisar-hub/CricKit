@@ -63,7 +63,7 @@ struct SignInView: View {
                     .foregroundColor(.appWhites)
             }.popover(isPresented: $showForgetPasswordSheet) {
                 ZStack {
-                    appSettings.isDarkMode ? Color.linearBlackColor : Color.linearWhiteColor
+                    appSettings.isDarkMode ? LinearGradient(Color.darkStart, Color.appBlacks) : LinearGradient(Color.appWhites)
                     ForgotPasswordView(showForgetPasswordSheet: $showForgetPasswordSheet)
                 }.ignoresSafeArea()
                     

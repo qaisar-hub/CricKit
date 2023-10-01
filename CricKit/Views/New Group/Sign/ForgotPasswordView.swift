@@ -18,11 +18,13 @@ struct ForgotPasswordView: View {
     var body: some View {
             VStack(spacing: 10) {
                 Text("Forgot Your Password?")
+                    .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                     .font(.title)
                     .fontWeight(.bold)
                     
                 
                 Text("Enter your email address below, and we'll send you a link to reset your password.")
+                    .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                     .font(.headline)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 20)
@@ -54,6 +56,7 @@ struct ForgotPasswordView: View {
                 
                 HStack {
                     Text("Remember your password?")
+                        .foregroundColor(ColorManager.appTextColor(colorScheme: appSettings.isDarkMode ? .dark : .light))
                         .font(.subheadline)
                     Button(action: {
                         showForgetPasswordSheet.toggle()
