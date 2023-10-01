@@ -34,5 +34,11 @@ class AppSettings: ObservableObject {
         }
     }
     
+    func deleteUserPreference(_ emailID: String) {
+        if !emailID.isEmpty {
+            SwiftDataHelper.shared.deleteUserPreference(emailID: emailID)
+        }
+    }
+    
 }
 

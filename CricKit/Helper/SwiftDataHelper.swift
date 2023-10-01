@@ -22,17 +22,13 @@ public class SwiftDataHelper {
             let modelContext = container.mainContext
             let userDataModel = try modelContext.fetch(FetchDescriptor<UserDataModel>())
             if let existingUserIndex = userDataModel.firstIndex(where: { $0.uniqueID == emailID }) {
-                debugPrint("### existingUserIndex \(existingUserIndex)")
                 userDataModel[existingUserIndex].isDarkMode = isDarkMode
                 userDataModel[existingUserIndex].favouriteTeam = favouriteTeam
                 userDataModel[existingUserIndex].userImage = userImage
-                debugPrint(userDataModel[existingUserIndex].isDarkMode)
-                debugPrint(userDataModel[existingUserIndex].favouriteTeam)
             } else {
                 let userData = UserDataModel(uniqueID: emailID, isDarkMode: isDarkMode, favouriteTeam: favouriteTeam, userImage: userImage)
                 modelContext.insert(userData)
             }
-            debugPrint("### userDataModel count : \(userDataModel.count)")
         } catch {
             debugPrint("### Error : \(error.localizedDescription)")
         }
@@ -43,14 +39,22 @@ public class SwiftDataHelper {
         do {
             let modelContext = container.mainContext
             let userDataModel = try modelContext.fetch(FetchDescriptor<UserDataModel>())
-            debugPrint("### emailID : \(emailID)")
-            debugPrint("### userDataModel count : \(userDataModel.count)")
             if let existingUser = userDataModel.first(where: { $0.uniqueID == emailID }) {
                 isDarkMode = existingUser.isDarkMode
                 favouriteTeam = existingUser.favouriteTeam
                 userImage = existingUser.userImage
-                debugPrint("### isDarkMode : \(existingUser.isDarkMode)")
-                debugPrint("### favouriteTeam : \(existingUser.favouriteTeam)")
+            }
+        } catch {
+            debugPrint("### Error : \(error.localizedDescription)")
+        }
+    }
+    
+    func deleteUserPreference(emailID: String) {
+        do {
+            let modelContext = container.mainContext
+            let userDataModel = try modelContext.fetch(FetchDescriptor<UserDataModel>())
+            if let existingUser = userDataModel.first(where: { $0.uniqueID == emailID }) {
+                modelContext.delete(existingUser)
             }
         } catch {
             debugPrint("### Error : \(error.localizedDescription)")

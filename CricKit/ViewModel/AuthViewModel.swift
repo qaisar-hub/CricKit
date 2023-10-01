@@ -93,25 +93,28 @@ class AuthViewModel: ObservableObject {
     }
 
     
-    func deleteAccount(password: String) {
+    func deleteAccount(password: String, _ completionHandler: @escaping (UserStatus, String) -> Void) {
         guard let user = Auth.auth().currentUser else {
             debugPrint("No user signed in.")
             return
         }
         
-        let credential = EmailAuthProvider.credential(withEmail: user.email ?? "", password: password)
+        let emailID = user.email ?? ""
+        let credential = EmailAuthProvider.credential(withEmail: emailID, password: password)
         
         user.reauthenticate(with: credential) { authResult, error in
             if let error = error {
                 debugPrint("Error reauthenticating user: \(error)")
+                completionHandler(.failed("Failed to delete account", "Please double-check your password and try again!"), emailID)
             } else {
                 user.delete { deleteError in
                     if let deleteError = deleteError {
                         debugPrint("Error deleting user: \(deleteError)")
+                        completionHandler(.failed("Failed to delete account", "Please double-check your password and try again!"), emailID)
                     } else {
+                        completionHandler(.success("Account Deleted","Your account deleted successfully!"), emailID)
                         self.userSession = nil
                         self.currentUser = nil
-                        self.userStatus = .success("Account Deleted","Your account deleted successfully!")
                         debugPrint("User account deleted successfully.")
                     }
                 }
