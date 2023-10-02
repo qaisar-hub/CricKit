@@ -41,7 +41,7 @@ struct TabBarButton: View {
     
     var body: some View {
         Button(action: {
-            if authViewModel.currentUser == nil && (tabIndex == 1 || tabIndex == 2) {
+            if authViewModel.currentUser == nil && tabIndex == 2 {
                 withAnimation {
                     appSettings.showSkipButton = false
                     showSignInSheet = true

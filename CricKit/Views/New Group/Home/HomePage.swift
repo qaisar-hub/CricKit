@@ -31,7 +31,7 @@ struct HomePage: View {
                     AppLogoView()
                     switch selectedIndex {
                     case 0:
-                        HomeBoard(liveScoreCardViewModel: liveScoreCardViewModel, showSignInSheet: $showSignInSheet)
+                        HomeBoard(liveScoreCardViewModel: liveScoreCardViewModel)
                     case 1:
 						LiveMatches()
                     default:

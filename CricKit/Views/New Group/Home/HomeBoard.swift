@@ -18,7 +18,6 @@ struct HomeBoard: View {
     
     @EnvironmentObject private var appSettings: AppSettings
     @EnvironmentObject private var authViewModel: AuthViewModel
-    @Binding var showSignInSheet: Bool
     
     var width = UIScreen.main.bounds.width
     @State private var alert: AlertTypes? = nil
@@ -46,24 +45,19 @@ struct HomeBoard: View {
                                 .padding(.trailing, index == liveScoreCardViewModel.liveScoreCardlists.count - 1 ? 30: 0)
                                 .onTapGesture {
                                     // MARK: LIVE ACTIVITY
-                                    if authViewModel.currentUser != nil {
-                                        let attributes = LiveScoreActivityAttributes(matchName: liveScoreItem.matchHeader)
-                                        let state = LiveScoreActivityAttributes.ContentState(endTime: Date().addingTimeInterval(60), liveScoreModel: liveScoreItem)
-                                        do {
-                                            let _ = try Activity.request(
-                                                attributes: attributes,
-                                                content: .init(state: state, staleDate: nil),
-                                                pushType: nil
-                                            )
-                                            alert = AlertTypes.defaulAlert(title: "Live Activity for \(liveScoreItem.matchHeader) is now added to your lock screen", message: "Please check your lock screen notifications")
-                                            // TODO: Add push notification for live activity to update
-                                            liveScoreTip.invalidate(reason: .actionPerformed)
-                                        } catch {
-                                            print(error.localizedDescription)
-                                        }
-                                    } else {
-                                        showSignInSheet = true
-                                        appSettings.showSkipButton = false
+                                    let attributes = LiveScoreActivityAttributes(matchName: liveScoreItem.matchHeader)
+                                    let state = LiveScoreActivityAttributes.ContentState(endTime: Date().addingTimeInterval(60), liveScoreModel: liveScoreItem)
+                                    do {
+                                        let _ = try Activity.request(
+                                            attributes: attributes,
+                                            content: .init(state: state, staleDate: nil),
+                                            pushType: nil
+                                        )
+                                        alert = AlertTypes.defaulAlert(title: "Live Activity for \(liveScoreItem.matchHeader) is now added to your lock screen", message: "Please check your lock screen notifications")
+                                        // TODO: Add push notification for live activity to update
+                                        liveScoreTip.invalidate(reason: .actionPerformed)
+                                    } catch {
+                                        print(error.localizedDescription)
                                     }
                                 }
                         }
