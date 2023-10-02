@@ -14,6 +14,7 @@ struct ForgotPasswordView: View {
     @Binding var showForgetPasswordSheet: Bool
     @StateObject var progress = TextFieldObserver()
     @State private var alert: AlertTypes? = nil
+    @State private var startValidation = false
     
     var body: some View {
             VStack(spacing: 10) {
@@ -40,7 +41,6 @@ struct ForgotPasswordView: View {
                 Button(action: {
                     authViewModel.resetPassword(withEmail: progress.emailId)
                     alert = authViewModel.checkUserStatus()
-                    showForgetPasswordSheet.toggle()
                 }) {
                     Text("Send Reset Link")
                         .font(.headline)

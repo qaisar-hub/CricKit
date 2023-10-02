@@ -69,10 +69,13 @@ class AuthViewModel: ObservableObject {
     }
     
     func resetPassword(withEmail email: String) {
+        if email.isEmpty {
+            self.userStatus = .failed("Error", "Email Id should not be empty.")
+        }
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
                 debugPrint(error.localizedDescription)
-                self.userStatus = .failed("Error", "\(error.localizedDescription)")
+                self.userStatus = .failed("Error", "Invalid Email ID")
             } else {
                 debugPrint("Password reset email sent. Check your inbox.")
                 self.userStatus = .success("Email Sent", "Password reset email sent. Check your inbox.")

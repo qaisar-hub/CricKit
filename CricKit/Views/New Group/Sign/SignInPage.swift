@@ -71,9 +71,19 @@ struct SignInPage: View {
                             
                             SignInView(readyToNavigate: $readyToNavigate, isLoading: $isLoading)
                             if appSettings.showSkipButton {
-                                EmbossedCapsuleButton(text: "Skip Sign In") {
-                                    readyToNavigate = true
-                                }.padding(.top, 30)
+                                HStack {
+                                    Spacer()
+                                    Button(action: {
+                                        readyToNavigate = true
+                                    }) {
+                                        Text("Skip for now?")
+                                            .font(.caption)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.appPrimary)
+                                    }
+                                    .padding(.trailing, 16)
+                                    .offset(y: UIScreen.main.bounds.width * 0.4)
+                                }
                             }
                         } else {
                             Text("Create Account")

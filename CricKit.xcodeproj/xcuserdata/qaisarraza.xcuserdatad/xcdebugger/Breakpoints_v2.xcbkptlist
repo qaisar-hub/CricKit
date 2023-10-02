@@ -14,42 +14,10 @@
             filePath = "CricKit/ViewModel/AuthViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "deleteAccount(password:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "708D1C2D-4F71-4584-BBD7-2E9EFB8D7992 - 70e28c5960c945"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CricKit.AuthViewModel.deleteAccount(password: Swift.String, _: (CricKit.UserStatus) -&gt; ()) -&gt; ()"
-                  moduleName = "CricKit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qaisarraza/Desktop/CricKit/CricKit/ViewModel/AuthViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "114"
-                  endingLineNumber = "114"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "708D1C2D-4F71-4584-BBD7-2E9EFB8D7992 - 8bcc8bb7f0786a52"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CricKit.AuthViewModel.deleteAccount(password: Swift.String, _: (CricKit.UserStatus, Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "CricKit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qaisarraza/Desktop/CricKit/CricKit/ViewModel/AuthViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "148">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
