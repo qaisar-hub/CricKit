@@ -10,26 +10,34 @@ import Foundation
 class RankingViewModel: ObservableObject {
     @Published var category: RankingCategory?
     
+    private let networkService: NetworkService
+    
+    init(networkService: NetworkService = HttpNetworkService()) {
+        self.networkService = networkService
+    }
+    
     func fetchRankings(_ matchFormat: String) {
-        debugPrint("matchFormat \(matchFormat)")
-        guard let url = URL(string: "https://raw.githubusercontent.com/qaisar-hub/ranking/main/\(matchFormat).json") else {
-            debugPrint("url is missing")
-            return
-        }
+        let urlString = "https://raw.githubusercontent.com/qaisar-hub/ranking/main/\(matchFormat).json"
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                let decoder = JSONDecoder()
-                if let decodedData = try? decoder.decode(RankingResponse.self, from: data) {
-                    DispatchQueue.main.async {
-                        self.category = decodedData.category
-                    }
-                } else {
-                    debugPrint("error: \(String(describing: error?.localizedDescription))")
+        networkService.fetchData(from: urlString, resultType: RankingResponse.self) { result in
+            switch result{
+            case .failure(let error):
+                if error == .missingData {
+                    print("data is missing")
                 }
-            } else {
-                debugPrint("error: \(String(describing: error?.localizedDescription))")
+                if error == .missingURL {
+                    print("url is missing")
+                }
+            case .success(let data):
+                guard let data = data else {
+                    return
+                }
+                //NetworkManager called on background thread
+                //so we are moving to main thread before updating the UI
+                DispatchQueue.main.async {
+                    self.category = data.category
+                }
             }
-        }.resume()
+        }
     }
 }
