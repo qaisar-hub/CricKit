@@ -12,6 +12,9 @@ struct HomeSections: View {
     @ObservedObject var sectionProgress : HomeSection
 	@EnvironmentObject private var appSettings: AppSettings
     
+    // maintaining a separate animation state for each tab
+    @State private var isAnimating: [Bool?] = [nil, nil, nil, nil, nil]
+    
     var width = UIScreen.main.bounds.width / 7
     var categoryDataImages: [String] = ["clock.fill", "rectangle.fill.on.rectangle.fill", "shared.with.you", "newspaper.fill", "stairs"]
     var categoryDataTitle: [String] = ["Recents", "Upcoming Matches", "Featured Players", "News", "Rankings"]
@@ -34,7 +37,18 @@ struct HomeSections: View {
                             .offset(y: CGFloat(-index*6))
                             .onTapGesture {
                                 sectionProgress.index = index
+                                withAnimation(.bouncy ,completionCriteria: .logicallyComplete) {
+                                    isAnimating[index] = true
+                                } completion: {
+                                    var trasnaction = Transaction()
+                                    trasnaction.disablesAnimations = true
+                                    withTransaction (trasnaction) {
+                                       isAnimating[index] = nil
+                                    }
+                                }
                             }
+                            .symbolEffect(.bounce.down.byLayer, value: isAnimating[index])
+
                     }
                 }
             }

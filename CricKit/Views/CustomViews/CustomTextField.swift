@@ -66,6 +66,7 @@ struct SecureTextFieldWithToggle: View {
                     isSecure.toggle()
                 }) {
                     Image(systemName: isSecure ? "eye.slash.fill" : "eye.fill")
+                        .symbolEffect(.bounce.down.byLayer, value: isSecure)
                         .foregroundColor(.gray)
                 }
                 .padding()

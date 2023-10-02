@@ -37,6 +37,7 @@ struct TabBarButton: View {
     @Binding var showSignInSheet: Bool
     @EnvironmentObject private var authViewModel: AuthViewModel
 	@EnvironmentObject private var appSettings: AppSettings
+    @State private var isAnimating: [Bool?] = [nil, nil, nil]
     
     var body: some View {
         Button(action: {
@@ -47,11 +48,22 @@ struct TabBarButton: View {
                 }
             } else {
                 selectedIndex = tabIndex
+                withAnimation(.bouncy ,completionCriteria: .logicallyComplete) {
+                    isAnimating[selectedIndex] = true
+                } completion: {
+                    var trasnaction = Transaction()
+                    trasnaction.disablesAnimations = true
+                    withTransaction (trasnaction) {
+                       isAnimating[selectedIndex] = nil
+                    }
+                }
+                    
            }
         }) {
             VStack(spacing: 3) {
                 Image(systemName: imageName)
                     .foregroundColor(selectedIndex == tabIndex ?  Color.appPrimary : appSettings.isDarkMode ? Color.white : Color.gray)
+                    .symbolEffect(.bounce.down.byLayer, value: isAnimating[selectedIndex])
                 Text(tabName.capitalized)
                     .font(.caption)
                     .foregroundColor(selectedIndex == tabIndex ? Color.appPrimary : appSettings.isDarkMode ? Color.white : Color.gray)
